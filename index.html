@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BidMaster - Online Auction Platform</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
+                <span style="font-size: 1.5rem; font-weight: 800; margin-left: 0.5rem;">BidMaster</span>
+            </a>
+
+            <!-- Navigation -->
+            <nav>
+                <ul class="nav-menu flex items-center gap-4">
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link dropdown-toggle">Home <i
+                                class="fas fa-chevron-down" style="font-size: 0.8rem;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html" class="dropdown-item">Home Style 1</a></li>
+                            <li><a href="index2.html" class="dropdown-item">Home Style 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link dropdown-toggle">Dashboard <i
+                                class="fas fa-chevron-down" style="font-size: 0.8rem;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-dashboard.html" class="dropdown-item">User Dashboard</a></li>
+                            <li><a href="admin-dashboard.html" class="dropdown-item">Admin Dashboard</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="rtl-toggle" class="icon-btn" title="Toggle RTL">
+                    <i class="fas fa-globe"></i>
+                </button>
+                <button class="icon-btn logout-btn" title="Logout" onclick="window.location.href='login.html'">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+
+                <button class="mobile-menu-btn">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container flex items-center justify-between" style="gap: 2rem; flex-wrap: wrap;">
+            <div class="hero-content">
+                <h1>Discover, Bid, and Win Extraordinary Items</h1>
+                <p>Welcome to the premium online auction destination. Find unique items, rare collectibles, and
+                    exclusive deals starting today.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="btn btn-primary">Start Bidding</a>
+                    <a href="about.html" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image"
+                style="flex: 1; min-width: 300px; height: 400px; background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; opacity: 0.1;">
+                <!-- Placeholder for Hero Image -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Categories -->
+    <section class="container" style="padding: 4rem 1.5rem;">
+        <h2 class="section-title">Popular Categories</h2>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+            <div class="card">
+                <i class="fas fa-laptop fa-3x" style="color: var(--primary-color); margin-bottom: 1rem;"></i>
+                <h3>Electronics</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Latest gadgets, laptops, and smart devices.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-gem fa-3x" style="color: var(--secondary-color); margin-bottom: 1rem;"></i>
+                <h3>Jewelry</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Exquisite rings, necklaces, and watches.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-car fa-3x" style="color: var(--accent-color); margin-bottom: 1rem;"></i>
+                <h3>Vehicles</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Luxury cars, vintage models, and bikes.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-palette fa-3x" style="color: var(--primary-color); margin-bottom: 1rem;"></i>
+                <h3>Art</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Contemporary paintings and sculptures.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section [NEW] -->
+    <section class="container"
+        style="padding: 4rem 1.5rem; background: var(--bg-surface); border-radius: var(--radius-lg); margin-bottom: 4rem;">
+        <h2 class="section-title">How It Works</h2>
+        <div class="flex" style="flex-wrap: wrap; gap: 2rem; justify-content: center; text-align: center;">
+            <div style="flex: 1; min-width: 250px;">
+                <div
+                    style="width: 80px; height: 80px; background: rgba(99, 102, 241, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                    <span style="font-size: 2rem; font-weight: 700; color: var(--primary-color);">1</span>
+                </div>
+                <h3>Register</h3>
+                <p style="color: var(--text-muted);">Sign up for free and verify your account.</p>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <div
+                    style="width: 80px; height: 80px; background: rgba(236, 72, 153, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                    <span style="font-size: 2rem; font-weight: 700; color: var(--secondary-color);">2</span>
+                </div>
+                <h3>Bid</h3>
+                <p style="color: var(--text-muted);">Find items and place your bids.</p>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <div
+                    style="width: 80px; height: 80px; background: rgba(139, 92, 246, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                    <span style="font-size: 2rem; font-weight: 700; color: var(--accent-color);">3</span>
+                </div>
+                <h3>Win</h3>
+                <p style="color: var(--text-muted);">Win the auction and pay securely.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials [NEW] -->
+    <section class="container" style="padding: 4rem 1.5rem;">
+        <h2 class="section-title">What Our Users Say</h2>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div class="card">
+                <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">"BidMaster is the best
+                    platform I've used. The interface is stunning and easy to navigate."</p>
+                <div class="flex items-center gap-3">
+                    <div style="width: 40px; height: 40px; background: #ddd; border-radius: 50%;"></div>
+                    <div>
+                        <h4 style="font-weight: 600;">Sarah Johnson</h4>
+                        <span style="font-size: 0.8rem; color: var(--text-muted);">Collector</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem;">"I sold my vintage watch
+                    collection here. The process was smooth and secure."</p>
+                <div class="flex items-center gap-3">
+                    <div style="width: 40px; height: 40px; background: #ddd; border-radius: 50%;"></div>
+                    <div>
+                        <h4 style="font-weight: 600;">Michael Chen</h4>
+                        <span style="font-size: 0.8rem; color: var(--text-muted);">Seller</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container" style="text-align: center;">
+            <p style="color: var(--text-muted);">&copy; 2026 BidMaster. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="rtltoggle.js"></script>
+    <script src="logout.js"></script>
+    <script src="device-simulator.js"></script>
+    <script src="main.js"></script>
+    <script>
+        // Dropdown Logic
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            if (toggle) {
+                toggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                });
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.dropdown')) {
+                dropdowns.forEach(d => d.classList.remove('active'));
+            }
+        });
+    </script>
+</body>
+
+</html>

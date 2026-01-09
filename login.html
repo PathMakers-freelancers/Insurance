@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BidMaster - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .auth-container {
+            max-width: 450px;
+            margin: 4rem auto;
+            background: var(--bg-surface);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--text-muted);
+            border-radius: var(--radius-md);
+            background: var(--bg-body);
+            color: var(--text-main);
+            font-family: inherit;
+        }
+
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--text-muted);
+        }
+
+        .auth-tab {
+            flex: 1;
+            text-align: center;
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-muted);
+            border-bottom: 2px solid transparent;
+        }
+
+        .auth-tab.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .social-login {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .social-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
+                <span style="font-size: 1.5rem; font-weight: 800; margin-left: 0.5rem;">BidMaster</span>
+            </a>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="icon-btn"><i class="fas fa-moon"></i></button>
+                <button id="rtl-toggle" class="icon-btn"><i class="fas fa-globe"></i></button>
+                <button class="mobile-menu-btn"><span class="bar"></span><span class="bar"></span><span
+                        class="bar"></span></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <div class="auth-tab active" onclick="switchTab('login')">Login</div>
+                <div class="auth-tab" onclick="switchTab('register')">Register</div>
+            </div>
+
+            <form id="login-form">
+                <h2 style="margin-bottom: 1.5rem; text-align: center;">Welcome Back</h2>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" placeholder="******">
+                    <div style="text-align: right; margin-top: 0.5rem;">
+                        <a href="#" style="font-size: 0.875rem; color: var(--primary-color);">Forgot password?</a>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary" style="width: 100%;"
+                    onclick="window.location.href='user-dashboard.html'">Sign In</button>
+                <div style="text-align: center; margin-top: 1rem;">
+                    <a href="admin-dashboard.html" style="font-size: 0.8rem; color: var(--text-muted);">Admin Demo
+                        Login</a>
+                </div>
+            </form>
+
+            <form id="register-form" style="display: none;">
+                <h2 style="margin-bottom: 1.5rem; text-align: center;">Create Account</h2>
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-control" placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" placeholder="Create a password">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" placeholder="Confirm password">
+                </div>
+                <button type="button" class="btn btn-primary" style="width: 100%;">Create Account</button>
+            </form>
+
+            <div class="social-login">
+                <button class="social-btn"><i class="fab fa-google"></i></button>
+                <button class="social-btn"><i class="fab fa-facebook-f"></i></button>
+                <button class="social-btn"><i class="fab fa-twitter"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="rtltoggle.js"></script>
+    <script src="device-simulator.js"></script>
+    <script src="main.js"></script>
+    <script>
+        function switchTab(tab) {
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            const tabs = document.querySelectorAll('.auth-tab');
+
+            if (tab === 'login') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                tabs[0].classList.add('active');
+                tabs[1].classList.remove('active');
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                tabs[0].classList.remove('active');
+                tabs[1].classList.add('active');
+            }
+        }
+    </script>
+</body>
+
+</html>
