@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BidMaster - Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--text-muted);
+            border-radius: var(--radius-md);
+            background: var(--bg-surface);
+            color: var(--text-main);
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="logo">
+                <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
+                <span style="font-size: 1.5rem; font-weight: 800; margin-left: 0.5rem;">BidMaster</span>
+            </a>
+            <nav>
+                <ul class="nav-menu flex items-center gap-4">
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link dropdown-toggle">Home <i
+                                class="fas fa-chevron-down" style="font-size: 0.8rem;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html" class="dropdown-item">Home Style 1</a></li>
+                            <li><a href="index2.html" class="dropdown-item">Home Style 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="nav-link dropdown-toggle">Dashboard <i
+                                class="fas fa-chevron-down" style="font-size: 0.8rem;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-dashboard.html" class="dropdown-item">User Dashboard</a></li>
+                            <li><a href="admin-dashboard.html" class="dropdown-item">Admin Dashboard</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="icon-btn"><i class="fas fa-moon"></i></button>
+                <button id="rtl-toggle" class="icon-btn"><i class="fas fa-globe"></i></button>
+                <button class="icon-btn logout-btn" onclick="window.location.href='login.html'"><i
+                        class="fas fa-sign-out-alt"></i></button>
+                <button class="mobile-menu-btn"><span class="bar"></span><span class="bar"></span><span
+                        class="bar"></span></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <span class="text-gold" style="font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">We're Here
+                to Help</span>
+            <h1 class="section-title" style="font-size: 3.5rem; margin-top: 0.5rem;">Get in <span
+                    class="text-gradient">Touch</span></h1>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Have a question about an item? Need
+                help with your account? Our team is ready to assist you.</p>
+        </div>
+
+        <div class="grid" style="grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: flex-start;">
+            <!-- Left: Contact Info & Map -->
+            <div>
+                <div class="glass-card hover-float" style="padding: 2rem; margin-bottom: 2rem;">
+                    <div style="display: flex; gap: 1.5rem; margin-bottom: 2rem;">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(99, 102, 241, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-map-marker-alt fa-lg" style="color: var(--primary-color);"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Headquarters</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">123 Auction Avenue,<br>New York, NY
+                                10001</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1.5rem; margin-bottom: 2rem;">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(236, 72, 153, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-phone fa-lg" style="color: var(--secondary-color);"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Phone Support</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">+1 (555) 123-4567<br><span
+                                    style="font-size: 0.8rem; opacity: 0.8;">Mon-Fri, 9am - 6pm EST</span></p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1.5rem;">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(245, 158, 11, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-envelope fa-lg" style="color: var(--gold-primary);"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Email Us</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">
+                                support@bidmaster.com<br>info@bidmaster.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div
+                    style="height: 300px; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); border: 2px solid rgba(255,255,255,0.05); margin-bottom: 2rem;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.2528082187!2d-74.11976373924614!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <!-- FAQ Section [NEW] -->
+                <div class="glass-card" style="padding: 2rem;">
+                    <h3 style="margin-bottom: 1.5rem;">Common Questions</h3>
+                    <div class="faq-item">
+                        <button class="faq-question">How do I place a bid? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer">Simply log in to your account, find an item you love, and enter your bid
+                            amount. If you're the high bidder when the auction ends, you win!</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Is shipping included? <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer">Shipping costs depend on the seller and the item's location. Check the
+                            "Shipping" tab on the auction page for details.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Form -->
+            <div class="glass-card premium-section" style="padding: 3rem;">
+                <h2 style="margin-bottom: 2rem;">Send us a message</h2>
+                <form>
+                    <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div class="form-group" style="margin: 0;">
+                            <label class="form-label" style="font-size: 0.9rem; color: var(--text-muted);">First
+                                Name</label>
+                            <input type="text" class="form-control"
+                                style="background: rgba(0,0,0,0.2); border-color: rgba(255,255,255,0.1); color: white;"
+                                placeholder="John">
+                        </div>
+                        <div class="form-group" style="margin: 0;">
+                            <label class="form-label" style="font-size: 0.9rem; color: var(--text-muted);">Last
+                                Name</label>
+                            <input type="text" class="form-control"
+                                style="background: rgba(0,0,0,0.2); border-color: rgba(255,255,255,0.1); color: white;"
+                                placeholder="Doe">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" style="font-size: 0.9rem; color: var(--text-muted);">Email
+                            Address</label>
+                        <input type="email" class="form-control"
+                            style="background: rgba(0,0,0,0.2); border-color: rgba(255,255,255,0.1); color: white;"
+                            placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" style="font-size: 0.9rem; color: var(--text-muted);">Subject</label>
+                        <select class="form-control"
+                            style="background: rgba(0,0,0,0.2); border-color: rgba(255,255,255,0.1); color: var(--text-muted);">
+                            <option>General Inquiry</option>
+                            <option>Support Request</option>
+                            <option>Auction Partnership</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" style="font-size: 0.9rem; color: var(--text-muted);">Message</label>
+                        <textarea class="form-control" rows="5"
+                            style="background: rgba(0,0,0,0.2); border-color: rgba(255,255,255,0.1); color: white;"
+                            placeholder="How can we help you?"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-premium" style="width: 100%; justify-content: center;">Send
+                        Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rich Footer [NEW] -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Brand Section -->
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <a href="#" class="logo flex items-center justify-center gap-2"
+                    style="margin-bottom: 1rem; display: inline-flex;">
+                    <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
+                    <span style="font-weight: 800; font-size: 2rem; color: white;">BidMaster</span>
+                </a>
+                <p style="color: #94a3b8; max-width: 500px; margin: 0 auto;">
+                    Redefining the auction experience with exclusivity and elegance.
+                </p>
+                <div class="social-links flex justify-center gap-4" style="margin-top: 1.5rem;">
+                    <a href="#" class="icon-btn"
+                        style="background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1);"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="#" class="icon-btn"
+                        style="background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1);"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#" class="icon-btn"
+                        style="background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1);"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Accordion Navigation -->
+            <div class="footer-reveal-area" style="max-width: 600px; margin: 0 auto;">
+
+                <div class="footer-accordion-item">
+                    <button class="footer-accordion-header">
+                        <span>Explore</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="footer-accordion-content">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-accordion-item">
+                    <button class="footer-accordion-header">
+                        <span>Support</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="footer-accordion-content">
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Selling Tips</a></li>
+                            <li><a href="#">Buying Guide</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-accordion-item">
+                    <button class="footer-accordion-header">
+                        <span>Legal</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="footer-accordion-content">
+                        <ul>
+                            <li><a href="javascript:void(0)" class="modal-trigger" data-modal="terms">Terms of
+                                    Service</a></li>
+                            <li><a href="javascript:void(0)" class="modal-trigger" data-modal="privacy">Privacy
+                                    Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div
+                style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; color: #64748b;">
+                <p>&copy; 2026 BidMaster. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="modal-terms" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <h2 style="margin-bottom: 1rem;">Terms of Service</h2>
+            <p style="line-height: 1.6; color: var(--text-muted);">
+                Welcome to BidMaster. By accessing our website, you agree to be bound by these Terms of Service.
+                <br><br>
+                <strong>1. Acceptance of Terms</strong><br>
+                By using our services, you agree to these terms. If you do not agree, please do not use our services.
+                <br><br>
+                <strong>2. User Conduct</strong><br>
+                You agree to use the site only for lawful purposes. You are prohibited from posting any unlawful or
+                objectionable content.
+                <br><br>
+                <strong>3. Auctions</strong><br>
+                All bids are binding. ensuring you have the funds before placing a bid is your responsibility.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal-privacy" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <h2 style="margin-bottom: 1rem;">Privacy Policy</h2>
+            <p style="line-height: 1.6; color: var(--text-muted);">
+                Your privacy is important to us. This policy explains how we handle your data.
+                <br><br>
+                <strong>1. Data Collection</strong><br>
+                We collect information you provide directly to us, such as when you create an account or place a bid.
+                <br><br>
+                <strong>2. Data Usage</strong><br>
+                We use your data to provide and improve our services, process transactions, and communicate with you.
+                <br><br>
+                <strong>3. Security</strong><br>
+                We implement reasonable security measures to protect your personal information.
+            </p>
+        </div>
+    </div>
+
+    <script src="rtltoggle.js"></script>
+    <script src="logout.js"></script>
+    <script src="device-simulator.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
