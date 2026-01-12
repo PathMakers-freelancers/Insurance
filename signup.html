@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BidMaster - Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="home-style-2"
+    style="display: flex; align-items: center; justify-content: center; min-height: 100vh; background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1547996160-81dfa6353325?q=80&w=2000'); background-size: cover; background-position: center; margin: 0;">
+
+    <!-- Fixed Controls -->
+    <div style="position: fixed; top: 2rem; right: 2rem; display: flex; gap: 1rem; z-index: 100;">
+        <a href="index.html" class="icon-btn" title="Back to Website"
+            style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; text-decoration: none; transition: var(--transition); border: 1px solid rgba(255,255,255,0.1);">
+            <i class="fas fa-home"></i>
+        </a>
+        <button id="theme-toggle" class="icon-btn" title="Toggle Theme"
+            style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; cursor: pointer; transition: var(--transition); border: 1px solid rgba(255,255,255,0.1);">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button id="rtl-toggle" class="icon-btn" title="Switch Language Direction"
+            style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; cursor: pointer; transition: var(--transition); border: 1px solid rgba(255,255,255,0.1);">
+            <i class="fas fa-globe"></i>
+        </button>
+    </div>
+
+    <!-- Floating Background Shapes -->
+    <div class="floating-shapes">
+        <div class="shape shape-1" style="background: var(--primary-color);"></div>
+        <div class="shape shape-2" style="background: var(--secondary-color);"></div>
+        <div class="shape shape-3" style="background: var(--accent-color);"></div>
+    </div>
+
+    <div class="card glass-card animate-entry"
+        style="width: 100%; max-width: 1000px; padding: 0; text-align: center; position: relative; z-index: 10; display: flex; overflow: hidden; border: none; min-height: 600px;">
+
+        <!-- Left Side: Image -->
+        <div
+            style="flex: 1.2; position: relative; display: none; display: flex; align-items: center; justify-content: center; background: url('https://images.unsplash.com/photo-1547996160-81dfa6353325?q=80&w=2000') no-repeat center center; background-size: cover;">
+            <div
+                style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.8));">
+            </div>
+            <div style="position: relative; z-index: 1; padding: 3rem; text-align: left;">
+                <h2 class="playfair" style="font-size: 3rem; color: white; margin-bottom: 1.5rem;">The <span
+                        class="text-gold">Collectors</span> Circle</h2>
+                <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; line-height: 1.6; max-width: 400px;">Access
+                    our private auctions, personalized advisory, and global network of verified collectors.</p>
+                <div style="margin-top: 3rem; display: flex; gap: 2rem;">
+                    <div>
+                        <div style="font-size: 1.5rem; font-weight: 800; color: #d4af37;">50k+</div>
+                        <div style="font-size: 0.8rem; color: rgba(255,255,255,0.6); text-transform: uppercase;">Active
+                            Bidders</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 1.5rem; font-weight: 800; color: #d4af37;">$2.4B</div>
+                        <div style="font-size: 0.8rem; color: rgba(255,255,255,0.6); text-transform: uppercase;">Auction
+                            Value</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Form -->
+        <div
+            style="flex: 1; padding: 4rem; display: flex; flex-direction: column; justify-content: center; background: rgba(15, 23, 42, 0.9);">
+            <a href="index.html" class="logo flex items-center justify-center gap-2"
+                style="margin-bottom: 2rem; align-self: center;">
+                <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
+                <span style="font-size: 1.5rem; font-weight: 800; color: white;">BidMaster</span>
+            </a>
+
+            <h2 style="margin-bottom: 0.5rem; color: white; text-align: center;">Create Account</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2.5rem; text-align: center;">Join the world's most
+                exclusive marketplace.</p>
+
+            <form onsubmit="handleSignup(event)" style="text-align: left;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <label
+                            style="color: #cbd5e1; margin-bottom: 0.5rem; display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">First
+                            Name</label>
+                        <input type="text" required placeholder="John"
+                            style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; outline: none;">
+                    </div>
+                    <div>
+                        <label
+                            style="color: #cbd5e1; margin-bottom: 0.5rem; display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Last
+                            Name</label>
+                        <input type="text" required placeholder="Doe"
+                            style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; outline: none;">
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label
+                        style="color: #cbd5e1; margin-bottom: 0.5rem; display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Email
+                        Address</label>
+                    <div style="position: relative;">
+                        <i class="fas fa-envelope"
+                            style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                        <input type="email" required placeholder="name@example.com"
+                            style="width: 100%; padding: 0.8rem 1rem 0.8rem 2.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; outline: none;">
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label
+                        style="color: #cbd5e1; margin-bottom: 0.5rem; display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Password</label>
+                    <div style="position: relative;">
+                        <i class="fas fa-lock"
+                            style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                        <input type="password" required placeholder="••••••••"
+                            style="width: 100%; padding: 0.8rem 1rem 0.8rem 2.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; outline: none;">
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <label class="flex items-center gap-2"
+                        style="color: var(--text-muted); font-size: 0.85rem; cursor: pointer;">
+                        <input type="checkbox" required style="accent-color: var(--primary-color);">
+                        I agree to the <a href="#" style="color: var(--primary-color);">Terms</a> & <a href="#"
+                            style="color: var(--primary-color);">Privacy</a>.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary"
+                    style="width: 100%; padding: 1rem; font-weight: 800; font-size: 1rem; margin-bottom: 1.5rem; justify-content: center; letter-spacing: 1px;">ASCEND
+                    TO MEMBERSHIP</button>
+            </form>
+
+            <p style="margin-top: 1rem; color: var(--text-muted); text-align: center; font-size: 0.9rem;">
+                Already have an account? <a href="login.html"
+                    style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Sign in</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="rtltoggle.js"></script>
+    <script>
+        function handleSignup(e) {
+            e.preventDefault();
+            // Mock signup logic
+            window.location.href = 'user-dashboard.html';
+        }
+    </script>
+</body>
+
+</html>
