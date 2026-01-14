@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BidMaster - Admin Dashboard</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Dashboard Layout Adjustments */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            width: 100%;
+            overflow-x: hidden;
+            padding-top: 70px;
+        }
+
+        @media (max-width: 991px) {
+            body {
+                padding-top: 110px;
+            }
+        }
+
+        .dashboard-container {
+            display: flex;
+            flex: 1;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 280px;
+            background: var(--bg-surface);
+            border-right: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            position: sticky;
+            top: 70px;
+            height: calc(100vh - 70px);
+            overflow-y: auto;
+            z-index: 40;
+            transition: var(--transition);
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (max-width: 991px) {
+            .sidebar {
+                position: fixed;
+                left: -300px;
+                top: 0;
+                height: 100vh;
+                width: 280px;
+                z-index: 2000;
+                box-shadow: var(--shadow-lg);
+                background: var(--bg-surface);
+                padding-top: 80px;
+                overflow-y: auto;
+            }
+
+            .sidebar.active {
+                left: 0;
+            }
+
+            .main-content {
+                padding: 1.5rem !important;
+                margin-top: 0 !important;
+            }
+        }
+
+        [data-theme="dark"] .sidebar {
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 3rem;
+            width: 100%;
+            overflow-x: hidden;
+            min-height: 80vh;
+        }
+
+        .sidebar-menu {
+            margin-top: 2rem;
+            flex: 1;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            color: var(--text-muted);
+            border-radius: var(--radius-md);
+            margin-bottom: 0.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .sidebar-link:hover,
+        .sidebar-link.active {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        /* Content Tabs */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Glass / Premium Cards */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        [data-theme="dark"] .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Command Center Aesthetic for Settings */
+        .command-center {
+            background: #0f172a;
+            /* Slate 900 */
+            color: #e2e8f0;
+            font-family: 'JetBrains Mono', monospace;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid #334155;
+        }
+
+        .command-row {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #334155;
+        }
+
+        @media (min-width: 768px) {
+            .command-row {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        .command-row:last-child {
+            border-bottom: none;
+        }
+
+        .command-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .command-input {
+            background: #1e293b;
+            border: 1px solid #475569;
+            color: #38bdf8;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-family: inherit;
+            width: 300px;
+        }
+
+        .command-input:focus {
+            outline: none;
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .status-dot.green {
+            background: #4ade80;
+            box-shadow: 0 0 8px #4ade80;
+        }
+
+        .status-dot.red {
+            background: #f87171;
+            box-shadow: 0 0 8px #f87171;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .sidebar {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                bottom: 0;
+                width: 280px;
+                transition: left 0.3s ease;
+            }
+
+            .sidebar.active {
+                left: 0;
+            }
+
+            .main-content {
+                padding: 1.5rem;
+            }
+
+            .dashboard-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 30;
+                display: none;
+            }
+
+            .dashboard-overlay.active {
+                display: block;
+            }
+
+            .charts-grid {
+                display: block;
+                overflow-x: auto;
+                overflow-y: visible;
+                -webkit-overflow-scrolling: touch;
+                white-space: nowrap;
+                padding-bottom: 1rem;
+            }
+
+            .charts-grid>* {
+                display: inline-block;
+                vertical-align: top;
+                white-space: normal;
+                min-width: 300px;
+                width: 90vw;
+                max-width: 500px;
+                margin-right: 1rem;
+            }
+
+            /* Enhanced Mobile Responsiveness */
+            /* Prevent horizontal overflow */
+            body,
+            html {
+                overflow-x: hidden;
+                width: 100%;
+            }
+
+            /* Make tables horizontally scrollable */
+            .table-responsive,
+            table {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            /* Ensure glass panels don't overflow */
+            .glass-panel {
+                max-width: 100%;
+                overflow-x: auto;
+            }
+
+            /* Stats grid - stack on mobile */
+            .grid[style*="repeat(4"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1rem !important;
+            }
+
+            /* Text wrapping */
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p,
+            span,
+            td,
+            th {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Stats grid - single column on small phones */
+            .grid[style*="repeat(4"],
+            .grid[style*="repeat(3"],
+            .grid[style*="repeat(2"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Reduce padding */
+            .glass-panel {
+                padding: 1rem !important;
+            }
+
+            /* Font size adjustments */
+            h1 {
+                font-size: 1.75rem !important;
+            }
+
+            h2 {
+                font-size: 1.5rem !important;
+            }
+
+            h3 {
+                font-size: 1.25rem !important;
+            }
+        }
+
+        /* Horizontal scroll container for wide content */
+        .scroll-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) transparent;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background-color: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        /* Chart Theme Visibility */
+        canvas {
+            background: transparent !important;
+        }
+
+        /* Chart container styling for both themes */
+        .chart-container {
+            position: relative;
+            background: var(--bg-surface);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        [data-theme="dark"] .chart-container {
+            background: rgba(30, 41, 59, 0.7);
+        }
+
+        /* Ensure chart text is visible in both themes */
+        [data-theme="dark"] canvas {
+            filter: brightness(1.1);
+        }
+
+        /* Desktop Grid for Charts */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .charts-grid>*:last-child {
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body class="dashboard-admin">
+
+    <!-- Navigation Overlay -->
+
+    <!-- Global Header -->
+    <header class="header">
+        <div class="container flex justify-between items-center">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo flex items-center gap-2">
+                <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
+                <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
+            </a>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="flex items-center gap-8">
+                    <li class="dropdown">
+                        <a href="index.html" class="nav-link dropdown-toggle">Home <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Home 1</a></li>
+                            <li><a href="index2.html">Home 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active">Dashboard <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-dashboard.html">User Dashboard</a></li>
+                            <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Mobile Auth (Inside menu) -->
+                <div class="auth-buttons show-mobile flex flex-column gap-4"
+                    style="padding: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05);">
+                    <button class="btn btn-danger logout-btn"
+                        style="width: 100%; justify-content: center; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </nav>
+
+            <div class="flex items-center gap-8">
+                <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="rtl-toggle" class="icon-btn" title="Switch Language Direction">
+                    <i class="fas fa-globe"></i>
+                </button>
+
+                <!-- Desktop Auth -->
+                <div class="auth-buttons flex gap-4 hide-mobile">
+                    <a href="login.html" class="btn btn-outline"
+                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Login</a>
+                    <a href="signup.html" class="btn btn-primary"
+                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Sign Up</a>
+                </div>
+
+                <!-- Dashboard Sidebar Toggle (Mobile Only) -->
+                <button class="icon-btn show-mobile"
+                    onclick="document.querySelector('.sidebar').classList.toggle('active'); document.querySelector('.dashboard-overlay').classList.toggle('active');"
+                    title="Toggle Sidebar">
+                    <i class="fas fa-columns"></i>
+                </button>
+
+                <!-- Hamburger -->
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    </nav>
+
+    <div class="dashboard-overlay"
+        onclick="this.classList.remove('active'); document.querySelector('.sidebar').classList.remove('active');"></div>
+
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="hide-mobile" style="margin-bottom: 2rem;">
+                <h3
+                    style="color: var(--secondary-color); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">
+                    Admin Console</h3>
+            </div>
+
+            <div class="sidebar-menu">
+                <a href="#analytics" class="sidebar-link active" onclick="switchTab(event, 'analytics')"><i
+                        class="fas fa-chart-line"></i> Analytics</a>
+                <a href="#users" class="sidebar-link" onclick="switchTab(event, 'users')"><i class="fas fa-users"></i>
+                    Users <span
+                        style="margin-left: auto; background: rgba(0,0,0,0.05); color: var(--text-muted); padding: 0.1rem 0.5rem; border-radius: 4px; font-size: 0.7rem;">2
+                        New</span></a>
+                <a href="#auctions" class="sidebar-link" onclick="switchTab(event, 'auctions')"><i
+                        class="fas fa-gavel"></i> Auctions</a>
+                <a href="#system" class="sidebar-link" onclick="switchTab(event, 'system')"><i
+                        class="fas fa-server"></i> System Logs</a>
+                <a href="#config" class="sidebar-link" onclick="switchTab(event, 'config')"><i
+                        class="fas fa-sliders-h"></i> Configuration</a>
+                <a href="#user-analytics" class="sidebar-link" onclick="switchTab(event, 'user-analytics')"><i
+                        class="fas fa-chart-pie"></i> User Analytics</a>
+                <a href="#revenue-reports" class="sidebar-link" onclick="switchTab(event, 'revenue-reports')"><i
+                        class="fas fa-file-invoice-dollar"></i> Revenue Reports</a>
+            </div>
+
+            <div style="margin-top: auto; padding-top: 2rem;">
+                <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem; text-align: center;">
+                    Server Load: <span style="color: #f59e0b; font-weight: 700;">42%</span>
+                </div>
+                <button class="logout-btn"
+                    style="width: 100%; border-radius: 0.75rem; justify-content: flex-start; padding: 0.75rem 1rem;"><i
+                        class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- SYSTEM OVERVIEW SECTION -->
+            <div id="analytics" class="tab-content active">
+                <header class="flex justify-between items-center" style="margin-bottom: 3rem;">
+                    <div>
+                        <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">System Command</h1>
+                        <div class="flex items-center gap-2"><span class="status-dot green"></span><span
+                                style="color: var(--primary-color); font-family: monospace;">SYSTEM ONLINE</span></div>
+                    </div>
+                    <span
+                        style="color: var(--text-muted); font-family: monospace; background: rgba(0,0,0,0.05); padding: 0.5rem 1rem; border-radius: 4px;">v2.5.0-beta</span>
+                </header>
+
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+                    <div class="card glass-card hover-float">
+                        <span
+                            style="color: var(--primary-color); font-size: 0.8rem; letter-spacing: 1px; font-weight: 700;">TOTAL
+                            REVENUE</span>
+                        <h3 style="font-size: 2.5rem; color: var(--text-main); margin: 0.5rem 0; font-weight: 800;">
+                            $1.2M</h3>
+                        <div
+                            style="width: 100%; height: 4px; background: rgba(0,0,0,0.1); border-radius: 2px; overflow: hidden;">
+                            <div style="width: 75%; height: 100%; background: var(--primary-color);"></div>
+                        </div>
+                    </div>
+                    <div class="card glass-card hover-float">
+                        <span
+                            style="color: var(--secondary-color); font-size: 0.8rem; letter-spacing: 1px; font-weight: 700;">ACTIVE
+                            USERS</span>
+                        <h3 style="font-size: 2.5rem; color: var(--text-main); margin: 0.5rem 0; font-weight: 800;">
+                            8,402</h3>
+                        <div
+                            style="width: 100%; height: 4px; background: rgba(0,0,0,0.1); border-radius: 2px; overflow: hidden;">
+                            <div style="width: 60%; height: 100%; background: var(--secondary-color);"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Live Traffic Requests</h3>
+                        <div class="chart-container"><canvas id="trafficChart"></canvas></div>
+                    </div>
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Bid Velocity (Real-time)</h3>
+                        <div class="chart-container"><canvas id="bidVelocityChart"></canvas></div>
+                    </div>
+                </div>
+
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2rem;">
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Market Liquidity</h3>
+                        <div class="chart-container"><canvas id="auctionLiquidityChart"></canvas></div>
+                    </div>
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Global Infrastructure</h3>
+                        <div class="chart-container"><canvas id="deviceChart"></canvas></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- USER ANALYTICS SECTION -->
+            <div id="user-analytics" class="tab-content">
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">User Intelligence</h1>
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Growth Trajectory</h3>
+                        <div class="chart-container"><canvas id="userGrowthChart"></canvas></div>
+                    </div>
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Global Demographics</h3>
+                        <div class="chart-container"><canvas id="demographicsChart"></canvas></div>
+                    </div>
+                </div>
+                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Retention Heatmap</h3>
+                        <div class="chart-container"><canvas id="retentionHeatmapChart"></canvas></div>
+                    </div>
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Verification Funnel</h3>
+                        <div class="chart-container"><canvas id="verificationFunnelChart"></canvas></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REVENUE REPORTS SECTION -->
+            <div id="revenue-reports" class="tab-content">
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Financial Intelligence</h1>
+                <div class="glass-panel" style="margin-bottom: 2rem;">
+                    <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Revenue Stream by Category</h3>
+                    <div class="chart-container" style="height: 400px;"><canvas id="revenueCategoryChart"></canvas>
+                    </div>
+                </div>
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr)); gap: 2rem;">
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Fee Revenue Breakdown</h3>
+                        <div class="chart-container"><canvas id="feeBreakdownChart"></canvas></div>
+                    </div>
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Regional Revenue Share</h3>
+                        <div class="chart-container"><canvas id="regionalRevenueChart"></canvas></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SYSTEM LOGS SECTION -->
+            <div id="system" class="tab-content">
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">System Health & Logs</h1>
+                <div class="glass-panel" style="margin-bottom: 2rem;">
+                    <h3 style="font-weight: 700; margin-bottom: 1.5rem;">API Latency (ms)</h3>
+                    <div class="chart-container" style="height: 200px;"><canvas id="apiLatencyChart"></canvas></div>
+                </div>
+                <div class="command-center"
+                    style="font-family: monospace; font-size: 0.9rem; padding: 2rem; background: #0f172a; color: #38bdf8; border-radius: 1rem;">
+                    <div>> tail -f /var/log/syslog</div>
+                    <div style="color: #10b981;">[OK] Cache synchronized successfully</div>
+                    <div style="color: #f59e0b;">[WARN] High memory usage detected: 88%</div>
+                    <div style="color: #38bdf8;">[INFO] New auction started: Lot #A-229</div>
+                    <div style="color: #f87171;">[ERROR] Failed to process payment for user_99</div>
+                    <div style="margin-top: 1rem; animation: blink 1s infinite;">_</div>
+                </div>
+            </div>
+
+            <!-- CONFIGURATION SECTION -->
+            <div id="config" class="tab-content">
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Environment Control</h1>
+                <div class="command-center" style="background: #1e293b; padding: 2.5rem; border-radius: 1rem;">
+                    <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div class="card" style="background: #334155; padding: 1.5rem; border-radius: 0.75rem;">
+                            <p style="color: #94a3b8; font-size: 0.8rem; margin-bottom: 0.5rem;">PLATFORM NAME</p>
+                            <input type="text" value="BidMaster Pro"
+                                style="background: transparent; border: 1px solid #475569; color: white; width: 100%; padding: 0.5rem; border-radius: 4px;">
+                        </div>
+                        <div class="card" style="background: #334155; padding: 1.5rem; border-radius: 0.75rem;">
+                            <p style="color: #94a3b8; font-size: 0.8rem; margin-bottom: 0.5rem;">MAINTENANCE MODE</p>
+                            <button class="btn btn-sm"
+                                style="background: #ef4444; color: white; width: 100%;">Deactivated</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- USERS SECTION -->
+            <div id="users" class="tab-content">
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Identity Management</h1>
+                <div class="glass-panel" style="padding: 0; overflow: hidden;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead style="background: rgba(0,0,0,0.03);">
+                            <tr>
+                                <th style="padding: 1.5rem; text-align: left;">User Detail</th>
+                                <th style="padding: 1.5rem; text-align: left;">Status</th>
+                                <th style="padding: 1.5rem; text-align: right;">Spent</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                <td style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; background: #e2e8f0;">
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: 700;">Alice Freeman</div>
+                                        <div style="font-size: 0.8rem; color: var(--text-muted);">alice@example.com
+                                        </div>
+                                    </div>
+                                </td>
+                                <td style="padding: 1.5rem;"><span style="color: #10b981;">Active</span></td>
+                                <td style="padding: 1.5rem; text-align: right; font-weight: 700;">$14,200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- AUCTIONS SECTION -->
+            <div id="auctions" class="tab-content">
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Inventory Control</h1>
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Auction Performance Index</h3>
+                        <div class="chart-container"><canvas id="auctionPerformanceChart"></canvas></div>
+                    </div>
+                    <div class="glass-panel flex flex-col justify-between">
+                        <div>
+                            <h3 style="font-weight: 700; margin-bottom: 1rem;">Active Listings</h3>
+                            <p style="font-size: 3.5rem; font-weight: 800;">142</p>
+                        </div>
+                        <button class="btn btn-primary">Create New Listing</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="footer" style="background: #0f172a; color: white; padding: 5rem 0 2rem; margin-top: auto;">
+        <div class="container">
+            <div class="grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 4rem;">
+                <!-- Column 1: Brand -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo flex items-center gap-2"
+                        style="margin-bottom: 1.5rem; color: white;">
+                        <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
+                        <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
+                    </a>
+                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.7;">The world's premier platform for
+                        extraordinary auctions. Verified sellers, rare treasures, and a global community of serious
+                        collectors.</p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Quick Links
+                    </h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="index.html"
+                                style="color: #94a3b8; transition: var(--transition);">Home</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="admin-dashboard.html"
+                                style="color: #94a3b8; transition: var(--transition);">Dashboard</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">System Status</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Tools -->
+                <div class="footer-col">
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Admin Tools
+                    </h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Audit Logs</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">User Manager</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Backup/Restore</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Support -->
+                <div class="footer-col">
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Internal
+                        Support</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Documentation</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">IT Ticket</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 BidMaster Admin Console. Authorized Personnel
+                    Only.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="rtltoggle.js"></script>
+    <script src="logout.js"></script>
+    <script src="main.js"></script>
+    <script>
+        // Tab Switching Logic
+        function switchTab(event, tabId) {
+            event.preventDefault();
+
+            // Remove active class from all links
+            document.querySelectorAll('.sidebar-link').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Add active class to clicked link
+            event.currentTarget.classList.add('active');
+
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Show target tab content
+            const target = document.getElementById(tabId);
+            if (target) {
+                target.classList.add('active');
+            }
+        }
+
+        // Charts Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get current theme
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            const textColor = isDark ? '#e2e8f0' : '#1e293b';
+            const gridColor = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)';
+
+            // Vibrant color palette for clear visibility
+            const vibrantColors = {
+                primary: '#6366f1',      // Vibrant indigo
+                secondary: '#ec4899',    // Vibrant pink
+                success: '#10b981',      // Vibrant green
+                warning: '#f59e0b',      // Vibrant amber
+                danger: '#ef4444',       // Vibrant red
+                info: '#3b82f6',         // Vibrant blue
+                purple: '#a855f7',       // Vibrant purple
+                cyan: '#06b6d4',         // Vibrant cyan
+                orange: '#f97316',       // Vibrant orange
+                teal: '#14b8a6'          // Vibrant teal
+            };
+
+            const adminChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: textColor,
+                            font: { size: 12, weight: '600' }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: textColor, font: { weight: '500' } }
+                    },
+                    y: {
+                        grid: { color: gridColor },
+                        ticks: { color: textColor, font: { weight: '500' } }
+                    }
+                }
+            };
+
+            // 1. Live Traffic
+            new Chart(document.getElementById('trafficChart'), {
+                type: 'line',
+                data: {
+                    labels: ['14:00', '14:05', '14:10', '14:15', '14:20', '14:25'],
+                    datasets: [{ label: 'Req/s', data: [120, 190, 150, 250, 220, 310], borderColor: vibrantColors.cyan, tension: 0.4, fill: true, backgroundColor: 'rgba(6, 182, 212, 0.1)', borderWidth: 3 }]
+                },
+                options: adminChartOptions
+            });
+
+            // 2. Bid Velocity
+            new Chart(document.getElementById('bidVelocityChart'), {
+                type: 'line',
+                data: {
+                    labels: ['1min', '2min', '3min', '4min', '5min'],
+                    datasets: [{ label: 'Bids/min', data: [45, 82, 60, 110, 95], borderColor: vibrantColors.success, tension: 0.4, borderWidth: 3, fill: true, backgroundColor: 'rgba(16, 185, 129, 0.1)' }]
+                },
+                options: adminChartOptions
+            });
+
+            // 3. Market Liquidity
+            new Chart(document.getElementById('auctionLiquidityChart'), {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Volume vs Price',
+                        data: [{ x: 10, y: 20 }, { x: 15, y: 10 }, { x: 20, y: 30 }, { x: 25, y: 45 }, { x: 30, y: 40 }],
+                        backgroundColor: vibrantColors.purple,
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }]
+                },
+                options: adminChartOptions
+            });
+
+            // 4. Infrastructure (Radar)
+            new Chart(document.getElementById('deviceChart'), {
+                type: 'radar',
+                data: {
+                    labels: ['Cloud', 'Edge', 'Direct', 'SaaS', 'On-Prem'],
+                    datasets: [{ label: 'Distribution', data: [90, 70, 40, 60, 20], backgroundColor: 'rgba(168, 85, 247, 0.2)', borderColor: vibrantColors.purple, borderWidth: 3 }]
+                },
+                options: { ...adminChartOptions, scales: {} }
+            });
+
+            // 5. User Growth
+            new Chart(document.getElementById('userGrowthChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{ label: 'Users', data: [4500, 5200, 5800, 6400, 7800, 8402], borderColor: vibrantColors.info, fill: true, backgroundColor: 'rgba(59, 130, 246, 0.1)', borderWidth: 3, tension: 0.4 }]
+                },
+                options: adminChartOptions
+            });
+
+            // 6. Demographics
+            new Chart(document.getElementById('demographicsChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['US', 'EU', 'Asia', 'Other'],
+                    datasets: [{ data: [45, 25, 20, 10], backgroundColor: [vibrantColors.info, vibrantColors.purple, vibrantColors.secondary, vibrantColors.warning], borderWidth: 0 }]
+                },
+                options: { ...adminChartOptions, cutout: '70%', scales: {} }
+            });
+
+            // 7. Retention Heatmap
+            new Chart(document.getElementById('retentionHeatmapChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['W1', 'W2', 'W3', 'W4', 'W5'],
+                    datasets: [
+                        { label: 'High', data: [12, 19, 3, 5, 2], backgroundColor: vibrantColors.success, borderWidth: 0 },
+                        { label: 'Med', data: [2, 3, 20, 5, 1], backgroundColor: vibrantColors.warning, borderWidth: 0 }
+                    ]
+                },
+                options: { ...adminChartOptions, scales: { x: { stacked: true }, y: { stacked: true } } }
+            });
+
+            // 8. Verification Funnel
+            new Chart(document.getElementById('verificationFunnelChart'), {
+                type: 'bar',
+                indexAxis: 'y',
+                data: {
+                    labels: ['Signed Up', 'Email Verified', 'ID Uploaded', 'Approved'],
+                    datasets: [{ label: 'Users', data: [1000, 850, 400, 320], backgroundColor: vibrantColors.info, borderWidth: 0 }]
+                },
+                options: adminChartOptions
+            });
+
+            // 9. Revenue Category
+            new Chart(document.getElementById('revenueCategoryChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Electronics', 'Art', 'Jewelry', 'Vehicles', 'Antiques'],
+                    datasets: [{ label: 'Revenue ($)', data: [450000, 320000, 280000, 540000, 150000], backgroundColor: vibrantColors.cyan, borderWidth: 0 }]
+                },
+                options: adminChartOptions
+            });
+
+            // 10. Fee Breakdown
+            new Chart(document.getElementById('feeBreakdownChart'), {
+                type: 'polarArea',
+                data: {
+                    labels: ['Listing', 'Final Value', 'Storage', 'Shipping'],
+                    datasets: [{ data: [30, 50, 10, 10], backgroundColor: [vibrantColors.info, vibrantColors.purple, vibrantColors.secondary, vibrantColors.warning], borderWidth: 0 }]
+                },
+                options: { ...adminChartOptions, scales: {} }
+            });
+
+            // 11. Regional Revenue
+            new Chart(document.getElementById('regionalRevenueChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['East', 'West', 'Central', 'Intl'],
+                    datasets: [{ data: [420, 380, 210, 190], backgroundColor: [vibrantColors.primary, vibrantColors.info, vibrantColors.cyan, vibrantColors.teal], borderWidth: 0 }]
+                },
+                options: { ...adminChartOptions, cutout: '70%', scales: {} }
+            });
+
+            // 12. API Latency
+            new Chart(document.getElementById('apiLatencyChart'), {
+                type: 'line',
+                data: {
+                    labels: ['1s', '2s', '3s', '4s', '5s', '6s', '7s', '8s', '9s', '10s'],
+                    datasets: [{ label: 'ms', data: [42, 38, 55, 40, 120, 45, 39, 41, 58, 44], borderColor: vibrantColors.danger, backgroundColor: 'rgba(239, 68, 68, 0.1)', fill: true, tension: 0.4, borderWidth: 3 }]
+                },
+                options: { ...adminChartOptions, plugins: { legend: { display: false } } }
+            });
+
+            // 13. Auction Performance
+            new Chart(document.getElementById('auctionPerformanceChart'), {
+                type: 'radar',
+                data: {
+                    labels: ['Sell-through', 'Bid Count', 'Price Realization', 'Time to Sale', 'Visitor/Bid'],
+                    datasets: [{ label: 'Performance', data: [85, 92, 78, 65, 88], backgroundColor: 'rgba(56, 189, 248, 0.2)', borderColor: '#38bdf8' }]
+                },
+                options: { ...adminChartOptions, scales: {} }
+            });
+        });
+    </script>
+    <script src="logout.js"></script>
+    <script src="main.js"></script>
+    <script src="rtltoggle.js"></script>
+</body>
+
+</html>

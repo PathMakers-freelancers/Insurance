@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BidMaster - Online Auction Platform</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="home-style-1">
+
+    <!-- Floating Background Shapes -->
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container flex justify-between items-center">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo flex items-center gap-2">
+                <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
+                <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
+            </a>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="flex items-center gap-8">
+                    <li class="dropdown">
+                        <a href="index.html" class="nav-link dropdown-toggle active">Home <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Home 1</a></li>
+                            <li><a href="index2.html">Home 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-dashboard.html">User Dashboard</a></li>
+                            <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Mobile Auth (Inside menu) -->
+                <div class="auth-buttons show-mobile flex flex-column gap-4"
+                    style="padding: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05);">
+                    <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
+                    <a href="signup.html" class="btn btn-primary" style="width: 100%;">Sign Up</a>
+                </div>
+            </nav>
+
+            <div class="flex items-center gap-8">
+                <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="rtl-toggle" class="icon-btn" title="Switch Language Direction">
+                    <i class="fas fa-globe"></i>
+                </button>
+
+                <!-- Desktop Auth -->
+                <div class="auth-buttons flex gap-4 hide-mobile">
+                    <a href="login.html" class="btn btn-outline"
+                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Login</a>
+                    <a href="signup.html" class="btn btn-primary"
+                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Sign Up</a>
+                </div>
+
+                <!-- Hamburger -->
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container flex items-center justify-center text-center">
+            <div class="hero-content">
+                <h1 style="margin-bottom: 1.5rem;">Discover, Bid, and Win <br><span
+                        style="color: var(--primary-color);">Extraordinary Items</span></h1>
+                <p style="font-size: 1.25rem; margin-bottom: 2.5rem;">Find unique items, rare collectibles, and
+                    exclusive deals from trusted sellers worldwide.</p>
+                <div class="flex gap-4 justify-center">
+                    <a href="signup.html" class="btn btn-primary" style="padding: 1rem 2.5rem;">Start Bidding</a>
+                    <a href="about.html" class="btn btn-outline" style="padding: 1rem 2.5rem;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Auctions -->
+    <section id="live-auctions" class="container animate-entry delay-100">
+        <div class="flex justify-between items-end" style="margin-bottom: 2rem;">
+            <div>
+                <span
+                    style="color: #ef4444; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; display: flex; align-items: center; gap: 0.5rem;"><i
+                        class="fas fa-circle fa-xs" style="animation: pulseRed 1.5s infinite;"></i> Live Now</span>
+                <h2 class="section-title" style="margin-bottom: 0; text-align: left; color: var(--text-main);">Live
+                    Auctions</h2>
+            </div>
+            <a href="javascript:void(0)" class="btn btn-outline" id="view-all-live-btn">View All Live</a>
+        </div>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2rem;">
+            <!-- Initial Card 1 -->
+            <div class="card hover-float">
+                <div
+                    style="position: relative; height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
+                    <div class="countdown-badge" data-countdown="2026-01-12T12:00:00"><i class="far fa-clock"></i>
+                        <span>02h 15m 30s</span>
+                    </div>
+                    <img src="assets/images/royal_antique.png" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Imperial Vase</h3>
+                <div class="flex justify-between items-center" style="margin-top: 0.5rem;">
+                    <p style="color: var(--text-muted);">Current Bid:</p>
+                    <p style="color: var(--primary-color); font-weight: 700; font-size: 1.2rem;">$45,000</p>
+                </div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Place Bid</button>
+            </div>
+            <!-- Initial Card 2 -->
+            <div class="card hover-float">
+                <div
+                    style="position: relative; height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
+                    <div class="countdown-badge" data-countdown="2026-01-12T15:30:00"><i class="far fa-clock"></i>
+                        <span>05h 45m 10s</span>
+                    </div>
+                    <img src="assets/images/classic_violin.png" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>1742 Guarneri Violin</h3>
+                <div class="flex justify-between items-center" style="margin-top: 0.5rem;">
+                    <p style="color: var(--text-muted);">Current Bid:</p>
+                    <p style="color: var(--primary-color); font-weight: 700; font-size: 1.2rem;">$120,500</p>
+                </div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Place Bid</button>
+            </div>
+            <!-- Initial Card 3 -->
+            <div class="card hover-float">
+                <div
+                    style="position: relative; height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
+                    <div class="countdown-badge" data-countdown="2026-01-11T20:00:00"><i class="far fa-clock"></i>
+                        <span>10h 00m 00s</span>
+                    </div>
+                    <img src="assets/images/space_memorabilia.png"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Apollo 11 Flight Plan</h3>
+                <div class="flex justify-between items-center" style="margin-top: 0.5rem;">
+                    <p style="color: var(--text-muted);">Current Bid:</p>
+                    <p style="color: var(--primary-color); font-weight: 700; font-size: 1.2rem;">$28,000</p>
+                </div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Place Bid</button>
+            </div>
+        </div>
+
+        <!-- HIDDEN CONTENT: Revealed by 'View All Live' -->
+        <div id="more-live-auctions" class="grid hide"
+            style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; display: none; opacity: 0; transition: all 0.5s ease;">
+            <!-- Extra Card 4 -->
+            <div class="card hover-float">
+                <div
+                    style="position: relative; height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
+                    <div class="countdown-badge" data-countdown="2026-01-14T10:00:00"><i class="far fa-clock"></i>
+                        <span>1d 20h 30m</span>
+                    </div>
+                    <img src="assets/images/rolex_daytona.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Vintage Rolex Daytona</h3>
+                <div class="flex justify-between items-center" style="margin-top: 0.5rem;">
+                    <p style="color: var(--text-muted);">Current Bid:</p>
+                    <p style="color: var(--primary-color); font-weight: 700; font-size: 1.2rem;">$85,000</p>
+                </div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Place Bid</button>
+            </div>
+            <!-- Extra Card 5 -->
+            <div class="card hover-float">
+                <div
+                    style="position: relative; height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
+                    <div class="countdown-badge" data-countdown="2026-01-15T18:00:00"><i class="far fa-clock"></i>
+                        <span>2d 04h 15m</span>
+                    </div>
+                    <img src="assets/images/great_gatsby.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>First Edition: Great Gatsby</h3>
+                <div class="flex justify-between items-center" style="margin-top: 0.5rem;">
+                    <p style="color: var(--text-muted);">Current Bid:</p>
+                    <p style="color: var(--primary-color); font-weight: 700; font-size: 1.2rem;">$12,500</p>
+                </div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Place Bid</button>
+            </div>
+            <!-- Extra Card 6 -->
+            <div class="card hover-float">
+                <div
+                    style="position: relative; height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
+                    <div class="countdown-badge" data-countdown="2026-01-13T23:59:59"><i class="far fa-clock"></i>
+                        <span>1d 10h 59m</span>
+                    </div>
+                    <img src="assets/images/bronze_sculpture.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Bronze "Ether" Sculpture</h3>
+                <div class="flex justify-between items-center" style="margin-top: 0.5rem;">
+                    <p style="color: var(--text-muted);">Current Bid:</p>
+                    <p style="color: var(--primary-color); font-weight: 700; font-size: 1.2rem;">$5,400</p>
+                </div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Place Bid</button>
+            </div>
+            <!-- Extra Card 7 -->
+            <div class="card hover-float">
+                <div
+                    style="position: relative; height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
+                    <div class="countdown-badge" data-countdown="2026-01-16T12:00:00"><i class="far fa-clock"></i>
+                        <span>2d 18h 00m</span>
+                    </div>
+                    <img src="assets/images/workstation.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Developer Edition Workstation</h3>
+                <div class="flex justify-between items-center" style="margin-top: 0.5rem;">
+                    <p style="color: var(--text-muted);">Current Bid:</p>
+                    <p style="color: var(--primary-color); font-weight: 700; font-size: 1.2rem;">$3,200</p>
+                </div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Place Bid</button>
+            </div>
+            <!-- Extra Card 8 -->
+            <div class="card hover-float">
+                <div
+                    style="position: relative; height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
+                    <div class="countdown-badge" data-countdown="2026-01-14T09:45:00"><i class="far fa-clock"></i>
+                        <span>1d 15h 30m</span>
+                    </div>
+                    <img src="assets/images/gold_chronograph.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>18K Gold Chronograph</h3>
+                <div class="flex justify-between items-center" style="margin-top: 0.5rem;">
+                    <p style="color: var(--text-muted);">Current Bid:</p>
+                    <p style="color: var(--primary-color); font-weight: 700; font-size: 1.2rem;">$12,800</p>
+                </div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Place Bid</button>
+            </div>
+            <!-- Extra Card 9 -->
+            <div class="card hover-float">
+                <div
+                    style="position: relative; height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
+                    <div class="countdown-badge" data-countdown="2026-01-13T15:00:00"><i class="far fa-clock"></i>
+                        <span>1d 01h 45m</span>
+                    </div>
+                    <img src="assets/images/art_deco_sunlight.jpg"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Art Deco "Sunlight"</h3>
+                <div class="flex justify-between items-center" style="margin-top: 0.5rem;">
+                    <p style="color: var(--text-muted);">Current Bid:</p>
+                    <p style="color: var(--primary-color); font-weight: 700; font-size: 1.2rem;">$1,950</p>
+                </div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Place Bid</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Items -->
+    <section id="featured" class="container animate-entry delay-100"
+        style="background: var(--bg-surface); border-radius: var(--radius-lg); position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,0.05);">
+        <h2 class="section-title" style="color: var(--text-main); position: relative; z-index: 1;">Featured
+            Collections
+        </h2>
+        <div class="grid"
+            style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2rem; position: relative; z-index: 1;">
+            <div class="card hover-float">
+                <div style="height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <img src="assets/images/royal_antique.png" alt="Royal Crown"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Royal Antiques</h3>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Discover exclusive artifacts from royal
+                    lineages, preserved in pristine condition for the discerning collector.</p>
+                <button class="btn btn-outline" style="width: 100%;">View Collection</button>
+            </div>
+            <div class="card hover-float">
+                <div style="height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <img src="assets/images/space_memorabilia.png" alt="Space Helmet"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Space Memorabilia</h3>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Own a piece of space exploration history
+                    with authentic items from the Apollo and Gemini missions.</p>
+                <button class="btn btn-outline" style="width: 100%;">View Collection</button>
+            </div>
+            <div class="card hover-float">
+                <div style="height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <img src="assets/images/classic_violin.png" alt="Violin"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Classic Instruments</h3>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Rare violins like Stradivarius and vintage
+                    guitars from legendary eras of music history.</p>
+                <button class="btn btn-outline" style="width: 100%;">View Collection</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Sellers highlight [NEW] -->
+    <section id="top-sellers" class="container animate-entry delay-200">
+        <h2 class="section-title" style="color: var(--text-main); margin-bottom: 2rem;">Top Sellers of the Month</h2>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <div class="card hover-float" style="text-align: center; padding: 2.5rem 1.5rem;">
+                <div style="position: relative; width: 100px; height: 100px; margin: 0 auto 1.5rem;">
+                    <img src="assets/images/avatar_michael.jpg" alt="Seller 1"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid var(--primary-color);">
+                    <div
+                        style="position: absolute; bottom: 0; right: 0; background: var(--primary-color); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; border: 2px solid var(--bg-surface);">
+                        1</div>
+                </div>
+                <h3 style="margin-bottom: 0.5rem;">Premium Estates Ltd.</h3>
+                <p style="color: var(--primary-color); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">$1.2M+
+                    Sold</p>
+                <div
+                    style="display: flex; justify-content: center; gap: 0.25rem; color: #fbbf24; margin-bottom: 1.5rem;">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <button class="btn btn-outline" style="width: 100%; font-size: 0.9rem;">View Portfolio</button>
+            </div>
+            <div class="card hover-float" style="text-align: center; padding: 2.5rem 1.5rem;">
+                <div style="position: relative; width: 100px; height: 100px; margin: 0 auto 1.5rem;">
+                    <img src="assets/images/avatar_elena.jpg" alt="Seller 2"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid var(--secondary-color);">
+                    <div
+                        style="position: absolute; bottom: 0; right: 0; background: var(--secondary-color); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; border: 2px solid var(--bg-surface);">
+                        2</div>
+                </div>
+                <h3 style="margin-bottom: 0.5rem;">Art Curators Collective</h3>
+                <p style="color: var(--secondary-color); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">
+                    $850K+ Sold</p>
+                <div
+                    style="display: flex; justify-content: center; gap: 0.25rem; color: #fbbf24; margin-bottom: 1.5rem;">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <button class="btn btn-outline" style="width: 100%; font-size: 0.9rem;">View Portfolio</button>
+            </div>
+            <div class="card hover-float" style="text-align: center; padding: 2.5rem 1.5rem;">
+                <div style="position: relative; width: 100px; height: 100px; margin: 0 auto 1.5rem;">
+                    <img src="assets/images/avatar_david.jpg" alt="Seller 3"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid var(--accent-color);">
+                    <div
+                        style="position: absolute; bottom: 0; right: 0; background: var(--accent-color); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; border: 2px solid var(--bg-surface);">
+                        3</div>
+                </div>
+                <h3 style="margin-bottom: 0.5rem;">Vintage Vaults</h3>
+                <p style="color: var(--accent-color); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">$620K+
+                    Sold</p>
+                <div
+                    style="display: flex; justify-content: center; gap: 0.25rem; color: #fbbf24; margin-bottom: 1.5rem;">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="far fa-star"></i>
+                </div>
+                <button class="btn btn-outline" style="width: 100%; font-size: 0.9rem;">View Portfolio</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Popular Categories -->
+    <section id="categories" class="container animate-entry delay-200">
+        <h2 class="section-title" style="color: var(--text-main); margin-bottom: 2rem;">Popular
+            Categories
+        </h2>
+        <div class="flex justify-center" style="gap: 2rem; flex-wrap: wrap;">
+            <div class="card hover-float" style="flex: 0 1 280px; min-width: 250px;">
+                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <img src="assets/images/electronics_category.png" alt="Electronics"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Electronics</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Latest gadgets, laptops, and smart devices.</p>
+            </div>
+            <div class="card hover-float" style="flex: 0 1 280px; min-width: 250px;">
+                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <img src="assets/images/jewelry_category.png" alt="Jewelry"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Jewelry</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Exquisite rings, necklaces, and watches.</p>
+            </div>
+            <div class="card hover-float" style="flex: 0 1 280px; min-width: 250px;">
+                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <img src="assets/images/vehicles_category.png" alt="Vehicles"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Vehicles</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Luxury cars, vintage models, and bikes.</p>
+            </div>
+            <div class="card hover-float" style="flex: 0 1 280px; min-width: 250px;">
+                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <img src="assets/images/art_category.png" alt="Art"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Art</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Contemporary paintings and sculptures.</p>
+            </div>
+            <div class="card hover-float" style="flex: 0 1 280px; min-width: 250px;">
+                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <img src="assets/images/furniture_category.png" alt="Furniture"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Furniture</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Vintage and modern home decor.</p>
+            </div>
+            <div class="card hover-float" style="flex: 0 1 280px; min-width: 250px;">
+                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                    <img src="assets/images/coins_category.png" alt="Coins"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Coins</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">Rare coins and currency.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Statistics -->
+    <section class="container animate-entry delay-300">
+        <div class="stats-section grid"
+            style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; background: var(--bg-surface); padding: 2rem 1.5rem; border-radius: var(--radius-lg); text-align: center; border: 1px solid rgba(0,0,0,0.05);">
+            <div>
+                <div class="stat-number" style="font-size: 3rem; font-weight: 800; color: var(--primary-color);"><span
+                        class="stat-value" data-target="15000">0</span>+
+                </div>
+                <div class="stat-label"
+                    style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600;">Active
+                    Bidders</div>
+            </div>
+            <div>
+                <div class="stat-number" style="font-size: 3rem; font-weight: 800; color: var(--secondary-color);">
+                    <span class="stat-value" data-target="8500">0</span>+
+                </div>
+                <div class="stat-label"
+                    style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600;">Items
+                    Sold</div>
+            </div>
+            <div>
+                <div class="stat-number" style="font-size: 3rem; font-weight: 800; color: var(--accent-color);">$<span
+                        class="stat-value" data-target="25">0</span>M+
+                </div>
+                <div class="stat-label"
+                    style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600;">Trade
+                    Volume</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Verification [NEW] -->
+    <section id="trust-verification" class="container animate-entry delay-300">
+        <div
+            style="background: var(--bg-surface); padding: 4rem; border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.05);">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">The Gold Standard of Trust</h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7;">We employ rigorous security
+                    protocols and expert verification to ensure that BidMaster remains the most secure platform for
+                    global collectors.</p>
+            </div>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem;">
+                <div style="display: flex; gap: 1.5rem;">
+                    <div
+                        style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(99, 102, 241, 0.1); color: var(--primary-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Identity Verification</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">AI-powered identity
+                            checks for all bidders and sellers to prevent fraud and ensure a professional community.</p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <div
+                        style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(236, 72, 153, 0.1); color: var(--secondary-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Item Authentication</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Our team of
+                            world-class experts physically inspects and certifies high-value assets before they go live.
+                        </p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <div
+                        style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(139, 92, 246, 0.1); color: var(--accent-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Escrow Protection</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Funds are held in a
+                            secure escrow account and only released when the buyer confirms receipt of the item.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Auction Calendar [NEW] -->
+
+    <section id="calendar" class="container animate-entry delay-300" style="margin-top: 5rem;">
+        <div class="flex justify-between items-end" style="margin-bottom: 3rem;">
+            <div>
+                <span
+                    style="color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; display: block;">Upcoming
+                    Events</span>
+                <h2 style="font-size: 2.5rem; font-family: 'Playfair Display', serif;">Auction Calendar</h2>
+            </div>
+            <a href="#" class="btn btn-outline">Subscribe to Calendar</a>
+        </div>
+        <div class="card" style="padding: 0; overflow: hidden; border: 1px solid rgba(0,0,0,0.05);">
+            <div class="table-responsive">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="background: var(--bg-body); border-bottom: 1px solid rgba(0,0,0,0.05);">
+                            <th
+                                style="padding: 1.5rem 2rem; color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">
+                                Date</th>
+                            <th
+                                style="padding: 1.5rem 2rem; color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">
+                                Event Name</th>
+                            <th
+                                style="padding: 1.5rem 2rem; color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">
+                                Category</th>
+                            <th
+                                style="padding: 1.5rem 2rem; color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">
+                                Status</th>
+                            <th
+                                style="padding: 1.5rem 2rem; color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">
+                                Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid rgba(0,0,0,0.05); transition: var(--transition);"
+                            onmouseover="this.style.background='var(--bg-body)'"
+                            onmouseout="this.style.background='transparent'">
+                            <td style="padding: 1.5rem 2rem;"><span style="font-weight: 700;">Jan 24, 2026</span></td>
+                            <td style="padding: 1.5rem 2rem; font-weight: 600;">The Obsidian Watch Collection</td>
+                            <td style="padding: 1.5rem 2rem;"><span
+                                    style="padding: 0.4rem 0.8rem; background: rgba(99, 102, 241, 0.1); color: var(--primary-color); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Jewelry</span>
+                            </td>
+                            <td style="padding: 1.5rem 2rem;"><span style="color: #10b981; font-weight: 700;"><i
+                                        class="fas fa-circle"
+                                        style="font-size: 0.5rem; margin-right: 0.5rem; vertical-align: middle;"></i>Open
+                                    for Pre-bidding</span></td>
+                            <td style="padding: 1.5rem 2rem;"><a href="#"
+                                    style="color: var(--primary-color); font-weight: 700; font-size: 0.9rem;">Register
+                                    <i class="fas fa-chevron-right"
+                                        style="font-size: 0.7rem; margin-left: 0.3rem;"></i></a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(0,0,0,0.05); transition: var(--transition);"
+                            onmouseover="this.style.background='var(--bg-body)'"
+                            onmouseout="this.style.background='transparent'">
+                            <td style="padding: 1.5rem 2rem;"><span style="font-weight: 700;">Feb 02, 2026</span></td>
+                            <td style="padding: 1.5rem 2rem; font-weight: 600;">Modern Masters: Art Deco Series</td>
+                            <td style="padding: 1.5rem 2rem;"><span
+                                    style="padding: 0.4rem 0.8rem; background: rgba(236, 72, 153, 0.1); color: var(--secondary-color); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Fine
+                                    Art</span></td>
+                            <td style="padding: 1.5rem 2rem;"><span style="color: #6b7280; font-weight: 700;"><i
+                                        class="fas fa-circle"
+                                        style="font-size: 0.5rem; margin-right: 0.5rem; vertical-align: middle;"></i>Coming
+                                    Soon</span></td>
+                            <td style="padding: 1.5rem 2rem;"><a href="#"
+                                    style="color: var(--primary-color); font-weight: 700; font-size: 0.9rem;">Remind Me
+                                    <i class="fas fa-bell" style="font-size: 0.8rem; margin-left: 0.3rem;"></i></a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(0,0,0,0.05); transition: var(--transition);"
+                            onmouseover="this.style.background='var(--bg-body)'"
+                            onmouseout="this.style.background='transparent'">
+                            <td style="padding: 1.5rem 2rem;"><span style="font-weight: 700;">Feb 15, 2026</span></td>
+                            <td style="padding: 1.5rem 2rem; font-weight: 600;">Global Supercar Showcase</td>
+                            <td style="padding: 1.5rem 2rem;"><span
+                                    style="padding: 0.4rem 0.8rem; background: rgba(139, 92, 246, 0.1); color: var(--accent-color); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Vehicles</span>
+                            </td>
+                            <td style="padding: 1.5rem 2rem;"><span style="color: #6b7280; font-weight: 700;"><i
+                                        class="fas fa-circle"
+                                        style="font-size: 0.5rem; margin-right: 0.5rem; vertical-align: middle;"></i>Coming
+                                    Soon</span></td>
+                            <td style="padding: 1.5rem 2rem;"><a href="#"
+                                    style="color: var(--primary-color); font-weight: 700; font-size: 0.9rem;">View
+                                    Catalog <i class="fas fa-file-pdf"
+                                        style="font-size: 0.8rem; margin-left: 0.3rem;"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News -->
+
+    <section class="container animate-entry delay-300"
+        style="padding: 2rem 1.5rem; background: var(--bg-surface); border-radius: var(--radius-lg);">
+        <h2 class="section-title" style="color: var(--text-main);">Latest Auction News</h2>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr)); gap: 2rem;">
+            <div class="blog-card"
+                style="background: var(--bg-body); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(0,0,0,0.05);">
+                <div class="blog-img" style="height: 200px; overflow: hidden;">
+                    <img src="assets/images/royal_antique.png" alt="News 1"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="blog-content" style="padding: 1.5rem;">
+                    <span class="blog-date"
+                        style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Oct 12, 2025</span>
+                    <h3 class="blog-title" style="margin: 0.5rem 0 1rem; color: var(--text-main);">Record Breaking Sale
+                        of the Century</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">A rare diamond necklace
+                        sold for over $5 million in our latest
+                        event.</p>
+                    <a href="#"
+                        style="color: var(--primary-color); font-weight: 700; margin-top: 1.5rem; display: block; font-size: 0.9rem;">Read
+                        More →</a>
+                </div>
+            </div>
+            <div class="blog-card"
+                style="background: var(--bg-body); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(0,0,0,0.05);">
+                <div class="blog-img" style="height: 200px; overflow: hidden;">
+                    <img src="assets/images/vehicles_category.png" alt="News 2"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="blog-content" style="padding: 1.5rem;">
+                    <span class="blog-date"
+                        style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Oct 08, 2025</span>
+                    <h3 class="blog-title" style="margin: 0.5rem 0 1rem; color: var(--text-main);">Classic Cars: A
+                        Rising Investment Class</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Why vintage vehicles are
+                        outperforming traditional stocks this
+                        year.</p>
+                    <a href="#"
+                        style="color: var(--primary-color); font-weight: 700; margin-top: 1.5rem; display: block; font-size: 0.9rem;">Read
+                        More →</a>
+                </div>
+            </div>
+            <div class="blog-card"
+                style="background: var(--bg-body); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(0,0,0,0.05);">
+                <div class="blog-img" style="height: 200px; overflow: hidden;">
+                    <img src="assets/images/electronics_category.png" alt="News 3"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="blog-content" style="padding: 1.5rem;">
+                    <span class="blog-date"
+                        style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Oct 05, 2025</span>
+                    <h3 class="blog-title" style="margin: 0.5rem 0 1rem; color: var(--text-main);">Tech Memorabilia in
+                        High Demand</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Early prototypes of
+                        famous gadgets are fetching high prices.</p>
+                    <a href="#"
+                        style="color: var(--primary-color); font-weight: 700; margin-top: 1.5rem; display: block; font-size: 0.9rem;">Read
+                        More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="container"
+        style="background: var(--bg-surface); border-radius: var(--radius-lg);">
+        <h2 class="section-title" style="color: var(--text-main); margin-bottom: 4rem;">How It Works</h2>
+        <div class="flex" style="flex-wrap: wrap; gap: 2rem; justify-content: center; position: relative;">
+            <!-- Connector Line -->
+            <div style="position: absolute; top: 40px; left: 15%; right: 15%; height: 2px; background: rgba(99, 102, 241, 0.2); z-index: 1;"
+                class="hide-mobile"></div>
+
+            <div style="flex: 1; min-width: 250px; text-align: center; position: relative; z-index: 2;">
+                <div
+                    style="width: 80px; height: 80px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: white; font-size: 1.8rem; font-weight: 800; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);">
+                    1
+                </div>
+                <h3 style="margin-bottom: 1rem; color: var(--text-main);">Register</h3>
+                <p style="color: var(--text-muted); line-height: 1.7;">Sign up for free, verify your account, and join
+                    our global community of collectors.</p>
+            </div>
+            <div style="flex: 1; min-width: 250px; text-align: center; position: relative; z-index: 2;">
+                <div
+                    style="width: 80px; height: 80px; background: var(--secondary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: white; font-size: 1.8rem; font-weight: 800; box-shadow: 0 10px 20px rgba(236, 72, 153, 0.3);">
+                    2
+                </div>
+                <h3 style="margin-bottom: 1rem; color: var(--text-main);">Bid</h3>
+                <p style="color: var(--text-muted); line-height: 1.7;">Browse extraordinary items and place your bids in
+                    real-time or via automated proxy.</p>
+            </div>
+            <div style="flex: 1; min-width: 250px; text-align: center; position: relative; z-index: 2;">
+                <div
+                    style="width: 80px; height: 80px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: white; font-size: 1.8rem; font-weight: 800; box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);">
+                    3
+                </div>
+                <h3 style="margin-bottom: 1rem; color: var(--text-main);">Win</h3>
+                <p style="color: var(--text-muted); line-height: 1.7;">Secure your win with our safe payment system and
+                    get your items delivered globally.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage & Story [NEW] -->
+    <section id="heritage" class="container animate-entry delay-300">
+        <div class="card"
+            style="padding: 0; overflow: hidden; display: flex; flex-wrap: wrap; border: none; background: transparent;">
+            <div style="flex: 1; min-width: 300px; height: 450px;">
+                <img src="assets/images/great_gatsby.jpg" alt="Heritage"
+                    style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div
+                style="flex: 1.2; min-width: 300px; padding: 4rem; background: var(--bg-surface); display: flex; flex-direction: column; justify-content: center;">
+                <span
+                    style="color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; display: block;">Our
+                    Legacy</span>
+                <h2
+                    style="font-size: 3rem; font-family: 'Playfair Display', serif; margin-bottom: 2rem; line-height: 1.2;">
+                    Preserving Excellence Since 1924</h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                    What started as a small auction room in London has evolved into the world's most trusted digital
+                    platform for high-value collectibles. We combine a century of expertise with cutting-edge technology
+                    to ensure every bid is secure and every treasure is authentic.
+                </p>
+                <div class="flex gap-4">
+                    <div
+                        style="text-align: center; flex: 1; padding: 1.5rem; background: var(--bg-body); border-radius: var(--radius-md);">
+                        <h4 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;">100+</h4>
+                        <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Years</p>
+                    </div>
+                    <div
+                        style="text-align: center; flex: 1; padding: 1.5rem; background: var(--bg-body); border-radius: var(--radius-md);">
+                        <h4 style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 0.5rem;">50+</h4>
+                        <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Countries</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="container animate-entry delay-300"
+        style="background: var(--bg-surface); border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.05);">
+        <h2 class="section-title" style="color: var(--text-main); margin-bottom: 4rem;">What Our Collectors Say</h2>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem;">
+            <div class="card hover-float" style="padding: 2rem; display: flex; flex-direction: column;">
+                <p
+                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1;">
+                    "BidMaster is the most refined auction platform I've ever experienced. The interface is stunning,
+                    and the real-time bidding is incredibly reliable."</p>
+                <div class="flex items-center gap-4"
+                    style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
+                    <img src="assets/images/avatar_sarah.jpg" alt="Sarah Johnson"
+                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
+                    <div>
+                        <h4 style="font-weight: 700; color: var(--text-main);">Sarah Johnson</h4>
+                        <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Vintage
+                            Collector</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card hover-float" style="padding: 2rem; display: flex; flex-direction: column;">
+                <p
+                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1;">
+                    "The security and transparency on this platform are unmatched. I felt confident selling my entire
+                    heirloom collection here."</p>
+                <div class="flex items-center gap-4"
+                    style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
+                    <img src="assets/images/avatar_michael.jpg" alt="Michael Chen"
+                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--secondary-color);">
+                    <div>
+                        <h4 style="font-weight: 700; color: var(--text-main);">Michael Chen</h4>
+                        <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Premium
+                            Seller</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card hover-float" style="padding: 2rem; display: flex; flex-direction: column;">
+                <p
+                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1;">
+                    "I found extremely rare pieces that I couldn't find anywhere else. The verification process gives me
+                    total peace of mind as a buyer."</p>
+                <div class="flex items-center gap-4"
+                    style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
+                    <img src="assets/images/avatar_elena.jpg" alt="Elena Rodriguez"
+                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-color);">
+                    <div>
+                        <h4 style="font-weight: 700; color: var(--text-main);">Elena Rodriguez</h4>
+                        <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Art
+                            Enthusiast</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Extra Review 4 -->
+            <div class="card hover-float" style="padding: 2rem; display: flex; flex-direction: column;">
+                <p
+                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1;">
+                    "The customer support is exceptional. They guided me through my first international high-value
+                    purchase with such expertise."</p>
+                <div class="flex items-center gap-4"
+                    style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
+                    <img src="assets/images/avatar_david.jpg" alt="David Smith"
+                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
+                    <div>
+                        <h4 style="font-weight: 700; color: var(--text-main);">David Smith</h4>
+                        <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Rare Coin
+                            Expert</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Extra Review 5 -->
+            <div class="card hover-float" style="padding: 2rem; display: flex; flex-direction: column;">
+                <p
+                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1;">
+                    "As a designer, I appreciate the aesthetics and smoothness of the platform. It's truly a cut above
+                    any other auction site out there."</p>
+                <div class="flex items-center gap-4"
+                    style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
+                    <img src="assets/images/avatar_sophia.jpg" alt="Sophia Loren"
+                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--secondary-color);">
+                    <div>
+                        <h4 style="font-weight: 700; color: var(--text-main);">Sophia Loren</h4>
+                        <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Interior
+                            Designer</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Extra Review 6 -->
+            <div class="card hover-float" style="padding: 2rem; display: flex; flex-direction: column;">
+                <p
+                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1;">
+                    "The proxy bidding feature saved me from missing out on a dream item while I was in meetings. Best
+                    system ever!"</p>
+                <div class="flex items-center gap-4"
+                    style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
+                    <img src="assets/images/avatar_james.jpg" alt="James Wilson"
+                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-color);">
+                    <div>
+                        <h4 style="font-weight: 700; color: var(--text-main);">James Wilson</h4>
+                        <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Sports
+                            Memorabilia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elite Membership Section -->
+    <section id="elite-section" class="container animate-entry delay-300">
+        <div class="glass-card premium-section bg-elite"
+            style="padding: 5rem 2rem; text-align: center; border-radius: var(--radius-lg); position: relative;">
+            <div class="elite-circle-container"
+                style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
+                <div class="elite-badge" style="margin-bottom: 2rem;">
+                    <i class="fas fa-crown fa-3x text-gold"
+                        style="filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));"></i>
+                </div>
+                <span class="text-gold"
+                    style="font-weight: 700; letter-spacing: 4px; text-transform: uppercase; display: block; margin-bottom: 1.5rem; font-size: 0.9rem;">Elite
+                    Membership</span>
+                <h2 class="section-title text-gold"
+                    style="margin-bottom: 2rem; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.2;">Elevate Your
+                    Collection to the Elite Tier</h2>
+                <p style="color: rgba(255, 255, 255, 0.8); margin: 0 auto 3rem; font-size: 1.2rem; line-height: 1.8;">
+                    Join an exclusive circle of high-stakes collectors. Gain early access to rare finds, personal
+                    auction concierges, and 0% buyer's premium on selected premium assets.
+                </p>
+                <div class="flex gap-6 justify-center" style="flex-wrap: wrap;">
+                    <a href="signup.html" class="btn btn-premium"
+                        style="font-size: 1.2rem; padding: 1.2rem 3.5rem; border-radius: var(--radius-full);">
+                        Join Elite Circle <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                    </a>
+                    <a href="about.html" class="btn btn-outline"
+                        style="font-size: 1.2rem; padding: 1.2rem 3.5rem; border-color: #d4af37; color: #d4af37; border-radius: var(--radius-full);">
+                        View Benefits
+                    </a>
+                </div>
+            </div>
+
+            <!-- Decorative Premium Elements -->
+            <div
+                style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(212, 175, 55, 0.15), transparent 70%); filter: blur(60px); pointer-events: none;">
+            </div>
+            <div
+                style="position: absolute; bottom: -100px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(99, 102, 241, 0.1), transparent 70%); filter: blur(60px); pointer-events: none;">
+            </div>
+
+            <!-- Floating Particles Effect (Visual Only) -->
+            <div class="elite-particles hide-mobile"
+                style="position: absolute; inset: 0; pointer-events: none; opacity: 0.4;">
+                <div
+                    style="position: absolute; top: 20%; left: 10%; width: 4px; height: 4px; background: #d4af37; border-radius: 50%; box-shadow: 0 0 10px #d4af37;">
+                </div>
+                <div
+                    style="position: absolute; top: 60%; right: 15%; width: 6px; height: 6px; background: #d4af37; border-radius: 50%; box-shadow: 0 0 15px #d4af37;">
+                </div>
+                <div
+                    style="position: absolute; bottom: 30%; left: 20%; width: 3px; height: 3px; background: #d4af37; border-radius: 50%; box-shadow: 0 0 8px #d4af37;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ Section -->
+    <section id="faq" class="container animate-entry delay-300">
+        <h2 class="section-title" style="color: var(--text-main); margin-bottom: 2rem;">Frequently Asked Questions</h2>
+        <div class="faq-grid" style="max-width: 800px; margin: 0 auto;">
+            <!-- Question 1 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do I place a bid?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Register for a free account, browse our live auctions, and click the "Place Bid" button on your
+                        desired item. You can enter a custom amount or use the quick bid options.</p>
+                </div>
+            </div>
+            <!-- Question 2 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Is there a buyer's premium?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, a standard buyer's premium of 5% applies to all winning bids to cover platform verification
+                        and processing services.</p>
+                </div>
+            </div>
+            <!-- Question 3 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How is shipping handled?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Sellers are responsible for shipping. Shipping costs and estimated delivery times are listed on
+                        each individual auction page.</p>
+                </div>
+            </div>
+            <!-- Question 4 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Is my payment information secure?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely. We use industry-standard encryption and partner with trusted payment gateways like
+                        Stripe and PayPal to ensure your data is always protected.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="container animate-entry delay-300">
+        <div class="newsletter-section"
+            style="background: linear-gradient(135deg, #1e293b, #0f172a); border-radius: var(--radius-lg); text-align: center; color: white;">
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem;">Stay in the Loop</h2>
+            <p style="color: #94a3b8; max-width: 650px; margin: 0 auto 3rem; font-size: 1.1rem; line-height: 1.8;">
+                Subscribe to our newsletter to
+                receive updates on upcoming live auctions, exclusive preview events, and world-class market insights.
+            </p>
+            <form class="newsletter-form"
+                style="display: flex; gap: 1rem; max-width: 600px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
+                <input type="email" placeholder="Enter your email address" class="newsletter-input"
+                    style="flex: 1; min-width: 250px; padding: 1.2rem 1.5rem; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white;">
+                <button type="button" class="btn btn-primary"
+                    style="border: none; padding: 1.2rem 3rem; font-weight: 700;">Subscribe Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: #0f172a; color: white; padding: 5rem 0 2rem; margin-top: 4rem;">
+        <div class="container">
+            <div class="grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 4rem;">
+                <!-- Column 1: Brand -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo flex items-center gap-2"
+                        style="margin-bottom: 1.5rem; color: white;">
+                        <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
+                        <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
+                    </a>
+                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.7;">The world's premier platform for
+                        extraordinary auctions. Verified sellers, rare treasures, and a global community of serious
+                        collectors.</p>
+                    <div class="flex gap-4" style="margin-top: 2rem;">
+                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Quick Links
+                    </h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="index.html"
+                                style="color: #94a3b8; transition: var(--transition);">Home</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="about.html"
+                                style="color: #94a3b8; transition: var(--transition);">About Us</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="services.html"
+                                style="color: #94a3b8; transition: var(--transition);">Live Auctions</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="contact.html"
+                                style="color: #94a3b8; transition: var(--transition);">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Categories -->
+                <div class="footer-col">
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Categories
+                    </h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Electronics</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Jewelry & Gems</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Art & Antiques</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Luxury Vehicles</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Support -->
+                <div class="footer-col">
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Support</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="#" class="modal-trigger" data-modal="terms"
+                                style="color: #94a3b8; transition: var(--transition);">Terms of Service</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#" class="modal-trigger" data-modal="privacy"
+                                style="color: #94a3b8; transition: var(--transition);">Privacy Policy</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Help Center</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 BidMaster. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <img src="assets/images/visa.svg" alt="Visa" style="height: 20px; opacity: 0.5;">
+                    <img src="assets/images/mastercard.svg" alt="Mastercard" style="height: 20px; opacity: 0.5;">
+                    <img src="assets/images/paypal.svg" alt="PayPal" style="height: 20px; opacity: 0.5;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="modal-terms" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <h2 style="margin-bottom: 1rem;">Terms of Service</h2>
+            <p style="line-height: 1.6; color: var(--text-muted);">
+                Welcome to BidMaster. By accessing our website, you agree to be bound by these Terms of Service.
+                <br><br>
+                <strong>1. Acceptance of Terms</strong><br>
+                By using our services, you agree to these terms. If you do not agree, please do not use our services.
+                <br><br>
+                <strong>2. User Conduct</strong><br>
+                You agree to use the site only for lawful purposes. You are prohibited from posting any unlawful or
+                objectionable content.
+                <br><br>
+                <strong>3. Auctions</strong><br>
+                All bids are binding. ensuring you have the funds before placing a bid is your responsibility.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal-privacy" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <h2 style="margin-bottom: 1rem;">Privacy Policy</h2>
+            <p style="line-height: 1.6; color: var(--text-muted);">
+                Your privacy is important to us. This policy explains how we handle your data.
+                <br><br>
+                <strong>1. Data Collection</strong><br>
+                We collect information you provide directly to us, such as when you create an account or place a bid.
+                <br><br>
+                <strong>2. Data Usage</strong><br>
+                We use your data to provide and improve our services, process transactions, and communicate with you.
+                <br><br>
+                <strong>3. Security</strong><br>
+                We implement reasonable security measures to protect your personal information.
+            </p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="rtltoggle.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>

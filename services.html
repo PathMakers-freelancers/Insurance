@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BidMaster - Services</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Scoped Mobile Adjustments for Services Page */
+        @media (max-width: 768px) {
+            body>.container {
+                padding-top: 4.2rem !important;
+            }
+
+            h1.playfair {
+                font-size: 2.5rem !important;
+            }
+
+            h2.playfair {
+                font-size: 2.2rem !important;
+            }
+
+            .grid {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+
+            /* Membership Tiers Adjustments */
+            .membership-tiers .grid {
+                gap: 3rem !important;
+            }
+
+            .glass-card {
+                padding: 2rem !important;
+            }
+
+            .glass-card.glow-on-hover {
+                transform: translateY(0) !important;
+                margin: 2rem 0;
+            }
+
+            /* Logistics Section Adjustments */
+            .logistics-grid {
+                grid-template-columns: 1fr !important;
+                gap: 3rem !important;
+            }
+
+            .logistics-img-container img {
+                height: 300px !important;
+            }
+
+            .monitoring-badge {
+                position: relative !important;
+                bottom: 0 !important;
+                right: 0 !important;
+                margin-top: -2rem;
+                margin-left: 1rem;
+                margin-right: 1rem;
+                z-index: 10;
+            }
+
+            /* Section Spacing */
+            .reveal {
+                margin-bottom: 4rem !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="logo flex items-center gap-2">
+                <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
+                <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
+            </a>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="flex items-center gap-8">
+                    <li class="dropdown">
+                        <a href="index.html" class="nav-link dropdown-toggle">Home <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Home 1</a></li>
+                            <li><a href="index2.html">Home 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-dashboard.html">User Dashboard</a></li>
+                            <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Mobile Auth (Inside menu) -->
+                <div class="auth-buttons show-mobile flex flex-column gap-4"
+                    style="padding: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05);">
+                    <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
+                    <a href="signup.html" class="btn btn-primary" style="width: 100%;">Sign Up</a>
+                </div>
+            </nav>
+
+            <div class="flex items-center gap-8">
+                <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="rtl-toggle" class="icon-btn" title="Switch Language Direction">
+                    <i class="fas fa-globe"></i>
+                </button>
+
+                <!-- Desktop Auth -->
+                <div class="auth-buttons flex gap-4 hide-mobile">
+                    <a href="login.html" class="btn btn-outline"
+                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Login</a>
+                    <a href="signup.html" class="btn btn-primary"
+                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Sign Up</a>
+                </div>
+
+                <!-- Hamburger -->
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container" style="padding-top: 6rem;">
+        <div class="reveal" style="text-align: center; margin-bottom: 6rem;">
+            <span class="text-gold"
+                style="font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">World-Class Solutions</span>
+            <h1 class="playfair" style="font-size: 4.5rem; line-height: 1.1; margin-top: 1rem;">Solutions for the <br>
+                <span class="text-gold">Modern Connoisseur</span>
+            </h1>
+        </div>
+
+        <div class="grid"
+            style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-bottom: 8rem;">
+            <div class="glass-card hover-float reveal premium-border"
+                style="padding: 3rem; border-top: 5px solid var(--primary-color);">
+                <div
+                    style="width: 70px; height: 70px; background: rgba(99, 102, 241, 0.1); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                    <i class="fas fa-bullhorn fa-2x" style="color: var(--primary-color);"></i>
+                </div>
+                <h3 class="playfair" style="font-size: 1.8rem; margin-bottom: 1.5rem;">Curation & Hosting</h3>
+                <p style="color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">List your treasures for free
+                    and reach a global network of verified high-net-worth collectors. Our platform handles all metadata
+                    and security.</p>
+            </div>
+            <div class="glass-card hover-float reveal premium-border"
+                style="padding: 3rem; border-top: 5px solid var(--secondary-color);">
+                <div
+                    style="width: 70px; height: 70px; background: rgba(236, 72, 153, 0.1); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                    <i class="fas fa-shield-halved fa-2x" style="color: var(--secondary-color);"></i>
+                </div>
+                <h3 class="playfair" style="font-size: 1.8rem; margin-bottom: 1.5rem;">Secure Vault Escrow</h3>
+                <p style="color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">Capital is protected within
+                    our decentralized escrow system until the asset is authenticated and safely received by the buyer.
+                </p>
+            </div>
+            <div class="glass-card hover-float reveal glow-on-hover premium-border"
+                style="padding: 3rem; border-top: 5px solid #d4af37;">
+                <div
+                    style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                    <i class="fas fa-gem fa-2x" style="color: #d4af37;"></i>
+                </div>
+                <h3 class="playfair text-gold" style="font-size: 1.8rem; margin-bottom: 1.5rem;">Expert Appraisal</h3>
+                <p style="color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">Access our elite circle of
+                    specialists for verified valuation reports, ensuring your assets are priced according to true market
+                    prestige.</p>
+            </div>
+        </div>
+
+        <!-- Premium Tiers -->
+        <div class="reveal membership-tiers" style="margin-bottom: 8rem;">
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <h2 class="playfair" style="font-size: 3.5rem;">Membership <span class="text-gold">Tiers</span></h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 1rem;">Architected for casual
+                    enthusiasts and institutional investors alike.</p>
+            </div>
+
+            <div class="grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; align-items: center;">
+                <!-- Basic -->
+                <div class="glass-card hover-float reveal premium-border"
+                    style="padding: 4rem 3rem; text-align: center;">
+                    <span
+                        style="color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">Essential</span>
+                    <h2 class="playfair" style="font-size: 4rem; margin: 1.5rem 0;">Free</h2>
+                    <ul
+                        style="text-align: left; margin: 2rem 0 3rem; display: flex; flex-direction: column; gap: 1.2rem;">
+                        <li style="display: flex; align-items: center; gap: 1rem; color: var(--text-main);"><i
+                                class="fas fa-check-circle" style="color: var(--primary-color);"></i> 3 Active Listings
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 1rem; color: var(--text-main);"><i
+                                class="fas fa-check-circle" style="color: var(--primary-color);"></i> Global Visibility
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 1rem; color: var(--text-main);"><i
+                                class="fas fa-check-circle" style="color: var(--primary-color);"></i> 8% Success Fee
+                        </li>
+                    </ul>
+                    <button class="btn btn-outline" style="width: 100%; padding: 1rem;">Get Started</button>
+                </div>
+
+                <!-- Elite -->
+                <div class="glass-card glow-on-hover reveal"
+                    style="padding: 5rem 3rem; text-align: center; border: 2px solid #d4af37; transform: translateY(-20px); background: rgba(20, 20, 20, 0.4); position: relative; overflow: visible;">
+                    <div
+                        style="position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: #d4af37; color: #000; padding: 0.6rem 2rem; border-radius: 50px; font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; white-space: nowrap; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);">
+                        PRESTIGE CHOICE</div>
+                    <span class="text-gold"
+                        style="letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">Royal
+                        Privileges</span>
+                    <h2 class="playfair text-gold" style="font-size: 5rem; margin: 1.5rem 0;">$49<span
+                            style="font-size: 1.2rem; font-weight: 400;">/mo</span></h2>
+                    <ul
+                        style="text-align: left; margin: 2rem 0 3rem; display: flex; flex-direction: column; gap: 1.2rem;">
+                        <li style="display: flex; align-items: center; gap: 1rem; color: white;"><i class="fas fa-crown"
+                                style="color: #d4af37;"></i> Unlimited Active Listings</li>
+                        <li style="display: flex; align-items: center; gap: 1rem; color: white;"><i class="fas fa-crown"
+                                style="color: #d4af37;"></i> Verified Platinum Badge</li>
+                        <li style="display: flex; align-items: center; gap: 1rem; color: white;"><i class="fas fa-crown"
+                                style="color: #d4af37;"></i> 2% Success Fee</li>
+                        <li style="display: flex; align-items: center; gap: 1rem; color: white;"><i class="fas fa-crown"
+                                style="color: #d4af37;"></i> VIP Concierge Support</li>
+                    </ul>
+                    <button class="btn btn-primary"
+                        style="width: 100%; padding: 1.2rem; background: #d4af37; border: none; color: #000; font-weight: 800;">Ascend
+                        to Elite</button>
+                </div>
+
+                <!-- Institutional -->
+                <div class="glass-card hover-float reveal premium-border"
+                    style="padding: 4rem 3rem; text-align: center;">
+                    <span
+                        style="color: var(--secondary-color); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">Institutional</span>
+                    <h2 class="playfair" style="font-size: 4rem; margin: 1.5rem 0;">$199<span
+                            style="font-size: 1.2rem; font-weight: 400;">/mo</span></h2>
+                    <ul
+                        style="text-align: left; margin: 2rem 0 3rem; display: flex; flex-direction: column; gap: 1.2rem;">
+                        <li style="display: flex; align-items: center; gap: 1rem; color: var(--text-main);"><i
+                                class="fas fa-building" style="color: var(--secondary-color);"></i> White-label Portals
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 1rem; color: var(--text-main);"><i
+                                class="fas fa-building" style="color: var(--secondary-color);"></i> Full API Integration
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 1rem; color: var(--text-main);"><i
+                                class="fas fa-building" style="color: var(--secondary-color);"></i> Priority Brokerage
+                        </li>
+                    </ul>
+                    <button class="btn btn-outline" style="width: 100%; padding: 1rem;">Connect with Sales</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- The BidMaster Methodology (Enhanced Process Map) -->
+        <div class="reveal" style="margin-bottom: 10rem;">
+            <div style="text-align: center; margin-bottom: 6rem;">
+                <span class="text-gold" style="font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">The
+                    Blueprint</span>
+                <h2 class="playfair" style="font-size: 4rem; margin-top: 1rem;">BidMaster <span
+                        class="text-gold">Methodology</span></h2>
+                <p
+                    style="color: var(--text-muted); font-size: 1.1rem; margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Our scientific approach to asset liquidation, perfected over decades of high-prestige transactions.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-between" style="gap: 2rem; position: relative;">
+                <!-- Process Line (Desktop Only) -->
+                <div class="hide-mobile"
+                    style="position: absolute; top: 50px; left: 10%; right: 10%; height: 2px; background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent); z-index: 0;">
+                </div>
+
+                <div class="glass-card premium-border"
+                    style="flex: 1 1 250px; padding: 3rem 2rem; text-align: center; position: relative; z-index: 1;">
+                    <div
+                        style="width: 60px; height: 60px; background: #d4af37; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-weight: 900; font-size: 1.5rem; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);">
+                        1</div>
+                    <h4 class="playfair" style="font-size: 1.4rem; margin-bottom: 1rem;">Selective Curation</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Only the top 5% of
+                        submitted assets are selected for our elite gallery exhibition.</p>
+                </div>
+
+                <div class="glass-card premium-border"
+                    style="flex: 1 1 250px; padding: 3rem 2rem; text-align: center; position: relative; z-index: 1;">
+                    <div
+                        style="width: 60px; height: 60px; background: #d4af37; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-weight: 900; font-size: 1.5rem; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);">
+                        2</div>
+                    <h4 class="playfair" style="font-size: 1.4rem; margin-bottom: 1rem;">Precise Valuation</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">AI-driven market analysis
+                        combined with direct human specialist appraisal expertise.</p>
+                </div>
+
+                <div class="glass-card premium-border"
+                    style="flex: 1 1 250px; padding: 3rem 2rem; text-align: center; position: relative; z-index: 1;">
+                    <div
+                        style="width: 60px; height: 60px; background: #d4af37; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-weight: 900; font-size: 1.5rem; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);">
+                        3</div>
+                    <h4 class="playfair" style="font-size: 1.4rem; margin-bottom: 1rem;">Global Exhibition</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Immersive digital 3D
+                        showcases and private physical viewings across our gallery network.</p>
+                </div>
+
+                <div class="glass-card premium-border"
+                    style="flex: 1 1 250px; padding: 3rem 2rem; text-align: center; position: relative; z-index: 1;">
+                    <div
+                        style="width: 60px; height: 60px; background: #d4af37; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-weight: 900; font-size: 1.5rem; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);">
+                        4</div>
+                    <h4 class="playfair" style="font-size: 1.4rem; margin-bottom: 1rem;">Elite Acquisition</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Secure, multi-layered
+                        bidding environment with instant verified settlement protocols.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Specialist Advisory Services (New Expansion) -->
+        <div class="reveal"
+            style="margin-bottom: 10rem; background: var(--bg-surface); border-radius: 30px; padding: 5rem 3rem;">
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <span class="text-gold" style="font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">Direct
+                    Advisory</span>
+                <h2 class="playfair" style="font-size: 3.5rem; margin-top: 1rem;">Asset Class <span
+                        class="text-gold">Specialization</span></h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 1rem;">Deep domain expertise for the
+                    most competitive market sectors.</p>
+            </div>
+
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div class="glass-card premium-border" style="padding: 2.5rem; text-align: left;">
+                    <h4 class="playfair" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Fine Art & Masterpieces</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8;">From Renaissance oils to
+                        contemporary digital installments, our art division provides meticulous authentication and
+                        market positioning.</p>
+                    <hr style="border: 0; border-top: 1px solid rgba(212, 175, 55, 0.2); margin: 2rem 0;">
+                    <p style="font-size: 0.85rem; font-weight: 600; color: #d4af37;">Primary markets: NY, London, Hong
+                        Kong</p>
+                </div>
+                <div class="glass-card premium-border" style="padding: 2.5rem; text-align: left;">
+                    <h4 class="playfair" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Horology & Jewelry</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8;">Specialized labs for
+                        movement verification and gemstone grading. We handle the world's most coveted Patek Philippe
+                        and Rolex references.</p>
+                    <hr style="border: 0; border-top: 1px solid rgba(212, 175, 55, 0.2); margin: 2rem 0;">
+                    <p style="font-size: 0.85rem; font-weight: 600; color: #d4af37;">Primary markets: Geneva, Dubai,
+                        Tokyo</p>
+                </div>
+                <div class="glass-card premium-border" style="padding: 2.5rem; text-align: left;">
+                    <h4 class="playfair" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Rare Collectibles</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8;">Valuation services for
+                        vintage tech, numismatics, and sports memorabilia. Ensuring historical significance is properly
+                        leveraged.</p>
+                    <hr style="border: 0; border-top: 1px solid rgba(212, 175, 55, 0.2); margin: 2rem 0;">
+                    <p style="font-size: 0.85rem; font-weight: 600; color: #d4af37;">Primary markets: Silicon Valley,
+                        Chicago, Singapore</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global White-Glove Logistics -->
+        <div class="reveal" style="margin-bottom: 10rem;">
+            <div class="grid logistics-grid" style="grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;">
+                <div style="position: relative;" class="logistics-img-container">
+                    <div class="glass-card"
+                        style="border-radius: 30px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.3);">
+                        <img src="assets/images/service_appraisal.jpg" alt="Secure Transport"
+                            style="width: 100%; height: 500px; object-fit: cover;">
+                    </div>
+                    <div class="glass-card premium-border monitoring-badge"
+                        style="position: absolute; bottom: -30px; right: -30px; padding: 2.5rem; max-width: 300px; backdrop-filter: blur(20px);">
+                        <i class="fas fa-truck-fast fa-3x"
+                            style="color: var(--primary-color); margin-bottom: 1rem;"></i>
+                        <h4 style="font-weight: 800; margin-bottom: 0.5rem;">24/7 Monitoring</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Real-time GPS and environmental sensor
+                            tracking for every transit.</p>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-gold"
+                        style="font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">Seamless
+                        Transit</span>
+                    <h2 class="playfair" style="font-size: 3.5rem; margin: 1rem 0 2rem;">Global <br> <span
+                            class="text-gold">White-Glove</span> Logistics</h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem;">We
+                        partner with specialized art and luxury couriers to provide temperature-controlled,
+                        fully-insured door-to-door delivery regardless of destination.</p>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.5rem;">
+                        <li style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 50%; background: rgba(99, 102, 241, 0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-plane-up" style="color: var(--primary-color);"></i>
+                            </div>
+                            <div>
+                                <h5 style="font-weight: 700; font-size: 1.1rem;">Intercontinental Air-Freight</h5>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Priority slots on leading cargo
+                                    carriers with dedicated handling crews.</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                            <div
+                                style="width: 40px; height: 40px; border-radius: 50%; background: rgba(236, 72, 153, 0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i class="fas fa-vault" style="color: var(--secondary-color);"></i>
+                            </div>
+                            <div>
+                                <h5 style="font-weight: 700; font-size: 1.1rem;">Bonded Storage Access</h5>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">Pre and post-auction storage in
+                                    world-class free-port facilities.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global Impact & Numbers (New) -->
+        <div class="reveal" style="margin-bottom: 10rem; text-align: center;">
+            <div class="grid stats-grid"
+                style="grid-template-columns: repeat(4, 1fr); gap: 2rem; padding: 4rem; background: rgba(20, 20, 20, 0.4); border-radius: 40px; border: 1px solid rgba(255,255,255,0.05);">
+                <div class="stat-item">
+                    <h2 class="playfair text-gold" style="font-size: 4rem; margin-bottom: 0.5rem;">$1.2B+</h2>
+                    <p
+                        style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
+                        Total Asset Volume</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="playfair text-gold" style="font-size: 4rem; margin-bottom: 0.5rem;">140+</h2>
+                    <p
+                        style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
+                        Countries Served</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="playfair text-gold" style="font-size: 4rem; margin-bottom: 0.5rem;">99.9%</h2>
+                    <p
+                        style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
+                        Auth. Accuracy</p>
+                </div>
+                <div class="stat-item">
+                    <h2 class="playfair text-gold" style="font-size: 4rem; margin-bottom: 0.5rem;">24h</h2>
+                    <p
+                        style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">
+                        Average Settlement</p>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            @media (max-width: 991px) {
+                .stats-grid {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                    gap: 3rem !important;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .stats-grid {
+                    grid-template-columns: 1fr !important;
+                    padding: 3rem 1.5rem !important;
+                }
+            }
+        </style>
+
+        <!-- Client Success Chronicles (New) -->
+        <div class="reveal" style="margin-bottom: 10rem;">
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <span class="text-gold"
+                    style="font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">Chronicles</span>
+                <h2 class="playfair" style="font-size: 3.5rem; margin-top: 1rem;">Client <span class="text-gold">Success
+                        Stories</span></h2>
+            </div>
+
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem;">
+                <div class="glass-card premium-border"
+                    style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+                    <img src="assets/images/success_art.jpg" alt="Success Story 1"
+                        style="width: 100%; height: 300px; object-fit: cover; filter: grayscale(0.5) contrast(1.1);">
+                    <div style="padding: 3rem;">
+                        <h4 class="playfair" style="font-size: 1.5rem; margin-bottom: 1rem;">The "Horizon" Collection
+                            Dispersal</h4>
+                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">A private estate
+                            liquidation involving 142 modern artifacts. Achieving 35% above conservative market
+                            estimates through strategic global pre-marketing.</p>
+                        <div
+                            style="font-style: italic; color: #d4af37; border-left: 2px solid #d4af37; padding-left: 1rem;">
+                            "BidMaster provided the discreet, highly-technical platform needed for this caliber of
+                            asset."</div>
+                    </div>
+                </div>
+                <div class="glass-card premium-border"
+                    style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+                    <img src="assets/images/success_watches.jpg" alt="Success Story 2"
+                        style="width: 100%; height: 300px; object-fit: cover; filter: grayscale(0.5) contrast(1.1);">
+                    <div style="padding: 3rem;">
+                        <h4 class="playfair" style="font-size: 1.5rem; margin-bottom: 1rem;">Vintage Horology Pivot</h4>
+                        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">A transition of
+                            investment capital from real-estate to rare timepieces. Our consultants sourced and
+                            authenticated 12 museum-grade Patek Philippe references.</p>
+                        <div
+                            style="font-style: italic; color: #d4af37; border-left: 2px solid #d4af37; padding-left: 1rem;">
+                            "Their network is unparalleled. We secured pieces that never hit the public market."</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partnership & Institutional Inquiry -->
+        <div class="reveal glass-card glow-on-hover"
+            style="margin-bottom: 10rem; padding: 6rem 3rem; text-align: center; border: 1px solid rgba(212, 175, 55, 0.3);">
+            <h2 class="playfair" style="font-size: 3.5rem; margin-bottom: 2rem;">Institutional <span
+                    class="text-gold">Inquiries</span></h2>
+            <p
+                style="color: var(--text-muted); font-size: 1.2rem; max-width: 700px; margin: 0 auto 4rem; line-height: 1.8;">
+                For estate managers, private wealth offices, and corporate collection curators, BidMaster offers
+                tailored liquidity solutions and discreet global divestment strategies.</p>
+            <div class="flex justify-center gap-6">
+                <a href="contact.html" class="btn btn-primary"
+                    style="padding: 1.2rem 3rem; background: #d4af37; color: #000; border: none; font-weight: 800;">Speak
+                    with a Broker</a>
+                <a href="#" class="btn btn-outline" style="padding: 1.2rem 3rem;">View Performance Reports</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: #0f172a; color: white; padding: 5rem 0 2rem; margin-top: 4rem;">
+        <div class="container">
+            <div class="grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 2rem; margin-bottom: 4rem;">
+                <!-- Column 1: Brand -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo flex items-center gap-2"
+                        style="margin-bottom: 1.5rem; color: white;">
+                        <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
+                        <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
+                    </a>
+                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.7;">The world's premier platform for
+                        extraordinary auctions. Verified sellers, rare treasures, and a global community of serious
+                        collectors.</p>
+                    <div class="flex gap-4" style="margin-top: 2rem;">
+                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Quick Links
+                    </h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="index.html"
+                                style="color: #94a3b8; transition: var(--transition);">Home</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="about.html"
+                                style="color: #94a3b8; transition: var(--transition);">About Us</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="services.html"
+                                style="color: #94a3b8; transition: var(--transition);">Live Auctions</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="contact.html"
+                                style="color: #94a3b8; transition: var(--transition);">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Categories -->
+                <div class="footer-col">
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Categories
+                    </h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Electronics</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Jewelry & Gems</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Art & Antiques</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Luxury Vehicles</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Support -->
+                <div class="footer-col">
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Support</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="#" class="modal-trigger" data-modal="terms"
+                                style="color: #94a3b8; transition: var(--transition);">Terms of Service</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#" class="modal-trigger" data-modal="privacy"
+                                style="color: #94a3b8; transition: var(--transition);">Privacy Policy</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Help Center</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 BidMaster. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <img src="assets/images/visa.svg" alt="Visa" style="height: 20px; opacity: 0.5;" loading="lazy">
+                    <img src="assets/images/mastercard.svg" alt="Mastercard" style="height: 20px; opacity: 0.5;"
+                        loading="lazy">
+                    <img src="assets/images/paypal.svg" alt="PayPal" style="height: 20px; opacity: 0.5;" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="modal-terms" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <h2 style="margin-bottom: 1rem;">Terms of Service</h2>
+            <p style="line-height: 1.6; color: var(--text-muted);">
+                Welcome to BidMaster. By accessing our website, you agree to be bound by these Terms of Service.
+                <br><br>
+                <strong>1. Acceptance of Terms</strong><br>
+                By using our services, you agree to these terms. If you do not agree, please do not use our services.
+                <br><br>
+                <strong>2. User Conduct</strong><br>
+                You agree to use the site only for lawful purposes. You are prohibited from posting any unlawful or
+                objectionable content.
+                <br><br>
+                <strong>3. Auctions</strong><br>
+                All bids are binding. ensuring you have the funds before placing a bid is your responsibility.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal-privacy" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <h2 style="margin-bottom: 1rem;">Privacy Policy</h2>
+            <p style="line-height: 1.6; color: var(--text-muted);">
+                Your privacy is important to us. This policy explains how we handle your data.
+                <br><br>
+                <strong>1. Data Collection</strong><br>
+                We collect information you provide directly to us, such as when you create an account or place a bid.
+                <br><br>
+                <strong>2. Data Usage</strong><br>
+                We use your data to provide and improve our services, process transactions, and communicate with you.
+                <br><br>
+                <strong>3. Security</strong><br>
+                We implement reasonable security measures to protect your personal information.
+            </p>
+        </div>
+    </div>
+
+    <script src="rtltoggle.js"></script>
+    <script src="logout.js"></script>
+    <script src="device-simulator.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BidMaster Elite - Exclusive Auctions</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* 
+         * HOME STYLE 2 - THE OBSIDIAN GALLERY
+         * A high-contrast, minimalist, and immersive exhibition theme.
+         */
+
+        :root {
+            --obsidian-bg: #ffffff;
+            --obsidian-surface: #f8f8f8;
+            --obsidian-accent: #D4AF37;
+            /* Gold */
+            --obsidian-text: #1a1a1a;
+            --obsidian-text-muted: #666666;
+            --obsidian-border: rgba(0, 0, 0, 0.1);
+            --obsidian-glass: rgba(255, 255, 255, 0.9);
+            --transition-gallery: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        [data-theme="dark"] {
+            --obsidian-bg: #0a0a0a;
+            --obsidian-surface: #141414;
+            --obsidian-accent: #D4AF37;
+            --obsidian-text: #ffffff;
+            --obsidian-text-muted: #888888;
+            --obsidian-border: rgba(255, 255, 255, 0.1);
+            --obsidian-glass: rgba(20, 20, 20, 0.8);
+        }
+
+        body.home-style-2 {
+            background-color: var(--obsidian-bg);
+            color: var(--obsidian-text);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        .home-style-2 .header {
+            background-color: var(--obsidian-glass);
+            border-bottom: 1px solid var(--obsidian-border);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transition: var(--transition-gallery);
+        }
+
+        .home-style-2 .header.scrolled {
+            background-color: var(--obsidian-surface);
+            padding: 0.5rem 0;
+        }
+
+        .home-style-2 h1,
+        .home-style-2 h2,
+        .home-style-2 h3,
+        .home-style-2 .logo span {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+        }
+
+        /* Page Loader */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--obsidian-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease;
+        }
+
+        .loader-line {
+            width: 0;
+            height: 1px;
+            background: var(--obsidian-accent);
+            animation: load 2s ease-in-out forwards;
+        }
+
+        @keyframes load {
+            to {
+                width: 200px;
+            }
+        }
+
+        /* Nav Overrides */
+        .home-style-2 .header {
+            background: transparent !important;
+            border-bottom: 1px solid var(--obsidian-border) !important;
+            padding: 1.5rem 0;
+            transition: var(--transition-gallery);
+        }
+
+        .home-style-2 .header.scrolled {
+            background: var(--obsidian-glass) !important;
+            backdrop-filter: blur(20px) !important;
+            padding: 1rem 0;
+        }
+
+        .home-style-2 .nav-link {
+            color: var(--obsidian-text) !important;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .home-style-2 .nav-link:hover {
+            color: var(--obsidian-accent) !important;
+        }
+
+        /* Dropdowns */
+        .home-style-2 .dropdown {
+            position: relative;
+        }
+
+        .home-style-2 .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--obsidian-surface);
+            border: 1px solid var(--obsidian-border);
+            min-width: 200px;
+            padding: 1rem 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition-gallery);
+            z-index: 1000;
+        }
+
+        .home-style-2 .dropdown-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .home-style-2 .dropdown-menu li {
+            list-style: none;
+        }
+
+        .home-style-2 .dropdown-menu a {
+            display: block;
+            padding: 0.8rem 2rem;
+            color: var(--obsidian-text-muted);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: var(--transition-gallery);
+        }
+
+        .home-style-2 .dropdown-menu a:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--obsidian-accent);
+            padding-left: 2.5rem;
+        }
+
+        /* Mobile Auth Buttons */
+        .home-style-2 .auth-buttons-mobile {
+            display: none;
+            padding: 2rem;
+            border-top: 1px solid var(--obsidian-border);
+            gap: 1rem;
+        }
+
+        @media (max-width: 991px) {
+            .home-style-2 .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background: var(--obsidian-bg);
+                display: flex;
+                flex-direction: column;
+                padding: 6rem 2rem 2rem;
+                transition: var(--transition-gallery);
+                z-index: 999;
+                border-left: 1px solid var(--obsidian-border);
+            }
+
+            .home-style-2 .nav-menu.active {
+                right: 0;
+            }
+
+            .home-style-2 .nav-menu ul {
+                flex-direction: column;
+                align-items: flex-start !important;
+                gap: 2rem !important;
+            }
+
+            .home-style-2 .auth-buttons-mobile {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .home-style-2 .dropdown-menu {
+                position: static !important;
+                opacity: 0;
+                visibility: hidden;
+                transform: none;
+                background: transparent;
+                border: none;
+                padding-left: 1.5rem;
+                display: none;
+                transition: none;
+            }
+
+            .home-style-2 .dropdown-menu.active {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        /* Immersive Hero */
+        .hero-gallery {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-split {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-image-side {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.5) contrast(1.1);
+            transition: transform 1.2s ease;
+        }
+
+        .hero-text-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5% 10%;
+            background: var(--obsidian-bg);
+            transition: background-color 0.4s ease;
+        }
+
+        .reveal-text {
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .reveal-text span {
+            display: block;
+            transform: translateY(100%);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .active .reveal-text span {
+            transform: translateY(0);
+        }
+
+        /* Curator's Picks (Vertical Exhibition) */
+        .exhibition-section {
+            padding: 4rem 0;
+        }
+
+        .exhibition-item {
+            display: flex;
+            align-items: center;
+            gap: 5%;
+            margin-bottom: 5rem;
+        }
+
+        .exhibition-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .ex-img-box {
+            flex: 1.5;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ex-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        .ex-text-box {
+            flex: 1;
+        }
+
+        .ex-text-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--obsidian-accent);
+        }
+
+        /* Horizontal Auctions */
+        .auction-gallery {
+            padding: 4rem 0;
+            background: var(--obsidian-surface);
+        }
+
+        .h-scroll-gallery {
+            display: flex;
+            overflow-x: auto;
+            padding: 2rem 5%;
+            gap: 3rem;
+            scrollbar-width: none;
+        }
+
+        .h-scroll-gallery::-webkit-scrollbar {
+            display: none;
+        }
+
+        .gallery-card {
+            min-width: 400px;
+            height: 450px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid var(--obsidian-border);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-gallery);
+            filter: brightness(0.7);
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.05);
+            filter: brightness(1);
+        }
+
+        .gallery-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            transform: translateY(20px);
+            transition: var(--transition-gallery);
+        }
+
+        .gallery-card:hover .gallery-info {
+            transform: translateY(0);
+        }
+
+        /* Auction Calendar */
+        .calendar-section {
+            padding: 4rem 0;
+        }
+
+        .calendar-row {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--obsidian-border);
+            transition: var(--transition-gallery);
+            cursor: pointer;
+            gap: 2rem;
+        }
+
+        .calendar-row:hover {
+            background: rgba(255, 255, 255, 0.02);
+            padding-left: 2rem;
+            color: var(--obsidian-accent);
+        }
+
+        .cal-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            filter: grayscale(1);
+            transition: var(--transition-gallery);
+        }
+
+        .calendar-row:hover .cal-img {
+            filter: grayscale(0);
+            transform: scale(1.1);
+        }
+
+        .cal-date {
+            flex: 0 0 150px;
+            font-weight: 700;
+            color: var(--obsidian-accent);
+        }
+
+        .cal-title {
+            flex: 1;
+            font-family: 'Cinzel';
+            font-size: 1.2rem;
+        }
+
+        .cal-status {
+            flex: 0 0 150px;
+            text-align: right;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        /* Performance Dashboard (Minimalist) */
+        .performance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .stat-circle {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 2rem;
+            border: 2px solid var(--obsidian-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .stat-circle::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            animation: pulse-gold 2s infinite;
+        }
+
+        @keyframes pulse-gold {
+            0% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Magnetic Button Base */
+        .btn-obsidian {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--obsidian-accent);
+            color: #000;
+            text-decoration: none;
+            font-family: 'Cinzel';
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: var(--transition-gallery);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-obsidian:hover {
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+            transform: translateY(-5px);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 991px) {
+            .hero-gallery {
+                height: auto;
+                min-height: 100vh;
+                display: block;
+            }
+
+            .hero-split {
+                flex-direction: column-reverse;
+                height: auto;
+            }
+
+            .hero-image-side {
+                height: 50vh;
+                min-height: 400px;
+                width: 100%;
+            }
+
+            .hero-image-side img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .hero-text-side {
+                padding: 8.5rem 1.5rem 3rem;
+                height: auto;
+                min-height: 50vh;
+                text-align: center;
+                align-items: center;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .hero-text-side h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .exhibition-section {
+                padding: 3rem 0;
+            }
+
+            .exhibition-item {
+                flex-direction: column !important;
+                margin-bottom: 4rem;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .ex-img-box {
+                height: 350px;
+                width: 100%;
+            }
+
+            .ex-img-box img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .ex-text-box {
+                margin-top: 0;
+                padding: 0;
+                text-align: center;
+            }
+
+            .ex-text-box h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .h-scroll-gallery {
+                padding: 1.5rem 1rem;
+                gap: 1.5rem;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .gallery-card {
+                min-width: 280px;
+                width: 85vw;
+                height: 400px;
+            }
+
+            .gallery-info {
+                transform: translateY(0) !important;
+                opacity: 1 !important;
+                padding: 1.5rem !important;
+            }
+
+            .calendar-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1.5rem;
+                padding: 2rem 1.5rem;
+                border: 1px solid var(--obsidian-border);
+                margin-bottom: 1rem;
+            }
+
+            .cal-img {
+                width: 100%;
+                height: 250px;
+                filter: grayscale(0);
+            }
+
+            .cal-date {
+                flex: none;
+                width: 100%;
+                font-size: 0.9rem;
+            }
+
+            .cal-title {
+                flex: none;
+                width: 100%;
+                font-size: 1.3rem;
+            }
+
+            .cal-status {
+                text-align: left;
+                width: 100%;
+                flex: none;
+                margin-top: 0.5rem;
+            }
+
+            .performance-grid {
+                gap: 3rem;
+                padding: 2rem 1rem;
+            }
+
+            .curator-grid {
+                gap: 3rem;
+                padding: 0 1rem;
+            }
+
+            .calendar-gallery-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+
+            .cal-gallery-card {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text-side h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text-side {
+                padding: 7.5rem 1rem 2rem;
+            }
+
+            .gallery-card {
+                min-width: 260px;
+                height: 350px;
+            }
+
+            .ex-img-box {
+                height: 280px;
+            }
+
+            .btn-obsidian {
+                padding: 1rem 2rem;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+
+        /* Scroll Reveal Utility */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition-gallery);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RTL Specific Overrides for Obsidian Theme */
+        [dir="rtl"] .home-style-2 .nav-menu {
+            right: auto;
+            left: -100%;
+            border-left: none;
+            border-right: 1px solid var(--obsidian-border);
+        }
+
+        [dir="rtl"] .home-style-2 .nav-menu.active {
+            left: 0;
+            right: auto;
+        }
+
+        [dir="rtl"] .home-style-2 .exhibition-item {
+            flex-direction: row !important;
+        }
+
+        [dir="rtl"] .home-style-2 .exhibition-item:nth-child(even) {
+            flex-direction: row-reverse !important;
+        }
+
+        [dir="rtl"] .home-style-2 .btn-obsidian i {
+            margin-left: 0;
+            margin-right: 10px;
+        }
+
+        [dir="rtl"] .home-style-2 .cal-status {
+            text-align: left;
+        }
+
+        [dir="rtl"] .home-style-2 .footer-column {
+            text-align: right;
+        }
+
+        /* NEW EXPANSION STYLES */
+        .curator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .curator-card {
+            text-align: center;
+            transition: var(--transition-gallery);
+        }
+
+        .curator-img {
+            width: 250px;
+            height: 350px;
+            object-fit: cover;
+            margin: 0 auto 2rem;
+            border: 1px solid var(--obsidian-border);
+            filter: grayscale(1);
+            transition: var(--transition-gallery);
+        }
+
+        .curator-card:hover .curator-img {
+            filter: grayscale(0);
+            transform: translateY(-10px);
+            border-color: var(--obsidian-accent);
+        }
+
+        .viewing-lounge {
+            padding: 5rem 0;
+            background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)), url('assets/images/index2_cta_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+        }
+
+        .lounge-card {
+            background: var(--obsidian-glass);
+            border: 1px solid var(--obsidian-border);
+            padding: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+            backdrop-filter: blur(20px);
+        }
+
+        /* Calendar Gallery Grid */
+        .calendar-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .cal-gallery-card {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            border: 1px solid var(--obsidian-border);
+            background: var(--obsidian-surface);
+        }
+
+        .cal-gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6);
+            transition: var(--transition-gallery);
+        }
+
+        .cal-gallery-card:hover img {
+            transform: scale(1.05);
+            filter: brightness(0.8);
+        }
+
+        .cal-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 3rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent 70%);
+        }
+
+        .cal-tag {
+            background: var(--obsidian-accent);
+            color: #000;
+            padding: 0.5rem 1rem;
+            font-family: 'Cinzel';
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            width: fit-content;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Global Highlights Map */
+        .global-highlights {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .map-mockup {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 4rem auto 0;
+            opacity: 0.6;
+        }
+
+        .map-mockup img {
+            width: 100%;
+            filter: invert(var(--map-invert, 0));
+        }
+
+        [data-theme="dark"] {
+            --map-invert: 1;
+        }
+
+        .map-point {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--obsidian-accent);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .map-point::after {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border: 1px solid var(--obsidian-accent);
+            border-radius: 50%;
+            animation: pulse-gold 2s infinite;
+        }
+    </style>
+
+</head>
+
+<body class="home-style-2">
+
+    <!-- Page Loader -->
+    <div id="loader">
+        <div class="loader-line"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="logo flex items-center gap-2" style="color: var(--obsidian-text);">
+                <i class="fas fa-gavel fa-2x" style="color: var(--obsidian-accent);"></i>
+                <span style="font-size: 1.5rem; font-weight: 800; color: var(--obsidian-text);">BidMaster</span>
+            </a>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="flex items-center gap-8">
+                    <li class="dropdown">
+                        <a href="index.html" class="nav-link dropdown-toggle active">Home <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Home 1</a></li>
+                            <li><a href="index2.html">Home 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-dashboard.html">User Dashboard</a></li>
+                            <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Mobile Auth Buttons -->
+                <div class="auth-buttons-mobile">
+                    <a href="login.html" class="btn-obsidian" style="text-align: center;">Login</a>
+                    <a href="signup.html" class="btn-obsidian"
+                        style="text-align: center; background: transparent; border: 1px solid var(--obsidian-accent); color: var(--obsidian-accent);">Sign
+                        Up</a>
+                </div>
+            </nav>
+
+            <div class="flex items-center gap-8">
+                <button id="theme-toggle" class="icon-btn"
+                    style="border: none; background: none; color: var(--obsidian-text);" title="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="rtl-toggle" class="icon-btn"
+                    style="border: none; background: none; color: var(--obsidian-text);" title="Switch Direction">
+                    <i class="fas fa-globe"></i>
+                </button>
+
+                <!-- Desktop Auth -->
+                <div class="flex gap-4 hide-mobile">
+                    <a href="login.html" class="nav-link"
+                        style="font-size: 0.75rem; color: var(--obsidian-text);">Login</a>
+                    <a href="signup.html" class="btn-obsidian" style="padding: 0.6rem 1.5rem; font-size: 0.7rem;">Get
+                        Started</a>
+                </div>
+
+                <!-- Hamburger -->
+                <button class="mobile-menu-btn show-mobile" aria-label="Menu"
+                    style="background: none; border: none; flex-direction: column; gap: 5px; cursor: pointer;">
+                    <span class="bar" style="width: 25px; height: 2px; background: var(--obsidian-text);"></span>
+                    <span class="bar" style="width: 25px; height: 2px; background: var(--obsidian-text);"></span>
+                    <span class="bar" style="width: 25px; height: 2px; background: var(--obsidian-text);"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Immersive Hero -->
+    <section class="hero-gallery">
+        <div class="hero-split">
+            <div class="hero-image-side">
+                <img src="assets/images/hero-art.png" alt="Art Exhibition">
+            </div>
+            <div class="hero-text-side reveal">
+                <div class="reveal-text"><span>THE MODERN</span></div>
+                <div class="reveal-text"><span
+                        style="color: var(--obsidian-accent); font-size: 4rem; font-family: 'Cinzel';">COLLECTOR</span>
+                </div>
+                <p style="margin-top: 2rem; color: var(--obsidian-text-muted); max-width: 400px; line-height: 1.8;">
+                    Welcome to a space where history, art, and technology converge. Explore our curated selection of
+                    global rarities.
+                </p>
+                <div style="margin-top: 3rem;">
+                    <a href="#exhibition" class="btn-obsidian">View Exhibition</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Curator's Picks -->
+    <section id="exhibition" class="container exhibition-section">
+        <div class="reveal" style="text-align: center; margin-bottom: 8rem;">
+            <span
+                style="letter-spacing: 5px; color: var(--obsidian-accent); text-transform: uppercase; font-size: 0.9rem;">Winter
+                2026</span>
+            <h2 style="font-size: 4rem; margin-top: 1rem;">The Curator's Picks</h2>
+        </div>
+
+        <div class="exhibition-item reveal">
+            <div class="ex-img-box">
+                <img src="assets/images/ethereal-form.png" alt="Sculpture">
+            </div>
+            <div class="ex-text-box">
+                <span style="color: var(--obsidian-accent); font-weight: 700;">Lot #742</span>
+                <h2>Ethereal Form</h2>
+                <p style="color: var(--obsidian-text-muted); line-height: 2;">
+                    A rare 19th-century bronze study from the personal collection of Elena Rodriguez. This piece has
+                    never before appeared at public auction.
+                </p>
+                <a href="#" class="btn-obsidian"
+                    style="margin-top: 2rem; background: transparent; border: 1px solid var(--obsidian-accent); color: var(--obsidian-accent);">Learn
+                    More</a>
+            </div>
+            <!-- Secondary detail image as requested -->
+            <div class="ex-img-box"
+                style="flex: 1; height: 350px; margin-top: 4rem; opacity: 0.8; filter: grayscale(0.2);">
+                <img src="assets/images/ethereal-detail.png" alt="Detail View">
+            </div>
+        </div>
+
+        <div class="exhibition-item reveal">
+            <div class="ex-img-box">
+                <img src="assets/images/neon-synthesis.png" alt="Futuristic Art">
+            </div>
+            <div class="ex-text-box">
+                <span style="color: var(--obsidian-accent); font-weight: 700;">Lot #922</span>
+                <h2>Neon Dreams</h2>
+                <p style="color: var(--obsidian-text-muted); line-height: 2;">
+                    The premiere digital-to-oil work by visual architect Sato. A profound exploration of light in the
+                    information age.
+                </p>
+                <a href="#" class="btn-obsidian"
+                    style="margin-top: 2rem; background: transparent; border: 1px solid var(--obsidian-accent); color: var(--obsidian-accent);">Learn
+                    More</a>
+            </div>
+        </div>
+
+        <!-- Master Curators [NEW] -->
+        <div class="reveal" style="text-align: center; margin-top: 6rem;">
+            <span
+                style="letter-spacing: 5px; color: var(--obsidian-text-muted); text-transform: uppercase; font-size: 0.8rem;">Expertise</span>
+            <h2 style="font-size: 3rem; margin-top: 1rem;">Master Curators</h2>
+            <div class="curator-grid">
+                <div class="curator-card">
+                    <img src="assets/images/avatar_elena.jpg" alt="Elena Rodriguez" class="curator-img">
+                    <h4 style="font-family: 'Cinzel'; font-size: 1.25rem;">Elena Rodriguez</h4>
+                    <p
+                        style="color: var(--obsidian-accent); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 0.5rem;">
+                        Antiquities Specialist</p>
+                    <p
+                        style="color: var(--obsidian-text-muted); margin-top: 1rem; font-size: 0.9rem; line-height: 1.6; padding: 0 1rem;">
+                        Former Director of Heritage at the Louvre with 20+ years of artifact authentication.</p>
+                </div>
+                <div class="curator-card">
+                    <img src="assets/images/avatar_michael.jpg" alt="Julian Thorne" class="curator-img">
+                    <h4 style="font-family: 'Cinzel'; font-size: 1.25rem;">Julian Thorne</h4>
+                    <p
+                        style="color: var(--obsidian-accent); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 0.5rem;">
+                        Modern Art Visionary</p>
+                    <p
+                        style="color: var(--obsidian-text-muted); margin-top: 1rem; font-size: 0.9rem; line-height: 1.6; padding: 0 1rem;">
+                        Consulting for the world's top digital art funds and contemporary galleries.</p>
+                </div>
+                <div class="curator-card">
+                    <img src="assets/images/avatar_david.jpg" alt="David Sterling" class="curator-img">
+                    <h4 style="font-family: 'Cinzel'; font-size: 1.25rem;">David Sterling</h4>
+                    <p
+                        style="color: var(--obsidian-accent); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 0.5rem;">
+                        Luxury & Assets</p>
+                    <p
+                        style="color: var(--obsidian-text-muted); margin-top: 1rem; font-size: 0.9rem; line-height: 1.6; padding: 0 1rem;">
+                        Expert in high-value horology and rare automotive investments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Horizontal Auctions -->
+    <section class="auction-gallery">
+        <div class="container reveal" style="margin-bottom: 3rem;">
+            <h2 style="font-size: 2.5rem;">Live <span style="color: var(--obsidian-accent);">Bidding</span></h2>
+        </div>
+        <div class="h-scroll-gallery">
+            <div class="gallery-card reveal">
+                <img src="assets/images/featured_book.jpg" alt="Rare Book" loading="lazy">
+                <div class="gallery-info">
+                    <h3 style="color: #fff;">Shakespeare First Folio</h3>
+                    <p style="color: var(--obsidian-accent); font-weight: 700;">Current: $2.4M</p>
+                </div>
+            </div>
+            <div class="gallery-card reveal">
+                <img src="assets/images/featured_tech.jpg" alt="Tech" loading="lazy">
+                <div class="gallery-info">
+                    <h3 style="color: #fff;">Apple I Prototype</h3>
+                    <p style="color: var(--obsidian-accent); font-weight: 700;">Current: $650k</p>
+                </div>
+            </div>
+            <div class="gallery-card reveal">
+                <img src="assets/images/featured_painting.jpg" alt="Painting" loading="lazy">
+                <div class="gallery-info">
+                    <h3 style="color: #fff;">Neon Dreams #4</h3>
+                    <p style="color: var(--obsidian-accent); font-weight: 700;">Current: $12k</p>
+                </div>
+            </div>
+            <div class="gallery-card reveal">
+                <img src="assets/images/featured_digital_art.jpg" alt="Digital Art" loading="lazy">
+                <div class="gallery-info">
+                    <h3 style="color: #fff;">The Ethereum Gate</h3>
+                    <p style="color: var(--obsidian-accent); font-weight: 700;">Current: 45 ETH</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Auction Calendar REDESIGN -->
+    <section class="container calendar-section">
+        <div class="flex justify-between items-end reveal" style="margin-bottom: 3rem;">
+            <div>
+                <span
+                    style="color: var(--obsidian-accent); text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem;">Schedule</span>
+                <h2 style="font-size: 3rem; margin-top: 1rem;">Auction <span
+                        style="color: var(--obsidian-accent);">Gallery</span></h2>
+            </div>
+            <a href="#" class="btn-obsidian"
+                style="background: transparent; border: 1px solid var(--obsidian-accent); color: var(--obsidian-accent);">Subscribe
+                to Events</a>
+        </div>
+
+        <div class="calendar-gallery-grid">
+            <div class="cal-gallery-card reveal">
+                <img src="assets/images/cal-jewelry.png" alt="Jewelry">
+                <div class="cal-overlay">
+                    <div class="cal-tag">Jan 24</div>
+                    <h3 style="font-family: 'Cinzel'; font-size: 1.5rem; margin-bottom: 1rem;">Imperial Jewelry Focus
+                    </h3>
+                    <p style="color: var(--obsidian-text-muted); margin-bottom: 2rem; font-size: 0.9rem;">Exhibition of
+                        rare royal gems and historical watches.</p>
+                    <div class="flex gap-4">
+                        <button class="btn-obsidian" style="padding: 0.8rem 1.5rem; font-size: 0.75rem;">Request
+                            Invite</button>
+                        <button class="btn-obsidian"
+                            style="background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 0.8rem 1.5rem; font-size: 0.75rem;">View
+                            Lots</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cal-gallery-card reveal">
+                <img src="assets/images/cal-furniture.png" alt="Furniture">
+                <div class="cal-overlay">
+                    <div class="cal-tag">Feb 02</div>
+                    <h3 style="font-family: 'Cinzel'; font-size: 1.5rem; margin-bottom: 1rem;">Mid-Century Masterpieces
+                    </h3>
+                    <p style="color: var(--obsidian-text-muted); margin-bottom: 2rem; font-size: 0.9rem;">Curated
+                        collection of 20th-century design icons.</p>
+                    <div class="flex gap-4">
+                        <button class="btn-obsidian" style="padding: 0.8rem 1.5rem; font-size: 0.75rem;">Request
+                            Invite</button>
+                        <button class="btn-obsidian"
+                            style="background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 0.8rem 1.5rem; font-size: 0.75rem;">View
+                            Lots</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cal-gallery-card reveal">
+                <img src="assets/images/cal-spirits.jpg" alt="Spirits">
+                <div class="cal-overlay">
+                    <div class="cal-tag">Feb 15</div>
+                    <h3 style="font-family: 'Cinzel'; font-size: 1.5rem; margin-bottom: 1rem;">Rare Spirits & Wines</h3>
+                    <p style="color: var(--obsidian-text-muted); margin-bottom: 2rem; font-size: 0.9rem;">The cellar of
+                        a private Mediterranean collector.</p>
+                    <div class="flex gap-4">
+                        <button class="btn-obsidian" style="padding: 0.8rem 1.5rem; font-size: 0.75rem;">Request
+                            Invite</button>
+                        <button class="btn-obsidian"
+                            style="background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 0.8rem 1.5rem; font-size: 0.75rem;">View
+                            Lots</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Performance Dashboard -->
+    <section class="container" style="padding: 4rem 0; background: transparent;">
+        <h2 class="reveal" style="text-align: center; margin-bottom: 3rem;">Platform <span
+                style="color: var(--obsidian-accent);">Pulse</span></h2>
+        <div class="performance-grid">
+            <div class="reveal">
+                <div class="stat-circle">
+                    <i class="fas fa-shield-alt fa-2x"
+                        style="position: absolute; opacity: 0.2; color: var(--obsidian-accent);"></i>
+                    <h3 style="font-size: 2.5rem; position: relative; z-index: 1;">98%</h3>
+                </div>
+                <p style="color: var(--obsidian-text-muted);">Verification Rate</p>
+            </div>
+            <div class="reveal">
+                <div class="stat-circle">
+                    <i class="fas fa-chart-line fa-2x"
+                        style="position: absolute; opacity: 0.2; color: var(--obsidian-accent);"></i>
+                    <h3 style="font-size: 2.5rem; position: relative; z-index: 1;">$24M</h3>
+                </div>
+                <p style="color: var(--obsidian-text-muted);">Trade Volume (24h)</p>
+            </div>
+            <div class="reveal">
+                <div class="stat-circle">
+                    <i class="fas fa-users fa-2x"
+                        style="position: absolute; opacity: 0.2; color: var(--obsidian-accent);"></i>
+                    <h3 style="font-size: 2.5rem; position: relative; z-index: 1;">12k</h3>
+                </div>
+                <p style="color: var(--obsidian-text-muted);">Active Global Bidders</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Private Viewing Lounge [NEW] -->
+    <section class="viewing-lounge reveal">
+        <div class="lounge-card">
+            <span
+                style="color: var(--obsidian-accent); text-transform: uppercase; letter-spacing: 5px; font-size: 0.9rem;">Exclusive
+                Access</span>
+            <h2 style="font-size: 3.5rem; margin-top: 1.5rem; margin-bottom: 2rem;">Private Viewing Lounge</h2>
+            <p
+                style="color: var(--obsidian-text-muted); font-size: 1.1rem; line-height: 2; max-width: 600px; margin: 0 auto 3rem;">
+                Experience the world's most refined collections in an intimate, private setting. Our concierge team
+                manages travel, security, and discreet acquisition for our most distinguished collectors.
+            </p>
+            <a href="contact.html" class="btn-obsidian">Request Private Viewing</a>
+        </div>
+    </section>
+
+    <!-- Global Auction Highlights [NEW] -->
+    <section class="container global-highlights reveal">
+        <span style="color: var(--obsidian-accent); text-transform: uppercase; letter-spacing: 3px;">The Network</span>
+        <h2 style="font-size: 3rem; margin-top: 1rem;">Global Reach</h2>
+        <div class="map-mockup">
+            <img src="assets/images/world-map-dots.png" alt="Global Map">
+            <div class="map-point" style="top: 35%; left: 22%;" title="New York"></div>
+            <div class="map-point" style="top: 30%; left: 48%;" title="London"></div>
+            <div class="map-point" style="top: 45%; left: 52%;" title="Dubai"></div>
+            <div class="map-point" style="top: 40%; left: 80%;" title="Tokyo"></div>
+            <div class="map-point" style="top: 75%; left: 88%;" title="Sydney"></div>
+        </div>
+        <p style="color: var(--obsidian-text-muted); margin-top: 3rem; font-size: 0.9rem;">Serving distinguished
+            collectors in <span style="color: var(--obsidian-text);">52 countries</span> through strategic physical
+            gallery partnerships.</p>
+    </section>
+
+
+    <!-- Footer (Synced with Home 1 structure) -->
+    <footer
+        style="padding: 6rem 0 2rem; border-top: 1px solid var(--obsidian-border); background: var(--obsidian-surface);">
+        <div class="container grid"
+            style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 4rem;">
+            <!-- Column 1: Brand -->
+            <div>
+                <a href="index.html" class="logo flex items-center gap-2" style="margin-bottom: 2rem;">
+                    <i class="fas fa-gavel fa-2x" style="color: var(--obsidian-accent);"></i>
+                    <span style="font-size: 1.5rem; font-weight: 800; color: var(--obsidian-text);">BidMaster</span>
+                </a>
+                <p style="color: var(--obsidian-text-muted); font-size: 0.9rem; line-height: 1.8;">
+                    The world's premier platform for high-value assets and extraordinary collectibles. Verified sellers,
+                    rare treasures, and a global community of serious collectors.
+                </p>
+                <div class="flex gap-4" style="margin-top: 2rem;">
+                    <a href="#"
+                        style="color: var(--obsidian-text-muted); font-size: 1.2rem; transition: var(--transition-gallery);"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#"
+                        style="color: var(--obsidian-text-muted); font-size: 1.2rem; transition: var(--transition-gallery);"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="#"
+                        style="color: var(--obsidian-text-muted); font-size: 1.2rem; transition: var(--transition-gallery);"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div>
+                <h4 style="font-family: 'Cinzel'; margin-bottom: 2rem; color: var(--obsidian-accent);">Quick Links</h4>
+                <ul style="list-style: none; color: var(--obsidian-text-muted); line-height: 2;">
+                    <li><a href="index.html"
+                            style="color: inherit; text-decoration: none; transition: var(--transition-gallery);">Home</a>
+                    </li>
+                    <li><a href="about.html"
+                            style="color: inherit; text-decoration: none; transition: var(--transition-gallery);">About
+                            Us</a></li>
+                    <li><a href="services.html"
+                            style="color: inherit; text-decoration: none; transition: var(--transition-gallery);">Live
+                            Auctions</a></li>
+                    <li><a href="contact.html"
+                            style="color: inherit; text-decoration: none; transition: var(--transition-gallery);">Contact
+                            Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Categories -->
+            <div>
+                <h4 style="font-family: 'Cinzel'; margin-bottom: 2rem; color: var(--obsidian-accent);">Exhibitions</h4>
+                <ul style="list-style: none; color: var(--obsidian-text-muted); line-height: 2;">
+                    <li><a href="#"
+                            style="color: inherit; text-decoration: none; transition: var(--transition-gallery);">Electronics</a>
+                    </li>
+                    <li><a href="#"
+                            style="color: inherit; text-decoration: none; transition: var(--transition-gallery);">Jewelry
+                            & Gems</a></li>
+                    <li><a href="#"
+                            style="color: inherit; text-decoration: none; transition: var(--transition-gallery);">Art &
+                            Antiques</a></li>
+                    <li><a href="#"
+                            style="color: inherit; text-decoration: none; transition: var(--transition-gallery);">Luxury
+                            Vehicles</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Support -->
+            <div>
+                <h4 style="font-family: 'Cinzel'; margin-bottom: 2rem; color: var(--obsidian-accent);">Concierge</h4>
+                <ul style="list-style: none; color: var(--obsidian-text-muted); line-height: 2;">
+                    <li><a href="#"
+                            style="color: inherit; text-decoration: none; transition: var(--transition-gallery);">Terms
+                            of Service</a></li>
+                    <li><a href="#"
+                            style="color: inherit; text-decoration: none; transition: var(--transition-gallery);">Privacy
+                            Policy</a></li>
+                    <li><a href="#"
+                            style="color: inherit; text-decoration: none; transition: var(--transition-gallery);">Help
+                            Center</a></li>
+                    <li><a href="#"
+                            style="color: inherit; text-decoration: none; transition: var(--transition-gallery);">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container"
+            style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <p style="color: var(--obsidian-text-muted); font-size: 0.8rem;">&copy; 2026 BIDMASTER ELITE. ALL RIGHTS
+                RESERVED.</p>
+            <div class="flex gap-4">
+                <img src="assets/images/visa.svg" alt="Visa"
+                    style="height: 18px; filter: grayscale(1) invert(1); opacity: 0.3;">
+                <img src="assets/images/mastercard.svg" alt="Mastercard"
+                    style="height: 18px; filter: grayscale(1) invert(1); opacity: 0.3;">
+                <img src="assets/images/paypal.svg" alt="PayPal"
+                    style="height: 18px; filter: grayscale(1) invert(1); opacity: 0.3;">
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="rtltoggle.js"></script>
+    <script>
+        // Page Loader
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => loader.style.display = 'none', 800);
+            }, 1000);
+        });
+
+        // Header Scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Reveal on Scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Horizontal Scroll Drag (Mobile Friendly)
+        const slider = document.querySelector('.h-scroll-gallery');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        if (slider) {
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.style.cursor = 'grabbing';
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.style.cursor = 'grab';
+            });
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.style.cursor = 'grab';
+            });
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        }
+    </script>
+</body>
+
+</html>

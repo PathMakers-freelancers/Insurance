@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BidMaster - About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        @media (max-width: 991px) {
+            .about-page h1 {
+                font-size: 2.8rem !important;
+            }
+
+            .about-page .grid {
+                grid-template-columns: 1fr !important;
+                gap: 3rem !important;
+            }
+
+            .about-hero-grid div:last-child {
+                order: -1;
+            }
+
+            .shield-graphic-wrap {
+                height: 480px !important;
+                margin-top: 3rem;
+            }
+
+            .shield-bg-box {
+                width: 280px !important;
+                height: 380px !important;
+            }
+
+            .shield-glass-card {
+                width: 280px !important;
+                height: 380px !important;
+                left: 30px !important;
+                top: 20px !important;
+                padding: 1.5rem !important;
+            }
+
+            .shield-glass-card i {
+                font-size: 3rem !important;
+            }
+
+            .shield-glass-card h3 {
+                font-size: 1.5rem !important;
+            }
+
+            .timeline-card {
+                height: 400px !important;
+                padding: 1rem !important;
+            }
+
+            .award-badge {
+                padding: 2rem 1rem !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="about-page">
+
+    <header class="header">
+        <div class="container flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="logo flex items-center gap-2">
+                <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
+                <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
+            </a>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="flex items-center gap-8">
+                    <li class="dropdown">
+                        <a href="index.html" class="nav-link dropdown-toggle">Home <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Home 1</a></li>
+                            <li><a href="index2.html">Home 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html" class="nav-link active">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-dashboard.html">User Dashboard</a></li>
+                            <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Mobile Auth (Inside menu) -->
+                <div class="auth-buttons show-mobile flex flex-column gap-4"
+                    style="padding: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05);">
+                    <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
+                    <a href="signup.html" class="btn btn-primary" style="width: 100%;">Sign Up</a>
+                </div>
+            </nav>
+
+            <div class="flex items-center gap-8">
+                <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="rtl-toggle" class="icon-btn" title="Switch Language Direction">
+                    <i class="fas fa-globe"></i>
+                </button>
+
+                <!-- Desktop Auth -->
+                <div class="auth-buttons flex gap-4 hide-mobile">
+                    <a href="login.html" class="btn btn-outline"
+                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Login</a>
+                    <a href="signup.html" class="btn btn-primary"
+                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Sign Up</a>
+                </div>
+
+                <!-- Hamburger -->
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container" style="padding-top: 6rem;">
+        <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+            <span class="text-gold" style="font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">Our
+                Legacy</span>
+            <h1 class="playfair" style="font-size: 4.5rem; line-height: 1.1; margin-top: 1rem;">Crafting the <br> <span
+                    class="text-gold">Auction Experience</span></h1>
+        </div>
+
+        <!-- Hero Content Block -->
+        <div class="grid reveal about-hero-grid"
+            style="grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center; margin-bottom: 8rem;">
+            <div>
+                <h2 class="playfair" style="font-size: 2.5rem; margin-bottom: 2rem;">Building the Future of <br>High-End
+                    Auctions</h2>
+                <p style="margin-bottom: 2rem; color: var(--text-muted); font-size: 1.2rem; line-height: 1.8;">Founded
+                    in 2024, BidMaster has rapidly grown to become the premier destination for luxury assets. We believe
+                    in absolute transparency, unwavering security, and the timeless thrill of the collection.</p>
+                <div class="glass-card" style="padding: 2.5rem; border-left: 4px solid var(--primary-color);">
+                    <p style="color: var(--text-main); font-size: 1.1rem; font-style: italic; line-height: 1.6;">"Our
+                        mission is to connect connoisseurs and creators in a seamless, engaging environment where every
+                        bid is a mark of heritage."</p>
+                </div>
+                <div style="margin-top: 3rem;">
+                    <a href="contact.html" class="btn btn-primary" style="padding: 1.2rem 3rem;">Join Our Elite
+                        Circle</a>
+                </div>
+            </div>
+
+            <div class="square-card hover-float shimmer"
+                style="border-radius: 40px; box-shadow: 0 30px 60px rgba(0,0,0,0.15);">
+                <img src="assets/images/about_team.jpg" alt="Auction Hall Spirit" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Pillars of Excellence (New Core Values Section) -->
+        <div class="reveal" style="margin-bottom: 8rem;">
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                <div class="glass-card premium-border hover-float"
+                    style="padding: 3rem; text-align: left; border-top: 4px solid var(--primary-color);">
+                    <div style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1.5rem;"><i
+                            class="fas fa-handshake"></i></div>
+                    <h4 class="playfair" style="font-size: 1.6rem; margin-bottom: 1rem;">Unwavering Integrity</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">Integrity is our
+                        foundational currency. From transparent appraisals to secure transactions, we never compromise
+                        on the truth of the asset.</p>
+                </div>
+                <div class="glass-card premium-border hover-float"
+                    style="padding: 3rem; text-align: left; border-top: 4px solid #d4af37;">
+                    <div style="font-size: 2.5rem; color: #d4af37; margin-bottom: 1.5rem;"><i
+                            class="fas fa-lightbulb"></i></div>
+                    <h4 class="playfair" style="font-size: 1.6rem; margin-bottom: 1rem;">Relentless Innovation</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">We leverage cutting-edge
+                        tech—from 3D scanning to AI valuation—to bring the local auction house into the global digital
+                        future.</p>
+                </div>
+                <div class="glass-card premium-border hover-float"
+                    style="padding: 3rem; text-align: left; border-top: 4px solid var(--secondary-color);">
+                    <div style="font-size: 2.5rem; color: var(--secondary-color); margin-bottom: 1.5rem;"><i
+                            class="fas fa-gem"></i></div>
+                    <h4 class="playfair" style="font-size: 1.6rem; margin-bottom: 1rem;">Pure Connoisseurship</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">Our team lives and
+                        breathes the history, craft, and soul of the objects we represent. We are collectors first,
+                        businessmen second.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="reveal section-tight" style="margin-bottom: 8rem;">
+            <div class="grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 2rem;">
+                <div class="glass-card hover-float premium-border" style="padding: 3rem; text-align: center;">
+                    <div
+                        style="width: 80px; height: 80px; background: rgba(99, 102, 241, 0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-crown fa-2x" style="color: var(--primary-color);"></i>
+                    </div>
+                    <h3 class="playfair" style="font-size: 3rem; margin-bottom: 0.5rem;">12K+</h3>
+                    <p
+                        style="color: var(--text-muted); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase;">
+                    </p>
+                </div>
+                <div class="glass-card hover-float glow-on-hover premium-border"
+                    style="padding: 3rem; text-align: center;">
+                    <div
+                        style="width: 80px; height: 80px; background: rgba(212, 175, 55, 0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-gavel fa-2x" style="color: #d4af37;"></i>
+                    </div>
+                    <h3 class="playfair text-gold" style="font-size: 3rem; margin-bottom: 0.5rem;">$85M</h3>
+                    <p
+                        style="color: var(--text-muted); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase;">
+                        Volume Traded</p>
+                </div>
+                <div class="glass-card hover-float premium-border" style="padding: 3rem; text-align: center;">
+                    <div
+                        style="width: 80px; height: 80px; background: rgba(16, 185, 129, 0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-shield-halved fa-2x" style="color: #10b981;"></i>
+                    </div>
+                    <h3 class="playfair" style="font-size: 3rem; margin-bottom: 0.5rem;">100%</h3>
+                    <p
+                        style="color: var(--text-muted); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase;">
+                        Asset Verified</p>
+                </div>
+                <div class="glass-card hover-float premium-border" style="padding: 3rem; text-align: center;">
+                    <div
+                        style="width: 80px; height: 80px; background: rgba(236, 72, 153, 0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-globe-americas fa-2x" style="color: var(--secondary-color);"></i>
+                    </div>
+                    <h3 class="playfair" style="font-size: 3rem; margin-bottom: 0.5rem;">65+</h3>
+                    <p
+                        style="color: var(--text-muted); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase;">
+                        Nations Served</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Quality Shield Section -->
+        <div class="reveal" style="margin-bottom: 10rem;">
+            <div class="grid quality-shield-grid"
+                style="grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;">
+                <div>
+                    <span class="text-gold"
+                        style="font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">Uncompromising
+                        Integrity</span>
+                    <h2 class="playfair" style="font-size: 3.5rem; margin: 1rem 0 2rem;">The <span
+                            class="text-gold">Quality Shield</span></h2>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 3rem;">Every item on BidMaster
+                        undergoes our rigorous 7-point verification protocol, ensuring its provenance, condition, and
+                        authenticity.</p>
+
+                    <div class="shield-step">
+                        <div class="shield-icon"><i class="fas fa-search"></i></div>
+                        <h4 style="font-weight: 700;">1. Physical Inspection</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Expert tactile & visual examination
+                            under controlled lighting.</p>
+                    </div>
+                    <div class="shield-step">
+                        <div class="shield-icon"><i class="fas fa-history"></i></div>
+                        <h4 style="font-weight: 700;">2. Provenance Validation</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Audit of ownership history and
+                            exhibition records.</p>
+                    </div>
+                    <div class="shield-step">
+                        <div class="shield-icon"><i class="fas fa-microscope"></i></div>
+                        <h4 style="font-weight: 700;">3. Forensic Analysis</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Material testing and carbon dating where
+                            applicable.</p>
+                    </div>
+                </div>
+                <div class="shield-graphic-wrap"
+                    style="position: relative; display: flex; justify-content: center; height: 450px;">
+                    <div class="shield-bg-box"
+                        style="width: 350px; height: 450px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 40px; transform: rotate(-5deg); z-index: 1;">
+                    </div>
+                    <div class="glass-card premium-border shield-glass-card"
+                        style="position: absolute; top: 30px; left: 60px; width: 350px; height: 450px; transform: rotate(5deg); z-index: 2; padding: 3rem; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1.5rem;">
+                        <i class="fas fa-shield-alt fa-5x"
+                            style="color: var(--primary-color); animation: shieldPulse 2s infinite;"></i>
+                        <h3 class="playfair" style="font-size: 2rem; text-align: center;">Verified <br> <span
+                                class="text-gold">by Experts</span></h3>
+                        <p style="font-size: 0.85rem; text-align: center; color: var(--text-muted);">Trusted by over 40+
+                            national museums and private estates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global Heritage Network (New Locations Section) -->
+        <div class="reveal" style="margin-bottom: 10rem;">
+            <div
+                style="background: rgba(20, 20, 20, 0.4); border-radius: 40px; padding: 6rem 4rem; border: 1px solid rgba(255,255,255,0.05);">
+                <div class="grid" style="grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: center;">
+                    <div>
+                        <span class="text-gold"
+                            style="font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">Our
+                            Presence</span>
+                        <h2 class="playfair" style="font-size: 3.5rem; margin: 1rem 0 2rem;">Global <br> <span
+                                class="text-gold">Heritage</span> Network</h2>
+                        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 3rem;">
+                            While our platform is digital, our roots are physical. Visit our flagship private galleries
+                            in the world's most iconic districts.</p>
+                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 2rem;">
+                            <li style="display: flex; gap: 1.5rem; align-items: center;">
+                                <div
+                                    style="width: 50px; height: 50px; border-radius: 50%; background: rgba(212, 175, 55, 0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fas fa-map-marker-alt" style="color: #d4af37;"></i>
+                                </div>
+                                <div>
+                                    <h5 style="font-weight: 800; font-size: 1.1rem;">London, Mayfair</h5>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">The heartbeat of Old World
+                                        refinement.</p>
+                                </div>
+                            </li>
+                            <li style="display: flex; gap: 1.5rem; align-items: center;">
+                                <div
+                                    style="width: 50px; height: 50px; border-radius: 50%; background: rgba(99, 102, 241, 0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fas fa-map-marker-alt" style="color: var(--primary-color);"></i>
+                                </div>
+                                <div>
+                                    <h5 style="font-weight: 800; font-size: 1.1rem;">New York, UES</h5>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">The center of global auction
+                                        momentum.</p>
+                                </div>
+                            </li>
+                            <li style="display: flex; gap: 1.5rem; align-items: center;">
+                                <div
+                                    style="width: 50px; height: 50px; border-radius: 50%; background: rgba(236, 72, 153, 0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fas fa-map-marker-alt" style="color: var(--secondary-color);"></i>
+                                </div>
+                                <div>
+                                    <h5 style="font-weight: 800; font-size: 1.1rem;">Hong Kong, Central</h5>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">The gateway to the emerging
+                                        East.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="position: relative;">
+                        <img src="assets/images/about_office.jpg" alt="London Gallery"
+                            style="width: 100%; height: 550px; object-fit: cover; border-radius: 30px; filter: grayscale(1) brightness(0.7);">
+                        <div class="glass-card"
+                            style="position: absolute; bottom: -20px; right: -20px; padding: 2rem; border: 1px solid rgba(212, 175, 55, 0.3); backdrop-filter: blur(20px);">
+                            <h4 class="playfair" style="font-size: 1.5rem;">The Mayfair Gallery</h4>
+                            <p style="font-size: 0.8rem; color: #d4af37; font-weight: 700;">PRIVATE VIEWINGS DAILY</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Section (Line Graph) -->
+        <div class="reveal" style="margin-bottom: 10rem;">
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <h2 class="playfair" style="font-size: 3rem;">Global <span class="text-gold">Progression Insights</span>
+                </h2>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Tracking our journey through key platform
+                    metrics.</p>
+            </div>
+            <div class="glass-card premium-border timeline-card" style="padding: 3rem; height: 500px;">
+                <canvas id="progressionChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Visionaries Section -->
+        <div class="reveal" style="margin-bottom: 8rem;">
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <h2 class="playfair" style="font-size: 3.5rem;">Meet the <span class="text-gold">Visionaries</span></h2>
+            </div>
+            <div class="grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 3rem;">
+                <!-- Leader 1 -->
+                <div class="glass-card hover-float premium-border" style="text-align: center; padding: 4rem 2rem;">
+                    <div
+                        style="width: 150px; height: 150px; margin: 0 auto 2rem; border-radius: 50%; overflow: hidden; border: 4px solid var(--primary-color); padding: 5px;">
+                        <img src="assets/images/avatar_ceo.jpg"
+                            style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"
+                            alt="Julian Sterling, CEO" loading="lazy">
+                    </div>
+                    <h3 class="playfair" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Julian Sterling</h3>
+                    <span
+                        style="color: var(--primary-color); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">CEO
+                        & Founder</span>
+                    <p style="color: var(--text-muted); margin-top: 1.5rem; font-size: 0.95rem;">A former hedge fund
+                        partner with a lifelong passion for horology and classical sculpture.</p>
+                </div>
+                <!-- Leader 2 -->
+                <div class="glass-card hover-float glow-on-hover premium-border"
+                    style="text-align: center; padding: 4rem 2rem;">
+                    <div
+                        style="width: 150px; height: 150px; margin: 0 auto 2rem; border-radius: 50%; overflow: hidden; border: 4px solid #d4af37; padding: 5px;">
+                        <img src="assets/images/avatar_product.jpg"
+                            style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"
+                            alt="Elena Vance, Head of Curation" loading="lazy">
+                    </div>
+                    <h3 class="playfair" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Elena Vance</h3>
+                    <span class="text-gold"
+                        style="font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">Head
+                        of Curation</span>
+                    <p style="color: var(--text-muted); margin-top: 1.5rem; font-size: 0.95rem;">Renowned art historian
+                        and previous consultant for leading global auction houses.</p>
+                </div>
+                <!-- Leader 3 -->
+                <div class="glass-card hover-float premium-border" style="text-align: center; padding: 4rem 2rem;">
+                    <div
+                        style="width: 150px; height: 150px; margin: 0 auto 2rem; border-radius: 50%; overflow: hidden; border: 4px solid var(--secondary-color); padding: 5px;">
+                        <img src="assets/images/avatar_tech.jpg"
+                            style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"
+                            alt="Marcus Thorne, Chief Architect" loading="lazy">
+                    </div>
+                    <h3 class="playfair" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Marcus Thorne</h3>
+                    <span
+                        style="color: var(--secondary-color); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">Chief
+                        Architect</span>
+                    <p style="color: var(--text-muted); margin-top: 1.5rem; font-size: 0.95rem;">Cybersecurity expert
+                        dedicated to building the world's most secure transactional engine.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Heritage Room Section -->
+        <div class="reveal" style="margin-bottom: 10rem;">
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <h2 class="playfair" style="font-size: 3rem;">The <span class="text-gold">Heritage Room</span></h2>
+                <p style="color: var(--text-muted); margin-top: 1rem;">A glimpse into the most iconic sales in our
+                    gallery's history.</p>
+            </div>
+            <div class="grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 3rem;">
+                <!-- Heritage Item 1 -->
+                <div class="glass-card premium-border" style="padding: 0; overflow: hidden;">
+                    <div style="height: 250px; overflow: hidden;">
+                        <img src="assets/images/racer.jfif" class="heritage-img"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 2rem;">
+                        <span
+                            style="color: var(--primary-color); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Sold
+                            for $4.2M</span>
+                        <h3 class="playfair" style="font-size: 1.5rem; margin: 0.5rem 0;">1954 Classic Racer</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Restored by manual craftspeople, this
+                            vehicle remains a pinnacle of mid-century engineering.</p>
+                    </div>
+                </div>
+                <!-- Heritage Item 2 -->
+                <div class="glass-card premium-border" style="padding: 0; overflow: hidden;">
+                    <div style="height: 250px; overflow: hidden;">
+                        <img src="assets/images/diamond.jfif" class="heritage-img"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 2rem;">
+                        <span
+                            style="color: var(--secondary-color); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Sold
+                            for $1.8M</span>
+                        <h3 class="playfair" style="font-size: 1.5rem; margin: 0.5rem 0;">The Eternal Diamond</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">A 42-carat masterpiece of natural
+                            geometry, auctioned under the highest security measures.</p>
+                    </div>
+                </div>
+                <!-- Heritage Item 3 -->
+                <div class="glass-card premium-border" style="padding: 0; overflow: hidden;">
+                    <div style="height: 250px; overflow: hidden;">
+                        <img src="assets/images/sketch.jfif" class="heritage-img"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 2rem;">
+                        <span class="text-gold"
+                            style="font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Sold for
+                            $950K</span>
+                        <h3 class="playfair" style="font-size: 1.5rem; margin: 0.5rem 0;">Renaissance Sketchbook</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Original charcoal works from a forgotten
+                            master, rediscovered through BidMaster appraisal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- In the Spotlight (New Press Section) -->
+        <div class="reveal" style="margin-bottom: 10rem;">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <span class="text-gold" style="font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">Press
+                    & Media</span>
+            </div>
+            <div class="flex flex-wrap justify-between items-center"
+                style="gap: 4rem; opacity: 0.4; filter: grayscale(1); padding: 0 4rem;">
+                <h3 class="playfair" style="font-size: 1.5rem;">Financial Times</h3>
+                <h3 class="playfair" style="font-size: 1.5rem;">Vogue Business</h3>
+                <h3 class="playfair" style="font-size: 1.5rem;">NY Times</h3>
+                <h3 class="playfair" style="font-size: 1.5rem;">Architectural Digest</h3>
+                <h3 class="playfair" style="font-size: 1.5rem;">Forbes</h3>
+            </div>
+        </div>
+
+        <!-- Global Recognition Section -->
+        <div class="reveal" style="margin-bottom: 8rem;">
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <h2 class="playfair" style="font-size: 3rem;">Global <span class="text-gold">Recognition</span></h2>
+            </div>
+            <div class="grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 2rem;">
+                <div class="award-badge"
+                    style="padding: 3rem 2rem; background: rgba(255,255,255,0.03); border-radius: 20px; transition: var(--transition-main); border: 1px solid rgba(255,255,255,0.05); text-align: center;">
+                    <i class="fas fa-trophy fa-3x" style="color: var(--primary-color); margin-bottom: 1.5rem;"></i>
+                    <h4 style="font-weight: 700;">UX Design 2025</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Platform Excellence Award</p>
+                </div>
+                <div class="award-badge"
+                    style="padding: 3rem 2rem; background: rgba(255,255,255,0.03); border-radius: 20px; transition: var(--transition-main); border: 1px solid rgba(255,255,255,0.05); text-align: center;">
+                    <i class="fas fa-award fa-3x" style="color: var(--secondary-color); margin-bottom: 1.5rem;"></i>
+                    <h4 style="font-weight: 700;">Top Sec Tech</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Cyber-Defense Quarterly</p>
+                </div>
+                <div class="award-badge"
+                    style="padding: 3rem 2rem; background: rgba(255,255,255,0.03); border-radius: 20px; transition: var(--transition-main); border: 1px solid rgba(255,255,255,0.05); text-align: center;">
+                    <i class="fas fa-medal fa-3x" style="color: #d4af37; margin-bottom: 1.5rem;"></i>
+                    <h4 style="font-weight: 700;">Museum Choice</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Heritage Preservation</p>
+                </div>
+                <div class="award-badge"
+                    style="padding: 3rem 2rem; background: rgba(255,255,255,0.03); border-radius: 20px; transition: var(--transition-main); border: 1px solid rgba(255,255,255,0.05); text-align: center;">
+                    <i class="fas fa-star fa-3x" style="color: #f59e0b; margin-bottom: 1.5rem;"></i>
+                    <h4 style="font-weight: 700;">Scale of Year</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">FinTech Innovations</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The BidMaster Manifesto (New) -->
+        <div class="reveal"
+            style="margin-bottom: 10rem; padding: 8rem 0; border-top: 1px solid rgba(212, 175, 55, 0.2); border-bottom: 1px solid rgba(212, 175, 55, 0.2);">
+            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <h2 class="playfair" style="font-size: 4rem; line-height: 1.1; margin-bottom: 3rem;">We don't just sell
+                    objects. We curate <span class="text-gold">human legacy</span>.</h2>
+                <p style="color: var(--text-muted); font-size: 1.4rem; line-height: 2; margin-bottom: 4rem;">In a world
+                    of fleeting digital noise, we stand for the eternal. For the hand-carved, the precision-engineered,
+                    and the master-painted. BidMaster is more than an auction house—it is a sanctuary for the
+                    exceptional.</p>
+                <div class="flex justify-center gap-6">
+                    <div style="text-align: left;">
+                        <h4 style="font-weight: 800; font-size: 1.2rem; margin-bottom: 0.5rem; color: #d4af37;">Julian
+                            Sterling</h4>
+                        <p style="font-style: italic; color: var(--text-muted);">CEO & Visionary</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: #0f172a; color: white; padding: 5rem 0 2rem; margin-top: 4rem;">
+        <div class="container">
+            <div class="grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 4rem;">
+                <!-- Column 1: Brand -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo flex items-center gap-2"
+                        style="margin-bottom: 1.5rem; color: white;">
+                        <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
+                        <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
+                    </a>
+                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.7;">The world's premier platform for
+                        extraordinary auctions. Verified sellers, rare treasures, and a global community of serious
+                        collectors.</p>
+                    <div class="flex gap-4" style="margin-top: 2rem;">
+                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Quick Links
+                    </h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="index.html"
+                                style="color: #94a3b8; transition: var(--transition);">Home</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="about.html"
+                                style="color: #94a3b8; transition: var(--transition);">About Us</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="services.html"
+                                style="color: #94a3b8; transition: var(--transition);">Live Auctions</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="contact.html"
+                                style="color: #94a3b8; transition: var(--transition);">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Categories -->
+                <div class="footer-col">
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Categories
+                    </h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Electronics</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Jewelry & Gems</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Art & Antiques</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Luxury Vehicles</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Support -->
+                <div class="footer-col">
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Support</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="#" class="modal-trigger" data-modal="terms"
+                                style="color: #94a3b8; transition: var(--transition);">Terms of Service</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#" class="modal-trigger" data-modal="privacy"
+                                style="color: #94a3b8; transition: var(--transition);">Privacy Policy</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Help Center</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 BidMaster. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <img src="assets/images/visa.svg" alt="Visa" style="height: 20px; opacity: 0.5;">
+                    <img src="assets/images/mastercard.svg" alt="Mastercard" style="height: 20px; opacity: 0.5;">
+                    <img src="assets/images/paypal.svg" alt="PayPal" style="height: 20px; opacity: 0.5;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="modal-terms" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <h2 style="margin-bottom: 1rem;">Terms of Service</h2>
+            <p style="line-height: 1.6; color: var(--text-muted);">
+                Welcome to BidMaster. By accessing our website, you agree to be bound by these Terms of Service.
+                <br><br>
+                <strong>1. Acceptance of Terms</strong><br>
+                By using our services, you agree to these terms. If you do not agree, please do not use our services.
+                <br><br>
+                <strong>2. User Conduct</strong><br>
+                You agree to use the site only for lawful purposes. You are prohibited from posting any unlawful or
+                objectionable content.
+                <br><br>
+                <strong>3. Auctions</strong><br>
+                All bids are binding. ensuring you have the funds before placing a bid is your responsibility.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal-privacy" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <h2 style="margin-bottom: 1rem;">Privacy Policy</h2>
+            <p style="line-height: 1.6; color: var(--text-muted);">
+                Your privacy is important to us. This policy explains how we handle your data.
+                <br><br>
+                <strong>1. Data Collection</strong><br>
+                We collect information you provide directly to us, such as when you create an account or place a bid.
+                <br><br>
+                <strong>2. Data Usage</strong><br>
+                We use your data to provide and improve our services, process transactions, and communicate with you.
+                <br><br>
+                <strong>3. Security</strong><br>
+                We implement reasonable security measures to protect your personal information.
+            </p>
+        </div>
+    </div>
+
+    <script src="rtltoggle.js"></script>
+    <script src="logout.js"></script>
+    <script src="device-simulator.js"></script>
+    <script src="main.js"></script>
+    <script>
+        // Chart.js Configuration for Progression Line Graph
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctx = document.getElementById('progressionChart');
+            if (ctx) {
+                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                const textColor = isDark ? '#9ca3af' : '#6b7280';
+                const gridColor = isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)';
+
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                        datasets: [
+                            {
+                                label: 'User Growth',
+                                data: [1200, 2500, 3800, 5100, 6400, 7800, 8500, 9200, 10500, 11200, 11800, 12500],
+                                borderColor: '#6366f1',
+                                backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                                fill: true,
+                                tension: 0.4,
+                                pointRadius: 5,
+                                pointHoverRadius: 8
+                            },
+                            {
+                                label: 'Auctions Created',
+                                data: [500, 1200, 1800, 2300, 2900, 3500, 4100, 4800, 5400, 6100, 6800, 7500],
+                                borderColor: '#ec4899',
+                                backgroundColor: 'rgba(236, 72, 153, 0.1)',
+                                fill: true,
+                                tension: 0.4,
+                                borderDash: [5, 5],
+                                pointRadius: 5,
+                                pointHoverRadius: 8
+                            },
+                            {
+                                label: 'Successful Bids',
+                                data: [800, 1900, 2700, 3400, 4200, 5100, 5900, 6700, 7600, 8500, 9300, 10200],
+                                borderColor: '#d4af37',
+                                backgroundColor: 'rgba(212, 175, 55, 0.1)',
+                                fill: true,
+                                tension: 0.4,
+                                pointRadius: 5,
+                                pointHoverRadius: 8
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                                labels: {
+                                    color: textColor,
+                                    font: { family: 'Outfit', size: 14 }
+                                }
+                            },
+                            tooltip: {
+                                mode: 'index',
+                                intersect: false,
+                                backgroundColor: isDark ? '#1e293b' : '#ffffff',
+                                titleColor: isDark ? '#f3f4f6' : '#1f2937',
+                                bodyColor: isDark ? '#9ca3af' : '#6b7280',
+                                borderWeight: 1,
+                                borderColor: gridColor
+                            }
+                        },
+                        scales: {
+                            y: {
+                                grid: { color: gridColor },
+                                ticks: { color: textColor, font: { family: 'Outfit' } }
+                            },
+                            x: {
+                                grid: { display: false },
+                                ticks: { color: textColor, font: { family: 'Outfit' } }
+                            }
+                        },
+                        animation: {
+                            duration: 2000,
+                            easing: 'easeOutQuart'
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
