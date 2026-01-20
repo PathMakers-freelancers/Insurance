@@ -9,14 +9,22 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         /* Enquiry Form Premium Styling */
+        .contact-form-section .form-group {
+            margin-bottom: 0;
+        }
+
         .contact-form-section .form-label {
             color: #d4af37 !important;
             font-size: 0.85rem;
             letter-spacing: 1px;
             text-transform: uppercase;
             font-weight: 700;
+            display: block;
+            margin-bottom: 0.75rem;
         }
 
         .contact-form-section .form-control {
@@ -25,11 +33,37 @@
             color: var(--text-main) !important;
             padding: 1.2rem !important;
             transition: all 0.3s ease;
+            width: 100%;
+            border-radius: 0.5rem;
         }
 
         .contact-form-section .form-control:focus {
             border-color: #d4af37 !important;
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.2) !important;
+            outline: none;
+        }
+
+        /* Chart Container Styling */
+        .chart-separator {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
+            margin: 3rem 0 2rem 0;
+        }
+
+        .contact-chart-container {
+            position: relative;
+            height: 300px;
+            margin-top: 2rem;
+        }
+
+        .chart-title {
+            color: #d4af37;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
 
         /* Responsive Utilities for Contact Page */
@@ -211,8 +245,8 @@
                     </li>
                 </ul>
 
-                <div class="auth-buttons show-mobile flex flex-column gap-4"
-                    style="padding: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05);">
+                <div class="auth-buttons show-mobile flex flex-column"
+                    style="padding: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05); gap: 2rem;">
                     <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
                     <a href="signup.html" class="btn btn-primary" style="width: 100%;">Sign Up</a>
                 </div>
@@ -226,7 +260,7 @@
                     <i class="fas fa-globe"></i>
                 </button>
 
-                <div class="auth-buttons flex gap-4 hide-mobile">
+                <div class="auth-buttons flex hide-mobile" style="gap: 4rem;">
                     <a href="login.html" class="btn btn-outline"
                         style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Login</a>
                     <a href="signup.html" class="btn btn-primary"
@@ -251,7 +285,7 @@
             </h1>
         </div>
 
-        <div class="grid mobile-stack" style="grid-template-columns: 1fr 1fr; gap: 5rem; align-items: flex-start;">
+        <div class="grid mobile-stack" style="grid-template-columns: 1fr 1fr; gap: 5rem;">
             <!-- Left Side: Information -->
             <div class="reveal">
                 <div class="glass-card hover-float responsive-card"
@@ -353,7 +387,7 @@
                 <h2 class="playfair" style="color: white; margin-bottom: 2rem;">Submit an Inquiry</h2>
                 <form>
                     <div class="grid mobile-stack"
-                        style="grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.5rem;">
+                        style="grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
                         <div class="form-group">
                             <label class="form-label">First Name</label>
                             <input type="text" class="form-control" placeholder="Lord / Lady">
@@ -363,11 +397,11 @@
                             <input type="text" class="form-control" placeholder="Sterling">
                         </div>
                     </div>
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <div class="form-group" style="margin-bottom: 2rem;">
                         <label class="form-label">Contact Email</label>
                         <input type="email" class="form-control" placeholder="example@private.com">
                     </div>
-                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <div class="form-group" style="margin-bottom: 2rem;">
                         <label class="form-label">Nature of Interest</label>
                         <select class="form-control">
                             <option>Private Collection Advisory</option>
@@ -376,7 +410,7 @@
                             <option>Asset Authentication</option>
                         </select>
                     </div>
-                    <div class="form-group" style="margin-bottom: 2.5rem;">
+                    <div class="form-group" style="margin-bottom: 2rem;">
                         <label class="form-label">Message Content</label>
                         <textarea class="form-control" rows="5"
                             placeholder="Please describe your requirements..."></textarea>
@@ -384,6 +418,17 @@
                     <button type="button" class="btn btn-primary"
                         style="width: 100%; padding: 1.3rem; background: #d4af37; border: none; color: #000; font-weight: 800; font-size: 1rem; letter-spacing: 1px;">Dispatch
                         Inquiry</button>
+
+                    <!-- Chart Separator -->
+                    <div class="chart-separator"></div>
+
+                    <!-- Response Time Analytics Chart -->
+                    <div>
+                        <h3 class="chart-title">Average Response Time by Inquiry Type</h3>
+                        <div class="contact-chart-container">
+                            <canvas id="responseTimeChart"></canvas>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -497,36 +542,81 @@
         <div class="container">
             <div class="grid mobile-stack"
                 style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+                <!-- Column 1: Brand -->
                 <div class="footer-col">
                     <a href="index.html" class="logo flex items-center gap-2"
                         style="margin-bottom: 1.5rem; color: white;">
                         <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
                         <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
                     </a>
-                    <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">The world's premier platform for
-                        extraordinary auctions. Verified sellers, rare treasures, and global collectors.</p>
+                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.7;">The world's premier platform for
+                        extraordinary auctions. Verified sellers, rare treasures, and a global community of serious
+                        collectors.</p>
+                    <div class="flex gap-4" style="margin-top: 2rem;">
+                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
 
+                <!-- Column 2: Quick Links -->
                 <div class="footer-col">
-                    <h4 style="font-size: 1.1rem; margin-bottom: 1.5rem; color: white;">Quick Links</h4>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 0.7rem;"><a href="index.html" style="color: #94a3b8;">Home</a></li>
-                        <li style="margin-bottom: 0.7rem;"><a href="about.html" style="color: #94a3b8;">About Us</a>
-                        </li>
-                        <li style="margin-bottom: 0.7rem;"><a href="services.html" style="color: #94a3b8;">Services</a>
-                        </li>
-                        <li style="margin-bottom: 0.7rem;"><a href="contact.html" style="color: #94a3b8;">Contact</a>
-                        </li>
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Quick Links
+                    </h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="index.html"
+                                style="color: #94a3b8; transition: var(--transition);">Home</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="about.html"
+                                style="color: #94a3b8; transition: var(--transition);">About Us</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="services.html"
+                                style="color: #94a3b8; transition: var(--transition);">Live Auctions</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="contact.html"
+                                style="color: #94a3b8; transition: var(--transition);">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Categories -->
+                <div class="footer-col">
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Categories
+                    </h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Electronics</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Jewelry & Gems</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Art & Antiques</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Luxury Vehicles</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Support -->
+                <div class="footer-col">
+                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Support</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="#" class="modal-trigger" data-modal="terms"
+                                style="color: #94a3b8; transition: var(--transition);">Terms of Service</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#" class="modal-trigger" data-modal="privacy"
+                                style="color: #94a3b8; transition: var(--transition);">Privacy Policy</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">Help Center</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: #94a3b8; transition: var(--transition);">FAQ</a></li>
                     </ul>
                 </div>
             </div>
 
             <div
                 style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <p style="color: #64748b; font-size: 0.85rem;">&copy; 2026 BidMaster. All rights reserved.</p>
+                <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 BidMaster. All rights reserved.</p>
                 <div class="flex gap-4">
-                    <img src="assets/images/visa.svg" alt="Visa" style="height: 15px; opacity: 0.4;">
-                    <img src="assets/images/mastercard.svg" alt="Mastercard" style="height: 15px; opacity: 0.4;">
+                    <img src="assets/images/visa.svg" alt="Visa" style="height: 20px; opacity: 0.5;">
+                    <img src="assets/images/mastercard.svg" alt="Mastercard" style="height: 20px; opacity: 0.5;">
+                    <img src="assets/images/paypal.svg" alt="PayPal" style="height: 20px; opacity: 0.5;">
                 </div>
             </div>
         </div>
@@ -536,6 +626,104 @@
     <script src="logout.js"></script>
     <script src="device-simulator.js"></script>
     <script src="main.js"></script>
+
+    <script>
+        // Initialize Response Time Chart
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx = document.getElementById('responseTimeChart');
+            if (ctx) {
+                const responseTimeChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Private Collection Advisory', 'High-Value Consignment', 'Institutional Partnership', 'Asset Authentication'],
+                        datasets: [{
+                            label: 'Response Time (hours)',
+                            data: [2, 4, 6, 3],
+                            backgroundColor: [
+                                'rgba(212, 175, 55, 0.8)',
+                                'rgba(99, 102, 241, 0.8)',
+                                'rgba(236, 72, 153, 0.8)',
+                                'rgba(16, 185, 129, 0.8)'
+                            ],
+                            borderColor: [
+                                'rgba(212, 175, 55, 1)',
+                                'rgba(99, 102, 241, 1)',
+                                'rgba(236, 72, 153, 1)',
+                                'rgba(16, 185, 129, 1)'
+                            ],
+                            borderWidth: 2,
+                            borderRadius: 8
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                                titleColor: '#d4af37',
+                                bodyColor: '#ffffff',
+                                borderColor: '#d4af37',
+                                borderWidth: 1,
+                                padding: 12,
+                                displayColors: false,
+                                callbacks: {
+                                    label: function (context) {
+                                        return 'Avg Response: ' + context.parsed.y + ' hours';
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    color: '#d4af37',
+                                    font: {
+                                        size: 11,
+                                        weight: '600'
+                                    },
+                                    callback: function (value) {
+                                        return value + 'h';
+                                    }
+                                },
+                                grid: {
+                                    color: 'rgba(212, 175, 55, 0.1)',
+                                    drawBorder: false
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Hours',
+                                    color: '#d4af37',
+                                    font: {
+                                        size: 12,
+                                        weight: '700'
+                                    }
+                                }
+                            },
+                            x: {
+                                ticks: {
+                                    color: 'rgba(255, 255, 255, 0.7)',
+                                    font: {
+                                        size: 10,
+                                        weight: '500'
+                                    },
+                                    maxRotation: 45,
+                                    minRotation: 45
+                                },
+                                grid: {
+                                    display: false
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

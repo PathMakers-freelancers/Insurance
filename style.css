@@ -349,6 +349,9 @@ img {
 
 .mobile-menu-btn {
     display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
 }
 
 .bar {
@@ -356,11 +359,26 @@ img {
     height: 3px;
     background-color: var(--text-main);
     display: block;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    transform-origin: center;
 }
 
 [data-theme="dark"] .bar {
     background-color: white;
+}
+
+/* Transform hamburger to X when active */
+.mobile-menu-btn.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.mobile-menu-btn.active .bar:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.mobile-menu-btn.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* Mobile Fit Adjustments */
@@ -924,6 +942,19 @@ img {
 [dir="rtl"] .nav-menu {
     left: auto;
     right: 0;
+}
+
+/* RTL Mobile Menu Fix */
+@media (max-width: 991px) {
+    [dir="rtl"] .nav-menu {
+        left: auto;
+        right: 0;
+        transform: translateX(150%);
+    }
+
+    [dir="rtl"] .nav-menu.active {
+        transform: translateX(0);
+    }
 }
 
 /* Dropdown Menu Enhancements */

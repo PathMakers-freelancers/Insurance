@@ -42,15 +42,24 @@
             background: var(--bg-surface);
             border-right: 1px solid rgba(0, 0, 0, 0.05);
             padding: 2rem;
-            position: sticky;
+            /* Force Fixed Position */
+            position: fixed;
             top: 70px;
+            bottom: 0;
+            left: 0;
             height: calc(100vh - 70px);
             overflow-y: auto;
+            scrollbar-width: none;
             z-index: 40;
             transition: var(--transition);
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
+        }
+
+        /* Hide scrollbar for Chrome/Safari/Opera */
+        .sidebar::-webkit-scrollbar {
+            display: none;
         }
 
         @media (max-width: 991px) {
@@ -77,6 +86,19 @@
             }
         }
 
+        /* RTL Support for Sidebar */
+        @media (max-width: 991px) {
+            [dir="rtl"] .sidebar {
+                left: auto;
+                right: -300px;
+            }
+
+            [dir="rtl"] .sidebar.active {
+                left: auto;
+                right: 0;
+            }
+        }
+
         /* Adjust header to not interfere if using sticky sidebar */
         /* If header is static, sidebar sticks to top of viewport. Perfect. */
 
@@ -90,7 +112,15 @@
             width: 100%;
             overflow-x: hidden;
             min-height: 80vh;
-            /* Ensure footer gets pushed down */
+            /* Add margin to account for fixed sidebar */
+            margin-left: 280px;
+        }
+
+        @media (max-width: 991px) {
+            .main-content {
+                /* Reset margin on mobile */
+                margin-left: 0;
+            }
         }
 
         .sidebar-menu {
@@ -464,7 +494,7 @@
                 </button>
 
                 <!-- Desktop Auth -->
-                <div class="auth-buttons flex gap-4 hide-mobile">
+                <div class="auth-buttons flex hide-mobile" style="gap: 4rem;">
                     <a href="login.html" class="btn btn-outline"
                         style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Login</a>
                     <a href="signup.html" class="btn btn-primary"
@@ -628,11 +658,60 @@
                         </div>
                     </div>
                 </div>
+                <!-- NEW OVERVIEW CHARTS -->
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Bid Distribution by Category</h3>
+                        <div class="chart-container">
+                            <canvas id="bidDistributionChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Daily Activity</h3>
+                        <div class="chart-container">
+                            <canvas id="dailyEngagementChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Session Duration Trends</h3>
+                        <div class="chart-container">
+                            <canvas id="sessionMetricsChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Device Platform Usage</h3>
+                        <div class="chart-container">
+                            <canvas id="platformUsageChart"></canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- BIDS SECTION -->
             <div id="bids" class="tab-content">
                 <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">My Activations</h1>
+
+                <!-- NEW BIDS CHARTS -->
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Active Bids Status</h3>
+                        <div class="chart-container">
+                            <canvas id="activeBidsStatusChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Bidding Frequency</h3>
+                        <div class="chart-container">
+                            <canvas id="bidHistoryChart"></canvas>
+                        </div>
+                    </div>
+                </div>
                 <div class="glass-panel table-responsive" style="padding: 0; overflow-x: auto;">
                     <table style="width: 100%; border-collapse: collapse;">
                         <thead style="background: rgba(0,0,0,0.02);">
@@ -700,6 +779,23 @@
                     <img src="assets/images/royal_antique.png"
                         style="position: absolute; right: -50px; top: -50px; width: 300px; height: 300px; object-fit: cover; opacity: 0.15; filter: grayscale(1) brightness(2); z-index: 1;">
                 </header>
+
+                <!-- NEW WINS CHARTS -->
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Wins by Category</h3>
+                        <div class="chart-container">
+                            <canvas id="winsByCategoryChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Monthly Spending</h3>
+                        <div class="chart-container">
+                            <canvas id="monthlySpendingChart"></canvas>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                     <!-- Winning Card 1 -->
@@ -961,93 +1057,100 @@
                 </div>
             </div>
 
+            <!-- Footer Moved Inside Main Content -->
+            <footer class="footer" style="background: #0f172a; color: white; padding: 5rem 0 2rem; margin-top: auto;">
+                <div class="container">
+                    <div class="grid"
+                        style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 4rem;">
+                        <!-- Column 1: Brand -->
+                        <div class="footer-col">
+                            <a href="index.html" class="logo flex items-center gap-2"
+                                style="margin-bottom: 1.5rem; color: white;">
+                                <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
+                                <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
+                            </a>
+                            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.7;">The world's premier
+                                platform for
+                                extraordinary auctions. Verified sellers, rare treasures, and a global community of
+                                serious
+                                collectors.</p>
+                            <div class="flex gap-4" style="margin-top: 2rem;">
+                                <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Column 2: Quick Links -->
+                        <div class="footer-col">
+                            <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Quick
+                                Links
+                            </h4>
+                            <ul style="list-style: none;">
+                                <li style="margin-bottom: 0.8rem;"><a href="index.html"
+                                        style="color: #94a3b8; transition: var(--transition);">Home</a></li>
+                                <li style="margin-bottom: 0.8rem;"><a href="about.html"
+                                        style="color: #94a3b8; transition: var(--transition);">About Us</a></li>
+                                <li style="margin-bottom: 0.8rem;"><a href="services.html"
+                                        style="color: #94a3b8; transition: var(--transition);">Live Auctions</a></li>
+                                <li style="margin-bottom: 0.8rem;"><a href="contact.html"
+                                        style="color: #94a3b8; transition: var(--transition);">Contact Us</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 3: Categories -->
+                        <div class="footer-col">
+                            <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">
+                                Categories
+                            </h4>
+                            <ul style="list-style: none;">
+                                <li style="margin-bottom: 0.8rem;"><a href="#"
+                                        style="color: #94a3b8; transition: var(--transition);">Electronics</a></li>
+                                <li style="margin-bottom: 0.8rem;"><a href="#"
+                                        style="color: #94a3b8; transition: var(--transition);">Jewelry & Gems</a></li>
+                                <li style="margin-bottom: 0.8rem;"><a href="#"
+                                        style="color: #94a3b8; transition: var(--transition);">Art & Antiques</a></li>
+                                <li style="margin-bottom: 0.8rem;"><a href="#"
+                                        style="color: #94a3b8; transition: var(--transition);">Luxury Vehicles</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 4: Support -->
+                        <div class="footer-col">
+                            <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">
+                                Support</h4>
+                            <ul style="list-style: none;">
+                                <li style="margin-bottom: 0.8rem;"><a href="#"
+                                        style="color: #94a3b8; transition: var(--transition);">Terms of Service</a></li>
+                                <li style="margin-bottom: 0.8rem;"><a href="#"
+                                        style="color: #94a3b8; transition: var(--transition);">Privacy Policy</a></li>
+                                <li style="margin-bottom: 0.8rem;"><a href="#"
+                                        style="color: #94a3b8; transition: var(--transition);">Help Center</a></li>
+                                <li style="margin-bottom: 0.8rem;"><a href="#"
+                                        style="color: #94a3b8; transition: var(--transition);">FAQ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div
+                        style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                        <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 BidMaster. All rights reserved.</p>
+                        <div class="flex gap-4">
+                            <img src="assets/images/visa.svg" alt="Visa" style="height: 20px; opacity: 0.5;">
+                            <img src="assets/images/mastercard.svg" alt="Mastercard"
+                                style="height: 20px; opacity: 0.5;">
+                            <img src="assets/images/paypal.svg" alt="PayPal" style="height: 20px; opacity: 0.5;">
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </main>
     </div>
 
-    <!-- Footer (Copied from index.html) -->
-    <footer class="footer" style="background: #0f172a; color: white; padding: 5rem 0 2rem; margin-top: auto;">
-        <div class="container">
-            <div class="grid"
-                style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 4rem;">
-                <!-- Column 1: Brand -->
-                <div class="footer-col">
-                    <a href="index.html" class="logo flex items-center gap-2"
-                        style="margin-bottom: 1.5rem; color: white;">
-                        <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
-                        <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
-                    </a>
-                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.7;">The world's premier platform for
-                        extraordinary auctions. Verified sellers, rare treasures, and a global community of serious
-                        collectors.</p>
-                    <div class="flex gap-4" style="margin-top: 2rem;">
-                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
-                                class="fab fa-twitter"></i></a>
-                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
-                                class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
 
-                <!-- Column 2: Quick Links -->
-                <div class="footer-col">
-                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Quick Links
-                    </h4>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.8rem;"><a href="index.html"
-                                style="color: #94a3b8; transition: var(--transition);">Home</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="about.html"
-                                style="color: #94a3b8; transition: var(--transition);">About Us</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="services.html"
-                                style="color: #94a3b8; transition: var(--transition);">Live Auctions</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="contact.html"
-                                style="color: #94a3b8; transition: var(--transition);">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3: Categories -->
-                <div class="footer-col">
-                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Categories
-                    </h4>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Electronics</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Jewelry & Gems</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Art & Antiques</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Luxury Vehicles</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 4: Support -->
-                <div class="footer-col">
-                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Support</h4>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Terms of Service</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Privacy Policy</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Help Center</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">FAQ</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div
-                style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 BidMaster. All rights reserved.</p>
-                <div class="flex gap-4">
-                    <img src="assets/images/visa.svg" alt="Visa" style="height: 20px; opacity: 0.5;">
-                    <img src="assets/images/mastercard.svg" alt="Mastercard" style="height: 20px; opacity: 0.5;">
-                    <img src="assets/images/paypal.svg" alt="PayPal" style="height: 20px; opacity: 0.5;">
-                </div>
-            </div>
-        </div>
-    </footer>
 
 
     <script src="rtltoggle.js"></script>
@@ -1210,6 +1313,130 @@
                 data: {
                     labels: ['Visa', 'Crypto', 'Bank', 'Other'],
                     datasets: [{ data: [60, 20, 15, 5], backgroundColor: ['#1a1f71', '#f59e0b', '#10b981', '#94a3b8'], borderWidth: 0 }]
+                },
+                options: { ...chartOptions, cutout: '70%', scales: {} }
+            });
+            // 13. Bid Distribution by Category (Overview)
+            new Chart(document.getElementById('bidDistributionChart'), {
+                type: 'pie',
+                data: {
+                    labels: ['Art', 'Electronics', 'Vehicles', 'Jewelry'],
+                    datasets: [{
+                        data: [35, 25, 20, 20],
+                        backgroundColor: ['#3b82f6', '#10b981', '#f59e0b', '#ec4899'],
+                        borderWidth: 0
+                    }]
+                },
+                options: { ...chartOptions, scales: {} }
+            });
+
+            // 14. Daily Activity (Overview)
+            new Chart(document.getElementById('dailyEngagementChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Interactions',
+                        data: [15, 22, 18, 25, 20, 30, 28],
+                        backgroundColor: '#6366f1',
+                        borderRadius: 6
+                    }]
+                },
+                options: chartOptions
+            });
+
+            // 15. Active Bids Status (Bids)
+            new Chart(document.getElementById('activeBidsStatusChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Winning', 'Outbid', 'Pending'],
+                    datasets: [{
+                        data: [8, 4, 3],
+                        backgroundColor: ['#10b981', '#ef4444', '#f59e0b'],
+                        borderWidth: 0
+                    }]
+                },
+                options: { ...chartOptions, cutout: '70%', scales: {} }
+            });
+
+            // 16. Bidding Frequency (Bids)
+            new Chart(document.getElementById('bidHistoryChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                    datasets: [{
+                        label: 'Bids Placed',
+                        data: [12, 19, 15, 25],
+                        borderColor: '#8b5cf6',
+                        tension: 0.4,
+                        fill: true,
+                        backgroundColor: 'rgba(139, 92, 246, 0.1)'
+                    }]
+                },
+                options: chartOptions
+            });
+
+            // 17. Wins by Category (Wins)
+            new Chart(document.getElementById('winsByCategoryChart'), {
+                type: 'polarArea',
+                data: {
+                    labels: ['Art', 'Collectibles', 'Watches', 'Furniture'],
+                    datasets: [{
+                        data: [4, 6, 3, 2],
+                        backgroundColor: [
+                            'rgba(236, 72, 153, 0.6)',
+                            'rgba(59, 130, 246, 0.6)',
+                            'rgba(16, 185, 129, 0.6)',
+                            'rgba(245, 158, 11, 0.6)'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: { ...chartOptions, scales: {} }
+            });
+
+            // 18. Monthly Spending (Wins)
+            new Chart(document.getElementById('monthlySpendingChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'],
+                    datasets: [{
+                        label: 'Spent ($)',
+                        data: [4500, 3200, 5800, 4100, 6900, 2400],
+                        backgroundColor: '#06b6d4',
+                        borderRadius: 6
+                    }]
+                },
+                options: chartOptions
+            });
+
+            // 19. Session Duration Trends (Overview Extra 1)
+            new Chart(document.getElementById('sessionMetricsChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Avg Duration (min)',
+                        data: [12, 18, 15, 22, 25, 30, 28],
+                        borderColor: '#f97316', // Orange
+                        tension: 0.4,
+                        fill: true,
+                        backgroundColor: 'rgba(249, 115, 22, 0.1)'
+                    }]
+                },
+                options: chartOptions
+            });
+
+            // 20. Device Platform Usage (Overview Extra 2)
+            new Chart(document.getElementById('platformUsageChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Mobile', 'Desktop', 'Tablet'],
+                    datasets: [{
+                        data: [55, 35, 10],
+                        backgroundColor: ['#8b5cf6', '#3b82f6', '#10b981'],
+                        borderWidth: 0
+                    }]
                 },
                 options: { ...chartOptions, cutout: '70%', scales: {} }
             });

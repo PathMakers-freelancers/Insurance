@@ -42,15 +42,24 @@
             background: var(--bg-surface);
             border-right: 1px solid rgba(0, 0, 0, 0.05);
             padding: 2rem;
-            position: sticky;
+            /* Force Fixed Position */
+            position: fixed;
             top: 70px;
+            bottom: 0;
+            left: 0;
             height: calc(100vh - 70px);
             overflow-y: auto;
+            scrollbar-width: none;
             z-index: 40;
             transition: var(--transition);
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
+        }
+
+        /* Hide scrollbar for Chrome/Safari/Opera */
+        .sidebar::-webkit-scrollbar {
+            display: none;
         }
 
         @media (max-width: 991px) {
@@ -77,6 +86,19 @@
             }
         }
 
+        /* RTL Support for Sidebar */
+        @media (max-width: 991px) {
+            [dir="rtl"] .sidebar {
+                left: auto;
+                right: -300px;
+            }
+
+            [dir="rtl"] .sidebar.active {
+                left: auto;
+                right: 0;
+            }
+        }
+
         [data-theme="dark"] .sidebar {
             border-right: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -87,6 +109,13 @@
             width: 100%;
             overflow-x: hidden;
             min-height: 80vh;
+            margin-left: 280px;
+        }
+
+        @media (max-width: 991px) {
+            .main-content {
+                margin-left: 0 !important;
+            }
         }
 
         .sidebar-menu {
@@ -466,7 +495,7 @@
                 </button>
 
                 <!-- Desktop Auth -->
-                <div class="auth-buttons flex gap-4 hide-mobile">
+                <div class="auth-buttons flex hide-mobile" style="gap: 4rem;">
                     <a href="login.html" class="btn btn-outline"
                         style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Login</a>
                     <a href="signup.html" class="btn btn-primary"
@@ -596,6 +625,30 @@
                     <div class="glass-panel">
                         <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Global Infrastructure</h3>
                         <div class="chart-container"><canvas id="deviceChart"></canvas></div>
+                    </div>
+                </div>
+
+                <!-- NEW CHARTS (User Request) -->
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">System Load Distribution</h3>
+                        <div class="chart-container"><canvas id="systemLoadChart"></canvas></div>
+                    </div>
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Network Throughput</h3>
+                        <div class="chart-container"><canvas id="networkTrafficChart"></canvas></div>
+                    </div>
+                </div>
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2rem; margin-top: 2rem;">
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Database Operations</h3>
+                        <div class="chart-container"><canvas id="dbOperationsChart"></canvas></div>
+                    </div>
+                    <div class="glass-panel">
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Security Incidents</h3>
+                        <div class="chart-container"><canvas id="securityEventsChart"></canvas></div>
                     </div>
                 </div>
             </div>
@@ -734,74 +787,81 @@
                 </div>
             </div>
 
+            <!-- Footer Moved Inside Main Content -->
+            <footer class="footer" style="background: #0f172a; color: white; padding: 5rem 0 2rem; margin-top: auto;">
+                <div class="container">
+                    <div class="grid"
+                        style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 4rem;">
+                        <!-- Column 1: Brand -->
+                        <div class="footer-col">
+                            <a href="index.html" class="logo flex items-center gap-2"
+                                style="margin-bottom: 1.5rem; color: white;">
+                                <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
+                                <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
+                            </a>
+                            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.7;">The world's premier
+                                platform for
+                                extraordinary auctions. Verified sellers, rare treasures, and a global community of
+                                serious
+                                collectors.</p>
+                        </div>
+
+                        <!-- Column 2: Quick Links -->
+                        <div class="footer-col">
+                            <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Quick
+                                Links
+                            </h4>
+                            <ul style="list-style: none;">
+                                <li style="margin-bottom: 0.8rem;"><a href="index.html"
+                                        style="color: #94a3b8; transition: var(--transition);">Home</a></li>
+                                <li style="margin-bottom: 0.8rem;"><a href="admin-dashboard.html"
+                                        style="color: #94a3b8; transition: var(--transition);">Dashboard</a></li>
+                                <li style="margin-bottom: 0.8rem;"><a href="#"
+                                        style="color: #94a3b8; transition: var(--transition);">System Status</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 3: Tools -->
+                        <div class="footer-col">
+                            <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Admin
+                                Tools
+                            </h4>
+                            <ul style="list-style: none;">
+                                <li style="margin-bottom: 0.8rem;"><a href="#"
+                                        style="color: #94a3b8; transition: var(--transition);">Audit Logs</a></li>
+                                <li style="margin-bottom: 0.8rem;"><a href="#"
+                                        style="color: #94a3b8; transition: var(--transition);">User Manager</a></li>
+                                <li style="margin-bottom: 0.8rem;"><a href="#"
+                                        style="color: #94a3b8; transition: var(--transition);">Backup/Restore</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 4: Support -->
+                        <div class="footer-col">
+                            <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">
+                                Internal
+                                Support</h4>
+                            <ul style="list-style: none;">
+                                <li style="margin-bottom: 0.8rem;"><a href="#"
+                                        style="color: #94a3b8; transition: var(--transition);">Documentation</a></li>
+                                <li style="margin-bottom: 0.8rem;"><a href="#"
+                                        style="color: #94a3b8; transition: var(--transition);">IT Ticket</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div
+                        style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                        <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 BidMaster Admin Console. Authorized
+                            Personnel
+                            Only.</p>
+                    </div>
+                </div>
+            </footer>
         </main>
     </div>
 
-    <!-- Global Footer -->
-    <footer class="footer" style="background: #0f172a; color: white; padding: 5rem 0 2rem; margin-top: auto;">
-        <div class="container">
-            <div class="grid"
-                style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 4rem;">
-                <!-- Column 1: Brand -->
-                <div class="footer-col">
-                    <a href="index.html" class="logo flex items-center gap-2"
-                        style="margin-bottom: 1.5rem; color: white;">
-                        <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
-                        <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
-                    </a>
-                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.7;">The world's premier platform for
-                        extraordinary auctions. Verified sellers, rare treasures, and a global community of serious
-                        collectors.</p>
-                </div>
 
-                <!-- Column 2: Quick Links -->
-                <div class="footer-col">
-                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Quick Links
-                    </h4>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.8rem;"><a href="index.html"
-                                style="color: #94a3b8; transition: var(--transition);">Home</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="admin-dashboard.html"
-                                style="color: #94a3b8; transition: var(--transition);">Dashboard</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">System Status</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3: Tools -->
-                <div class="footer-col">
-                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Admin Tools
-                    </h4>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Audit Logs</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">User Manager</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Backup/Restore</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 4: Support -->
-                <div class="footer-col">
-                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Internal
-                        Support</h4>
-                    <ul style="list-style: none;">
-                        <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Documentation</a></li>
-                        <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">IT Ticket</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div
-                style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 BidMaster Admin Console. Authorized Personnel
-                    Only.</p>
-            </div>
-        </div>
-    </footer>
 
 
     <script src="rtltoggle.js"></script>
@@ -1011,6 +1071,65 @@
                 data: {
                     labels: ['Sell-through', 'Bid Count', 'Price Realization', 'Time to Sale', 'Visitor/Bid'],
                     datasets: [{ label: 'Performance', data: [85, 92, 78, 65, 88], backgroundColor: 'rgba(56, 189, 248, 0.2)', borderColor: '#38bdf8' }]
+                },
+                options: { ...adminChartOptions, scales: {} }
+            });
+            // 14. System Load Distribution
+            new Chart(document.getElementById('systemLoadChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['CPU', 'Memory', 'Disk I/O', 'Network'],
+                    datasets: [{
+                        data: [45, 60, 25, 30],
+                        backgroundColor: [vibrantColors.danger, vibrantColors.info, vibrantColors.warning, vibrantColors.success],
+                        borderWidth: 0
+                    }]
+                },
+                options: { ...adminChartOptions, cutout: '60%', scales: {} }
+            });
+
+            // 15. Network Throughput
+            new Chart(document.getElementById('networkTrafficChart'), {
+                type: 'line',
+                data: {
+                    labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
+                    datasets: [
+                        { label: 'Inbound (GB)', data: [12, 19, 35, 80, 65, 40], borderColor: vibrantColors.cyan, tension: 0.4 },
+                        { label: 'Outbound (GB)', data: [8, 15, 25, 60, 55, 30], borderColor: vibrantColors.purple, tension: 0.4 }
+                    ]
+                },
+                options: adminChartOptions
+            });
+
+            // 16. Database Operations
+            new Chart(document.getElementById('dbOperationsChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Read', 'Write', 'Update', 'Delete'],
+                    datasets: [{
+                        label: 'Ops/sec',
+                        data: [4500, 1200, 800, 150],
+                        backgroundColor: [vibrantColors.info, vibrantColors.success, vibrantColors.warning, vibrantColors.danger]
+                    }]
+                },
+                options: adminChartOptions
+            });
+
+            // 17. Security Incidents
+            new Chart(document.getElementById('securityEventsChart'), {
+                type: 'polarArea',
+                data: {
+                    labels: ['Failed Login', 'WAF Blocks', 'Bot Traffic', 'Policy Violation'],
+                    datasets: [{
+                        data: [45, 120, 80, 25],
+                        backgroundColor: [
+                            'rgba(239, 68, 68, 0.6)',
+                            'rgba(249, 115, 22, 0.6)',
+                            'rgba(168, 85, 247, 0.6)',
+                            'rgba(59, 130, 246, 0.6)'
+                        ],
+                        borderWidth: 0
+                    }]
                 },
                 options: { ...adminChartOptions, scales: {} }
             });
