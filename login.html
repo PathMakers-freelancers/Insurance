@@ -10,64 +10,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="home-style-2 login-body">
+<body class="home-style-2 login-reset-body">
     <style>
-        .login-body {
+        .login-reset-body {
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            background: linear-gradient(var(--bg-glass), var(--bg-glass)), url('assets/images/login_bg.jpg');
-            background-size: cover;
-            background-position: center;
             margin: 0;
-            transition: var(--transition);
+            background: var(--bg-body);
+            overflow: hidden;
+            position: relative;
         }
 
-        .glass-card {
-            background: var(--bg-surface) !important;
-            color: var(--text-main) !important;
-        }
-
-        .glass-card h2,
-        .glass-card p,
-        .glass-card label,
-        .glass-card .logo span {
-            color: var(--text-main) !important;
-        }
-
-        .glass-card input {
-            background: rgba(var(--primary-color-rgb, 99, 102, 241), 0.05) !important;
-            border: 1px solid rgba(var(--primary-color-rgb, 99, 102, 241), 0.1) !important;
-            color: var(--text-main) !important;
-        }
-
-        [data-theme="dark"] .glass-card input {
-            background: rgba(255, 255, 255, 0.05) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            color: white !important;
-        }
-
-        .glass-card .divider span {
-            color: var(--text-muted) !important;
-        }
-
-        .social-btn {
-            background: rgba(var(--primary-color-rgb, 99, 102, 241), 0.05) !important;
-            border: 1px solid rgba(var(--primary-color-rgb, 99, 102, 241), 0.1) !important;
-            color: var(--text-main) !important;
-            transition: var(--transition);
-        }
-
-        [data-theme="dark"] .social-btn {
-            background: rgba(255, 255, 255, 0.05) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            color: white !important;
-        }
-
-        .social-btn:hover {
-            background: var(--primary-color) !important;
-            color: white !important;
+        .glass-login-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
     </style>
 
@@ -84,16 +44,16 @@
         </button>
     </div>
 
-    <!-- Floating Background Shapes -->
-    <div class="floating-shapes">
-        <div class="shape shape-1" style="background: var(--primary-color);"></div>
-        <div class="shape shape-2" style="background: var(--secondary-color);"></div>
-        <div class="shape shape-3" style="background: var(--accent-color);"></div>
+    <!-- Animated Background -->
+    <div class="animated-bg" style="z-index: -1;">
+        <div class="bg-blob bg-blob-1"></div>
+        <div class="bg-blob bg-blob-2"></div>
+        <div class="bg-blob bg-blob-3"></div>
     </div>
 
     <!-- Login Card -->
-    <div class="card glass-card animate-entry"
-        style="width: calc(100% - 2rem); max-width: 450px; padding: clamp(1.5rem, 8vw, 3rem); text-align: center; position: relative; z-index: 10; margin: 1rem;">
+    <div class="card glass-login-card animate-entry premium-border glow-on-hover"
+        style="width: calc(100% - 2rem); max-width: 450px; padding: clamp(2rem, 8vw, 3.5rem); text-align: center; position: relative; z-index: 10; margin: 1rem; border-radius: 24px;">
 
         <!-- Logo -->
         <a href="index.html" class="logo flex items-center justify-center gap-2"

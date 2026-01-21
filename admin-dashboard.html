@@ -667,7 +667,9 @@
                         <div class="chart-container"><canvas id="demographicsChart"></canvas></div>
                     </div>
                 </div>
-                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr)); gap: 2rem;">
+
                     <div class="glass-panel">
                         <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Retention Heatmap</h3>
                         <div class="chart-container"><canvas id="retentionHeatmapChart"></canvas></div>
@@ -722,7 +724,8 @@
             <div id="config" class="tab-content">
                 <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Environment Control</h1>
                 <div class="command-center" style="background: #1e293b; padding: 2.5rem; border-radius: 1rem;">
-                    <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+
                         <div class="card" style="background: #334155; padding: 1.5rem; border-radius: 0.75rem;">
                             <p style="color: #94a3b8; font-size: 0.8rem; margin-bottom: 0.5rem;">PLATFORM NAME</p>
                             <input type="text" value="BidMaster Pro"
@@ -752,8 +755,9 @@
                         <tbody>
                             <tr style="border-bottom: 1px solid rgba(0,0,0,0.05);">
                                 <td style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                                    <div style="width: 40px; height: 40px; border-radius: 50%; background: #e2e8f0;">
-                                    </div>
+                                    <img src="assets/images/avatar_sarah.jpg" alt="Alice Freeman"
+                                        style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+
                                     <div>
                                         <div style="font-weight: 700;">Alice Freeman</div>
                                         <div style="font-size: 0.8rem; color: var(--text-muted);">alice@example.com
@@ -899,6 +903,9 @@
             const textColor = isDark ? '#e2e8f0' : '#1e293b';
             const gridColor = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)';
 
+            // Store all chart instances for theme updates
+            const chartInstances = [];
+
             // Vibrant color palette for clear visibility
             const vibrantColors = {
                 primary: '#6366f1',      // Vibrant indigo
@@ -937,27 +944,27 @@
             };
 
             // 1. Live Traffic
-            new Chart(document.getElementById('trafficChart'), {
+            chartInstances.push(new Chart(document.getElementById('trafficChart'), {
                 type: 'line',
                 data: {
                     labels: ['14:00', '14:05', '14:10', '14:15', '14:20', '14:25'],
                     datasets: [{ label: 'Req/s', data: [120, 190, 150, 250, 220, 310], borderColor: vibrantColors.cyan, tension: 0.4, fill: true, backgroundColor: 'rgba(6, 182, 212, 0.1)', borderWidth: 3 }]
                 },
                 options: adminChartOptions
-            });
+            }));
 
             // 2. Bid Velocity
-            new Chart(document.getElementById('bidVelocityChart'), {
+            chartInstances.push(new Chart(document.getElementById('bidVelocityChart'), {
                 type: 'line',
                 data: {
                     labels: ['1min', '2min', '3min', '4min', '5min'],
                     datasets: [{ label: 'Bids/min', data: [45, 82, 60, 110, 95], borderColor: vibrantColors.success, tension: 0.4, borderWidth: 3, fill: true, backgroundColor: 'rgba(16, 185, 129, 0.1)' }]
                 },
                 options: adminChartOptions
-            });
+            }));
 
             // 3. Market Liquidity
-            new Chart(document.getElementById('auctionLiquidityChart'), {
+            chartInstances.push(new Chart(document.getElementById('auctionLiquidityChart'), {
                 type: 'scatter',
                 data: {
                     datasets: [{
@@ -969,40 +976,40 @@
                     }]
                 },
                 options: adminChartOptions
-            });
+            }));
 
             // 4. Infrastructure (Radar)
-            new Chart(document.getElementById('deviceChart'), {
+            chartInstances.push(new Chart(document.getElementById('deviceChart'), {
                 type: 'radar',
                 data: {
                     labels: ['Cloud', 'Edge', 'Direct', 'SaaS', 'On-Prem'],
                     datasets: [{ label: 'Distribution', data: [90, 70, 40, 60, 20], backgroundColor: 'rgba(168, 85, 247, 0.2)', borderColor: vibrantColors.purple, borderWidth: 3 }]
                 },
                 options: { ...adminChartOptions, scales: {} }
-            });
+            }));
 
             // 5. User Growth
-            new Chart(document.getElementById('userGrowthChart'), {
+            chartInstances.push(new Chart(document.getElementById('userGrowthChart'), {
                 type: 'line',
                 data: {
                     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
                     datasets: [{ label: 'Users', data: [4500, 5200, 5800, 6400, 7800, 8402], borderColor: vibrantColors.info, fill: true, backgroundColor: 'rgba(59, 130, 246, 0.1)', borderWidth: 3, tension: 0.4 }]
                 },
                 options: adminChartOptions
-            });
+            }));
 
             // 6. Demographics
-            new Chart(document.getElementById('demographicsChart'), {
+            chartInstances.push(new Chart(document.getElementById('demographicsChart'), {
                 type: 'doughnut',
                 data: {
                     labels: ['US', 'EU', 'Asia', 'Other'],
                     datasets: [{ data: [45, 25, 20, 10], backgroundColor: [vibrantColors.info, vibrantColors.purple, vibrantColors.secondary, vibrantColors.warning], borderWidth: 0 }]
                 },
                 options: { ...adminChartOptions, cutout: '70%', scales: {} }
-            });
+            }));
 
             // 7. Retention Heatmap
-            new Chart(document.getElementById('retentionHeatmapChart'), {
+            chartInstances.push(new Chart(document.getElementById('retentionHeatmapChart'), {
                 type: 'bar',
                 data: {
                     labels: ['W1', 'W2', 'W3', 'W4', 'W5'],
@@ -1012,10 +1019,10 @@
                     ]
                 },
                 options: { ...adminChartOptions, scales: { x: { stacked: true }, y: { stacked: true } } }
-            });
+            }));
 
             // 8. Verification Funnel
-            new Chart(document.getElementById('verificationFunnelChart'), {
+            chartInstances.push(new Chart(document.getElementById('verificationFunnelChart'), {
                 type: 'bar',
                 indexAxis: 'y',
                 data: {
@@ -1023,59 +1030,59 @@
                     datasets: [{ label: 'Users', data: [1000, 850, 400, 320], backgroundColor: vibrantColors.info, borderWidth: 0 }]
                 },
                 options: adminChartOptions
-            });
+            }));
 
             // 9. Revenue Category
-            new Chart(document.getElementById('revenueCategoryChart'), {
+            chartInstances.push(new Chart(document.getElementById('revenueCategoryChart'), {
                 type: 'bar',
                 data: {
                     labels: ['Electronics', 'Art', 'Jewelry', 'Vehicles', 'Antiques'],
                     datasets: [{ label: 'Revenue ($)', data: [450000, 320000, 280000, 540000, 150000], backgroundColor: vibrantColors.cyan, borderWidth: 0 }]
                 },
                 options: adminChartOptions
-            });
+            }));
 
             // 10. Fee Breakdown
-            new Chart(document.getElementById('feeBreakdownChart'), {
+            chartInstances.push(new Chart(document.getElementById('feeBreakdownChart'), {
                 type: 'polarArea',
                 data: {
                     labels: ['Listing', 'Final Value', 'Storage', 'Shipping'],
                     datasets: [{ data: [30, 50, 10, 10], backgroundColor: [vibrantColors.info, vibrantColors.purple, vibrantColors.secondary, vibrantColors.warning], borderWidth: 0 }]
                 },
                 options: { ...adminChartOptions, scales: {} }
-            });
+            }));
 
             // 11. Regional Revenue
-            new Chart(document.getElementById('regionalRevenueChart'), {
+            chartInstances.push(new Chart(document.getElementById('regionalRevenueChart'), {
                 type: 'doughnut',
                 data: {
                     labels: ['East', 'West', 'Central', 'Intl'],
                     datasets: [{ data: [420, 380, 210, 190], backgroundColor: [vibrantColors.primary, vibrantColors.info, vibrantColors.cyan, vibrantColors.teal], borderWidth: 0 }]
                 },
                 options: { ...adminChartOptions, cutout: '70%', scales: {} }
-            });
+            }));
 
             // 12. API Latency
-            new Chart(document.getElementById('apiLatencyChart'), {
+            chartInstances.push(new Chart(document.getElementById('apiLatencyChart'), {
                 type: 'line',
                 data: {
                     labels: ['1s', '2s', '3s', '4s', '5s', '6s', '7s', '8s', '9s', '10s'],
                     datasets: [{ label: 'ms', data: [42, 38, 55, 40, 120, 45, 39, 41, 58, 44], borderColor: vibrantColors.danger, backgroundColor: 'rgba(239, 68, 68, 0.1)', fill: true, tension: 0.4, borderWidth: 3 }]
                 },
                 options: { ...adminChartOptions, plugins: { legend: { display: false } } }
-            });
+            }));
 
             // 13. Auction Performance
-            new Chart(document.getElementById('auctionPerformanceChart'), {
+            chartInstances.push(new Chart(document.getElementById('auctionPerformanceChart'), {
                 type: 'radar',
                 data: {
                     labels: ['Sell-through', 'Bid Count', 'Price Realization', 'Time to Sale', 'Visitor/Bid'],
                     datasets: [{ label: 'Performance', data: [85, 92, 78, 65, 88], backgroundColor: 'rgba(56, 189, 248, 0.2)', borderColor: '#38bdf8' }]
                 },
                 options: { ...adminChartOptions, scales: {} }
-            });
+            }));
             // 14. System Load Distribution
-            new Chart(document.getElementById('systemLoadChart'), {
+            chartInstances.push(new Chart(document.getElementById('systemLoadChart'), {
                 type: 'doughnut',
                 data: {
                     labels: ['CPU', 'Memory', 'Disk I/O', 'Network'],
@@ -1086,10 +1093,10 @@
                     }]
                 },
                 options: { ...adminChartOptions, cutout: '60%', scales: {} }
-            });
+            }));
 
             // 15. Network Throughput
-            new Chart(document.getElementById('networkTrafficChart'), {
+            chartInstances.push(new Chart(document.getElementById('networkTrafficChart'), {
                 type: 'line',
                 data: {
                     labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
@@ -1099,10 +1106,10 @@
                     ]
                 },
                 options: adminChartOptions
-            });
+            }));
 
             // 16. Database Operations
-            new Chart(document.getElementById('dbOperationsChart'), {
+            chartInstances.push(new Chart(document.getElementById('dbOperationsChart'), {
                 type: 'bar',
                 data: {
                     labels: ['Read', 'Write', 'Update', 'Delete'],
@@ -1113,10 +1120,10 @@
                     }]
                 },
                 options: adminChartOptions
-            });
+            }));
 
             // 17. Security Incidents
-            new Chart(document.getElementById('securityEventsChart'), {
+            chartInstances.push(new Chart(document.getElementById('securityEventsChart'), {
                 type: 'polarArea',
                 data: {
                     labels: ['Failed Login', 'WAF Blocks', 'Bot Traffic', 'Policy Violation'],
@@ -1132,7 +1139,37 @@
                     }]
                 },
                 options: { ...adminChartOptions, scales: {} }
+            }));
+
+            // Theme Observer to update charts dynamically
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                        const newTheme = document.documentElement.getAttribute('data-theme');
+                        const isDark = newTheme === 'dark';
+                        const newTextColor = isDark ? '#e2e8f0' : '#1e293b';
+                        const newGridColor = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)';
+
+                        chartInstances.forEach(chart => {
+                            if (chart.options.plugins && chart.options.plugins.legend) {
+                                chart.options.plugins.legend.labels.color = newTextColor;
+                            }
+                            if (chart.options.scales) {
+                                if (chart.options.scales.x) {
+                                    chart.options.scales.x.ticks.color = newTextColor;
+                                }
+                                if (chart.options.scales.y) {
+                                    chart.options.scales.y.grid.color = newGridColor;
+                                    chart.options.scales.y.ticks.color = newTextColor;
+                                }
+                            }
+                            chart.update();
+                        });
+                    }
+                });
             });
+
+            observer.observe(document.documentElement, { attributes: true });
         });
     </script>
     <script src="logout.js"></script>

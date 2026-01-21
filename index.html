@@ -99,16 +99,32 @@
 
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container flex items-center justify-center text-center">
-            <div class="hero-content">
-                <h1 style="margin-bottom: 1.5rem;">Discover, Bid, and Win <br><span
-                        style="color: var(--primary-color);">Extraordinary Items</span></h1>
-                <p style="font-size: 1.25rem; margin-bottom: 2.5rem;">Find unique items, rare collectibles, and
-                    exclusive deals from trusted sellers worldwide.</p>
+    <section class="hero" style="min-height: 90vh;">
+        <div class="animated-bg">
+            <div class="bg-blob bg-blob-1"></div>
+            <div class="bg-blob bg-blob-2"></div>
+            <div class="bg-blob bg-blob-3"></div>
+        </div>
+        <div class="container flex items-center justify-center text-center" style="position: relative; z-index: 2;">
+            <div class="hero-content" style="max-width: 900px;">
+                <span
+                    style="color: #D4AF37; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; display: block; animation: fadeIn 1s ease-out;">The
+                    World's Premier Marketplace</span>
+                <h1
+                    style="margin-bottom: 2rem; font-size: clamp(3rem, 6vw, 5.5rem); text-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                    Curating the <br><span class="text-gold playfair">Extraordinary</span>
+                </h1>
+                <p
+                    style="font-size: 1.35rem; margin-bottom: 3.5rem; color: rgba(255,255,255,0.9); font-weight: 300; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Access an exclusive collection of rare artifacts, fine art, and luxury assets from the globe's most
+                    secluded vaults.
+                </p>
                 <div class="flex gap-4 justify-center">
-                    <a href="signup.html" class="btn btn-primary" style="padding: 1rem 2.5rem;">Start Bidding</a>
-                    <a href="about.html" class="btn btn-outline" style="padding: 1rem 2.5rem;">Learn More</a>
+                    <a href="signup.html" class="btn btn-primary" style="padding: 1rem 3rem; font-size: 1.1rem;">Explore
+                        Collection</a>
+                    <a href="about.html" class="btn btn-outline"
+                        style="padding: 1rem 3rem; font-size: 1.1rem; border-color: rgba(255,255,255,0.3); color: white;">Our
+                        Heritage</a>
                 </div>
             </div>
         </div>
@@ -126,55 +142,114 @@
             </div>
             <a href="javascript:void(0)" class="btn btn-outline" id="view-all-live-btn">View All Live</a>
         </div>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2rem;">
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 2.5rem;">
             <!-- Initial Card 1 -->
-            <div class="card hover-float">
+            <div class="card hover-float" style="padding: 0; background: transparent; overflow: visible;">
                 <div
-                    style="position: relative; height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
-                    <div class="countdown-badge" data-countdown="2026-01-12T12:00:00"><i class="far fa-clock"></i>
-                        <span>02h 15m 30s</span>
+                    style="position: relative; height: 320px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 1.5rem; box-shadow: var(--shadow-lg);">
+                    <div class="countdown-badge" data-countdown="2026-01-12T12:00:00"
+                        style="background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);">
+                        <i class="far fa-clock" style="color: var(--primary-color);"></i>
+                        <span style="font-family: var(--font-main); letter-spacing: 1px;">02h 15m 30s</span>
                     </div>
-                    <img src="assets/images/royal_antique.png" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="assets/images/royal_antique.png"
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);">
+                        <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.5rem;">Imperial Vase</h3>
+                        <p style="color: rgba(255,255,255,0.8);">Ming Dynasty Era</p>
+                    </div>
                 </div>
-                <h3>Imperial Vase</h3>
-                <div class="flex justify-between items-center" style="margin-top: 0.5rem;">
-                    <p style="color: var(--text-muted);">Current Bid:</p>
-                    <p style="color: var(--primary-color); font-weight: 700; font-size: 1.2rem;">$45,000</p>
+                <div class="glass-panel"
+                    style="padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.05); background: var(--bg-surface);">
+                    <div class="flex justify-between items-center" style="margin-bottom: 1.5rem;">
+                        <div>
+                            <p
+                                style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
+                                Current Bid</p>
+                            <p
+                                style="color: var(--text-main); font-weight: 700; font-size: 1.8rem; font-family: var(--font-heading);">
+                                $45,000</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Bids</p>
+                            <p style="font-weight: 600;">24</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;">Place Your Bid</button>
                 </div>
-                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Place Bid</button>
             </div>
             <!-- Initial Card 2 -->
-            <div class="card hover-float">
+            <div class="card hover-float" style="padding: 0; background: transparent; overflow: visible;">
                 <div
-                    style="position: relative; height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
-                    <div class="countdown-badge" data-countdown="2026-01-12T15:30:00"><i class="far fa-clock"></i>
-                        <span>05h 45m 10s</span>
+                    style="position: relative; height: 320px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 1.5rem; box-shadow: var(--shadow-lg);">
+                    <div class="countdown-badge" data-countdown="2026-01-12T15:30:00"
+                        style="background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);">
+                        <i class="far fa-clock" style="color: var(--primary-color);"></i>
+                        <span style="font-family: var(--font-main); letter-spacing: 1px;">05h 45m 10s</span>
                     </div>
-                    <img src="assets/images/classic_violin.png" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="assets/images/classic_violin.png"
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);">
+                        <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.5rem;">1742 Guarneri</h3>
+                        <p style="color: rgba(255,255,255,0.8);">Restored Condition</p>
+                    </div>
                 </div>
-                <h3>1742 Guarneri Violin</h3>
-                <div class="flex justify-between items-center" style="margin-top: 0.5rem;">
-                    <p style="color: var(--text-muted);">Current Bid:</p>
-                    <p style="color: var(--primary-color); font-weight: 700; font-size: 1.2rem;">$120,500</p>
+                <div class="glass-panel"
+                    style="padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.05); background: var(--bg-surface);">
+                    <div class="flex justify-between items-center" style="margin-bottom: 1.5rem;">
+                        <div>
+                            <p
+                                style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
+                                Current Bid</p>
+                            <p
+                                style="color: var(--text-main); font-weight: 700; font-size: 1.8rem; font-family: var(--font-heading);">
+                                $120,500</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Bids</p>
+                            <p style="font-weight: 600;">86</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;">Place Your Bid</button>
                 </div>
-                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Place Bid</button>
             </div>
             <!-- Initial Card 3 -->
-            <div class="card hover-float">
+            <div class="card hover-float" style="padding: 0; background: transparent; overflow: visible;">
                 <div
-                    style="position: relative; height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1rem;">
-                    <div class="countdown-badge" data-countdown="2026-01-11T20:00:00"><i class="far fa-clock"></i>
-                        <span>10h 00m 00s</span>
+                    style="position: relative; height: 320px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 1.5rem; box-shadow: var(--shadow-lg);">
+                    <div class="countdown-badge" data-countdown="2026-01-11T20:00:00"
+                        style="background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);">
+                        <i class="far fa-clock" style="color: var(--primary-color);"></i>
+                        <span style="font-family: var(--font-main); letter-spacing: 1px;">10h 00m 00s</span>
                     </div>
                     <img src="assets/images/space_memorabilia.png"
-                        style="width: 100%; height: 100%; object-fit: cover;">
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
+                    <div
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);">
+                        <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.5rem;">Apollo 11 Plan</h3>
+                        <p style="color: rgba(255,255,255,0.8);">Authentic Flight Log</p>
+                    </div>
                 </div>
-                <h3>Apollo 11 Flight Plan</h3>
-                <div class="flex justify-between items-center" style="margin-top: 0.5rem;">
-                    <p style="color: var(--text-muted);">Current Bid:</p>
-                    <p style="color: var(--primary-color); font-weight: 700; font-size: 1.2rem;">$28,000</p>
+                <div class="glass-panel"
+                    style="padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.05); background: var(--bg-surface);">
+                    <div class="flex justify-between items-center" style="margin-bottom: 1.5rem;">
+                        <div>
+                            <p
+                                style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
+                                Current Bid</p>
+                            <p
+                                style="color: var(--text-main); font-weight: 700; font-size: 1.8rem; font-family: var(--font-heading);">
+                                $28,000</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Bids</p>
+                            <p style="font-weight: 600;">12</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;">Place Your Bid</button>
                 </div>
-                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Place Bid</button>
             </div>
         </div>
 
@@ -283,58 +358,95 @@
 
     <!-- Featured Items -->
     <section id="featured" class="container animate-entry delay-100"
-        style="background: var(--bg-surface); border-radius: var(--radius-lg); position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,0.05);">
-        <h2 class="section-title" style="color: var(--text-main); position: relative; z-index: 1;">Featured
-            Collections
-        </h2>
+        style="padding: 4rem 2rem; background: var(--bg-surface); border-radius: var(--radius-xl); position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); margin-top: 4rem;">
+        <div class="animated-bg" style="opacity: 0.3;">
+            <div class="bg-blob bg-blob-3"></div>
+        </div>
+        <div class="flex justify-between items-end" style="margin-bottom: 4rem; position: relative; z-index: 2;">
+            <div>
+                <span
+                    style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Curated
+                    Selections</span>
+                <h2 class="section-title" style="color: var(--text-main); margin-bottom: 0; text-align: left;">Featured
+                    Collections</h2>
+            </div>
+            <a href="#" class="btn btn-outline" style="border-radius: var(--radius-full);">View All Collections</a>
+        </div>
         <div class="grid"
-            style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2rem; position: relative; z-index: 1;">
-            <div class="card hover-float">
-                <div style="height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+            style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2.5rem; position: relative; z-index: 1;">
+            <div class="card hover-float" style="padding: 0; border: none; background: transparent;">
+                <div
+                    style="height: 350px; position: relative; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 0; box-shadow: var(--shadow-lg);">
                     <img src="assets/images/royal_antique.png" alt="Royal Crown"
-                        style="width: 100%; height: 100%; object-fit: cover;">
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
+                    <div
+                        style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
+                        <h3
+                            style="color: white; font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem;">
+                            Royal Antiques</h3>
+                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">Discover
+                            exclusive artifacts from royal lineages.</p>
+                        <button class="btn btn-outline" style="border-color: white; color: white;">Explore
+                            Collection</button>
+                    </div>
                 </div>
-                <h3>Royal Antiques</h3>
-                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Discover exclusive artifacts from royal
-                    lineages, preserved in pristine condition for the discerning collector.</p>
-                <button class="btn btn-outline" style="width: 100%;">View Collection</button>
             </div>
-            <div class="card hover-float">
-                <div style="height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+            <div class="card hover-float" style="padding: 0; border: none; background: transparent;">
+                <div
+                    style="height: 350px; position: relative; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 0; box-shadow: var(--shadow-lg);">
                     <img src="assets/images/space_memorabilia.png" alt="Space Helmet"
-                        style="width: 100%; height: 100%; object-fit: cover;">
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
+                    <div
+                        style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
+                        <h3
+                            style="color: white; font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem;">
+                            Space Memorabilia</h3>
+                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">Own a piece of
+                            space exploration history.</p>
+                        <button class="btn btn-outline" style="border-color: white; color: white;">Explore
+                            Collection</button>
+                    </div>
                 </div>
-                <h3>Space Memorabilia</h3>
-                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Own a piece of space exploration history
-                    with authentic items from the Apollo and Gemini missions.</p>
-                <button class="btn btn-outline" style="width: 100%;">View Collection</button>
             </div>
-            <div class="card hover-float">
-                <div style="height: 220px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+            <div class="card hover-float" style="padding: 0; border: none; background: transparent;">
+                <div
+                    style="height: 350px; position: relative; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 0; box-shadow: var(--shadow-lg);">
                     <img src="assets/images/classic_violin.png" alt="Violin"
-                        style="width: 100%; height: 100%; object-fit: cover;">
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
+                    <div
+                        style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
+                        <h3
+                            style="color: white; font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem;">
+                            Classic Instruments</h3>
+                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">Legendary
+                            instruments from history's maestros.</p>
+                        <button class="btn btn-outline" style="border-color: white; color: white;">Explore
+                            Collection</button>
+                    </div>
                 </div>
-                <h3>Classic Instruments</h3>
-                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Rare violins like Stradivarius and vintage
-                    guitars from legendary eras of music history.</p>
-                <button class="btn btn-outline" style="width: 100%;">View Collection</button>
             </div>
         </div>
     </section>
 
     <!-- Top Sellers highlight [NEW] -->
-    <section id="top-sellers" class="container animate-entry delay-200">
-        <h2 class="section-title" style="color: var(--text-main); margin-bottom: 2rem;">Top Sellers of the Month</h2>
+    <section id="top-sellers" class="container animate-entry delay-200" style="margin-top: 5rem;">
+        <h2 class="section-title" style="color: var(--text-main); margin-bottom: 3rem; text-align: center;">Elite
+            Sellers of the Month</h2>
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-            <div class="card hover-float" style="text-align: center; padding: 2.5rem 1.5rem;">
-                <div style="position: relative; width: 100px; height: 100px; margin: 0 auto 1.5rem;">
+            <div class="glass-card"
+                style="text-align: center; padding: 3rem 1.5rem; position: relative; overflow: visible;">
+                <div
+                    style="position: absolute; top: -1px; left: 50%; transform: translateX(-50%); width: 60%; height: 2px; background: var(--gradient-gold);">
+                </div>
+                <div style="position: relative; width: 110px; height: 110px; margin: 0 auto 1.5rem;">
                     <img src="assets/images/avatar_michael.jpg" alt="Seller 1"
                         style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid var(--primary-color);">
                     <div
-                        style="position: absolute; bottom: 0; right: 0; background: var(--primary-color); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; border: 2px solid var(--bg-surface);">
+                        style="position: absolute; bottom: 0; right: 0; background: var(--primary-color); color: #0f172a; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 800; border: 2px solid var(--bg-surface); box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                         1</div>
                 </div>
-                <h3 style="margin-bottom: 0.5rem;">Premium Estates Ltd.</h3>
+                <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading); font-size: 1.4rem;">Premium Estates
+                    Ltd.</h3>
                 <p style="color: var(--primary-color); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">$1.2M+
                     Sold</p>
                 <div
@@ -342,165 +454,189 @@
                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                         class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
-                <button class="btn btn-outline" style="width: 100%; font-size: 0.9rem;">View Portfolio</button>
+                <button class="btn btn-outline"
+                    style="width: 100%; font-size: 0.9rem; border-radius: var(--radius-full);">View Portfolio</button>
             </div>
-            <div class="card hover-float" style="text-align: center; padding: 2.5rem 1.5rem;">
-                <div style="position: relative; width: 100px; height: 100px; margin: 0 auto 1.5rem;">
+            <div class="glass-card"
+                style="text-align: center; padding: 3rem 1.5rem; position: relative; overflow: visible;">
+                <div
+                    style="position: absolute; top: -1px; left: 50%; transform: translateX(-50%); width: 60%; height: 2px; background: rgba(0,0,0,0.1);">
+                </div>
+                <div style="position: relative; width: 110px; height: 110px; margin: 0 auto 1.5rem;">
                     <img src="assets/images/avatar_elena.jpg" alt="Seller 2"
-                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid var(--secondary-color);">
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid #94a3b8;">
                     <div
-                        style="position: absolute; bottom: 0; right: 0; background: var(--secondary-color); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; border: 2px solid var(--bg-surface);">
+                        style="position: absolute; bottom: 0; right: 0; background: var(--text-muted); color: white; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 800; border: 2px solid var(--bg-surface);">
                         2</div>
                 </div>
-                <h3 style="margin-bottom: 0.5rem;">Art Curators Collective</h3>
-                <p style="color: var(--secondary-color); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">
+                <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading); font-size: 1.4rem;">Art Curators
+                    Collective</h3>
+                <p style="color: var(--text-muted); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">
                     $850K+ Sold</p>
                 <div
                     style="display: flex; justify-content: center; gap: 0.25rem; color: #fbbf24; margin-bottom: 1.5rem;">
                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                         class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                 </div>
-                <button class="btn btn-outline" style="width: 100%; font-size: 0.9rem;">View Portfolio</button>
+                <button class="btn btn-outline"
+                    style="width: 100%; font-size: 0.9rem; border-radius: var(--radius-full);">View Portfolio</button>
             </div>
-            <div class="card hover-float" style="text-align: center; padding: 2.5rem 1.5rem;">
-                <div style="position: relative; width: 100px; height: 100px; margin: 0 auto 1.5rem;">
+            <div class="glass-card"
+                style="text-align: center; padding: 3rem 1.5rem; position: relative; overflow: visible;">
+                <div
+                    style="position: absolute; top: -1px; left: 50%; transform: translateX(-50%); width: 60%; height: 2px; background: rgba(0,0,0,0.1);">
+                </div>
+                <div style="position: relative; width: 110px; height: 110px; margin: 0 auto 1.5rem;">
                     <img src="assets/images/avatar_david.jpg" alt="Seller 3"
-                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid var(--accent-color);">
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid #94a3b8;">
                     <div
-                        style="position: absolute; bottom: 0; right: 0; background: var(--accent-color); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; border: 2px solid var(--bg-surface);">
+                        style="position: absolute; bottom: 0; right: 0; background: var(--text-muted); color: white; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 800; border: 2px solid var(--bg-surface);">
                         3</div>
                 </div>
-                <h3 style="margin-bottom: 0.5rem;">Vintage Vaults</h3>
-                <p style="color: var(--accent-color); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">$620K+
+                <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading); font-size: 1.4rem;">Vintage Vaults
+                </h3>
+                <p style="color: var(--text-muted); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">$620K+
                     Sold</p>
                 <div
                     style="display: flex; justify-content: center; gap: 0.25rem; color: #fbbf24; margin-bottom: 1.5rem;">
                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                         class="fas fa-star"></i><i class="far fa-star"></i>
                 </div>
-                <button class="btn btn-outline" style="width: 100%; font-size: 0.9rem;">View Portfolio</button>
+                <button class="btn btn-outline"
+                    style="width: 100%; font-size: 0.9rem; border-radius: var(--radius-full);">View Portfolio</button>
             </div>
         </div>
     </section>
 
 
     <!-- Popular Categories -->
-    <section id="categories" class="container animate-entry delay-200">
-        <h2 class="section-title" style="color: var(--text-main); margin-bottom: 2rem;">Popular
+    <section id="categories" class="container animate-entry delay-200" style="margin-top: 5rem;">
+        <h2 class="section-title" style="color: var(--text-main); margin-bottom: 3rem;">Popular
             Categories
         </h2>
         <div class="flex justify-center" style="gap: 2rem; flex-wrap: wrap;">
-            <div class="card hover-float" style="flex: 0 1 280px; min-width: 250px;">
-                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+            <!-- Categories content remains similar but wrapping in glass-card needed or just style improvement via css already done to .card -->
+            <div class="glass-card hover-float"
+                style="flex: 0 1 280px; min-width: 250px; text-align: center; padding: 2rem;">
+                <div
+                    style="height: 120px; width: 120px; overflow: hidden; border-radius: 50%; margin: 0 auto 1.5rem; border: 3px solid var(--primary-color);">
                     <img src="assets/images/electronics_category.png" alt="Electronics"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                <h3>Electronics</h3>
-                <p style="color: var(--text-muted); margin-top: 0.5rem;">Latest gadgets, laptops, and smart devices.</p>
+                <h3 style="font-family: var(--font-heading);">Electronics</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Latest gadgets & devices.
+                </p>
             </div>
-            <div class="card hover-float" style="flex: 0 1 280px; min-width: 250px;">
-                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+            <div class="glass-card hover-float"
+                style="flex: 0 1 280px; min-width: 250px; text-align: center; padding: 2rem;">
+                <div
+                    style="height: 120px; width: 120px; overflow: hidden; border-radius: 50%; margin: 0 auto 1.5rem; border: 3px solid var(--primary-color);">
                     <img src="assets/images/jewelry_category.png" alt="Jewelry"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                <h3>Jewelry</h3>
-                <p style="color: var(--text-muted); margin-top: 0.5rem;">Exquisite rings, necklaces, and watches.</p>
+                <h3 style="font-family: var(--font-heading);">Jewelry</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Exquisite rings & watches.
+                </p>
             </div>
-            <div class="card hover-float" style="flex: 0 1 280px; min-width: 250px;">
-                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+            <div class="glass-card hover-float"
+                style="flex: 0 1 280px; min-width: 250px; text-align: center; padding: 2rem;">
+                <div
+                    style="height: 120px; width: 120px; overflow: hidden; border-radius: 50%; margin: 0 auto 1.5rem; border: 3px solid var(--primary-color);">
                     <img src="assets/images/vehicles_category.png" alt="Vehicles"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                <h3>Vehicles</h3>
-                <p style="color: var(--text-muted); margin-top: 0.5rem;">Luxury cars, vintage models, and bikes.</p>
+                <h3 style="font-family: var(--font-heading);">Vehicles</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Luxury cars & vintage.</p>
             </div>
-            <div class="card hover-float" style="flex: 0 1 280px; min-width: 250px;">
-                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+            <div class="glass-card hover-float"
+                style="flex: 0 1 280px; min-width: 250px; text-align: center; padding: 2rem;">
+                <div
+                    style="height: 120px; width: 120px; overflow: hidden; border-radius: 50%; margin: 0 auto 1.5rem; border: 3px solid var(--primary-color);">
                     <img src="assets/images/art_category.png" alt="Art"
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                <h3>Art</h3>
-                <p style="color: var(--text-muted); margin-top: 0.5rem;">Contemporary paintings and sculptures.</p>
-            </div>
-            <div class="card hover-float" style="flex: 0 1 280px; min-width: 250px;">
-                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
-                    <img src="assets/images/furniture_category.png" alt="Furniture"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <h3>Furniture</h3>
-                <p style="color: var(--text-muted); margin-top: 0.5rem;">Vintage and modern home decor.</p>
-            </div>
-            <div class="card hover-float" style="flex: 0 1 280px; min-width: 250px;">
-                <div style="height: 200px; overflow: hidden; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
-                    <img src="assets/images/coins_category.png" alt="Coins"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <h3>Coins</h3>
-                <p style="color: var(--text-muted); margin-top: 0.5rem;">Rare coins and currency.</p>
+                <h3 style="font-family: var(--font-heading);">Fine Art</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Paintings & sculptures.</p>
             </div>
         </div>
     </section>
 
     <!-- Platform Statistics -->
-    <section class="container animate-entry delay-300">
-        <div class="stats-section grid"
-            style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; background: var(--bg-surface); padding: 2rem 1.5rem; border-radius: var(--radius-lg); text-align: center; border: 1px solid rgba(0,0,0,0.05);">
+    <section class="container animate-entry delay-300" style="margin-top: 5rem;">
+        <div class="stats-section grid glass-card"
+            style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 3rem 2rem; border-radius: var(--radius-lg); text-align: center; border: 1px solid rgba(255,255,255,0.1);">
             <div>
-                <div class="stat-number" style="font-size: 3rem; font-weight: 800; color: var(--primary-color);"><span
-                        class="stat-value" data-target="15000">0</span>+
+                <div class="stat-number"
+                    style="font-size: 3.5rem; font-weight: 800; color: var(--primary-color); font-family: var(--font-heading);">
+                    <span class="stat-value" data-target="15000">0</span>+
                 </div>
                 <div class="stat-label"
-                    style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600;">Active
+                    style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                    Active
                     Bidders</div>
             </div>
-            <div>
-                <div class="stat-number" style="font-size: 3rem; font-weight: 800; color: var(--secondary-color);">
+            <div style="position: relative;">
+                <!-- Vertical Divider for desktop -->
+                <div class="hide-mobile"
+                    style="position: absolute; left: 0; top: 20%; bottom: 20%; width: 1px; background: rgba(0,0,0,0.1);">
+                </div>
+                <div class="stat-number"
+                    style="font-size: 3.5rem; font-weight: 800; color: var(--primary-color); font-family: var(--font-heading);">
                     <span class="stat-value" data-target="8500">0</span>+
                 </div>
                 <div class="stat-label"
-                    style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600;">Items
+                    style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                    Items
                     Sold</div>
+                <div class="hide-mobile"
+                    style="position: absolute; right: 0; top: 20%; bottom: 20%; width: 1px; background: rgba(0,0,0,0.1);">
+                </div>
             </div>
             <div>
-                <div class="stat-number" style="font-size: 3rem; font-weight: 800; color: var(--accent-color);">$<span
-                        class="stat-value" data-target="25">0</span>M+
+                <div class="stat-number"
+                    style="font-size: 3.5rem; font-weight: 800; color: var(--primary-color); font-family: var(--font-heading);">
+                    $<span class="stat-value" data-target="25">0</span>M+
                 </div>
                 <div class="stat-label"
-                    style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600;">Trade
+                    style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                    Trade
                     Volume</div>
             </div>
         </div>
     </section>
 
     <!-- Trust & Verification [NEW] -->
-    <section id="trust-verification" class="container animate-entry delay-300">
-        <div
-            style="background: var(--bg-surface); padding: 4rem; border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.05);">
+    <section id="trust-verification" class="container animate-entry delay-300" style="margin-top: 5rem;">
+        <div class="glass-card"
+            style="padding: 4rem; border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.2);">
             <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">The Gold Standard of Trust</h2>
-                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7;">We employ rigorous security
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--text-main);">The Gold Standard of
+                    Trust</h2>
+                <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.8;">We employ rigorous security
                     protocols and expert verification to ensure that BidMaster remains the most secure platform for
                     global collectors.</p>
             </div>
             <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem;">
                 <div style="display: flex; gap: 1.5rem;">
                     <div
-                        style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(99, 102, 241, 0.1); color: var(--primary-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                        style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); color: var(--primary-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 1px solid rgba(212, 175, 55, 0.2);">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <div>
-                        <h4 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Identity Verification</h4>
+                        <h4 style="font-size: 1.25rem; margin-bottom: 0.75rem; font-family: var(--font-heading);">
+                            Identity Verification</h4>
                         <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">AI-powered identity
                             checks for all bidders and sellers to prevent fraud and ensure a professional community.</p>
                     </div>
                 </div>
                 <div style="display: flex; gap: 1.5rem;">
                     <div
-                        style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(236, 72, 153, 0.1); color: var(--secondary-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                        style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); color: var(--primary-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 1px solid rgba(212, 175, 55, 0.2);">
                         <i class="fas fa-check-double"></i>
                     </div>
                     <div>
-                        <h4 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Item Authentication</h4>
+                        <h4 style="font-size: 1.25rem; margin-bottom: 0.75rem; font-family: var(--font-heading);">Item
+                            Authentication</h4>
                         <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Our team of
                             world-class experts physically inspects and certifies high-value assets before they go live.
                         </p>
@@ -508,11 +644,12 @@
                 </div>
                 <div style="display: flex; gap: 1.5rem;">
                     <div
-                        style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(139, 92, 246, 0.1); color: var(--accent-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                        style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); color: var(--primary-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 1px solid rgba(212, 175, 55, 0.2);">
                         <i class="fas fa-lock"></i>
                     </div>
                     <div>
-                        <h4 style="font-size: 1.25rem; margin-bottom: 0.75rem;">Escrow Protection</h4>
+                        <h4 style="font-size: 1.25rem; margin-bottom: 0.75rem; font-family: var(--font-heading);">Escrow
+                            Protection</h4>
                         <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Funds are held in a
                             secure escrow account and only released when the buyer confirms receipt of the item.</p>
                     </div>
@@ -520,6 +657,8 @@
             </div>
         </div>
     </section>
+
+    <!-- Auction Calendar [NEW] -->
 
     <!-- Auction Calendar [NEW] -->
 
@@ -531,13 +670,13 @@
                     Events</span>
                 <h2 style="font-size: 2.5rem; font-family: 'Playfair Display', serif;">Auction Calendar</h2>
             </div>
-            <a href="#" class="btn btn-outline">Subscribe to Calendar</a>
+            <a href="#" class="btn btn-outline" style="border-radius: var(--radius-full);">Subscribe to Calendar</a>
         </div>
-        <div class="card" style="padding: 0; overflow: hidden; border: 1px solid rgba(0,0,0,0.05);">
+        <div class="glass-card" style="padding: 0; overflow: hidden; border: 1px solid rgba(0,0,0,0.05);">
             <div class="table-responsive">
                 <table style="width: 100%; border-collapse: collapse; text-align: left;">
                     <thead>
-                        <tr style="background: var(--bg-body); border-bottom: 1px solid rgba(0,0,0,0.05);">
+                        <tr style="background: rgba(0,0,0,0.02); border-bottom: 1px solid rgba(0,0,0,0.05);">
                             <th
                                 style="padding: 1.5rem 2rem; color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">
                                 Date</th>
@@ -557,12 +696,13 @@
                     </thead>
                     <tbody>
                         <tr style="border-bottom: 1px solid rgba(0,0,0,0.05); transition: var(--transition);"
-                            onmouseover="this.style.background='var(--bg-body)'"
+                            onmouseover="this.style.background='rgba(212, 175, 55, 0.05)'"
                             onmouseout="this.style.background='transparent'">
-                            <td style="padding: 1.5rem 2rem;"><span style="font-weight: 700;">Jan 24, 2026</span></td>
+                            <td style="padding: 1.5rem 2rem;"><span
+                                    style="font-weight: 700; font-family: var(--font-heading);">Jan 24, 2026</span></td>
                             <td style="padding: 1.5rem 2rem; font-weight: 600;">The Obsidian Watch Collection</td>
                             <td style="padding: 1.5rem 2rem;"><span
-                                    style="padding: 0.4rem 0.8rem; background: rgba(99, 102, 241, 0.1); color: var(--primary-color); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Jewelry</span>
+                                    style="padding: 0.4rem 0.8rem; background: rgba(212, 175, 55, 0.1); color: var(--primary-color); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Jewelry</span>
                             </td>
                             <td style="padding: 1.5rem 2rem;"><span style="color: #10b981; font-weight: 700;"><i
                                         class="fas fa-circle"
@@ -574,14 +714,15 @@
                                         style="font-size: 0.7rem; margin-left: 0.3rem;"></i></a></td>
                         </tr>
                         <tr style="border-bottom: 1px solid rgba(0,0,0,0.05); transition: var(--transition);"
-                            onmouseover="this.style.background='var(--bg-body)'"
+                            onmouseover="this.style.background='rgba(212, 175, 55, 0.05)'"
                             onmouseout="this.style.background='transparent'">
-                            <td style="padding: 1.5rem 2rem;"><span style="font-weight: 700;">Feb 02, 2026</span></td>
+                            <td style="padding: 1.5rem 2rem;"><span
+                                    style="font-weight: 700; font-family: var(--font-heading);">Feb 02, 2026</span></td>
                             <td style="padding: 1.5rem 2rem; font-weight: 600;">Modern Masters: Art Deco Series</td>
                             <td style="padding: 1.5rem 2rem;"><span
-                                    style="padding: 0.4rem 0.8rem; background: rgba(236, 72, 153, 0.1); color: var(--secondary-color); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Fine
+                                    style="padding: 0.4rem 0.8rem; background: rgba(124, 58, 237, 0.1); color: var(--accent-color); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Fine
                                     Art</span></td>
-                            <td style="padding: 1.5rem 2rem;"><span style="color: #6b7280; font-weight: 700;"><i
+                            <td style="padding: 1.5rem 2rem;"><span style="color: #64748b; font-weight: 700;"><i
                                         class="fas fa-circle"
                                         style="font-size: 0.5rem; margin-right: 0.5rem; vertical-align: middle;"></i>Coming
                                     Soon</span></td>
@@ -590,14 +731,15 @@
                                     <i class="fas fa-bell" style="font-size: 0.8rem; margin-left: 0.3rem;"></i></a></td>
                         </tr>
                         <tr style="border-bottom: 1px solid rgba(0,0,0,0.05); transition: var(--transition);"
-                            onmouseover="this.style.background='var(--bg-body)'"
+                            onmouseover="this.style.background='rgba(212, 175, 55, 0.05)'"
                             onmouseout="this.style.background='transparent'">
-                            <td style="padding: 1.5rem 2rem;"><span style="font-weight: 700;">Feb 15, 2026</span></td>
+                            <td style="padding: 1.5rem 2rem;"><span
+                                    style="font-weight: 700; font-family: var(--font-heading);">Feb 15, 2026</span></td>
                             <td style="padding: 1.5rem 2rem; font-weight: 600;">Global Supercar Showcase</td>
                             <td style="padding: 1.5rem 2rem;"><span
-                                    style="padding: 0.4rem 0.8rem; background: rgba(139, 92, 246, 0.1); color: var(--accent-color); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Vehicles</span>
+                                    style="padding: 0.4rem 0.8rem; background: rgba(15, 23, 42, 0.1); color: var(--secondary-color); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Vehicles</span>
                             </td>
-                            <td style="padding: 1.5rem 2rem;"><span style="color: #6b7280; font-weight: 700;"><i
+                            <td style="padding: 1.5rem 2rem;"><span style="color: #64748b; font-weight: 700;"><i
                                         class="fas fa-circle"
                                         style="font-size: 0.5rem; margin-right: 0.5rem; vertical-align: middle;"></i>Coming
                                     Soon</span></td>
@@ -614,64 +756,79 @@
 
     <!-- Latest News -->
 
+    <!-- Latest News -->
+
     <section class="container animate-entry delay-300"
-        style="padding: 2rem 1.5rem; background: var(--bg-surface); border-radius: var(--radius-lg);">
-        <h2 class="section-title" style="color: var(--text-main);">Latest Auction News</h2>
+        style="padding: 4rem 2rem; background: var(--bg-surface); border-radius: var(--radius-xl); border: 1px solid rgba(0,0,0,0.05);">
+        <h2 class="section-title" style="color: var(--text-main); margin-bottom: 3rem;">Latest Auction News</h2>
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr)); gap: 2rem;">
             <div class="blog-card"
-                style="background: var(--bg-body); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(0,0,0,0.05);">
-                <div class="blog-img" style="height: 200px; overflow: hidden;">
+                style="background: var(--bg-body); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(0,0,0,0.05); transition: var(--transition);">
+                <div class="blog-img" style="height: 240px; overflow: hidden;">
                     <img src="assets/images/royal_antique.png" alt="News 1"
-                        style="width: 100%; height: 100%; object-fit: cover;">
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;">
                 </div>
-                <div class="blog-content" style="padding: 1.5rem;">
+                <div class="blog-content" style="padding: 2rem;">
                     <span class="blog-date"
-                        style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Oct 12, 2025</span>
-                    <h3 class="blog-title" style="margin: 0.5rem 0 1rem; color: var(--text-main);">Record Breaking Sale
+                        style="font-size: 0.8rem; color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Oct
+                        12, 2025</span>
+                    <h3 class="blog-title"
+                        style="margin: 0.75rem 0 1rem; color: var(--text-main); font-family: var(--font-heading); font-size: 1.5rem;">
+                        Record Breaking Sale
                         of the Century</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">A rare diamond necklace
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">A
+                        rare diamond necklace
                         sold for over $5 million in our latest
-                        event.</p>
+                        event, setting a new global benchmark for high jewelry auctions.</p>
                     <a href="#"
-                        style="color: var(--primary-color); font-weight: 700; margin-top: 1.5rem; display: block; font-size: 0.9rem;">Read
-                        More →</a>
+                        style="color: var(--primary-color); font-weight: 700; display: inline-block; font-size: 0.9rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 2px;">Read
+                        Article</a>
                 </div>
             </div>
             <div class="blog-card"
-                style="background: var(--bg-body); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(0,0,0,0.05);">
-                <div class="blog-img" style="height: 200px; overflow: hidden;">
+                style="background: var(--bg-body); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(0,0,0,0.05); transition: var(--transition);">
+                <div class="blog-img" style="height: 240px; overflow: hidden;">
                     <img src="assets/images/vehicles_category.png" alt="News 2"
-                        style="width: 100%; height: 100%; object-fit: cover;">
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;">
                 </div>
-                <div class="blog-content" style="padding: 1.5rem;">
+                <div class="blog-content" style="padding: 2rem;">
                     <span class="blog-date"
-                        style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Oct 08, 2025</span>
-                    <h3 class="blog-title" style="margin: 0.5rem 0 1rem; color: var(--text-main);">Classic Cars: A
+                        style="font-size: 0.8rem; color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Oct
+                        08, 2025</span>
+                    <h3 class="blog-title"
+                        style="margin: 0.75rem 0 1rem; color: var(--text-main); font-family: var(--font-heading); font-size: 1.5rem;">
+                        Classic Cars: A
                         Rising Investment Class</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Why vintage vehicles are
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">Why
+                        vintage vehicles are
                         outperforming traditional stocks this
-                        year.</p>
+                        year as tangible assets become the preferred hedge against inflation.</p>
                     <a href="#"
-                        style="color: var(--primary-color); font-weight: 700; margin-top: 1.5rem; display: block; font-size: 0.9rem;">Read
-                        More →</a>
+                        style="color: var(--primary-color); font-weight: 700; display: inline-block; font-size: 0.9rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 2px;">Read
+                        Article</a>
                 </div>
             </div>
             <div class="blog-card"
-                style="background: var(--bg-body); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(0,0,0,0.05);">
-                <div class="blog-img" style="height: 200px; overflow: hidden;">
+                style="background: var(--bg-body); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(0,0,0,0.05); transition: var(--transition);">
+                <div class="blog-img" style="height: 240px; overflow: hidden;">
                     <img src="assets/images/electronics_category.png" alt="News 3"
-                        style="width: 100%; height: 100%; object-fit: cover;">
+                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;">
                 </div>
-                <div class="blog-content" style="padding: 1.5rem;">
+                <div class="blog-content" style="padding: 2rem;">
                     <span class="blog-date"
-                        style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Oct 05, 2025</span>
-                    <h3 class="blog-title" style="margin: 0.5rem 0 1rem; color: var(--text-main);">Tech Memorabilia in
+                        style="font-size: 0.8rem; color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Oct
+                        05, 2025</span>
+                    <h3 class="blog-title"
+                        style="margin: 0.75rem 0 1rem; color: var(--text-main); font-family: var(--font-heading); font-size: 1.5rem;">
+                        Tech Memorabilia in
                         High Demand</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Early prototypes of
-                        famous gadgets are fetching high prices.</p>
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">Early
+                        prototypes of
+                        famous gadgets are fetching high prices, driven by Silicon Valley collectors seeking pieces of
+                        history.</p>
                     <a href="#"
-                        style="color: var(--primary-color); font-weight: 700; margin-top: 1.5rem; display: block; font-size: 0.9rem;">Read
-                        More →</a>
+                        style="color: var(--primary-color); font-weight: 700; display: inline-block; font-size: 0.9rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 2px;">Read
+                        Article</a>
                 </div>
             </div>
         </div>
@@ -679,73 +836,94 @@
 
     <!-- How It Works Section -->
     <section id="how-it-works" class="container"
-        style="background: var(--bg-surface); border-radius: var(--radius-lg);">
-        <h2 class="section-title" style="color: var(--text-main); margin-bottom: 4rem;">How It Works</h2>
-        <div class="flex" style="flex-wrap: wrap; gap: 2rem; justify-content: center; position: relative;">
+        style="background: var(--bg-surface); border-radius: var(--radius-xl); padding: 5rem 2rem; margin-top: 5rem; position: relative; border: 1px solid rgba(0,0,0,0.05);">
+        <h2 class="section-title" style="color: var(--text-main); margin-bottom: 5rem; text-align: center;">How It Works
+        </h2>
+        <div class="flex" style="flex-wrap: wrap; gap: 4rem; justify-content: center; position: relative;">
             <!-- Connector Line -->
-            <div style="position: absolute; top: 40px; left: 15%; right: 15%; height: 2px; background: rgba(99, 102, 241, 0.2); z-index: 1;"
+            <div style="position: absolute; top: 50px; left: 15%; right: 15%; height: 2px; background: linear-gradient(to right, transparent, var(--primary-color), transparent); z-index: 1; opacity: 0.3;"
                 class="hide-mobile"></div>
 
-            <div style="flex: 1; min-width: 250px; text-align: center; position: relative; z-index: 2;">
+            <div style="flex: 1; min-width: 280px; text-align: center; position: relative; z-index: 2;">
                 <div
-                    style="width: 80px; height: 80px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: white; font-size: 1.8rem; font-weight: 800; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);">
+                    style="width: 100px; height: 100px; background: var(--bg-surface); border: 2px solid var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2.5rem; color: var(--primary-color); font-size: 2rem; font-weight: 800; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);">
                     1
                 </div>
-                <h3 style="margin-bottom: 1rem; color: var(--text-main);">Register</h3>
-                <p style="color: var(--text-muted); line-height: 1.7;">Sign up for free, verify your account, and join
-                    our global community of collectors.</p>
+                <h3
+                    style="margin-bottom: 1rem; color: var(--text-main); font-family: var(--font-heading); font-size: 1.6rem;">
+                    Register</h3>
+                <p style="color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">Sign up for exclusive access,
+                    verify your identity, and join our global community of elite collectors.</p>
             </div>
-            <div style="flex: 1; min-width: 250px; text-align: center; position: relative; z-index: 2;">
+            <div style="flex: 1; min-width: 280px; text-align: center; position: relative; z-index: 2;">
                 <div
-                    style="width: 80px; height: 80px; background: var(--secondary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: white; font-size: 1.8rem; font-weight: 800; box-shadow: 0 10px 20px rgba(236, 72, 153, 0.3);">
+                    style="width: 100px; height: 100px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2.5rem; color: #0f172a; font-size: 2rem; font-weight: 800; box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);">
                     2
                 </div>
-                <h3 style="margin-bottom: 1rem; color: var(--text-main);">Bid</h3>
-                <p style="color: var(--text-muted); line-height: 1.7;">Browse extraordinary items and place your bids in
-                    real-time or via automated proxy.</p>
+                <h3
+                    style="margin-bottom: 1rem; color: var(--text-main); font-family: var(--font-heading); font-size: 1.6rem;">
+                    Bid</h3>
+                <p style="color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">Browse extraordinary
+                    curations and place your bids in real-time or via automated proxy services.</p>
             </div>
-            <div style="flex: 1; min-width: 250px; text-align: center; position: relative; z-index: 2;">
+            <div style="flex: 1; min-width: 280px; text-align: center; position: relative; z-index: 2;">
                 <div
-                    style="width: 80px; height: 80px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: white; font-size: 1.8rem; font-weight: 800; box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);">
+                    style="width: 100px; height: 100px; background: var(--bg-surface); border: 2px solid var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2.5rem; color: var(--accent-color); font-size: 2rem; font-weight: 800; box-shadow: 0 10px 30px rgba(124, 58, 237, 0.2);">
                     3
                 </div>
-                <h3 style="margin-bottom: 1rem; color: var(--text-main);">Win</h3>
-                <p style="color: var(--text-muted); line-height: 1.7;">Secure your win with our safe payment system and
-                    get your items delivered globally.</p>
+                <h3
+                    style="margin-bottom: 1rem; color: var(--text-main); font-family: var(--font-heading); font-size: 1.6rem;">
+                    Win</h3>
+                <p style="color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">Secure your win with our safe
+                    escrow payment system and enjoy white-glove global delivery.</p>
             </div>
         </div>
     </section>
 
     <!-- Heritage & Story [NEW] -->
-    <section id="heritage" class="container animate-entry delay-300">
+    <section id="heritage" class="container animate-entry delay-300" style="margin-top: 5rem;">
         <div class="card"
-            style="padding: 0; overflow: hidden; display: flex; flex-wrap: wrap; border: none; background: transparent;">
-            <div style="flex: 1; min-width: 300px; height: 450px;">
+            style="padding: 0; overflow: hidden; display: flex; flex-wrap: wrap; border: none; background: transparent; align-items: center;">
+            <div style="flex: 1; min-width: 300px; height: 500px; position: relative;">
                 <img src="assets/images/great_gatsby.jpg" alt="Heritage"
-                    style="width: 100%; height: 100%; object-fit: cover;">
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                <div
+                    style="position: absolute; bottom: -20px; right: -20px; background: var(--bg-surface); padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); border: 1px solid rgba(0,0,0,0.05);">
+                    <p
+                        style="font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 1; color: var(--primary-color); margin: 0;">
+                        1924</p>
+                    <p
+                        style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-top: 0.5rem; text-align: center;">
+                        Founded</p>
+                </div>
             </div>
             <div
-                style="flex: 1.2; min-width: 300px; padding: 4rem; background: var(--bg-surface); display: flex; flex-direction: column; justify-content: center;">
+                style="flex: 1.2; min-width: 300px; padding: 4rem 2rem 4rem 4rem; display: flex; flex-direction: column; justify-content: center;">
                 <span
                     style="color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; display: block;">Our
                     Legacy</span>
                 <h2
-                    style="font-size: 3rem; font-family: 'Playfair Display', serif; margin-bottom: 2rem; line-height: 1.2;">
-                    Preserving Excellence Since 1924</h2>
-                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
-                    What started as a small auction room in London has evolved into the world's most trusted digital
+                    style="font-size: 3.5rem; font-family: 'Playfair Display', serif; margin-bottom: 2rem; line-height: 1.1; color: var(--text-main);">
+                    Preserving Excellence <br>Since 1924</h2>
+                <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.8; margin-bottom: 2.5rem;">
+                    What started as a small, exclusive auction room in London has evolved into the world's most trusted
+                    digital
                     platform for high-value collectibles. We combine a century of expertise with cutting-edge technology
                     to ensure every bid is secure and every treasure is authentic.
                 </p>
                 <div class="flex gap-4">
                     <div
-                        style="text-align: center; flex: 1; padding: 1.5rem; background: var(--bg-body); border-radius: var(--radius-md);">
-                        <h4 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;">100+</h4>
+                        style="text-align: center; flex: 1; padding: 2rem; background: var(--bg-surface); border-radius: var(--radius-md); border: 1px solid rgba(0,0,0,0.05); box-shadow: var(--shadow-sm);">
+                        <h4
+                            style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 0.5rem; font-family: var(--font-heading);">
+                            100+</h4>
                         <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Years</p>
                     </div>
                     <div
-                        style="text-align: center; flex: 1; padding: 1.5rem; background: var(--bg-body); border-radius: var(--radius-md);">
-                        <h4 style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 0.5rem;">50+</h4>
+                        style="text-align: center; flex: 1; padding: 2rem; background: var(--bg-surface); border-radius: var(--radius-md); border: 1px solid rgba(0,0,0,0.05); box-shadow: var(--shadow-sm);">
+                        <h4
+                            style="font-size: 2.5rem; color: var(--secondary-color); margin-bottom: 0.5rem; font-family: var(--font-heading);">
+                            50+</h4>
                         <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Countries</p>
                     </div>
                 </div>
@@ -756,12 +934,14 @@
 
     <!-- Testimonials -->
     <section id="testimonials" class="container animate-entry delay-300"
-        style="background: var(--bg-surface); border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.05);">
+        style="padding: 5rem 2rem; background: var(--bg-surface); border-radius: var(--radius-xl); border: 1px solid rgba(0,0,0,0.05); margin-top: 5rem;">
         <h2 class="section-title" style="color: var(--text-main); margin-bottom: 4rem;">What Our Collectors Say</h2>
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem;">
-            <div class="card hover-float" style="padding: 2rem; display: flex; flex-direction: column;">
+            <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
+                <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
+                        class="fas fa-quote-left"></i></div>
                 <p
-                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1;">
+                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1; font-size: 1.1rem;">
                     "BidMaster is the most refined auction platform I've ever experienced. The interface is stunning,
                     and the real-time bidding is incredibly reliable."</p>
                 <div class="flex items-center gap-4"
@@ -769,96 +949,113 @@
                     <img src="assets/images/avatar_sarah.jpg" alt="Sarah Johnson"
                         style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
                     <div>
-                        <h4 style="font-weight: 700; color: var(--text-main);">Sarah Johnson</h4>
+                        <h4
+                            style="font-weight: 700; color: var(--text-main); font-family: var(--font-heading); font-size: 1.1rem;">
+                            Sarah Johnson</h4>
                         <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Vintage
                             Collector</span>
                     </div>
                 </div>
             </div>
-            <div class="card hover-float" style="padding: 2rem; display: flex; flex-direction: column;">
+            <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
+                <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
+                        class="fas fa-quote-left"></i></div>
                 <p
-                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1;">
+                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1; font-size: 1.1rem;">
                     "The security and transparency on this platform are unmatched. I felt confident selling my entire
                     heirloom collection here."</p>
                 <div class="flex items-center gap-4"
                     style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
                     <img src="assets/images/avatar_michael.jpg" alt="Michael Chen"
-                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--secondary-color);">
+                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
                     <div>
-                        <h4 style="font-weight: 700; color: var(--text-main);">Michael Chen</h4>
+                        <h4
+                            style="font-weight: 700; color: var(--text-main); font-family: var(--font-heading); font-size: 1.1rem;">
+                            Michael Chen</h4>
                         <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Premium
                             Seller</span>
                     </div>
                 </div>
             </div>
-            <div class="card hover-float" style="padding: 2rem; display: flex; flex-direction: column;">
+            <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
+                <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
+                        class="fas fa-quote-left"></i></div>
                 <p
-                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1;">
+                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1; font-size: 1.1rem;">
                     "I found extremely rare pieces that I couldn't find anywhere else. The verification process gives me
                     total peace of mind as a buyer."</p>
                 <div class="flex items-center gap-4"
                     style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
-                    <img src="assets/images/avatar_elena.jpg" alt="Elena Rodriguez"
-                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-color);">
+                    <img src="assets/images/avatar_elena.jpg" alt="David Miller"
+                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
                     <div>
-                        <h4 style="font-weight: 700; color: var(--text-main);">Elena Rodriguez</h4>
+                        <h4
+                            style="font-weight: 700; color: var(--text-main); font-family: var(--font-heading); font-size: 1.1rem;">
+                            Elena Rodriguez</h4>
                         <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Art
                             Enthusiast</span>
                     </div>
                 </div>
             </div>
-            <!-- Extra Review 4 -->
-            <div class="card hover-float" style="padding: 2rem; display: flex; flex-direction: column;">
-                <p
-                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1;">
-                    "The customer support is exceptional. They guided me through my first international high-value
-                    purchase with such expertise."</p>
-                <div class="flex items-center gap-4"
-                    style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
-                    <img src="assets/images/avatar_david.jpg" alt="David Smith"
-                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
-                    <div>
-                        <h4 style="font-weight: 700; color: var(--text-main);">David Smith</h4>
-                        <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Rare Coin
-                            Expert</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Extra Review 5 -->
-            <div class="card hover-float" style="padding: 2rem; display: flex; flex-direction: column;">
-                <p
-                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1;">
-                    "As a designer, I appreciate the aesthetics and smoothness of the platform. It's truly a cut above
-                    any other auction site out there."</p>
-                <div class="flex items-center gap-4"
-                    style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
-                    <img src="assets/images/avatar_sophia.jpg" alt="Sophia Loren"
-                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--secondary-color);">
-                    <div>
-                        <h4 style="font-weight: 700; color: var(--text-main);">Sophia Loren</h4>
-                        <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Interior
-                            Designer</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Extra Review 6 -->
-            <div class="card hover-float" style="padding: 2rem; display: flex; flex-direction: column;">
-                <p
-                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1;">
-                    "The proxy bidding feature saved me from missing out on a dream item while I was in meetings. Best
-                    system ever!"</p>
-                <div class="flex items-center gap-4"
-                    style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
-                    <img src="assets/images/avatar_james.jpg" alt="James Wilson"
-                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-color);">
-                    <div>
-                        <h4 style="font-weight: 700; color: var(--text-main);">James Wilson</h4>
-                        <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Sports
-                            Memorabilia</span>
-                    </div>
-                </div>
+        </div>
+    </section> <img src="assets/images/avatar_elena.jpg" alt="Elena Rodriguez"
+        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-color);">
+    <div>
+        <h4 style="font-weight: 700; color: var(--text-main);">Elena Rodriguez</h4>
+        <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Art
+            Enthusiast</span>
+    </div>
+    </div>
+    </div>
+    <!-- Extra Review 4 -->
+    <div class="card hover-float" style="padding: 2rem; display: flex; flex-direction: column;">
+        <p style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1;">
+            "The customer support is exceptional. They guided me through my first international high-value
+            purchase with such expertise."</p>
+        <div class="flex items-center gap-4"
+            style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
+            <img src="assets/images/avatar_david.jpg" alt="David Smith"
+                style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
+            <div>
+                <h4 style="font-weight: 700; color: var(--text-main);">David Smith</h4>
+                <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Rare Coin
+                    Expert</span>
             </div>
         </div>
+    </div>
+    <!-- Extra Review 5 -->
+    <div class="card hover-float" style="padding: 2rem; display: flex; flex-direction: column;">
+        <p style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1;">
+            "As a designer, I appreciate the aesthetics and smoothness of the platform. It's truly a cut above
+            any other auction site out there."</p>
+        <div class="flex items-center gap-4"
+            style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
+            <img src="assets/images/avatar_sophia.jpg" alt="Sophia Loren"
+                style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--secondary-color);">
+            <div>
+                <h4 style="font-weight: 700; color: var(--text-main);">Sophia Loren</h4>
+                <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Interior
+                    Designer</span>
+            </div>
+        </div>
+    </div>
+    <!-- Extra Review 6 -->
+    <div class="card hover-float" style="padding: 2rem; display: flex; flex-direction: column;">
+        <p style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1;">
+            "The proxy bidding feature saved me from missing out on a dream item while I was in meetings. Best
+            system ever!"</p>
+        <div class="flex items-center gap-4"
+            style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
+            <img src="assets/images/avatar_james.jpg" alt="James Wilson"
+                style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-color);">
+            <div>
+                <h4 style="font-weight: 700; color: var(--text-main);">James Wilson</h4>
+                <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Sports
+                    Memorabilia</span>
+            </div>
+        </div>
+    </div>
+    </div>
     </section>
 
     <!-- Elite Membership Section -->
@@ -972,16 +1169,24 @@
     <!-- Newsletter Signup -->
     <section class="container animate-entry delay-300">
         <div class="newsletter-section"
-            style="background: linear-gradient(135deg, #1e293b, #0f172a); border-radius: var(--radius-lg); text-align: center; color: white;">
-            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem;">Stay in the Loop</h2>
-            <p style="color: #94a3b8; max-width: 650px; margin: 0 auto 3rem; font-size: 1.1rem; line-height: 1.8;">
+            style="background: var(--gradient-dark); border-radius: var(--radius-lg); text-align: center; color: white; border: 1px solid rgba(255,255,255,0.1); padding: 5rem 2rem; position: relative; overflow: hidden;">
+            <!-- Decorative Glow -->
+            <div
+                style="position: absolute; top: -50%; left: -20%; width: 50%; height: 200%; background: radial-gradient(circle, rgba(212, 175, 55, 0.15), transparent 70%); transform: rotate(30deg); pointer-events: none;">
+            </div>
+
+            <h2
+                style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; font-family: var(--font-heading); position: relative;">
+                Stay in the Loop</h2>
+            <p
+                style="color: rgba(255,255,255,0.8); max-width: 650px; margin: 0 auto 3rem; font-size: 1.15rem; line-height: 1.8; position: relative;">
                 Subscribe to our newsletter to
                 receive updates on upcoming live auctions, exclusive preview events, and world-class market insights.
             </p>
             <form class="newsletter-form"
-                style="display: flex; gap: 1rem; max-width: 600px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
+                style="display: flex; gap: 1rem; max-width: 600px; margin: 0 auto; flex-wrap: wrap; justify-content: center; position: relative;">
                 <input type="email" placeholder="Enter your email address" class="newsletter-input"
-                    style="flex: 1; min-width: 250px; padding: 1.2rem 1.5rem; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: white;">
+                    style="flex: 1; min-width: 250px; padding: 1.2rem 1.5rem; border-radius: var(--radius-full); border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: white; backdrop-filter: blur(5px);">
                 <button type="button" class="btn btn-primary"
                     style="border: none; padding: 1.2rem 3rem; font-weight: 700;">Subscribe Now</button>
             </form>
@@ -989,85 +1194,121 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer" style="background: #0f172a; color: white; padding: 5rem 0 2rem; margin-top: 4rem;">
+    <footer class="footer"
+        style="background: var(--secondary-color); color: white; padding: 6rem 0 3rem; margin-top: 6rem; position: relative;">
+        <!-- Top Border with Gold Accent -->
+        <div
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(to right, transparent, var(--primary-color), transparent); opacity: 0.5;">
+        </div>
+
         <div class="container">
             <div class="grid"
-                style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 4rem;">
+                style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 5rem;">
                 <!-- Column 1: Brand -->
                 <div class="footer-col">
                     <a href="index.html" class="logo flex items-center gap-2"
                         style="margin-bottom: 1.5rem; color: white;">
                         <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
-                        <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
+                        <span
+                            style="font-size: 1.8rem; font-weight: 800; font-family: var(--font-heading); letter-spacing: -0.5px;">BidMaster</span>
                     </a>
-                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.7;">The world's premier platform for
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
+                        The world's premier platform for
                         extraordinary auctions. Verified sellers, rare treasures, and a global community of serious
                         collectors.</p>
-                    <div class="flex gap-4" style="margin-top: 2rem;">
-                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                    <div class="flex gap-4">
+                        <a href="#"
+                            style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.05); color: white; transition: var(--transition); border: 1px solid rgba(255,255,255,0.1);"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                        <a href="#"
+                            style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.05); color: white; transition: var(--transition); border: 1px solid rgba(255,255,255,0.1);"><i
                                 class="fab fa-twitter"></i></a>
-                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                        <a href="#"
+                            style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.05); color: white; transition: var(--transition); border: 1px solid rgba(255,255,255,0.1);"><i
                                 class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.05); color: white; transition: var(--transition); border: 1px solid rgba(255,255,255,0.1);"><i
+                                class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
 
                 <!-- Column 2: Quick Links -->
                 <div class="footer-col">
-                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Quick Links
+                    <h4
+                        style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white; font-family: var(--font-heading); letter-spacing: 0.5px;">
+                        Quick Links
                     </h4>
                     <ul style="list-style: none;">
                         <li style="margin-bottom: 0.8rem;"><a href="index.html"
-                                style="color: #94a3b8; transition: var(--transition);">Home</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Home</a>
+                        </li>
                         <li style="margin-bottom: 0.8rem;"><a href="about.html"
-                                style="color: #94a3b8; transition: var(--transition);">About Us</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">About
+                                Us</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="services.html"
-                                style="color: #94a3b8; transition: var(--transition);">Live Auctions</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Live
+                                Auctions</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="contact.html"
-                                style="color: #94a3b8; transition: var(--transition);">Contact Us</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Contact
+                                Us</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3: Categories -->
                 <div class="footer-col">
-                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Categories
+                    <h4
+                        style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white; font-family: var(--font-heading); letter-spacing: 0.5px;">
+                        Categories
                     </h4>
                     <ul style="list-style: none;">
                         <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Electronics</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Electronics</a>
+                        </li>
                         <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Jewelry & Gems</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Jewelry
+                                & Gems</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Art & Antiques</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Art
+                                & Antiques</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Luxury Vehicles</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Luxury
+                                Vehicles</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 4: Support -->
                 <div class="footer-col">
-                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Support</h4>
+                    <h4
+                        style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white; font-family: var(--font-heading); letter-spacing: 0.5px;">
+                        Support</h4>
                     <ul style="list-style: none;">
                         <li style="margin-bottom: 0.8rem;"><a href="#" class="modal-trigger" data-modal="terms"
-                                style="color: #94a3b8; transition: var(--transition);">Terms of Service</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Terms
+                                of Service</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="#" class="modal-trigger" data-modal="privacy"
-                                style="color: #94a3b8; transition: var(--transition);">Privacy Policy</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Privacy
+                                Policy</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Help Center</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Help
+                                Center</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">FAQ</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">FAQ</a>
+                        </li>
                     </ul>
                 </div>
             </div>
 
             <div
                 style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 BidMaster. All rights reserved.</p>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">&copy; 2026 BidMaster. All rights reserved.
+                </p>
                 <div class="flex gap-4">
-                    <img src="assets/images/visa.svg" alt="Visa" style="height: 20px; opacity: 0.5;">
-                    <img src="assets/images/mastercard.svg" alt="Mastercard" style="height: 20px; opacity: 0.5;">
-                    <img src="assets/images/paypal.svg" alt="PayPal" style="height: 20px; opacity: 0.5;">
+                    <img src="assets/images/visa.svg" alt="Visa"
+                        style="height: 24px; opacity: 0.7; filter: brightness(0) invert(1);">
+                    <img src="assets/images/mastercard.svg" alt="Mastercard"
+                        style="height: 24px; opacity: 0.7; filter: brightness(0) invert(1);">
+                    <img src="assets/images/paypal.svg" alt="PayPal"
+                        style="height: 24px; opacity: 0.7; filter: brightness(0) invert(1);">
                 </div>
             </div>
         </div>

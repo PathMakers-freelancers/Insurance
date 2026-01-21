@@ -10,60 +10,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="home-style-2 signup-body">
+<body class="home-style-2 signup-reset-body">
     <style>
-        .signup-body {
+        .signup-reset-body {
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            background: linear-gradient(var(--bg-glass), var(--bg-glass)), url('assets/images/signup_bg.jpg');
-            background-size: cover;
-            background-position: center;
             margin: 0;
-            transition: var(--transition);
+            background: var(--bg-body);
+            overflow: hidden;
+            position: relative;
         }
 
-        .signup-form-side {
-            background: var(--bg-surface) !important;
-            color: var(--text-main) !important;
-        }
-
-        .signup-form-side h2,
-        .signup-form-side p,
-        .signup-form-side label,
-        .signup-form-side .logo span {
-            color: var(--text-main) !important;
-        }
-
-        .signup-form-side input {
-            background: rgba(var(--primary-color-rgb, 99, 102, 241), 0.05) !important;
-            border: 1px solid rgba(var(--primary-color-rgb, 99, 102, 241), 0.1) !important;
-            color: var(--text-main) !important;
-        }
-
-        [data-theme="dark"] .signup-form-side input {
-            background: rgba(255, 255, 255, 0.05) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            color: white !important;
-        }
-
-        .signup-left h2,
-        .signup-left p,
-        .signup-left .signup-stat-label {
-            transition: var(--transition);
-        }
-
-        [data-theme="light"] .signup-left h2 {
-            color: var(--text-main) !important;
-        }
-
-        [data-theme="light"] .signup-left p {
-            color: var(--text-muted) !important;
-        }
-
-        [data-theme="light"] .signup-left .signup-stat-label {
-            color: var(--text-muted) !important;
+        .glass-signup-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border-radius: 24px;
         }
     </style>
 
@@ -80,14 +45,14 @@
         </button>
     </div>
 
-    <!-- Floating Background Shapes -->
-    <div class="floating-shapes">
-        <div class="shape shape-1" style="background: var(--primary-color);"></div>
-        <div class="shape shape-2" style="background: var(--secondary-color);"></div>
-        <div class="shape shape-3" style="background: var(--accent-color);"></div>
+    <!-- Animated Background -->
+    <div class="animated-bg" style="z-index: -1;">
+        <div class="bg-blob bg-blob-1"></div>
+        <div class="bg-blob bg-blob-2"></div>
+        <div class="bg-blob bg-blob-3"></div>
     </div>
 
-    <div class="card glass-card animate-entry signup-card"
+    <div class="card glass-signup-card animate-entry signup-card premium-border glow-on-hover"
         style="width: 95%; max-width: 1000px; padding: 0; text-align: center; position: relative; z-index: 10; display: flex; flex-direction: column; overflow: hidden; border: none; min-height: 600px; margin: 2rem 0;">
         <style>
             @media (min-width: 768px) {

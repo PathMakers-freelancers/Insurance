@@ -209,10 +209,10 @@
 
 <body>
     <!-- Background Animations -->
-    <div class="animated-bg">
-        <div class="bg-blob bg-blob-1"></div>
-        <div class="bg-blob bg-blob-2"></div>
-        <div class="bg-blob bg-blob-3"></div>
+    <div class="animated-bg" style="z-index: -1;">
+        <div class="bg-blob bg-blob-1" style="top: 10%; left: 10%;"></div>
+        <div class="bg-blob bg-blob-2" style="top: 40%; right: 10%;"></div>
+        <div class="bg-blob bg-blob-3" style="bottom: 10%; left: 30%;"></div>
     </div>
     <header class="header">
         <div class="container flex justify-between items-center">
@@ -538,85 +538,121 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer" style="background: #0f172a; color: white; padding: 5rem 0 2rem;">
+    <footer class="footer"
+        style="background: var(--secondary-color); color: white; padding: 6rem 0 3rem; margin-top: 6rem; position: relative;">
+        <!-- Top Border with Gold Accent -->
+        <div
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(to right, transparent, var(--primary-color), transparent); opacity: 0.5;">
+        </div>
+
         <div class="container">
-            <div class="grid mobile-stack"
-                style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+            <div class="grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 5rem;">
                 <!-- Column 1: Brand -->
                 <div class="footer-col">
                     <a href="index.html" class="logo flex items-center gap-2"
                         style="margin-bottom: 1.5rem; color: white;">
                         <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
-                        <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
+                        <span
+                            style="font-size: 1.8rem; font-weight: 800; font-family: var(--font-heading); letter-spacing: -0.5px;">BidMaster</span>
                     </a>
-                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.7;">The world's premier platform for
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
+                        The world's premier platform for
                         extraordinary auctions. Verified sellers, rare treasures, and a global community of serious
                         collectors.</p>
-                    <div class="flex gap-4" style="margin-top: 2rem;">
-                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                    <div class="flex gap-4">
+                        <a href="#"
+                            style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.05); color: white; transition: var(--transition); border: 1px solid rgba(255,255,255,0.1);"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                        <a href="#"
+                            style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.05); color: white; transition: var(--transition); border: 1px solid rgba(255,255,255,0.1);"><i
                                 class="fab fa-twitter"></i></a>
-                        <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
+                        <a href="#"
+                            style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.05); color: white; transition: var(--transition); border: 1px solid rgba(255,255,255,0.1);"><i
                                 class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.05); color: white; transition: var(--transition); border: 1px solid rgba(255,255,255,0.1);"><i
+                                class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
 
                 <!-- Column 2: Quick Links -->
                 <div class="footer-col">
-                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Quick Links
+                    <h4
+                        style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white; font-family: var(--font-heading); letter-spacing: 0.5px;">
+                        Quick Links
                     </h4>
                     <ul style="list-style: none;">
                         <li style="margin-bottom: 0.8rem;"><a href="index.html"
-                                style="color: #94a3b8; transition: var(--transition);">Home</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Home</a>
+                        </li>
                         <li style="margin-bottom: 0.8rem;"><a href="about.html"
-                                style="color: #94a3b8; transition: var(--transition);">About Us</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">About
+                                Us</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="services.html"
-                                style="color: #94a3b8; transition: var(--transition);">Live Auctions</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Live
+                                Auctions</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="contact.html"
-                                style="color: #94a3b8; transition: var(--transition);">Contact Us</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Contact
+                                Us</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3: Categories -->
                 <div class="footer-col">
-                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Categories
+                    <h4
+                        style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white; font-family: var(--font-heading); letter-spacing: 0.5px;">
+                        Categories
                     </h4>
                     <ul style="list-style: none;">
                         <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Electronics</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Electronics</a>
+                        </li>
                         <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Jewelry & Gems</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Jewelry
+                                & Gems</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Art & Antiques</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Art
+                                & Antiques</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Luxury Vehicles</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Luxury
+                                Vehicles</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 4: Support -->
                 <div class="footer-col">
-                    <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Support</h4>
+                    <h4
+                        style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white; font-family: var(--font-heading); letter-spacing: 0.5px;">
+                        Support</h4>
                     <ul style="list-style: none;">
                         <li style="margin-bottom: 0.8rem;"><a href="#" class="modal-trigger" data-modal="terms"
-                                style="color: #94a3b8; transition: var(--transition);">Terms of Service</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Terms
+                                of Service</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="#" class="modal-trigger" data-modal="privacy"
-                                style="color: #94a3b8; transition: var(--transition);">Privacy Policy</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Privacy
+                                Policy</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">Help Center</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Help
+                                Center</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="#"
-                                style="color: #94a3b8; transition: var(--transition);">FAQ</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">FAQ</a>
+                        </li>
                     </ul>
                 </div>
             </div>
 
             <div
                 style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 BidMaster. All rights reserved.</p>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">&copy; 2026 BidMaster. All rights reserved.
+                </p>
                 <div class="flex gap-4">
-                    <img src="assets/images/visa.svg" alt="Visa" style="height: 20px; opacity: 0.5;">
-                    <img src="assets/images/mastercard.svg" alt="Mastercard" style="height: 20px; opacity: 0.5;">
-                    <img src="assets/images/paypal.svg" alt="PayPal" style="height: 20px; opacity: 0.5;">
+                    <img src="assets/images/visa.svg" alt="Visa"
+                        style="height: 24px; opacity: 0.7; filter: brightness(0) invert(1);">
+                    <img src="assets/images/mastercard.svg" alt="Mastercard"
+                        style="height: 24px; opacity: 0.7; filter: brightness(0) invert(1);">
+                    <img src="assets/images/paypal.svg" alt="PayPal"
+                        style="height: 24px; opacity: 0.7; filter: brightness(0) invert(1);">
                 </div>
             </div>
         </div>
