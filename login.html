@@ -10,115 +10,373 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="home-style-2 login-reset-body">
+<body class="login-reset-body">
     <style>
         .login-reset-body {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-between;
             min-height: 100vh;
             margin: 0;
             background: var(--bg-body);
-            overflow: hidden;
+            overflow-x: hidden;
             position: relative;
         }
 
-        .glass-login-card {
-            background: rgba(255, 255, 255, 0.03);
+        .login-main-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .login-wrapper {
+            display: flex;
+            width: 100%;
+            max-width: 1000px;
+            background: var(--bg-surface);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--shadow-subtle);
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .login-image-section {
+            flex: 1;
+            background: url('assets/images/login-auction.png') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 3rem;
+            min-height: 600px;
+        }
+
+        .login-image-section::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        }
+
+        .login-image-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .glass-login-card {
+            flex: 1;
+            max-width: 500px;
+            padding: clamp(2rem, 5vw, 4rem);
+            margin: 0 !important;
+            border-radius: 0 !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        @media (max-width: 900px) {
+            .login-image-section {
+                display: none;
+            }
+
+            .login-wrapper {
+                max-width: 450px;
+                border: 1px solid var(--shadow-subtle);
+                background: var(--bg-surface);
+            }
+
+            .glass-login-card {
+                padding: 2.5rem;
+            }
         }
     </style>
 
     <!-- Fixed Controls -->
-    <div style="position: fixed; top: 2rem; left: 2rem; display: flex; gap: 1rem; z-index: 100;">
-        <a href="index.html" class="icon-btn" title="Back to Website">
-            <i class="fas fa-home"></i>
-        </a>
-        <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
-            <i class="fas fa-moon"></i>
-        </button>
-        <button id="rtl-toggle" class="icon-btn" title="Switch Language Direction">
-            <i class="fas fa-globe"></i>
-        </button>
-    </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container flex justify-between items-center" style="overflow: visible !important;">
 
-    <!-- Animated Background -->
-    <div class="animated-bg" style="z-index: -1;">
-        <div class="bg-blob bg-blob-1"></div>
-        <div class="bg-blob bg-blob-2"></div>
-        <div class="bg-blob bg-blob-3"></div>
-    </div>
+            <!-- Logo -->
+            <a href="index.html" class="logo flex items-center gap-2">
+                <i class="fas fa-gavel fa-2x"></i>
+                <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
+            </a>
 
-    <!-- Login Card -->
-    <div class="card glass-login-card animate-entry premium-border glow-on-hover"
-        style="width: calc(100% - 2rem); max-width: 450px; padding: clamp(2rem, 8vw, 3.5rem); text-align: center; position: relative; z-index: 10; margin: 1rem; border-radius: 24px;">
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="flex items-center gap-8">
+                    <li class="dropdown">
+                        <a href="index.html" class="nav-link dropdown-toggle active">Home <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Home 1</a></li>
+                            <li><a href="index2.html">Home 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Dashboard <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-dashboard.html">User Dashboard</a></li>
+                            <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+                        </ul>
+                    </li>
+                </ul>
 
-        <!-- Logo -->
-        <a href="index.html" class="logo flex items-center justify-center gap-2"
-            style="margin-bottom: 2rem; text-decoration: none;">
-            <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
-            <span style="font-size: 1.8rem; font-weight: 800;">BidMaster</span>
-        </a>
+                <!-- Mobile Auth (Inside menu) -->
+                <div class="auth-buttons show-mobile flex flex-column gap-4"
+                    style="padding: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05);">
+                    <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
+                    <a href="signup.html" class="btn btn-primary" style="width: 100%;">Sign Up</a>
+                </div>
+            </nav>
 
-        <h2 style="margin-bottom: 0.5rem;">Welcome Back</h2>
-        <p style="color: var(--text-muted); margin-bottom: 2rem;">Enter your credentials to access your account.</p>
+            <div class="flex items-center gap-8">
+                <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="rtl-toggle" class="icon-btn" title="Switch Language Direction">
+                    <i class="fas fa-globe"></i>
+                </button>
 
-        <!-- Login Form -->
-        <form onsubmit="handleLogin(event)" style="text-align: left;">
-            <div style="margin-bottom: 1.5rem;">
-                <label style="margin-bottom: 0.5rem; display: block; font-size: 0.9rem;">Email
-                    Address</label>
-                <div style="position: relative;">
-                    <i class="fas fa-envelope"
-                        style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
-                    <input type="email" id="email" required placeholder="name@example.com"
-                        style="width: 100%; padding: 0.8rem 1rem 0.8rem 2.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; outline: none; font-family: inherit;">
+                <!-- Desktop Auth -->
+                <div class="auth-buttons flex hide-mobile" style="gap: 4rem;">
+                    <a href="login.html" class="btn btn-outline"
+                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Login</a>
+                    <a href="signup.html" class="btn btn-primary"
+                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Sign Up</a>
+                </div>
+
+                <!-- Hamburger -->
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Login Main Section -->
+    <main class="login-main-container">
+        <div class="login-wrapper premium-border glow-on-hover animate-entry">
+            <!-- Left Image Section -->
+            <div class="login-image-section">
+                <div class="login-image-content">
+                    <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; color: #fff;">Bid on the
+                        Extraordinary</h2>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; line-height: 1.6;">Join our elite
+                        community of collectors and experience the thrill of the world's most exclusive auctions.</p>
                 </div>
             </div>
 
-            <div style="margin-bottom: 1.5rem;">
-                <label style="margin-bottom: 0.5rem; display: block; font-size: 0.9rem;">Password</label>
-                <div style="position: relative;">
-                    <i class="fas fa-lock"
-                        style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
-                    <input type="password" id="password" required placeholder="••••••••"
-                        style="width: 100%; padding: 0.8rem 1rem 0.8rem 2.8rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; outline: none; font-family: inherit;">
+            <!-- Right Form Section (Login Card) -->
+            <div class="card glass-login-card" style="text-align: center; position: relative; z-index: 10;">
+
+
+                <!-- Logo -->
+                <a href="index.html" class="logo flex items-center justify-center gap-2"
+                    style="margin-bottom: 2rem; text-decoration: none;">
+                    <i class="fas fa-gavel fa-2x" style="color: var(--primary-color);"></i>
+                    <span style="font-size: 1.8rem; font-weight: 800;">BidMaster</span>
+                </a>
+
+                <h2 style="margin-bottom: 0.5rem;">Welcome Back</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Enter your credentials to access your account.
+                </p>
+
+                <!-- Login Form -->
+                <form onsubmit="handleLogin(event)" style="text-align: left;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="margin-bottom: 0.5rem; display: block; font-size: 0.9rem;">Email
+                            Address</label>
+                        <div style="position: relative;">
+                            <i class="fas fa-envelope"
+                                style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                            <input type="email" id="email" required placeholder="name@example.com"
+                                style="width: 100%; padding: 0.8rem 1rem 0.8rem 2.8rem; background: var(--bg-body); border: 1px solid var(--shadow-subtle); border-radius: 8px; color: var(--text-main); outline: none; font-family: inherit;">
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="margin-bottom: 0.5rem; display: block; font-size: 0.9rem;">Password</label>
+                        <div style="position: relative;">
+                            <i class="fas fa-lock"
+                                style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                            <input type="password" id="password" required placeholder="••••••••"
+                                style="width: 100%; padding: 0.8rem 1rem 0.8rem 2.8rem; background: var(--bg-body); border: 1px solid var(--shadow-subtle); border-radius: 8px; color: var(--text-main); outline: none; font-family: inherit;">
+                        </div>
+                        <div style="text-align: right; margin-top: 0.5rem;">
+                            <a href="#"
+                                style="color: var(--primary-color); font-size: 0.85rem; text-decoration: none;">Forgot
+                                password?</a>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"
+                        style="width: 100%; padding: 1rem; font-weight: 600; font-size: 1rem; margin-bottom: 1.5rem; justify-content: center;">Sign
+                        In</button>
+
+                    <!-- Divider -->
+                    <div class="divider" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <div
+                            style="height: 1px; background: rgba(var(--primary-color-rgb, 99, 102, 241), 0.1); flex: 1;">
+                        </div>
+                        <span style="color: var(--text-muted); font-size: 0.85rem;">OR CONTINUE WITH</span>
+                        <div
+                            style="height: 1px; background: rgba(var(--primary-color-rgb, 99, 102, 241), 0.1); flex: 1;">
+                        </div>
+                    </div>
+
+                    <!-- Social Buttons -->
+                    <div class="flex gap-4">
+                        <button type="button" class="social-btn icon-btn"
+                            style="flex: 1; padding: 0.8rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i
+                                class="fab fa-google fa-lg"></i></button>
+                        <button type="button" class="social-btn icon-btn"
+                            style="flex: 1; padding: 0.8rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i
+                                class="fab fa-github fa-lg"></i></button>
+                    </div>
+                </form>
+
+                <p style="margin-top: 2rem; color: var(--text-muted);">
+                    Don't have an account? <a href="signup.html"
+                        style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Sign up</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer"
+        style="background: var(--secondary-color); color: white; padding: 6rem 0 3rem; margin-top: 6rem; position: relative;">
+        <!-- Top Border with Gold Accent -->
+        <div
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(to right, transparent, var(--primary-color), transparent); opacity: 0.5;">
+        </div>
+
+        <div class="container">
+            <div class="grid"
+                style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 5rem;">
+                <!-- Column 1: Brand -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo flex items-center gap-2"
+                        style="margin-bottom: 1.5rem; color: white;">
+                        <i class="fas fa-gavel fa-2x"></i>
+                        <span
+                            style="font-size: 1.8rem; font-weight: 800; font-family: var(--font-heading); letter-spacing: -0.5px;">BidMaster</span>
+                    </a>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
+                        The world's premier platform for
+                        extraordinary auctions. Verified sellers, rare treasures, and a global community of serious
+                        collectors.</p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.05); color: white; transition: var(--transition); border: 1px solid rgba(255,255,255,0.1);"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.05); color: white; transition: var(--transition); border: 1px solid rgba(255,255,255,0.1);"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#"
+                            style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.05); color: white; transition: var(--transition); border: 1px solid rgba(255,255,255,0.1);"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#"
+                            style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.05); color: white; transition: var(--transition); border: 1px solid rgba(255,255,255,0.1);"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-                <div style="text-align: right; margin-top: 0.5rem;">
-                    <a href="#" style="color: var(--primary-color); font-size: 0.85rem; text-decoration: none;">Forgot
-                        password?</a>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4
+                        style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white; font-family: var(--font-heading); letter-spacing: 0.5px;">
+                        Quick Links
+                    </h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="index.html"
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Home</a>
+                        </li>
+                        <li style="margin-bottom: 0.8rem;"><a href="about.html"
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">About
+                                Us</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="services.html"
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Live
+                                Auctions</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="contact.html"
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Contact
+                                Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Categories -->
+                <div class="footer-col">
+                    <h4
+                        style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white; font-family: var(--font-heading); letter-spacing: 0.5px;">
+                        Categories
+                    </h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Electronics</a>
+                        </li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Jewelry
+                                & Gems</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Art
+                                & Antiques</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Luxury
+                                Vehicles</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Support -->
+                <div class="footer-col">
+                    <h4
+                        style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white; font-family: var(--font-heading); letter-spacing: 0.5px;">
+                        Support</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.8rem;"><a href="#" class="modal-trigger" data-modal="terms"
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Terms
+                                of Service</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#" class="modal-trigger" data-modal="privacy"
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Privacy
+                                Policy</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Help
+                                Center</a></li>
+                        <li style="margin-bottom: 0.8rem;"><a href="#"
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">FAQ</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary"
-                style="width: 100%; padding: 1rem; font-weight: 600; font-size: 1rem; margin-bottom: 1.5rem; justify-content: center;">Sign
-                In</button>
-
-            <!-- Divider -->
-            <div class="divider" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                <div style="height: 1px; background: rgba(var(--primary-color-rgb, 99, 102, 241), 0.1); flex: 1;"></div>
-                <span style="color: var(--text-muted); font-size: 0.85rem;">OR CONTINUE WITH</span>
-                <div style="height: 1px; background: rgba(var(--primary-color-rgb, 99, 102, 241), 0.1); flex: 1;"></div>
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">&copy; 2026 BidMaster. All rights reserved.
+                </p>
+                <div class="flex gap-4">
+                    <img src="assets/images/visa.svg" alt="Visa"
+                        style="height: 24px; opacity: 0.7; filter: brightness(0) invert(1);">
+                    <img src="assets/images/mastercard.svg" alt="Mastercard"
+                        style="height: 24px; opacity: 0.7; filter: brightness(0) invert(1);">
+                    <img src="assets/images/paypal.svg" alt="PayPal"
+                        style="height: 24px; opacity: 0.7; filter: brightness(0) invert(1);">
+                </div>
             </div>
-
-            <!-- Social Buttons -->
-            <div class="flex gap-4">
-                <button type="button" class="social-btn"
-                    style="flex: 1; padding: 0.8rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i
-                        class="fab fa-google fa-lg"></i></button>
-                <button type="button" class="social-btn"
-                    style="flex: 1; padding: 0.8rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i
-                        class="fab fa-github fa-lg"></i></button>
-            </div>
-        </form>
-
-        <p style="margin-top: 2rem; color: var(--text-muted);">
-            Don't have an account? <a href="signup.html"
-                style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Sign up</a>
-        </p>
-    </div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="main.js"></script>
