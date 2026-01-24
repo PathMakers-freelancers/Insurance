@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (current) {
                 sidebarLinks.forEach(link => {
                     link.classList.remove('active');
-                    if (link.getAttribute('href').includes(current)) {
+                    if (link.getAttribute('href') === `#${current}`) {
                         link.classList.add('active');
                     }
                 });

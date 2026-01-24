@@ -565,15 +565,29 @@
 
             <!-- SYSTEM OVERVIEW (Analytics) -->
             <div id="analytics" class="tab-content active">
-                <header class="flex justify-between items-center" style="margin-bottom: 3rem;">
-                    <div>
-                        <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">System Command</h1>
-                        <div class="flex items-center gap-2"><span class="status-dot green"></span><span
-                                style="color: var(--primary-color); font-family: monospace;">SYSTEM ONLINE</span></div>
+                <div class="glass-panel"
+                    style="padding: 0; overflow: hidden; margin-bottom: 3rem; background: transparent; border: none; box-shadow: var(--shadow-lg);">
+                    <div
+                        style="height: 250px; width: 100%; position: relative; border-radius: var(--radius-lg); overflow: hidden;">
+                        <img src="assets/images/featured_tech.jpg"
+                            style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6);">
+                        <div
+                            style="position: absolute; inset: 0; padding: 3rem; display: flex; flex-direction: column; justify-content: flex-end; color: white;">
+                            <header class="flex justify-between items-center" style="margin-bottom: 0;">
+                                <div>
+                                    <h1
+                                        style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; color: white;">
+                                        System Command</h1>
+                                    <div class="flex items-center gap-2"><span class="status-dot green"></span><span
+                                            style="color: var(--primary-color); font-family: monospace;">SYSTEM
+                                            ONLINE</span></div>
+                                </div>
+                                <span
+                                    style="color: rgba(255,255,255,0.8); font-family: monospace; background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 4px; backdrop-filter: blur(5px);">v2.5.0-beta</span>
+                            </header>
+                        </div>
                     </div>
-                    <span
-                        style="color: var(--text-muted); font-family: monospace; background: rgba(0,0,0,0.05); padding: 0.5rem 1rem; border-radius: 4px;">v2.5.0-beta</span>
-                </header>
+                </div>
 
                 <div class="grid"
                     style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
@@ -653,7 +667,20 @@
 
             <!-- USERS SECTION -->
             <div id="users" class="tab-content">
-                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Identity Management</h1>
+                <div class="glass-panel"
+                    style="padding: 0; overflow: hidden; margin-bottom: 3rem; display: flex; align-items: center; gap: 3rem; background: var(--bg-surface);">
+                    <div style="flex: 1; min-height: 200px; padding: 3rem;">
+                        <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">Identity Management</h1>
+                        <p style="color: var(--text-muted); line-height: 1.6;">Monitor user behavior, verify identities,
+                            and manage account security across the platform.</p>
+                    </div>
+                    <div style="flex: 1; height: 260px; overflow: hidden; position: relative;" class="hide-mobile">
+                        <img src="assets/images/about_office.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div
+                            style="position: absolute; inset: 0; background: linear-gradient(to right, var(--bg-surface), transparent);">
+                        </div>
+                    </div>
+                </div>
                 <div class="glass-panel" style="padding: 0; overflow: hidden;">
                     <table style="width: 100%; border-collapse: collapse;">
                         <thead style="background: rgba(0,0,0,0.03);">
@@ -685,7 +712,16 @@
 
             <!-- AUCTIONS SECTION -->
             <div id="auctions" class="tab-content">
-                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Inventory Control</h1>
+                <div
+                    style="margin-bottom: 3rem; border-radius: var(--radius-lg); overflow: hidden; height: 200px; position: relative; box-shadow: var(--shadow-md);">
+                    <img src="assets/images/login-auction.png"
+                        style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7);">
+                    <div
+                        style="position: absolute; inset: 0; display: flex; align-items: center; padding-left: 3rem; background: linear-gradient(to right, rgba(0,0,0,0.8), transparent);">
+                        <h1 style="font-size: 3rem; font-weight: 800; color: white;">Inventory <span
+                                class="text-gold">Control</span></h1>
+                    </div>
+                </div>
                 <div class="grid"
                     style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2rem; margin-bottom: 2rem;">
                     <div class="glass-panel">
