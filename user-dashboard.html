@@ -529,6 +529,12 @@
     <div class="dashboard-container">
         <!-- Sidebar -->
         <aside class="sidebar">
+            <div
+                style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 1.2rem; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: var(--radius-full); width: fit-content;">
+                <i class="fas fa-user-circle" style="color: var(--primary-color) !important; font-size: 0.9rem;"></i>
+                <span
+                    style="color: var(--text-main); font-weight: 800; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">User</span>
+            </div>
             <div class="hide-mobile" style="margin-bottom: 2rem;">
                 <h3
                     style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">
@@ -611,13 +617,14 @@
                                 <span style="color: var(--text-muted); font-size: 0.95rem; font-weight: 500;">Auctions
                                     Won</span>
                                 <h3
-                                    style="font-size: 2.5rem; color: var(--secondary-color); margin-top: 0.5rem; font-weight: 800;">
+                                    style="font-size: 2.5rem; color: var(--stat-won); margin-top: 0.5rem; font-weight: 800;">
                                     8</h3>
                             </div>
                             <div
                                 style="width: 50px; height: 50px; background: rgba(236, 72, 153, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-trophy fa-lg" style="color: var(--secondary-color);"></i>
+                                <i class="fas fa-trophy fa-lg" style="color: var(--stat-won);"></i>
                             </div>
+
                         </div>
                     </div>
                     <div class="card glass-card hover-float">
@@ -626,13 +633,14 @@
                                 <span style="color: var(--text-muted); font-size: 0.95rem; font-weight: 500;">Total
                                     Invested</span>
                                 <h3
-                                    style="font-size: 2.5rem; color: var(--accent-color); margin-top: 0.5rem; font-weight: 800;">
+                                    style="font-size: 2.5rem; color: var(--stat-invested); margin-top: 0.5rem; font-weight: 800;">
                                     $4.2k</h3>
                             </div>
                             <div
                                 style="width: 50px; height: 50px; background: rgba(139, 92, 246, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-chart-pie fa-lg" style="color: var(--accent-color);"></i>
+                                <i class="fas fa-chart-pie fa-lg" style="color: var(--stat-invested);"></i>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -915,7 +923,9 @@
             <!-- WATCHLIST SECTION -->
             <div id="watchlist" class="tab-content">
                 <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Strategic Watchlist</h1>
-                <div class="grid" style="grid-template-columns: 2fr 1fr; gap: 2rem;">
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr)); gap: 2rem;">
+
                     <div class="glass-panel">
                         <h3 style="font-weight: 700; margin-bottom: 2rem;">Tracked Items Growth</h3>
                         <div class="chart-container">
@@ -934,7 +944,9 @@
             <!-- PAYMENTS SECTION -->
             <div id="payments" class="tab-content">
                 <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Financial Wallet</h1>
-                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 2rem;">
+
                     <div class="glass-panel">
                         <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Preferred Funding</h3>
                         <div class="chart-container">
@@ -974,10 +986,18 @@
                 </div>
                 <div class="glass-panel">
                     <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Global Luxury Demand Map</h3>
-                    <div
-                        style="height: 300px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.05); border-radius: 1rem;">
-                        <span class="text-gold" style="font-weight: 700;">Interactive Geographic Data Heatmap
-                            (Mockup)</span>
+                    <div class="map-container">
+                        <img src="assets/images/world-map.png" class="map-image" alt="World Map">
+
+                        <!-- Interactive Points -->
+                        <div class="map-point" style="top: 35%; left: 22%;" data-location="New York, USA"></div>
+                        <div class="map-point" style="top: 32%; left: 48%;" data-location="London, UK"></div>
+                        <div class="map-point" style="top: 45%; left: 52%;" data-location="Dubai, UAE"></div>
+                        <div class="map-point" style="top: 40%; left: 80%;" data-location="Tokyo, Japan"></div>
+                        <div class="map-point" style="top: 75%; left: 88%;" data-location="Sydney, Australia"></div>
+                        <div class="map-point" style="top: 48%; left: 68%;" data-location="Mumbai, India"></div>
+                        <div class="map-point" style="top: 38%; left: 18%;" data-location="Silicon Valley, USA"></div>
+                        <div class="map-point" style="top: 30%; left: 75%;" data-location="Beijing, China"></div>
                     </div>
                 </div>
             </div>
