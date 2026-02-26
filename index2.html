@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BidMaster Elite - Exclusive Auctions</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -109,7 +110,9 @@
 
         /* Nav Overrides */
         .home-style-2 .header {
-            background: transparent !important;
+            background: var(--obsidian-glass) !important;
+            backdrop-filter: blur(20px) !important;
+            -webkit-backdrop-filter: blur(20px) !important;
             border-bottom: 1px solid var(--obsidian-border) !important;
             padding: 1.5rem 0;
             transition: var(--transition-gallery);
@@ -651,6 +654,20 @@
             .cal-gallery-card {
                 height: 400px;
             }
+
+            .calendar-section > .flex.justify-between {
+                flex-direction: column;
+                align-items: flex-start !important;
+                gap: 1.5rem;
+            }
+
+            .calendar-section > .flex.justify-between .btn-obsidian {
+                align-self: flex-start;
+            }
+
+            .calendar-section h2 {
+                font-size: 2rem !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -859,7 +876,6 @@
             inset: -8px;
             border: 1px solid var(--obsidian-accent);
             border-radius: 50%;
-            animation: pulse-gold 2s infinite;
         }
     </style>
 
@@ -1099,7 +1115,7 @@
                 <h2 style="font-size: 3rem; margin-top: 1rem; color: var(--obsidian-text);">Auction Gallery</h2>
             </div>
             <a href="#" class="btn-obsidian"
-                style="background: transparent; border: 1px solid var(--obsidian-accent); color: var(--obsidian-accent);">Subscribe
+                style="background: transparent; border: 1px solid var(--obsidian-accent); color: var(--obsidian-accent); padding: 0.6rem 1.5rem; font-size: 0.75rem;">Subscribe
                 to Events</a>
         </div>
 
@@ -1210,7 +1226,7 @@
     </section>
 
     <!-- Global Auction Highlights [NEW] -->
-    <section class="container global-highlights reveal">
+    <section class="container global-highlights">
         <span style="color: var(--obsidian-accent); text-transform: uppercase; letter-spacing: 3px;">The Network</span>
         <h2 style="font-size: 3rem; margin-top: 1rem;">Global Reach</h2>
         <div class="map-mockup">

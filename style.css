@@ -373,6 +373,10 @@ img {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.btn-premium i {
+    color: #0f172a !important;
+}
+
 .btn-premium:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
@@ -404,14 +408,14 @@ img {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    padding: 1rem 0;
+    padding: 1.25rem 0;
     transition: var(--transition);
     overflow: visible !important;
 }
 
 @media (max-width: 991px) {
     .header {
-        padding: 0.75rem 0;
+        padding: 1rem 0;
     }
 }
 
@@ -512,7 +516,7 @@ img {
 /* Desktop View Adjustments */
 @media (min-width: 992px) {
     .header {
-        padding: 0.5rem 0;
+        padding: 1.25rem 0;
     }
 
     .mobile-menu-btn {
@@ -599,6 +603,8 @@ img {
 .hero-content {
     max-width: 800px;
     z-index: 10;
+    text-align: center;
+    margin: 0 auto;
 }
 
 @media (max-width: 768px) {
@@ -617,6 +623,7 @@ img {
     line-height: 1.1;
     color: white;
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
 .hero p {
@@ -624,6 +631,205 @@ img {
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 3rem;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Curated Selections / Featured Section */
+#featured .curated-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#featured .curated-header span {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+    color: var(--primary-color);
+    padding: 0.4rem 1.2rem;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    margin-bottom: 1rem;
+}
+
+#featured .curated-header h2 {
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+#featured .curated-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+#featured .featured-card {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+}
+
+#featured .featured-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    border-color: rgba(212, 175, 55, 0.4);
+}
+
+#featured .featured-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+#featured .featured-card:hover img {
+    transform: scale(1.1);
+}
+
+#featured .featured-card .featured-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem;
+    transition: background 0.4s ease;
+}
+
+#featured .featured-card:hover .featured-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
+}
+
+#featured .featured-card .featured-badge {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    background: rgba(212, 175, 55, 0.9);
+    color: #0f172a;
+    padding: 0.35rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    backdrop-filter: blur(4px);
+}
+
+#featured .featured-card .featured-count {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.35rem 0.8rem;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+#featured .featured-card .btn {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+
+#featured .featured-card:hover .btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Testimonials Carousel */
+.testimonials-carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials-carousel {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 1rem 0;
+}
+
+.testimonials-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonials-carousel .testimonial-card {
+    min-width: 380px;
+    max-width: 380px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+    .testimonials-carousel .testimonial-card {
+        min-width: 300px;
+        max-width: 300px;
+    }
+}
+
+.testimonial-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bg-surface);
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+}
+
+.testimonial-nav-btn:hover {
+    background: var(--primary-color);
+    color: #0f172a;
+    border-color: var(--primary-color);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+}
+
+.testimonial-nav-btn:hover i {
+    color: #0f172a !important;
+}
+
+.testimonial-nav-btn.prev {
+    left: 0;
+}
+
+.testimonial-nav-btn.next {
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    .testimonial-nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
 }
 
 /* Cards */
@@ -1727,9 +1933,18 @@ body::before {
 #trust-verification,
 #calendar,
 .newsletter-section {
-    padding: 2rem 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     margin-bottom: 2rem;
     /* Ensure consistent outer spacing too */
+}
+
+/* Consistent brand logo styling */
+.logo span {
+    font-size: 1.5rem !important;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    letter-spacing: -0.5px;
 }
 
 /* FAQ Accordion Styles */
@@ -1785,6 +2000,12 @@ body::before {
     opacity: 0;
 }
 
+.faq-answer p {
+    padding-bottom: 1.25rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
 .logout-btn {
     background: rgba(239, 68, 68, 0.1);
     color: #ef4444 !important;
@@ -1817,6 +2038,7 @@ body::before {
     max-height: 500px;
     opacity: 1;
     padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .faq-item.active .faq-question i {
@@ -1903,4 +2125,66 @@ body::before {
     box-shadow: var(--shadow-md);
     margin-bottom: 0.5rem;
     font-weight: 700;
+}
+
+/* === RESPONSIVE FIX: 1024px Navbar Alignment === */
+@media (max-width: 1100px) and (min-width: 992px) {
+    .header .container .nav-menu ul {
+        gap: 1rem !important;
+    }
+
+    .header .auth-buttons {
+        gap: 1rem !important;
+    }
+
+    .header .flex.items-center.gap-8 {
+        gap: 1rem !important;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+    }
+}
+
+/* === RESPONSIVE FIX: 360px Home1 Gold Standard & Our Legacy === */
+@media (max-width: 480px) {
+    #trust-verification .glass-card {
+        padding: 2rem 1rem !important;
+    }
+
+    #trust-verification .glass-card > div:first-child h2 {
+        font-size: 1.8rem !important;
+    }
+
+    #trust-verification .glass-card .grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    #heritage .card {
+        flex-direction: column !important;
+    }
+
+    #heritage .card > div:first-child {
+        min-width: 100% !important;
+        height: 280px !important;
+    }
+
+    #heritage .card > div:last-child {
+        min-width: 100% !important;
+        padding: 2rem 1rem !important;
+    }
+
+    #heritage .card > div:last-child h2 {
+        font-size: 2rem !important;
+    }
+
+    #heritage .card > div:first-child > div:last-child {
+        right: 10px !important;
+        bottom: -10px !important;
+        padding: 1rem !important;
+    }
+
+    #heritage .card > div:first-child > div:last-child p:first-child {
+        font-size: 2.5rem !important;
+    }
 }

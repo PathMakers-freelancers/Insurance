@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BidMaster - Online Auction Platform</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,8 +67,8 @@
                 <!-- Mobile Auth (Inside menu) -->
                 <div class="auth-buttons show-mobile flex flex-column gap-4"
                     style="padding: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05);">
-                    <a href="login.html" class="btn btn-outline" style="width: 100%;">Login</a>
-                    <a href="signup.html" class="btn btn-primary" style="width: 100%;">Sign Up</a>
+                    <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+                    <a href="signup.html" class="btn btn-outline" style="width: 100%;">Sign Up</a>
                 </div>
             </nav>
 
@@ -81,9 +82,9 @@
 
                 <!-- Desktop Auth -->
                 <div class="auth-buttons flex hide-mobile" style="gap: 4rem;">
-                    <a href="login.html" class="btn btn-outline"
+                    <a href="login.html" class="btn btn-primary"
                         style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Login</a>
-                    <a href="signup.html" class="btn btn-primary"
+                    <a href="signup.html" class="btn btn-outline"
                         style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Sign Up</a>
                 </div>
 
@@ -358,71 +359,61 @@
 
     <!-- Featured Items -->
     <section id="featured" class="container animate-entry delay-100"
-        style="padding: 4rem 2rem; background: var(--bg-surface); border-radius: var(--radius-xl); position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); margin-top: 4rem;">
+        style="padding: 5rem 2rem; background: var(--bg-surface); border-radius: var(--radius-xl); position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); margin-top: 4rem;">
         <div class="animated-bg" style="opacity: 0.3;">
             <div class="bg-blob bg-blob-3"></div>
         </div>
-        <div class="flex justify-between items-end" style="margin-bottom: 4rem; position: relative; z-index: 2;">
-            <div>
-                <span
-                    style="color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Curated
-                    Selections</span>
-                <h2 class="section-title" style="color: var(--text-main); margin-bottom: 0; text-align: left;">Featured
-                    Collections</h2>
-            </div>
+        <!-- Curated Header -->
+        <div class="curated-header" style="position: relative; z-index: 2;">
+            <span><i class="fas fa-gem" style="margin-right: 0.5rem;"></i>Curated Selections</span>
+            <h2 class="section-title" style="color: var(--text-main); margin-bottom: 0.75rem;">Featured Collections</h2>
+            <p>Handpicked masterpieces and rare treasures from the world's most exclusive collections.</p>
+        </div>
+        <div style="text-align: center; margin-bottom: 3rem; position: relative; z-index: 2;">
             <a href="#" class="btn btn-outline" style="border-radius: var(--radius-full);">View All Collections</a>
         </div>
         <div class="grid"
             style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2.5rem; position: relative; z-index: 1;">
-            <div class="card hover-float" style="padding: 0; border: none; background: transparent;">
-                <div
-                    style="height: 350px; position: relative; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 0; box-shadow: var(--shadow-lg);">
-                    <img src="assets/images/royal_antique.png" alt="Royal Crown"
-                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
-                    <div
-                        style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
-                        <h3
-                            style="color: white; font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem;">
-                            Royal Antiques</h3>
-                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">Discover
-                            exclusive artifacts from royal lineages.</p>
-                        <button class="btn btn-outline" style="border-color: white; color: white;">Explore
-                            Collection</button>
-                    </div>
+            <div class="featured-card" style="height: 400px;">
+                <span class="featured-badge"><i class="fas fa-crown" style="margin-right: 0.3rem;"></i> Premium</span>
+                <span class="featured-count"><i class="fas fa-layer-group" style="margin-right: 0.3rem;"></i> 24 Items</span>
+                <img src="assets/images/royal_antique.png" alt="Royal Crown">
+                <div class="featured-overlay">
+                    <h3
+                        style="color: white; font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem;">
+                        Royal Antiques</h3>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">Discover
+                        exclusive artifacts from royal lineages.</p>
+                    <button class="btn btn-outline" style="border-color: white; color: white; width: fit-content;">Explore
+                        Collection <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></button>
                 </div>
             </div>
-            <div class="card hover-float" style="padding: 0; border: none; background: transparent;">
-                <div
-                    style="height: 350px; position: relative; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 0; box-shadow: var(--shadow-lg);">
-                    <img src="assets/images/space_memorabilia.png" alt="Space Helmet"
-                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
-                    <div
-                        style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
-                        <h3
-                            style="color: white; font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem;">
-                            Space Memorabilia</h3>
-                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">Own a piece of
-                            space exploration history.</p>
-                        <button class="btn btn-outline" style="border-color: white; color: white;">Explore
-                            Collection</button>
-                    </div>
+            <div class="featured-card" style="height: 400px;">
+                <span class="featured-badge"><i class="fas fa-star" style="margin-right: 0.3rem;"></i> Rare</span>
+                <span class="featured-count"><i class="fas fa-layer-group" style="margin-right: 0.3rem;"></i> 18 Items</span>
+                <img src="assets/images/space_memorabilia.png" alt="Space Helmet">
+                <div class="featured-overlay">
+                    <h3
+                        style="color: white; font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem;">
+                        Space Memorabilia</h3>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">Own a piece of
+                        space exploration history.</p>
+                    <button class="btn btn-outline" style="border-color: white; color: white; width: fit-content;">Explore
+                        Collection <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></button>
                 </div>
             </div>
-            <div class="card hover-float" style="padding: 0; border: none; background: transparent;">
-                <div
-                    style="height: 350px; position: relative; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 0; box-shadow: var(--shadow-lg);">
-                    <img src="assets/images/classic_violin.png" alt="Violin"
-                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
-                    <div
-                        style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem;">
-                        <h3
-                            style="color: white; font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem;">
-                            Classic Instruments</h3>
-                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">Legendary
-                            instruments from history's maestros.</p>
-                        <button class="btn btn-outline" style="border-color: white; color: white;">Explore
-                            Collection</button>
-                    </div>
+            <div class="featured-card" style="height: 400px;">
+                <span class="featured-badge"><i class="fas fa-music" style="margin-right: 0.3rem;"></i> Iconic</span>
+                <span class="featured-count"><i class="fas fa-layer-group" style="margin-right: 0.3rem;"></i> 12 Items</span>
+                <img src="assets/images/classic_violin.png" alt="Violin">
+                <div class="featured-overlay">
+                    <h3
+                        style="color: white; font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem;">
+                        Classic Instruments</h3>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">Legendary
+                        instruments from history's maestros.</p>
+                    <button class="btn btn-outline" style="border-color: white; color: white; width: fit-content;">Explore
+                        Collection <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></button>
                 </div>
             </div>
         </div>
@@ -571,7 +562,7 @@
                     <span class="stat-value" data-target="15000">0</span>+
                 </div>
                 <div class="stat-label"
-                    style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                    style="font-size: 1.1rem; color: var(--text-main); margin-top: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
                     Active
                     Bidders</div>
             </div>
@@ -585,7 +576,7 @@
                     <span class="stat-value" data-target="8500">0</span>+
                 </div>
                 <div class="stat-label"
-                    style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                    style="font-size: 1.1rem; color: var(--text-main); margin-top: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
                     Items
                     Sold</div>
                 <div class="hide-mobile"
@@ -598,7 +589,7 @@
                     $<span class="stat-value" data-target="25">0</span>M+
                 </div>
                 <div class="stat-label"
-                    style="font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                    style="font-size: 1.1rem; color: var(--text-main); margin-top: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
                     Trade
                     Volume</div>
             </div>
@@ -936,9 +927,12 @@
     <section id="testimonials" class="container animate-entry delay-300"
         style="padding: 5rem 2rem; background: var(--bg-surface); border-radius: var(--radius-xl); border: 1px solid rgba(0,0,0,0.05); margin-top: 5rem;">
         <h2 class="section-title" style="color: var(--text-main); margin-bottom: 4rem;">What Our Collectors Say</h2>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem;">
+        <div class="testimonials-carousel-wrapper">
+            <button class="testimonial-nav-btn prev" onclick="scrollTestimonials(-1)" aria-label="Previous testimonials"><i class="fas fa-chevron-left"></i></button>
+            <button class="testimonial-nav-btn next" onclick="scrollTestimonials(1)" aria-label="Next testimonials"><i class="fas fa-chevron-right"></i></button>
+            <div class="testimonials-carousel">
             <!-- Review 1 -->
-            <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
+            <div class="glass-card testimonial-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
                 <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
                         class="fas fa-quote-left"></i></div>
                 <p
@@ -959,7 +953,7 @@
                 </div>
             </div>
             <!-- Review 2 -->
-            <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
+            <div class="glass-card testimonial-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
                 <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
                         class="fas fa-quote-left"></i></div>
                 <p
@@ -980,7 +974,7 @@
                 </div>
             </div>
             <!-- Review 3 -->
-            <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
+            <div class="glass-card testimonial-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
                 <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
                         class="fas fa-quote-left"></i></div>
                 <p
@@ -1001,7 +995,7 @@
                 </div>
             </div>
             <!-- Review 4 -->
-            <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
+            <div class="glass-card testimonial-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
                 <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
                         class="fas fa-quote-left"></i></div>
                 <p
@@ -1022,7 +1016,7 @@
                 </div>
             </div>
             <!-- Review 5 -->
-            <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
+            <div class="glass-card testimonial-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
                 <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
                         class="fas fa-quote-left"></i></div>
                 <p
@@ -1043,7 +1037,7 @@
                 </div>
             </div>
             <!-- Review 6 -->
-            <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
+            <div class="glass-card testimonial-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
                 <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
                         class="fas fa-quote-left"></i></div>
                 <p
@@ -1063,6 +1057,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
@@ -1124,8 +1119,8 @@
 
 
     <!-- FAQ Section -->
-    <section id="faq" class="container animate-entry delay-300">
-        <h2 class="section-title" style="color: var(--text-main); margin-bottom: 2rem;">Frequently Asked Questions</h2>
+    <section id="faq" class="container animate-entry delay-300" style="padding: 5rem 2rem;">
+        <h2 class="section-title" style="color: var(--text-main); margin-bottom: 3rem;">Frequently Asked Questions</h2>
         <div class="faq-grid" style="max-width: 800px; margin: 0 auto;">
             <!-- Question 1 -->
             <div class="faq-item">
@@ -1217,8 +1212,7 @@
                     <a href="index.html" class="logo flex items-center gap-2"
                         style="margin-bottom: 1.5rem; color: white;">
                         <i class="fas fa-gavel fa-2x"></i>
-                        <span
-                            style="font-size: 1.8rem; font-weight: 800; font-family: var(--font-heading); letter-spacing: -0.5px;">BidMaster</span>
+                        <span>BidMaster</span>
                     </a>
                     <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
                         The world's premier platform for
@@ -1365,6 +1359,14 @@
     <!-- Scripts -->
     <script src="rtltoggle.js"></script>
     <script src="main.js"></script>
+    <script>
+        function scrollTestimonials(direction) {
+            const carousel = document.querySelector('.testimonials-carousel');
+            const card = carousel.querySelector('.testimonial-card');
+            const scrollAmount = card.offsetWidth + 32; // card width + gap
+            carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+    </script>
 
 </body>
 
