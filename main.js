@@ -45,6 +45,15 @@ function initReveal() {
 document.addEventListener('DOMContentLoaded', () => {
     startCountdowns();
     initReveal();
+
+    // Floating header scroll effect
+    const header = document.querySelector('.header');
+    if (header) {
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 20);
+        });
+    }
+
     // Theme Switcher
     const themeToggleBtn = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;

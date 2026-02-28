@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 
 <head>
@@ -79,8 +79,7 @@
         <div class="container flex justify-between items-center" style="overflow: visible !important;">
             <!-- Logo -->
             <a href="index.html" class="logo flex items-center gap-2">
-                <i class="fas fa-landmark fa-2x"></i>
-                <span style="font-size: 1.5rem; font-weight: 800;">AuctionNest</span>
+                <span class="logo-badge">AN</span><span style="font-size: 1.4rem; font-weight: 800;">AuctionNest</span>
             </a>
 
             <!-- Navigation Menu -->
@@ -90,18 +89,18 @@
                         <a href="index.html" class="nav-link dropdown-toggle">Home <i
                                 class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="index.html">Home I</a></li>
-                            <li><a href="index2.html">Home II</a></li>
+                            <li><a href="index.html">Home 1</a></li>
+                            <li><a href="index2.html">Home 2</a></li>
                         </ul>
                     </li>
-                    <li><a href="about.html" class="nav-link">Heritage</a></li>
-                    <li><a href="services.html" class="nav-link active">Atelier</a></li>
-                    <li><a href="contact.html" class="nav-link">Connect</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                     <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">Portal <i class="fas fa-chevron-down"></i></a>
+                        <a href="#" class="nav-link dropdown-toggle">Dashboards <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="user-dashboard.html">Collector Portal</a></li>
-                            <li><a href="admin-dashboard.html">Curator Portal</a></li>
+                            <li><a href="user-dashboard.html">User Dashboard</a></li>
+                            <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -109,8 +108,7 @@
                 <!-- Mobile Auth (Inside menu) -->
                 <div class="auth-buttons show-mobile flex flex-column gap-4"
                     style="padding: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05);">
-                    <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
-                    <a href="signup.html" class="btn btn-outline" style="width: 100%;">Sign Up</a>
+                    <a href="login.html" class="btn btn-login-text" style="width: 100%;">Log In</a><a href="signup.html" class="btn btn-primary" style="width: 100%;">Get Started</a>
                 </div>
             </nav>
 
@@ -124,10 +122,7 @@
 
                 <!-- Desktop Auth -->
                 <div class="auth-buttons flex hide-mobile" style="gap: 4rem;">
-                    <a href="login.html" class="btn btn-primary"
-                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Login</a>
-                    <a href="signup.html" class="btn btn-outline"
-                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Sign Up</a>
+                    <a href="login.html" class="btn btn-login-text">Log In</a><a href="signup.html" class="btn btn-primary" style="padding: 0.6rem 1.6rem; font-size: 0.85rem;">Get Started</a>
                 </div>
 
                 <!-- Hamburger -->
@@ -175,16 +170,16 @@
                     <i class="fas fa-shield-halved fa-2x" style="color: var(--secondary-color);"></i>
                 </div>
                 <h3 class="playfair" style="font-size: 1.8rem; margin-bottom: 1.5rem;">Sovereign Escrow</h3>
-                <p style="color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">All capital is held within our triple-layered custodial escrow vault until independent authentication is complete and the acquirer confirms receipt â€” ensuring absolute financial integrity on every transaction.
+                <p style="color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">All capital is held within our triple-layered custodial escrow vault until independent authentication is complete and the acquirer confirms receipt — ensuring absolute financial integrity on every transaction.
                 </p>
             </div>
             <div class="glass-card hover-float reveal glow-on-hover premium-border"
-                style="padding: 3rem; border-top: 5px solid #2563eb;">
+                style="padding: 3rem; border-top: 5px solid var(--primary-color);">
                 <div
-                    style="width: 70px; height: 70px; background: rgba(37, 99, 235, 0.1); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
-                    <i class="fas fa-landmark fa-2x" style="color: #2563eb;"></i>
+                    style="width: 70px; height: 70px; background: rgba(212, 175, 55, 0.1); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                    <i class="fas fa-landmark fa-2x" style="color: var(--primary-color);"></i>
                 </div>
-                <h3 class="playfair text-gold" style="font-size: 1.8rem; margin-bottom: 1.5rem;">Ã‰lite Valuation</h3>
+                <h3 class="playfair text-gold" style="font-size: 1.8rem; margin-bottom: 1.5rem;">Élite Valuation</h3>
                 <p style="color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">Commission our panel of world-renowned specialists to produce museum-grade valuation dossiers, positioning your assets at the pinnacle of their true market potential.</p>
             </div>
         </div>
@@ -221,9 +216,9 @@
 
                 <!-- Elite -->
                 <div class="glass-card glow-on-hover reveal"
-                    style="padding: 5rem 3rem; text-align: center; border: 2px solid #2563eb; transform: translateY(-20px); background: rgba(20, 20, 20, 0.4); position: relative; overflow: visible;">
+                    style="padding: 5rem 3rem; text-align: center; border: 2px solid var(--primary-color); transform: translateY(-20px); background: rgba(20, 20, 20, 0.4); position: relative; overflow: visible;">
                     <div
-                        style="position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: #2563eb; color: #000; padding: 0.6rem 2rem; border-radius: 50px; font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; white-space: nowrap; box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);">
+                        style="position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: var(--primary-color); color: #000; padding: 0.6rem 2rem; border-radius: 50px; font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; white-space: nowrap; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);">
                         CONNOISSEUR'S CHOICE</div>
                     <span class="text-gold"
                         style="letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">Grand
@@ -233,23 +228,23 @@
                     <ul
                         style="text-align: left; margin: 2rem 0 3rem; display: flex; flex-direction: column; gap: 1.2rem;">
                         <li style="display: flex; align-items: center; gap: 1rem; color: white;"><i class="fas fa-crown"
-                                style="color: #2563eb;"></i> Unlimited Curated Lots</li>
+                                style="color: var(--primary-color);"></i> Unlimited Curated Lots</li>
                         <li style="display: flex; align-items: center; gap: 1rem; color: white;"><i class="fas fa-crown"
-                                style="color: #2563eb;"></i> Verified Connoisseur Badge</li>
+                                style="color: var(--primary-color);"></i> Verified Connoisseur Badge</li>
                         <li style="display: flex; align-items: center; gap: 1rem; color: white;"><i class="fas fa-crown"
-                                style="color: #2563eb;"></i> 2% Buyer's Premium</li>
+                                style="color: var(--primary-color);"></i> 2% Buyer's Premium</li>
                         <li style="display: flex; align-items: center; gap: 1rem; color: white;"><i class="fas fa-crown"
-                                style="color: #2563eb;"></i> Private Liaison Concierge</li>
+                                style="color: var(--primary-color);"></i> Private Liaison Concierge</li>
                     </ul>
                     <button class="btn btn-primary"
-                        style="width: 100%; padding: 1.2rem; background: #2563eb; border: none; color: #000; font-weight: 800;">Enter the Grand Salon</button>
+                        style="width: 100%; padding: 1.2rem; background: var(--primary-color); border: none; color: #000; font-weight: 800;">Enter the Grand Salon</button>
                 </div>
 
                 <!-- Institutional -->
                 <div class="glass-card hover-float reveal premium-border"
                     style="padding: 4rem 3rem; text-align: center;">
                     <span
-                        style="color: var(--secondary-color); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">Maison PrivÃ©e</span>
+                        style="color: var(--secondary-color); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">Maison Privée</span>
                     <h2 class="playfair" style="font-size: 4rem; margin: 1.5rem 0;">$199<span
                             style="font-size: 1.2rem; font-weight: 400;">/mo</span></h2>
                     <ul
@@ -278,29 +273,29 @@
                         class="text-gold">Accord</span></h2>
                 <p
                     style="color: var(--text-muted); font-size: 1.1rem; margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    A four-pillar methodology governing every acquisition â€” from first appraisal to final gavel.
+                    A four-pillar methodology governing every acquisition — from first appraisal to final gavel.
                 </p>
             </div>
 
             <div class="flex flex-wrap justify-between" style="gap: 2rem; position: relative;">
                 <!-- Process Line (Desktop Only) -->
                 <div class="hide-mobile"
-                    style="position: absolute; top: 50px; left: 10%; right: 10%; height: 2px; background: linear-gradient(to right, transparent, rgba(37, 99, 235, 0.3), transparent); z-index: 0;">
+                    style="position: absolute; top: 50px; left: 10%; right: 10%; height: 2px; background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent); z-index: 0;">
                 </div>
 
                 <div class="glass-card premium-border"
                     style="flex: 1 1 250px; padding: 3rem 2rem; text-align: center; position: relative; z-index: 1;">
                     <div
-                        style="width: 60px; height: 60px; background: #2563eb; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-weight: 900; font-size: 1.5rem; box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);">
+                        style="width: 60px; height: 60px; background: var(--primary-color); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-weight: 900; font-size: 1.5rem; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);">
                         1</div>
                     <h4 class="playfair" style="font-size: 1.4rem; margin-bottom: 1rem;">Discerning Selection</h4>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Fewer than 5% of submissions earn a place in our exclusive catalogue â€” only the truly exceptional.</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Fewer than 5% of submissions earn a place in our exclusive catalogue — only the truly exceptional.</p>
                 </div>
 
                 <div class="glass-card premium-border"
                     style="flex: 1 1 250px; padding: 3rem 2rem; text-align: center; position: relative; z-index: 1;">
                     <div
-                        style="width: 60px; height: 60px; background: #2563eb; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-weight: 900; font-size: 1.5rem; box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);">
+                        style="width: 60px; height: 60px; background: var(--primary-color); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-weight: 900; font-size: 1.5rem; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);">
                         2</div>
                     <h4 class="playfair" style="font-size: 1.4rem; margin-bottom: 1rem;">Expert Authentication</h4>
                     <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Advanced scientific analysis paired with the seasoned eye of our in-house specialists.</p>
@@ -309,7 +304,7 @@
                 <div class="glass-card premium-border"
                     style="flex: 1 1 250px; padding: 3rem 2rem; text-align: center; position: relative; z-index: 1;">
                     <div
-                        style="width: 60px; height: 60px; background: #2563eb; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-weight: 900; font-size: 1.5rem; box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);">
+                        style="width: 60px; height: 60px; background: var(--primary-color); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-weight: 900; font-size: 1.5rem; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);">
                         3</div>
                     <h4 class="playfair" style="font-size: 1.4rem; margin-bottom: 1rem;">Grand Exposition</h4>
                     <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Cinematic digital presentations and by-invitation private viewings at our global salon residences.</p>
@@ -318,7 +313,7 @@
                 <div class="glass-card premium-border"
                     style="flex: 1 1 250px; padding: 3rem 2rem; text-align: center; position: relative; z-index: 1;">
                     <div
-                        style="width: 60px; height: 60px; background: #2563eb; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-weight: 900; font-size: 1.5rem; box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);">
+                        style="width: 60px; height: 60px; background: var(--primary-color); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-weight: 900; font-size: 1.5rem; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);">
                         4</div>
                     <h4 class="playfair" style="font-size: 1.4rem; margin-bottom: 1rem;">Ceremonial Gavel</h4>
                     <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">A secure, multi-stage bidding theatre with real-time verified settlement and instant deed transfer.</p>
@@ -341,22 +336,22 @@
                 <div class="glass-card premium-border" style="padding: 2.5rem; text-align: left;">
                     <h4 class="playfair" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Curated Art & Masterpieces</h4>
                     <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8;">From Renaissance canvases to contemporary digital works, our curatorial division provides rigorous provenance research and premium market placement for every piece.</p>
-                    <hr style="border: 0; border-top: 1px solid rgba(37, 99, 235, 0.2); margin: 2rem 0;">
-                    <p style="font-size: 0.85rem; font-weight: 600; color: #2563eb;">Key salons: New York, London, Hong
+                    <hr style="border: 0; border-top: 1px solid rgba(212, 175, 55, 0.2); margin: 2rem 0;">
+                    <p style="font-size: 0.85rem; font-weight: 600; color: var(--primary-color);">Key salons: New York, London, Hong
                         Kong</p>
                 </div>
                 <div class="glass-card premium-border" style="padding: 2.5rem; text-align: left;">
                     <h4 class="playfair" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Fine Horology & Rare Jewels</h4>
                     <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8;">Purpose-built ateliers for movement verification and gemological certification. We represent the most coveted timepieces and jewels from houses like Patek Philippe, Van Cleef & Arpels, and Cartier.</p>
-                    <hr style="border: 0; border-top: 1px solid rgba(37, 99, 235, 0.2); margin: 2rem 0;">
-                    <p style="font-size: 0.85rem; font-weight: 600; color: #2563eb;">Key salons: Geneva, Dubai,
+                    <hr style="border: 0; border-top: 1px solid rgba(212, 175, 55, 0.2); margin: 2rem 0;">
+                    <p style="font-size: 0.85rem; font-weight: 600; color: var(--primary-color);">Key salons: Geneva, Dubai,
                         Tokyo</p>
                 </div>
                 <div class="glass-card premium-border" style="padding: 2.5rem; text-align: left;">
                     <h4 class="playfair" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Classic Motors & Rarities</h4>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8;">Specialist appraisal for concours-level automobiles, numismatic treasures, and iconic memorabilia â€” ensuring every asset's legacy translates into commanding value.</p>
-                    <hr style="border: 0; border-top: 1px solid rgba(37, 99, 235, 0.2); margin: 2rem 0;">
-                    <p style="font-size: 0.85rem; font-weight: 600; color: #2563eb;">Key salons: Monterey,
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8;">Specialist appraisal for concours-level automobiles, numismatic treasures, and iconic memorabilia — ensuring every asset's legacy translates into commanding value.</p>
+                    <hr style="border: 0; border-top: 1px solid rgba(212, 175, 55, 0.2); margin: 2rem 0;">
+                    <p style="font-size: 0.85rem; font-weight: 600; color: var(--primary-color);">Key salons: Monterey,
                         Munich, Singapore</p>
                 </div>
             </div>
@@ -480,7 +475,7 @@
                             Unveiling</h4>
                         <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">A private estate release of 214 Impressionist and Art Deco masterworks. Every lot exceeded high estimates, achieving a combined 57% above reserve through targeted global outreach.</p>
                         <div
-                            style="font-style: italic; color: #2563eb; border-left: 2px solid #2563eb; padding-left: 1rem;">
+                            style="font-style: italic; color: var(--primary-color); border-left: 2px solid var(--primary-color); padding-left: 1rem;">
                             "AuctionNest orchestrated every detail with the discretion and precision our family demanded."</div>
                     </div>
                 </div>
@@ -492,7 +487,7 @@
                         <h4 class="playfair" style="font-size: 1.5rem; margin-bottom: 1rem;">The Geneva Horological Acquisition</h4>
                         <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">A strategic portfolio shift from real estate into museum-grade timepieces. Our horology advisors privately sourced and authenticated 22 landmark references from Patek Philippe, Audemars Piguet, and F.P. Journe.</p>
                         <div
-                            style="font-style: italic; color: #2563eb; border-left: 2px solid #2563eb; padding-left: 1rem;">
+                            style="font-style: italic; color: var(--primary-color); border-left: 2px solid var(--primary-color); padding-left: 1rem;">
                             "They secured pieces that simply do not appear on the open market. Truly unrivalled access."</div>
                     </div>
                 </div>
@@ -501,7 +496,7 @@
 
         <!-- Partnership & Institutional Inquiry -->
         <div class="reveal glass-card glow-on-hover"
-            style="margin-bottom: 10rem; padding: 6rem 3rem; text-align: center; border: 1px solid rgba(37, 99, 235, 0.3);">
+            style="margin-bottom: 10rem; padding: 6rem 3rem; text-align: center; border: 1px solid rgba(212, 175, 55, 0.3);">
             <h2 class="playfair" style="font-size: 3.5rem; margin-bottom: 2rem;">Private & Institutional <span
                     class="text-gold">Alliances</span></h2>
             <p
@@ -510,7 +505,7 @@
                 tailored liquidity solutions and confidential cross-border divestment strategies.</p>
             <div class="flex justify-center gap-6">
                 <a href="contact.html" class="btn btn-primary"
-                    style="padding: 1.2rem 3rem; background: #2563eb; color: #000; border: none; font-weight: 800;">Speak
+                    style="padding: 1.2rem 3rem; background: var(--primary-color); color: #000; border: none; font-weight: 800;">Speak
                     with a Director</a>
                 <a href="#" class="btn btn-outline" style="padding: 1.2rem 3rem;">View Annual Results</a>
             </div>
@@ -565,11 +560,11 @@
                                 style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Home</a>
                         </li>
                         <li style="margin-bottom: 0.8rem;"><a href="about.html"
-                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Heritage</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">About</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="services.html"
-                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Atelier</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Services</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="contact.html"
-                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Connect</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Contact</a></li>
                     </ul>
                 </div>
 

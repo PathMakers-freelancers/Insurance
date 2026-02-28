@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 
 <head>
@@ -19,7 +19,7 @@
         }
 
         .contact-form-section .form-label {
-            color: #2563eb !important;
+            color: var(--primary-color) !important;
             font-size: 0.85rem;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -39,15 +39,15 @@
         }
 
         .contact-form-section .form-control:focus {
-            border-color: #2563eb !important;
-            box-shadow: 0 0 15px rgba(37, 99, 235, 0.2) !important;
+            border-color: var(--primary-color) !important;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2) !important;
             outline: none;
         }
 
         /* Chart Container Styling */
         .chart-separator {
             height: 1px;
-            background: linear-gradient(to right, transparent, rgba(37, 99, 235, 0.3), transparent);
+            background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.3), transparent);
             margin: 3rem 0 2rem 0;
         }
 
@@ -58,7 +58,7 @@
         }
 
         .chart-title {
-            color: #2563eb;
+            color: var(--primary-color);
             font-size: 1rem;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -94,7 +94,7 @@
                 margin-bottom: 1rem;
                 width: 100%;
                 scrollbar-width: thin;
-                scrollbar-color: #2563eb rgba(255, 255, 255, 0.1);
+                scrollbar-color: var(--primary-color) rgba(255, 255, 255, 0.1);
             }
 
             .mobile-scroll-container::-webkit-scrollbar {
@@ -108,7 +108,7 @@
             }
 
             .mobile-scroll-container::-webkit-scrollbar-thumb {
-                background: #2563eb;
+                background: var(--primary-color);
                 border-radius: 10px;
             }
 
@@ -122,7 +122,7 @@
                 align-items: center;
                 justify-content: center;
                 gap: 0.8rem;
-                color: #2563eb;
+                color: var(--primary-color);
                 font-size: 0.75rem;
                 font-weight: 600;
                 text-transform: uppercase;
@@ -219,8 +219,7 @@
 
             <!-- Logo -->
             <a href="index.html" class="logo flex items-center gap-2">
-                <i class="fas fa-landmark fa-2x"></i>
-                <span style="font-size: 1.5rem; font-weight: 800;">AuctionNest</span>
+                <span class="logo-badge">AN</span><span style="font-size: 1.4rem; font-weight: 800;">AuctionNest</span>
             </a>
 
             <!-- Navigation Menu -->
@@ -249,8 +248,7 @@
                 <!-- Mobile Auth (Inside menu) -->
                 <div class="auth-buttons show-mobile flex flex-column gap-4"
                     style="padding: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05);">
-                    <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
-                    <a href="signup.html" class="btn btn-outline" style="width: 100%;">Sign Up</a>
+                    <a href="login.html" class="btn btn-login-text" style="width: 100%;">Log In</a><a href="signup.html" class="btn btn-primary" style="width: 100%;">Get Started</a>
                 </div>
             </nav>
 
@@ -264,10 +262,7 @@
 
                 <!-- Desktop Auth -->
                 <div class="auth-buttons flex hide-mobile" style="gap: 4rem;">
-                    <a href="login.html" class="btn btn-primary"
-                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Login</a>
-                    <a href="signup.html" class="btn btn-outline"
-                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Sign Up</a>
+                    <a href="login.html" class="btn btn-login-text">Log In</a><a href="signup.html" class="btn btn-primary" style="padding: 0.6rem 1.6rem; font-size: 0.85rem;">Get Started</a>
                 </div>
 
                 <!-- Hamburger -->
@@ -311,7 +306,7 @@
                         <div>
                             <h3 class="playfair" style="font-size: 1.4rem; margin-bottom: 0.8rem;">Direct Line</h3>
                             <p style="color: var(--text-muted); line-height: 1.6;">+44 20 7946 0321<br><span
-                                    style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Priority support for Maison PrivÃ©e members</span></p>
+                                    style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Priority support for Maison Privée members</span></p>
                         </div>
                     </div>
                     <div style="display: flex; gap: 2rem; margin-bottom: 3rem;">
@@ -321,7 +316,7 @@
                         </div>
                         <div>
                             <h3 class="playfair" style="font-size: 1.4rem; margin-bottom: 0.8rem;">Office Hours</h3>
-                            <p style="color: var(--text-muted); line-height: 1.6;">Mon â€“ Fri: 08:30 â€“ 19:00 GMT<br>
+                            <p style="color: var(--text-muted); line-height: 1.6;">Mon – Fri: 08:30 – 19:00 GMT<br>
                                 Saturday: By Appointment Only</p>
                         </div>
                     </div>
@@ -375,7 +370,7 @@
                         </iframe>
                         <!-- Overlay hint for touch -->
                         <div class="mobile-only"
-                            style="position: absolute; top: 1rem; right: 1rem; background: rgba(37, 99, 235, 0.9); color: black; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.7rem; font-weight: 700; pointer-events: none;">
+                            style="position: absolute; top: 1rem; right: 1rem; background: rgba(212, 175, 55, 0.9); color: black; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.7rem; font-weight: 700; pointer-events: none;">
                             <i class="fas fa-arrows-left-right mr-1"></i> SCROLLABLE MAP
                         </div>
                     </div>
@@ -383,7 +378,7 @@
             </div>
 
             <div class="glass-card reveal glow-on-hover premium-border contact-form-section responsive-card"
-                style="padding: 4rem; border-top: 5px solid #2563eb; background: #ffffff; backdrop-filter: blur(20px);">
+                style="padding: 4rem; border-top: 5px solid var(--primary-color); background: #ffffff; backdrop-filter: blur(20px);">
                 <h2 class="playfair" style="color: #0f172a; margin-bottom: 2rem;">Send an Enquiry</h2>
                 <form>
                     <div class="grid mobile-stack"
@@ -416,7 +411,7 @@
                             placeholder="Please describe your requirements..."></textarea>
                     </div>
                     <button type="button" class="btn btn-primary"
-                        style="width: 100%; padding: 1.3rem; background: #2563eb; border: none; color: #fff; font-weight: 800; font-size: 1rem; letter-spacing: 1px;">SUBMIT ENQUIRY</button>
+                        style="width: 100%; padding: 1.3rem; background: var(--primary-color); border: none; color: #fff; font-weight: 800; font-size: 1rem; letter-spacing: 1px;">SUBMIT ENQUIRY</button>
 
                     <!-- Chart Separator -->
                     <div class="chart-separator"></div>
@@ -436,7 +431,7 @@
     <!-- The Concierge Network -->
     <div class="reveal responsive-container" style="margin-bottom: 4rem;">
         <div class="container"
-            style="border: 1px solid rgba(37, 99, 235, 0.2); border-radius: 40px; padding: 4rem 3rem; background: rgba(255, 255, 255, 0.01); position: relative;">
+            style="border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 40px; padding: 4rem 3rem; background: rgba(255, 255, 255, 0.01); position: relative;">
             <div style="text-align: center; margin-bottom: 4rem;">
                 <h2 class="playfair">Our <span class="text-gold">Global Offices</span></h2>
                 <p style="color: var(--text-muted); margin-top: 1rem;">Regional expertise positioned across the world's leading cultural and financial centres.</p>
@@ -448,21 +443,21 @@
                     style="padding: 2.5rem; text-align: center;">
                     <div style="font-size: 2rem; color: var(--primary-color); margin-bottom: 1rem;"><i
                             class="fas fa-landmark-dome"></i></div>
-                    <h4 class="playfair" style="font-size: 1.4rem; margin-bottom: 0.8rem;">London â€” Mayfair</h4>
+                    <h4 class="playfair" style="font-size: 1.4rem; margin-bottom: 0.8rem;">London — Mayfair</h4>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">European headquarters specialising in fine horology and Old Master paintings.</p>
                 </div>
                 <div class="glass-card premium-border hover-float responsive-card"
                     style="padding: 2.5rem; text-align: center;">
                     <div style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 1rem;"><i
                             class="fas fa-city"></i></div>
-                    <h4 class="playfair" style="font-size: 1.4rem; margin-bottom: 0.8rem;">Geneva â€” Rue du RhÃ´ne</h4>
+                    <h4 class="playfair" style="font-size: 1.4rem; margin-bottom: 0.8rem;">Geneva — Rue du Rhône</h4>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">Centre of excellence for rare jewels, Swiss timepieces, and private estate sales.</p>
                 </div>
                 <div class="glass-card premium-border hover-float responsive-card"
                     style="padding: 2.5rem; text-align: center;">
                     <div style="font-size: 2rem; color: #10b981; margin-bottom: 1rem;"><i class="fas fa-torii-gate"></i>
                     </div>
-                    <h4 class="playfair" style="font-size: 1.4rem; margin-bottom: 0.8rem;">Dubai â€” DIFC Gate</h4>
+                    <h4 class="playfair" style="font-size: 1.4rem; margin-bottom: 0.8rem;">Dubai — DIFC Gate</h4>
                     <p style="color: var(--text-muted); font-size: 0.9rem;">Middle East hub for classic automobiles, contemporary art, and sovereign collections.</p>
                 </div>
             </div>
@@ -481,7 +476,7 @@
                 style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                 <div class="glass-card premium-border hover-float responsive-card" style="padding: 2rem;">
                     <div style="display: flex; gap: 1rem;">
-                        <div style="color: #2563eb; font-size: 1.2rem;"><i class="fas fa-shield-halved"></i></div>
+                        <div style="color: var(--primary-color); font-size: 1.2rem;"><i class="fas fa-shield-halved"></i></div>
                         <div>
                             <h4 class="playfair" style="font-size: 1.2rem; margin-bottom: 0.5rem;">Are enquiries kept confidential?</h4>
                             <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Absolutely. Every correspondence is handled under strict NDA protocols with end-to-end encryption.</p>
@@ -490,16 +485,16 @@
                 </div>
                 <div class="glass-card premium-border hover-float responsive-card" style="padding: 2rem;">
                     <div style="display: flex; gap: 1rem;">
-                        <div style="color: #2563eb; font-size: 1.2rem;"><i class="fas fa-handshake"></i></div>
+                        <div style="color: var(--primary-color); font-size: 1.2rem;"><i class="fas fa-handshake"></i></div>
                         <div>
                             <h4 class="playfair" style="font-size: 1.2rem; margin-bottom: 0.5rem;">Do you provide free valuations?</h4>
-                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Yes. Our specialists offer complimentary preliminary estimates for items with an estimated value above Â£5,000.</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Yes. Our specialists offer complimentary preliminary estimates for items with an estimated value above £5,000.</p>
                         </div>
                     </div>
                 </div>
                 <div class="glass-card premium-border hover-float responsive-card" style="padding: 2rem;">
                     <div style="display: flex; gap: 1rem;">
-                        <div style="color: #2563eb; font-size: 1.2rem;"><i class="fas fa-truck"></i></div>
+                        <div style="color: var(--primary-color); font-size: 1.2rem;"><i class="fas fa-truck"></i></div>
                         <div>
                             <h4 class="playfair" style="font-size: 1.2rem; margin-bottom: 0.5rem;">How are items shipped after purchase?</h4>
                             <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">We use bonded fine-art logistics partners with climate-controlled transit and full insurance for every consignment.</p>
@@ -508,7 +503,7 @@
                 </div>
                 <div class="glass-card premium-border hover-float responsive-card" style="padding: 2rem;">
                     <div style="display: flex; gap: 1rem;">
-                        <div style="color: #2563eb; font-size: 1.2rem;"><i class="fas fa-earth-americas"></i></div>
+                        <div style="color: var(--primary-color); font-size: 1.2rem;"><i class="fas fa-earth-americas"></i></div>
                         <div>
                             <h4 class="playfair" style="font-size: 1.2rem; margin-bottom: 0.5rem;">Can I participate from overseas?</h4>
                             <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">Yes. AuctionNest supports live bidding from 80+ countries with real-time currency conversion and multi-language support.</p>
@@ -655,13 +650,13 @@
                             label: 'Response Time (hours)',
                             data: [2, 4, 6, 3],
                             backgroundColor: [
-                                'rgba(37, 99, 235, 0.8)',
+                                'rgba(212, 175, 55, 0.8)',
                                 'rgba(99, 102, 241, 0.8)',
                                 'rgba(236, 72, 153, 0.8)',
                                 'rgba(16, 185, 129, 0.8)'
                             ],
                             borderColor: [
-                                'rgba(37, 99, 235, 1)',
+                                'rgba(212, 175, 55, 1)',
                                 'rgba(99, 102, 241, 1)',
                                 'rgba(236, 72, 153, 1)',
                                 'rgba(16, 185, 129, 1)'
@@ -679,9 +674,9 @@
                             },
                             tooltip: {
                                 backgroundColor: 'rgba(15, 23, 42, 0.95)',
-                                titleColor: '#2563eb',
+                                titleColor: 'var(--primary-color)',
                                 bodyColor: '#ffffff',
-                                borderColor: '#2563eb',
+                                borderColor: 'var(--primary-color)',
                                 borderWidth: 1,
                                 padding: 12,
                                 displayColors: false,
@@ -696,7 +691,7 @@
                             y: {
                                 beginAtZero: true,
                                 ticks: {
-                                    color: '#2563eb',
+                                    color: 'var(--primary-color)',
                                     font: {
                                         size: 11,
                                         weight: '600'
@@ -706,13 +701,13 @@
                                     }
                                 },
                                 grid: {
-                                    color: 'rgba(37, 99, 235, 0.1)',
+                                    color: 'rgba(212, 175, 55, 0.1)',
                                     drawBorder: false
                                 },
                                 title: {
                                     display: true,
                                     text: 'Hours',
-                                    color: '#2563eb',
+                                    color: 'var(--primary-color)',
                                     font: {
                                         size: 12,
                                         weight: '700'

@@ -37,8 +37,7 @@
 
             <!-- Logo -->
             <a href="index.html" class="logo flex items-center gap-2">
-                <i class="fas fa-landmark fa-2x"></i>
-                <span style="font-size: 1.5rem; font-weight: 800;">AuctionNest</span>
+                <span class="logo-badge">AN</span><span style="font-size: 1.4rem; font-weight: 800;">AuctionNest</span>
             </a>
 
             <!-- Navigation Menu -->
@@ -48,18 +47,18 @@
                         <a href="index.html" class="nav-link dropdown-toggle active">Home <i
                                 class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="index.html">Home I</a></li>
-                            <li><a href="index2.html">Home II</a></li>
+                            <li><a href="index.html">Home 1</a></li>
+                            <li><a href="index2.html">Home 2</a></li>
                         </ul>
                     </li>
-                    <li><a href="about.html" class="nav-link">Heritage</a></li>
-                    <li><a href="services.html" class="nav-link">Atelier</a></li>
-                    <li><a href="contact.html" class="nav-link">Connect</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
                     <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">Portal <i class="fas fa-chevron-down"></i></a>
+                        <a href="#" class="nav-link dropdown-toggle">Dashboards <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="user-dashboard.html">Collector Portal</a></li>
-                            <li><a href="admin-dashboard.html">Curator Portal</a></li>
+                            <li><a href="user-dashboard.html">User Dashboard</a></li>
+                            <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -67,8 +66,7 @@
                 <!-- Mobile Auth (Inside menu) -->
                 <div class="auth-buttons show-mobile flex flex-column gap-4"
                     style="padding: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05);">
-                    <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
-                    <a href="signup.html" class="btn btn-outline" style="width: 100%;">Sign Up</a>
+                    <a href="login.html" class="btn btn-login-text" style="width: 100%;">Log In</a><a href="signup.html" class="btn btn-primary" style="width: 100%;">Get Started</a>
                 </div>
             </nav>
 
@@ -82,10 +80,7 @@
 
                 <!-- Desktop Auth -->
                 <div class="auth-buttons flex hide-mobile" style="gap: 4rem;">
-                    <a href="login.html" class="btn btn-primary"
-                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Login</a>
-                    <a href="signup.html" class="btn btn-outline"
-                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Sign Up</a>
+                    <a href="login.html" class="btn btn-login-text">Log In</a><a href="signup.html" class="btn btn-primary" style="padding: 0.6rem 1.6rem; font-size: 0.85rem;">Get Started</a>
                 </div>
 
                 <!-- Hamburger -->
@@ -109,7 +104,7 @@
         <div class="container flex items-center justify-center text-center" style="position: relative; z-index: 2;">
             <div class="hero-content" style="max-width: 900px;">
                 <span
-                    style="color: #2563eb; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; display: block; animation: fadeIn 1s ease-out;">The
+                    style="color: var(--primary-color); font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; display: block; animation: fadeIn 1s ease-out;">The
                     Pinnacle of Collecting</span>
                 <h1
                     style="margin-bottom: 2rem; font-size: clamp(3rem, 6vw, 5.5rem); text-shadow: 0 10px 30px rgba(0,0,0,0.5);">
@@ -621,7 +616,7 @@
             <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem;">
                 <div style="display: flex; gap: 1.5rem;">
                     <div
-                        style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); color: var(--primary-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 1px solid rgba(37, 99, 235, 0.2);">
+                        style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); color: var(--primary-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 1px solid rgba(212, 175, 55, 0.2);">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <div>
@@ -633,7 +628,7 @@
                 </div>
                 <div style="display: flex; gap: 1.5rem;">
                     <div
-                        style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); color: var(--primary-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 1px solid rgba(37, 99, 235, 0.2);">
+                        style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); color: var(--primary-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 1px solid rgba(212, 175, 55, 0.2);">
                         <i class="fas fa-check-double"></i>
                     </div>
                     <div>
@@ -646,7 +641,7 @@
                 </div>
                 <div style="display: flex; gap: 1.5rem;">
                     <div
-                        style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(37, 99, 235, 0.1); color: var(--primary-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 1px solid rgba(37, 99, 235, 0.2);">
+                        style="flex-shrink: 0; width: 60px; height: 60px; background: rgba(212, 175, 55, 0.1); color: var(--primary-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; border: 1px solid rgba(212, 175, 55, 0.2);">
                         <i class="fas fa-lock"></i>
                     </div>
                     <div>
@@ -698,13 +693,13 @@
                     </thead>
                     <tbody>
                         <tr style="border-bottom: 1px solid rgba(0,0,0,0.05); transition: var(--transition);"
-                            onmouseover="this.style.background='rgba(37, 99, 235, 0.05)'"
+                            onmouseover="this.style.background='rgba(212, 175, 55, 0.05)'"
                             onmouseout="this.style.background='transparent'">
                             <td style="padding: 1.5rem 2rem;"><span
                                     style="font-weight: 700; font-family: var(--font-heading);">Mar 14, 2026</span></td>
                             <td style="padding: 1.5rem 2rem; font-weight: 600;">The Geneva Horological Summit</td>
                             <td style="padding: 1.5rem 2rem;"><span
-                                    style="padding: 0.4rem 0.8rem; background: rgba(37, 99, 235, 0.1); color: var(--primary-color); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Jewelry</span>
+                                    style="padding: 0.4rem 0.8rem; background: rgba(212, 175, 55, 0.1); color: var(--primary-color); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Jewelry</span>
                             </td>
                             <td style="padding: 1.5rem 2rem;"><span style="color: #10b981; font-weight: 700;"><i
                                         class="fas fa-circle"
@@ -716,7 +711,7 @@
                                         style="font-size: 0.7rem; margin-left: 0.3rem;"></i></a></td>
                         </tr>
                         <tr style="border-bottom: 1px solid rgba(0,0,0,0.05); transition: var(--transition);"
-                            onmouseover="this.style.background='rgba(37, 99, 235, 0.05)'"
+                            onmouseover="this.style.background='rgba(212, 175, 55, 0.05)'"
                             onmouseout="this.style.background='transparent'">
                             <td style="padding: 1.5rem 2rem;"><span
                                     style="font-weight: 700; font-family: var(--font-heading);">Apr 03, 2026</span></td>
@@ -733,13 +728,13 @@
                                     <i class="fas fa-bell" style="font-size: 0.8rem; margin-left: 0.3rem;"></i></a></td>
                         </tr>
                         <tr style="border-bottom: 1px solid rgba(0,0,0,0.05); transition: var(--transition);"
-                            onmouseover="this.style.background='rgba(37, 99, 235, 0.05)'"
+                            onmouseover="this.style.background='rgba(212, 175, 55, 0.05)'"
                             onmouseout="this.style.background='transparent'">
                             <td style="padding: 1.5rem 2rem;"><span
                                     style="font-weight: 700; font-family: var(--font-heading);">Apr 22, 2026</span></td>
                             <td style="padding: 1.5rem 2rem; font-weight: 600;">The Concours d'�l�gance Sale</td>
                             <td style="padding: 1.5rem 2rem;"><span
-                                    style="padding: 0.4rem 0.8rem; background: rgba(37, 99, 235, 0.1); color: var(--primary-color); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Vehicles</span>
+                                    style="padding: 0.4rem 0.8rem; background: rgba(212, 175, 55, 0.1); color: var(--primary-color); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Vehicles</span>
                             </td>
                             <td style="padding: 1.5rem 2rem;"><span style="color: #64748b; font-weight: 700;"><i
                                         class="fas fa-circle"
@@ -845,7 +840,7 @@
 
             <div style="flex: 1; min-width: 280px; text-align: center; position: relative; z-index: 2;">
                 <div
-                    style="width: 100px; height: 100px; background: var(--bg-surface); border: 2px solid var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2.5rem; color: var(--primary-color); font-size: 2rem; font-weight: 800; box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);">
+                    style="width: 100px; height: 100px; background: var(--bg-surface); border: 2px solid var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2.5rem; color: var(--primary-color); font-size: 2rem; font-weight: 800; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);">
                     1
                 </div>
                 <h3
@@ -856,7 +851,7 @@
             </div>
             <div style="flex: 1; min-width: 280px; text-align: center; position: relative; z-index: 2;">
                 <div
-                    style="width: 100px; height: 100px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2.5rem; color: #0f172a; font-size: 2rem; font-weight: 800; box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);">
+                    style="width: 100px; height: 100px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2.5rem; color: #0f172a; font-size: 2rem; font-weight: 800; box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);">
                     2
                 </div>
                 <h3
@@ -1075,7 +1070,7 @@
                 style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
                 <div class="elite-badge" style="margin-bottom: 2rem;">
                     <i class="fas fa-crown fa-3x text-gold"
-                        style="filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.5));"></i>
+                        style="filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));"></i>
                 </div>
                 <span class="text-gold"
                     style="font-weight: 700; letter-spacing: 4px; text-transform: uppercase; display: block; margin-bottom: 1.5rem; font-size: 0.9rem;">Sovereign
@@ -1101,7 +1096,7 @@
 
             <!-- Decorative Premium Elements -->
             <div
-                style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(37, 99, 235, 0.15), transparent 70%); filter: blur(60px); pointer-events: none;">
+                style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(212, 175, 55, 0.15), transparent 70%); filter: blur(60px); pointer-events: none;">
             </div>
             <div
                 style="position: absolute; bottom: -100px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(99, 102, 241, 0.1), transparent 70%); filter: blur(60px); pointer-events: none;">
@@ -1111,13 +1106,13 @@
             <div class="elite-particles hide-mobile"
                 style="position: absolute; inset: 0; pointer-events: none; opacity: 0.4;">
                 <div
-                    style="position: absolute; top: 20%; left: 10%; width: 4px; height: 4px; background: #2563eb; border-radius: 50%; box-shadow: 0 0 10px #2563eb;">
+                    style="position: absolute; top: 20%; left: 10%; width: 4px; height: 4px; background: var(--primary-color); border-radius: 50%; box-shadow: 0 0 10px var(--primary-color);">
                 </div>
                 <div
-                    style="position: absolute; top: 60%; right: 15%; width: 6px; height: 6px; background: #2563eb; border-radius: 50%; box-shadow: 0 0 15px #2563eb;">
+                    style="position: absolute; top: 60%; right: 15%; width: 6px; height: 6px; background: var(--primary-color); border-radius: 50%; box-shadow: 0 0 15px var(--primary-color);">
                 </div>
                 <div
-                    style="position: absolute; bottom: 30%; left: 20%; width: 3px; height: 3px; background: #2563eb; border-radius: 50%; box-shadow: 0 0 8px #2563eb;">
+                    style="position: absolute; bottom: 30%; left: 20%; width: 3px; height: 3px; background: var(--primary-color); border-radius: 50%; box-shadow: 0 0 8px var(--primary-color);">
                 </div>
             </div>
         </div>
@@ -1182,7 +1177,7 @@
             style="background: var(--gradient-dark); border-radius: var(--radius-lg); text-align: center; color: white; border: 1px solid rgba(255,255,255,0.1); padding: 5rem 2rem; position: relative; overflow: hidden;">
             <!-- Decorative Glow -->
             <div
-                style="position: absolute; top: -50%; left: -20%; width: 50%; height: 200%; background: radial-gradient(circle, rgba(37, 99, 235, 0.15), transparent 70%); transform: rotate(30deg); pointer-events: none;">
+                style="position: absolute; top: -50%; left: -20%; width: 50%; height: 200%; background: radial-gradient(circle, rgba(212, 175, 55, 0.15), transparent 70%); transform: rotate(30deg); pointer-events: none;">
             </div>
 
             <h2
@@ -1253,7 +1248,7 @@
                                 style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">About
                                 Us</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="services.html"
-                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Atelier</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Services</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="contact.html"
                                 style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Contact
                                 Us</a></li>
@@ -1376,3 +1371,4 @@
 </body>
 
 </html>
+
