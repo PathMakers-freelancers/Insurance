@@ -2916,3 +2916,23 @@ h2:not(.section-title):not(.newsletter-section h2) {
         margin: 0 0.5rem !important;
     }
 }
+
+/* === FINAL FIX: Login/Signup mobile centering === */
+@media (max-width: 900px) {
+
+    .login-reset-body,
+    .signup-reset-body {
+        align-items: flex-start !important;
+        padding-top: 1.5rem !important;
+        overflow-y: auto !important;
+    }
+}
+
+/* === FINAL FIX: Hide header toggles on mobile globally === */
+@media (max-width: 991px) {
+
+    .header #theme-toggle,
+    .header #rtl-toggle {
+        display: none !important;
+    }
+}

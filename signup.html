@@ -22,7 +22,7 @@
             margin: 0;
             background: var(--bg-body);
             position: relative;
-            padding: 2rem;
+            padding: 6rem 2rem 2rem;
         }
 
         .signup-wrapper {
@@ -101,9 +101,22 @@
         }
     </style>
 
-    <!-- Fixed Controls -->
-
-
+    <!-- Header (Same as Dashboard) -->
+    <header class="header">
+        <div class="container flex justify-between items-center">
+            <a href="index.html" class="logo flex items-center gap-2">
+                <span class="logo-badge">AN</span><span style="font-size: 1.4rem; font-weight: 800;">AuctionNest</span>
+            </a>
+            <div class="flex items-center gap-8">
+                <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="rtl-toggle" class="icon-btn" title="Switch Language Direction">
+                    <i class="fas fa-globe"></i>
+                </button>
+            </div>
+        </div>
+    </header>
 
     <div class="signup-wrapper animate-entry">
         <!-- Left Side: Narrative -->
