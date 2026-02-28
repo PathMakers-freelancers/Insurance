@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AuctionNest - Online Auction Platform</title>
+    <title>AuctionNest - Premium Online Salvage & Collectibles</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
     <!-- Google Fonts -->
@@ -23,104 +23,97 @@
 
 <body class="home-style-1">
 
-    <!-- Floating Background Shapes -->
-    <div class="floating-shapes">
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
-    </div>
-
-
     <!-- Header -->
-    <header class="header">
-        <div class="container flex justify-between items-center">
-
-            <!-- Logo -->
-            <a href="index.html" class="logo flex items-center gap-2">
-                <span class="logo-badge">AN</span><span style="font-size: 1.4rem; font-weight: 800;">AuctionNest</span>
+    <header class="header glass-panel">
+        <div class="container flex justify-between items-center py-4">
+            <a href="index.html" class="logo">
+                <span class="logo-badge">AN</span>
+                <span
+                    style="font-size: 1.8rem; font-weight: 800; letter-spacing: -1px; color: var(--text-main);">AuctionNest</span>
             </a>
 
-            <!-- Navigation Menu -->
-            <nav class="nav-menu">
-                <ul class="flex items-center gap-8">
+            <nav class="nav-menu hide-mobile">
+                <ul class="flex gap-8 items-center">
+                    <li><a href="index.html" class="nav-link active">Gallery</a></li>
+                    <li><a href="auctions.html" class="nav-link">Live Events</a></li>
+                    <li><a href="private-sales.html" class="nav-link">Private Sales</a></li>
+                    <li><a href="valuation.html" class="nav-link">Valuations</a></li>
                     <li class="dropdown">
-                        <a href="index.html" class="nav-link dropdown-toggle active">Home <i
-                                class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="index.html">Home 1</a></li>
-                            <li><a href="index2.html">Home 2</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">Dashboards <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="user-dashboard.html">User Dashboard</a></li>
-                            <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
-                        </ul>
+                        <a href="#" class="nav-link flex items-center gap-1">Collectibles <i
+                                class="fas fa-chevron-down text-xs"></i></a>
+                        <div class="dropdown-menu glass-card">
+                            <a href="#" class="dropdown-item">Fine Horology</a>
+                            <a href="#" class="dropdown-item">Rare Gems</a>
+                            <a href="#" class="dropdown-item">Estate Jewels</a>
+                            <a href="#" class="dropdown-item">Masterworks</a>
+                        </div>
                     </li>
                 </ul>
-
-                <!-- Mobile Auth (Inside menu) -->
-                <div class="auth-buttons show-mobile flex flex-column gap-4"
-                    style="padding: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05);">
-                    <a href="login.html" class="btn btn-login-text" style="width: 100%;">Log In</a><a href="signup.html" class="btn btn-primary" style="width: 100%;">Get Started</a>
-                </div>
             </nav>
 
-            <div class="flex items-center gap-8">
-                <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
-                    <i class="fas fa-sun"></i>
-                </button>
-                <button id="rtl-toggle" class="icon-btn" title="Switch Language Direction">
-                    <i class="fas fa-globe"></i>
-                </button>
-
-                <!-- Desktop Auth -->
-                <div class="auth-buttons flex hide-mobile" style="gap: 4rem;">
-                    <a href="login.html" class="btn btn-login-text">Log In</a><a href="signup.html" class="btn btn-primary" style="padding: 0.6rem 1.6rem; font-size: 0.85rem;">Get Started</a>
-                </div>
-
-                <!-- Hamburger -->
-                <button class="mobile-menu-btn" aria-label="Menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
+            <div class="auth-buttons flex items-center gap-4">
+                <a href="login.html" class="btn btn-outline"
+                    style="border-radius: var(--radius-full); padding: 0.75rem 2rem;">Sign In</a>
+                <a href="signup.html" class="btn btn-primary"
+                    style="border-radius: var(--radius-full); padding: 0.75rem 2rem;">Join Elite</a>
+                <button class="theme-toggle" id="theme-btn"><i class="fas fa-moon"></i></button>
             </div>
         </div>
     </header>
 
-
     <!-- Hero Section -->
-    <section class="hero" style="min-height: 90vh;">
-        <div class="animated-bg">
-            <div class="bg-blob bg-blob-1"></div>
-            <div class="bg-blob bg-blob-2"></div>
-            <div class="bg-blob bg-blob-3"></div>
-        </div>
-        <div class="container flex items-center justify-center text-center" style="position: relative; z-index: 2;">
-            <div class="hero-content" style="max-width: 900px;">
-                <span
-                    style="color: var(--primary-color); font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; display: block; animation: fadeIn 1s ease-out;">The
-                    Pinnacle of Collecting</span>
+    <section class="hero-section" style="padding: 10rem 0 8rem; position: relative; overflow: hidden;">
+        <div class="container grid grid-cols-2 gap-12 items-center">
+            <div class="hero-content animate-entry">
+                <span class="text-gold"
+                    style="font-weight: 700; letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; display: block; margin-bottom: 2rem;">World
+                    Class Curations</span>
                 <h1
-                    style="margin-bottom: 2rem; font-size: clamp(3rem, 6vw, 5.5rem); text-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                    Bid on the <br><span class="text-gold playfair">Extraordinary</span>
-                </h1>
+                    style="font-size: clamp(3rem, 6vw, 5rem); line-height: 1.1; margin-bottom: 2.5rem; font-weight: 800;">
+                    The Destination for <span class="text-gold">Extraordinary</span> Collecting</h1>
                 <p
-                    style="font-size: 1.35rem; margin-bottom: 3.5rem; color: rgba(255,255,255,0.9); font-weight: 300; max-width: 700px; margin-left: auto; margin-right: auto;">
-                    Gain privileged access to the world's rarest timepieces, priceless gemstones, and
-                    heritage masterpieces � each hand-selected by our panel of distinguished curators.
-                </p>
-                <div class="flex gap-4 justify-center">
-                    <a href="signup.html" class="btn btn-primary" style="padding: 1rem 3rem; font-size: 1.1rem;">Begin
-                        Collecting</a>
-                    <a href="about.html" class="btn btn-outline"
-                        style="padding: 1rem 3rem; font-size: 1.1rem; border-color: rgba(255,255,255,0.3); color: white;">Our
+                    style="font-size: 1.35rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 4rem; max-width: 600px; font-weight: 300;">
+                    Discover rare masterpieces, verified provenance, and a global marketplace of distinguished
+                    connoisseurs.</p>
+
+                <div class="flex gap-6 items-center">
+                    <a href="#live-auctions" class="btn btn-primary"
+                        style="padding: 1.5rem 3.5rem; font-size: 1.1rem; border-radius: var(--radius-full);">Enter
+                        Saleroom</a>
+                    <a href="how-it-works.html" class="btn btn-outline"
+                        style="padding: 1.5rem 3.5rem; font-size: 1.1rem; border-radius: var(--radius-full);">Our
                         Heritage</a>
+                </div>
+
+                <div class="flex items-center gap-8 mt-16 pt-8 border-t border-glass">
+                    <div>
+                        <div style="font-size: 1.8rem; font-weight: 800; color: var(--text-main);">$450M</div>
+                        <div
+                            style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);">
+                            Auctioned in 2025</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual relative animate-entry delay-200">
+                <div class="hero-image-wrapper glass-card"
+                    style="padding: 1.5rem; border-radius: var(--radius-xl); transform: perspective(1000px) rotateY(-10deg);">
+                    <img src="C:\Users\subas\.gemini\antigravity\brain\886f407d-c3dd-4a07-b51b-90234963ad9b\hero_main_1772255348066.png"
+                        alt="Exquisite Sculpture"
+                        style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                </div>
+
+                <!-- Floating Info Card -->
+                <div class="glass-card float-medium"
+                    style="position: absolute; bottom: 10%; left: -10%; padding: 2rem; width: 280px;">
+                    <span class="text-gold"
+                        style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Closing Soon</span>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; margin: 0.5rem 0;">1964 Ferrari 250 GTO</h3>
+                    <div style="font-size: 1.5rem; font-weight: 800; color: var(--text-main); margin: 1rem 0;">
+                        $48,500,000</div>
+                    <div class="flex items-center gap-2" style="font-size: 0.9rem; color: #ef4444; font-weight: 600;">
+                        <i class="fas fa-clock"></i> 02h 45m 12s
+                    </div>
                 </div>
             </div>
         </div>
@@ -138,115 +131,81 @@
             </div>
             <a href="javascript:void(0)" class="btn btn-outline" id="view-all-live-btn">View All Live</a>
         </div>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 2.5rem;">
-            <!-- Initial Card 1 -->
-            <div class="card hover-float" style="padding: 0; background: transparent; overflow: visible;">
-                <div
-                    style="position: relative; height: 320px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 1.5rem; box-shadow: var(--shadow-lg);">
-                    <div class="countdown-badge" data-countdown="2026-01-12T12:00:00"
-                        style="background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);">
-                        <i class="far fa-clock"></i>
-                        <span style="font-family: var(--font-main); letter-spacing: 1px;">02h 15m 30s</span>
-                    </div>
-                    <img src="assets/images/royal_antique.png"
-                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
-                    <div
-                        style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);">
-                        <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.5rem;">Imperial Coronation Urn</h3>
-                        <p style="color: rgba(255,255,255,0.8);">Habsburg Court � 1720s</p>
-                    </div>
+        <div class="grid grid-cols-3 gap-10">
+            <!-- Refined Auction Card 1 -->
+            <article class="auction-card">
+                <div class="auction-img-wrapper">
+                    <span class="auction-badge">LIVE • 02h 15m</span>
+                    <img src="assets/images/royal_antique.png" alt="Imperial Coronation Urn">
                 </div>
-                <div class="glass-panel"
-                    style="padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.05); background: var(--bg-surface);">
-                    <div class="flex justify-between items-center" style="margin-bottom: 1.5rem;">
+                <div class="auction-content">
+                    <h3 class="auction-title">Imperial Coronation Urn</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Habsburg Court Court
+                        • 1720s</p>
+                    <div class="auction-meta">
                         <div>
-                            <p
-                                style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
-                                Current Bid</p>
-                            <p
-                                style="color: var(--text-main); font-weight: 700; font-size: 1.8rem; font-family: var(--font-heading);">
-                                $62,000</p>
+                            <div class="price-label">Current Bid</div>
+                            <div class="price-value">$62,000</div>
                         </div>
-                        <div style="text-align: right;">
-                            <p style="color: var(--text-muted); font-size: 0.9rem;">Bids</p>
-                            <p style="font-weight: 600;">31</p>
+                        <div class="bid-count">
+                            <div class="price-label">Bids</div>
+                            <div style="font-weight: 700;">31</div>
                         </div>
                     </div>
-                    <button class="btn btn-primary" style="width: 100%;">Place Your Bid</button>
+                    <button class="btn btn-primary" style="width: 100%; border-radius: var(--radius-md);">Place
+                        Bid</button>
                 </div>
-            </div>
-            <!-- Initial Card 2 -->
-            <div class="card hover-float" style="padding: 0; background: transparent; overflow: visible;">
-                <div
-                    style="position: relative; height: 320px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 1.5rem; box-shadow: var(--shadow-lg);">
-                    <div class="countdown-badge" data-countdown="2026-01-12T15:30:00"
-                        style="background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);">
-                        <i class="far fa-clock"></i>
-                        <span style="font-family: var(--font-main); letter-spacing: 1px;">05h 45m 10s</span>
-                    </div>
-                    <img src="assets/images/classic_violin.png"
-                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
-                    <div
-                        style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);">
-                        <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.5rem;">Guarneri del Ges� Violin</h3>
-                        <p style="color: rgba(255,255,255,0.8);">Virtuoso-Certified Provenance</p>
-                    </div>
+            </article>
+
+            <!-- Refined Auction Card 2 -->
+            <article class="auction-card">
+                <div class="auction-img-wrapper">
+                    <span class="auction-badge">LIVE • 05h 45m</span>
+                    <img src="assets/images/classic_violin.png" alt="Guarneri del Gesù Violin">
                 </div>
-                <div class="glass-panel"
-                    style="padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.05); background: var(--bg-surface);">
-                    <div class="flex justify-between items-center" style="margin-bottom: 1.5rem;">
+                <div class="auction-content">
+                    <h3 class="auction-title">Guarneri del Gesù Violin</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Virtuoso-Certified
+                        Provenance</p>
+                    <div class="auction-meta">
                         <div>
-                            <p
-                                style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
-                                Current Bid</p>
-                            <p
-                                style="color: var(--text-main); font-weight: 700; font-size: 1.8rem; font-family: var(--font-heading);">
-                                $189,000</p>
+                            <div class="price-label">Current Bid</div>
+                            <div class="price-value">$189,000</div>
                         </div>
-                        <div style="text-align: right;">
-                            <p style="color: var(--text-muted); font-size: 0.9rem;">Bids</p>
-                            <p style="font-weight: 600;">107</p>
+                        <div class="bid-count">
+                            <div class="price-label">Bids</div>
+                            <div style="font-weight: 700;">107</div>
                         </div>
                     </div>
-                    <button class="btn btn-primary" style="width: 100%;">Place Your Bid</button>
+                    <button class="btn btn-primary" style="width: 100%; border-radius: var(--radius-md);">Place
+                        Bid</button>
                 </div>
-            </div>
-            <!-- Initial Card 3 -->
-            <div class="card hover-float" style="padding: 0; background: transparent; overflow: visible;">
-                <div
-                    style="position: relative; height: 320px; overflow: hidden; border-radius: var(--radius-lg); margin-bottom: 1.5rem; box-shadow: var(--shadow-lg);">
-                    <div class="countdown-badge" data-countdown="2026-01-11T20:00:00"
-                        style="background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);">
-                        <i class="far fa-clock"></i>
-                        <span style="font-family: var(--font-main); letter-spacing: 1px;">10h 00m 00s</span>
-                    </div>
-                    <img src="assets/images/space_memorabilia.png"
-                        style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
-                    <div
-                        style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);">
-                        <h3 style="color: white; margin-bottom: 0.5rem; font-size: 1.5rem;">Apollo Command Schematic</h3>
-                        <p style="color: rgba(255,255,255,0.8);">Mission Archive � 1968</p>
-                    </div>
+            </article>
+
+            <!-- Refined Auction Card 3 -->
+            <article class="auction-card">
+                <div class="auction-img-wrapper">
+                    <span class="auction-badge">FINAL HOUR</span>
+                    <img src="assets/images/space_memorabilia.png" alt="Apollo Command Schematic">
                 </div>
-                <div class="glass-panel"
-                    style="padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.05); background: var(--bg-surface);">
-                    <div class="flex justify-between items-center" style="margin-bottom: 1.5rem;">
+                <div class="auction-content">
+                    <h3 class="auction-title">Apollo Command Schematic</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Mission Archive •
+                        1968</p>
+                    <div class="auction-meta">
                         <div>
-                            <p
-                                style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
-                                Current Bid</p>
-                            <p
-                                style="color: var(--text-main); font-weight: 700; font-size: 1.8rem; font-family: var(--font-heading);">
-                                $34,500</p>
+                            <div class="price-label">Current Bid</div>
+                            <div class="price-value">$34,500</div>
                         </div>
-                        <div style="text-align: right;">
-                            <p style="color: var(--text-muted); font-size: 0.9rem;">Bids</p>
-                            <p style="font-weight: 600;">19</p>
+                        <div class="bid-count">
+                            <div class="price-label">Bids</div>
+                            <div style="font-weight: 700;">19</div>
                         </div>
                     </div>
-                    <button class="btn btn-primary" style="width: 100%;">Place Your Bid</button>
+                    <button class="btn btn-primary" style="width: 100%; border-radius: var(--radius-md);">Place
+                        Bid</button>
                 </div>
-            </div>
+            </article>
         </div>
 
         <!-- HIDDEN CONTENT: Revealed by 'View All Live' -->
@@ -371,7 +330,8 @@
             style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2.5rem; position: relative; z-index: 1;">
             <div class="featured-card" style="height: 400px;">
                 <span class="featured-badge"><i class="fas fa-crown" style="margin-right: 0.3rem;"></i> Premium</span>
-                <span class="featured-count"><i class="fas fa-layer-group" style="margin-right: 0.3rem;"></i> 24 Items</span>
+                <span class="featured-count"><i class="fas fa-layer-group" style="margin-right: 0.3rem;"></i> 24
+                    Items</span>
                 <img src="assets/images/royal_antique.png" alt="Royal Crown">
                 <div class="featured-overlay">
                     <h3
@@ -379,27 +339,32 @@
                         Royal Antiques</h3>
                     <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">Discover
                         sovereign relics and palace treasures with certified provenance.</p>
-                    <button class="btn btn-outline" style="border-color: white; color: white; width: fit-content;">Explore
+                    <button class="btn btn-outline"
+                        style="border-color: white; color: white; width: fit-content;">Explore
                         Collection <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></button>
                 </div>
             </div>
             <div class="featured-card" style="height: 400px;">
                 <span class="featured-badge"><i class="fas fa-star" style="margin-right: 0.3rem;"></i> Rare</span>
-                <span class="featured-count"><i class="fas fa-layer-group" style="margin-right: 0.3rem;"></i> 18 Items</span>
+                <span class="featured-count"><i class="fas fa-layer-group" style="margin-right: 0.3rem;"></i> 18
+                    Items</span>
                 <img src="assets/images/space_memorabilia.png" alt="Space Helmet">
                 <div class="featured-overlay">
                     <h3
                         style="color: white; font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem;">
                         Space Memorabilia</h3>
-                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">Own authenticated artefacts from
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">Own authenticated
+                        artefacts from
                         the golden age of space exploration.</p>
-                    <button class="btn btn-outline" style="border-color: white; color: white; width: fit-content;">Explore
+                    <button class="btn btn-outline"
+                        style="border-color: white; color: white; width: fit-content;">Explore
                         Collection <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></button>
                 </div>
             </div>
             <div class="featured-card" style="height: 400px;">
                 <span class="featured-badge"><i class="fas fa-music" style="margin-right: 0.3rem;"></i> Iconic</span>
-                <span class="featured-count"><i class="fas fa-layer-group" style="margin-right: 0.3rem;"></i> 12 Items</span>
+                <span class="featured-count"><i class="fas fa-layer-group" style="margin-right: 0.3rem;"></i> 12
+                    Items</span>
                 <img src="assets/images/classic_violin.png" alt="Violin">
                 <div class="featured-overlay">
                     <h3
@@ -407,7 +372,8 @@
                         Classic Instruments</h3>
                     <p style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; line-height: 1.6;">Acquire
                         legendary instruments once wielded by master composers and virtuosos.</p>
-                    <button class="btn btn-outline" style="border-color: white; color: white; width: fit-content;">Explore
+                    <button class="btn btn-outline"
+                        style="border-color: white; color: white; width: fit-content;">Explore
                         Collection <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></button>
                 </div>
             </div>
@@ -431,7 +397,8 @@
                         style="position: absolute; bottom: 0; right: 0; background: var(--primary-color); color: #0f172a; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 800; border: 2px solid var(--bg-surface); box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                         1</div>
                 </div>
-                <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading); font-size: 1.4rem;">Vanderlaine Estate
+                <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading); font-size: 1.4rem;">Vanderlaine
+                    Estate
                     Holdings</h3>
                 <p style="color: var(--primary-color); font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">$2.1M+
                     Traded</p>
@@ -510,7 +477,8 @@
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <h3 style="font-family: var(--font-heading);">Fine Horology</h3>
-                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Museum-worthy timepieces & grand complications.
+                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Museum-worthy timepieces &
+                    grand complications.
                 </p>
             </div>
             <div class="glass-card hover-float"
@@ -521,7 +489,8 @@
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <h3 style="font-family: var(--font-heading);">Rare Jewels</h3>
-                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Investment-grade gemstones & heritage suites.
+                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Investment-grade gemstones &
+                    heritage suites.
                 </p>
             </div>
             <div class="glass-card hover-float"
@@ -532,7 +501,8 @@
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <h3 style="font-family: var(--font-heading);">Classic Motors</h3>
-                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Concours-ready marques & legendary racecars.</p>
+                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Concours-ready marques &
+                    legendary racecars.</p>
             </div>
             <div class="glass-card hover-float"
                 style="flex: 0 1 280px; min-width: 250px; text-align: center; padding: 2rem;">
@@ -542,7 +512,8 @@
                         style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <h3 style="font-family: var(--font-heading);">Curated Art</h3>
-                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Masterworks in oil, bronze & mixed media.</p>
+                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">Masterworks in oil, bronze &
+                    mixed media.</p>
             </div>
         </div>
     </section>
@@ -609,7 +580,8 @@
             <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
                 <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--text-main);">The Integrity
                     Standard</h2>
-                <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.8;">Our multi-layered authentication
+                <p style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.8;">Our multi-layered
+                    authentication
                     protocols and world-class specialists ensure that AuctionNest remains the definitive sanctuary for
                     elite collectors.</p>
             </div>
@@ -623,7 +595,8 @@
                         <h4 style="font-size: 1.25rem; margin-bottom: 0.75rem; font-family: var(--font-heading);">
                             Identity Assurance</h4>
                         <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Advanced
-                            identity verification confirms every bidder's credentials before they gain access to the saleroom.</p>
+                            identity verification confirms every bidder's credentials before they gain access to the
+                            saleroom.</p>
                     </div>
                 </div>
                 <div style="display: flex; gap: 1.5rem;">
@@ -632,10 +605,12 @@
                         <i class="fas fa-check-double"></i>
                     </div>
                     <div>
-                        <h4 style="font-size: 1.25rem; margin-bottom: 0.75rem; font-family: var(--font-heading);">Provenance
+                        <h4 style="font-size: 1.25rem; margin-bottom: 0.75rem; font-family: var(--font-heading);">
+                            Provenance
                             Guarantee</h4>
                         <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">A dedicated panel of
-                            independent conservators traces and validates each lot's history before it enters the catalogue.
+                            independent conservators traces and validates each lot's history before it enters the
+                            catalogue.
                         </p>
                     </div>
                 </div>
@@ -645,10 +620,13 @@
                         <i class="fas fa-lock"></i>
                     </div>
                     <div>
-                        <h4 style="font-size: 1.25rem; margin-bottom: 0.75rem; font-family: var(--font-heading);">Insured
+                        <h4 style="font-size: 1.25rem; margin-bottom: 0.75rem; font-family: var(--font-heading);">
+                            Insured
                             Escrow</h4>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Funds are safeguarded in a
-                            fully insured trust account, released only after the buyer confirms receipt and satisfaction.</p>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Funds are safeguarded
+                            in a
+                            fully insured trust account, released only after the buyer confirms receipt and
+                            satisfaction.</p>
                     </div>
                 </div>
             </div>
@@ -715,7 +693,8 @@
                             onmouseout="this.style.background='transparent'">
                             <td style="padding: 1.5rem 2rem;"><span
                                     style="font-weight: 700; font-family: var(--font-heading);">Apr 03, 2026</span></td>
-                            <td style="padding: 1.5rem 2rem; font-weight: 600;">Impressionist &amp; Modern Masters Evening</td>
+                            <td style="padding: 1.5rem 2rem; font-weight: 600;">Impressionist &amp; Modern Masters
+                                Evening</td>
                             <td style="padding: 1.5rem 2rem;"><span
                                     style="padding: 0.4rem 0.8rem; background: rgba(156, 163, 175, 0.1); color: var(--accent-color); border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 600;">Fine
                                     Art</span></td>
@@ -774,7 +753,8 @@
                         Rare Ecclesiastical Urn Shatters
                         Auction Record</h3>
                     <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">A
-                        18th-century ceremonial urn from a private Habsburg collection achieved $7.8 million, setting a new global benchmark for sacred antiquities.</p>
+                        18th-century ceremonial urn from a private Habsburg collection achieved $7.8 million, setting a
+                        new global benchmark for sacred antiquities.</p>
                     <a href="#"
                         style="color: var(--primary-color); font-weight: 700; display: inline-block; font-size: 0.9rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 2px;">Read
                         Article</a>
@@ -794,7 +774,8 @@
                         style="margin: 0.75rem 0 1rem; color: var(--text-main); font-family: var(--font-heading); font-size: 1.5rem;">
                         Vintage Automobiles Emerge as
                         Premier Store of Value</h3>
-                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">Collector-grade
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                        Collector-grade
                         motorcars are outperforming traditional equities, attracting a new wave of ultra-high-net-worth
                         investors seeking tangible assets.</p>
                     <a href="#"
@@ -816,7 +797,8 @@
                         style="margin: 0.75rem 0 1rem; color: var(--text-main); font-family: var(--font-heading); font-size: 1.5rem;">
                         Pioneering Tech Prototypes
                         Ignite Fierce Bidding Wars</h3>
-                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">Original
+                    <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                        Original
                         hardware from
                         Silicon Valley's founding era is drawing record premiums from institutional archives and
                         private collectors worldwide.</p>
@@ -846,7 +828,8 @@
                 <h3
                     style="margin-bottom: 1rem; color: var(--text-main); font-family: var(--font-heading); font-size: 1.6rem;">
                     Register</h3>
-                <p style="color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">Create your collector profile,
+                <p style="color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">Create your collector
+                    profile,
                     pass our secure identity screening, and gain entry to a global network of connoisseurs.</p>
             </div>
             <div style="flex: 1; min-width: 280px; text-align: center; position: relative; z-index: 2;">
@@ -868,7 +851,8 @@
                 <h3
                     style="margin-bottom: 1rem; color: var(--text-main); font-family: var(--font-heading); font-size: 1.6rem;">
                     Collect</h3>
-                <p style="color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">Complete your purchase through
+                <p style="color: var(--text-muted); line-height: 1.8; font-size: 1.05rem;">Complete your purchase
+                    through
                     our insured escrow process and enjoy white-glove delivery to your door, anywhere in the world.</p>
             </div>
         </div>
@@ -930,135 +914,149 @@
         style="padding: 5rem 2rem; background: var(--bg-surface); border-radius: var(--radius-xl); border: 1px solid rgba(0,0,0,0.05); margin-top: 5rem;">
         <h2 class="section-title" style="color: var(--text-main); margin-bottom: 4rem;">What Our Collectors Say</h2>
         <div class="testimonials-carousel-wrapper">
-            <button class="testimonial-nav-btn prev" onclick="scrollTestimonials(-1)" aria-label="Previous testimonials"><i class="fas fa-chevron-left"></i></button>
-            <button class="testimonial-nav-btn next" onclick="scrollTestimonials(1)" aria-label="Next testimonials"><i class="fas fa-chevron-right"></i></button>
+            <button class="testimonial-nav-btn prev" onclick="scrollTestimonials(-1)"
+                aria-label="Previous testimonials"><i class="fas fa-chevron-left"></i></button>
+            <button class="testimonial-nav-btn next" onclick="scrollTestimonials(1)" aria-label="Next testimonials"><i
+                    class="fas fa-chevron-right"></i></button>
             <div class="testimonials-carousel">
-            <!-- Review 1 -->
-            <div class="glass-card testimonial-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
-                <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
-                        class="fas fa-quote-left"></i></div>
-                <p
-                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1; font-size: 1.1rem;">
-                    "AuctionNest redefined my expectations of online auctions. The attention to detail in every lot description
-                    and the seamless bidding experience are simply without parallel."</p>
-                <div class="flex items-center gap-4"
-                    style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
-                    <img src="assets/images/avatar_sarah.jpg" alt="Victoria Ashford"
-                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
-                    <div>
-                        <h4
-                            style="font-weight: 700; color: var(--text-main); font-family: var(--font-heading); font-size: 1.1rem;">
-                            Victoria Ashford</h4>
-                        <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Private
-                            Art Collector</span>
+                <!-- Review 1 -->
+                <div class="glass-card testimonial-card"
+                    style="padding: 2.5rem; display: flex; flex-direction: column;">
+                    <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
+                            class="fas fa-quote-left"></i></div>
+                    <p
+                        style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1; font-size: 1.1rem;">
+                        "AuctionNest redefined my expectations of online auctions. The attention to detail in every lot
+                        description
+                        and the seamless bidding experience are simply without parallel."</p>
+                    <div class="flex items-center gap-4"
+                        style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
+                        <img src="assets/images/avatar_sarah.jpg" alt="Victoria Ashford"
+                            style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
+                        <div>
+                            <h4
+                                style="font-weight: 700; color: var(--text-main); font-family: var(--font-heading); font-size: 1.1rem;">
+                                Victoria Ashford</h4>
+                            <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Private
+                                Art Collector</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="glass-card testimonial-card"
+                    style="padding: 2.5rem; display: flex; flex-direction: column;">
+                    <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
+                            class="fas fa-quote-left"></i></div>
+                    <p
+                        style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1; font-size: 1.1rem;">
+                        "I consigned my late father's horological collection and the white-glove service exceeded every
+                        expectation.
+                        The final hammer prices surpassed our most optimistic estimates."</p>
+                    <div class="flex items-center gap-4"
+                        style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
+                        <img src="assets/images/avatar_michael.jpg" alt="Marcus Bellingham"
+                            style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
+                        <div>
+                            <h4
+                                style="font-weight: 700; color: var(--text-main); font-family: var(--font-heading); font-size: 1.1rem;">
+                                Marcus Bellingham</h4>
+                            <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Estate
+                                Executor</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="glass-card testimonial-card"
+                    style="padding: 2.5rem; display: flex; flex-direction: column;">
+                    <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
+                            class="fas fa-quote-left"></i></div>
+                    <p
+                        style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1; font-size: 1.1rem;">
+                        "The provenance documentation is extraordinary � museum-calibre research accompanies every lot.
+                        I've built an entire gallery wing from pieces sourced exclusively through AuctionNest."</p>
+                    <div class="flex items-center gap-4"
+                        style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
+                        <img src="assets/images/avatar_elena.jpg" alt="Helena Christova"
+                            style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
+                        <div>
+                            <h4
+                                style="font-weight: 700; color: var(--text-main); font-family: var(--font-heading); font-size: 1.1rem;">
+                                Helena Christova</h4>
+                            <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Gallery
+                                Curator</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 4 -->
+                <div class="glass-card testimonial-card"
+                    style="padding: 2.5rem; display: flex; flex-direction: column;">
+                    <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
+                            class="fas fa-quote-left"></i></div>
+                    <p
+                        style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1; font-size: 1.1rem;">
+                        "Their specialist team guided me through a complex cross-border acquisition of a vintage Patek
+                        Philippe.
+                        Customs, insurance, logistics � everything was handled with meticulous care."</p>
+                    <div class="flex items-center gap-4"
+                        style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
+                        <img src="assets/images/avatar_david.jpg" alt="Theodore Kensington"
+                            style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
+                        <div>
+                            <h4
+                                style="font-weight: 700; color: var(--text-main); font-family: var(--font-heading); font-size: 1.1rem;">
+                                Theodore Kensington</h4>
+                            <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Horological
+                                Connoisseur</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 5 -->
+                <div class="glass-card testimonial-card"
+                    style="padding: 2.5rem; display: flex; flex-direction: column;">
+                    <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
+                            class="fas fa-quote-left"></i></div>
+                    <p
+                        style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1; font-size: 1.1rem;">
+                        "Every lot tells a story, and AuctionNest presents them with unmatched elegance. I've furnished
+                        three residences with statement pieces discovered here � each one a conversation starter."</p>
+                    <div class="flex items-center gap-4"
+                        style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
+                        <img src="assets/images/avatar_sophia.jpg" alt="Isabelle Moreau"
+                            style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
+                        <div>
+                            <h4
+                                style="font-weight: 700; color: var(--text-main); font-family: var(--font-heading); font-size: 1.1rem;">
+                                Isabelle Moreau</h4>
+                            <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Interior
+                                Designer</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 6 -->
+                <div class="glass-card testimonial-card"
+                    style="padding: 2.5rem; display: flex; flex-direction: column;">
+                    <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
+                            class="fas fa-quote-left"></i></div>
+                    <p
+                        style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1; font-size: 1.1rem;">
+                        "The proxy bidding intelligence is remarkable � it secured a rare prototype engine for my
+                        collection
+                        while I was travelling abroad. Flawless execution and instant notifications every step of the
+                        way."</p>
+                    <div class="flex items-center gap-4"
+                        style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
+                        <img src="assets/images/avatar_james.jpg" alt="Sebastian Drake"
+                            style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
+                        <div>
+                            <h4
+                                style="font-weight: 700; color: var(--text-main); font-family: var(--font-heading); font-size: 1.1rem;">
+                                Sebastian Drake</h4>
+                            <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Motorsport
+                                Enthusiast</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Review 2 -->
-            <div class="glass-card testimonial-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
-                <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
-                        class="fas fa-quote-left"></i></div>
-                <p
-                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1; font-size: 1.1rem;">
-                    "I consigned my late father's horological collection and the white-glove service exceeded every expectation.
-                    The final hammer prices surpassed our most optimistic estimates."</p>
-                <div class="flex items-center gap-4"
-                    style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
-                    <img src="assets/images/avatar_michael.jpg" alt="Marcus Bellingham"
-                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
-                    <div>
-                        <h4
-                            style="font-weight: 700; color: var(--text-main); font-family: var(--font-heading); font-size: 1.1rem;">
-                            Marcus Bellingham</h4>
-                        <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Estate
-                            Executor</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Review 3 -->
-            <div class="glass-card testimonial-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
-                <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
-                        class="fas fa-quote-left"></i></div>
-                <p
-                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1; font-size: 1.1rem;">
-                    "The provenance documentation is extraordinary � museum-calibre research accompanies every lot.
-                    I've built an entire gallery wing from pieces sourced exclusively through AuctionNest."</p>
-                <div class="flex items-center gap-4"
-                    style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
-                    <img src="assets/images/avatar_elena.jpg" alt="Helena Christova"
-                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
-                    <div>
-                        <h4
-                            style="font-weight: 700; color: var(--text-main); font-family: var(--font-heading); font-size: 1.1rem;">
-                            Helena Christova</h4>
-                        <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Gallery
-                            Curator</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Review 4 -->
-            <div class="glass-card testimonial-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
-                <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
-                        class="fas fa-quote-left"></i></div>
-                <p
-                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1; font-size: 1.1rem;">
-                    "Their specialist team guided me through a complex cross-border acquisition of a vintage Patek Philippe.
-                    Customs, insurance, logistics � everything was handled with meticulous care."</p>
-                <div class="flex items-center gap-4"
-                    style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
-                    <img src="assets/images/avatar_david.jpg" alt="Theodore Kensington"
-                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
-                    <div>
-                        <h4
-                            style="font-weight: 700; color: var(--text-main); font-family: var(--font-heading); font-size: 1.1rem;">
-                            Theodore Kensington</h4>
-                        <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Horological
-                            Connoisseur</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Review 5 -->
-            <div class="glass-card testimonial-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
-                <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
-                        class="fas fa-quote-left"></i></div>
-                <p
-                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1; font-size: 1.1rem;">
-                    "Every lot tells a story, and AuctionNest presents them with unmatched elegance. I've furnished three residences with statement pieces discovered here � each one a conversation starter."</p>
-                <div class="flex items-center gap-4"
-                    style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
-                    <img src="assets/images/avatar_sophia.jpg" alt="Isabelle Moreau"
-                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
-                    <div>
-                        <h4
-                            style="font-weight: 700; color: var(--text-main); font-family: var(--font-heading); font-size: 1.1rem;">
-                            Isabelle Moreau</h4>
-                        <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Interior
-                            Designer</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Review 6 -->
-            <div class="glass-card testimonial-card" style="padding: 2.5rem; display: flex; flex-direction: column;">
-                <div style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;"><i
-                        class="fas fa-quote-left"></i></div>
-                <p
-                    style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; flex: 1; font-size: 1.1rem;">
-                    "The proxy bidding intelligence is remarkable � it secured a rare prototype engine for my collection
-                    while I was travelling abroad. Flawless execution and instant notifications every step of the way."</p>
-                <div class="flex items-center gap-4"
-                    style="margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem;">
-                    <img src="assets/images/avatar_james.jpg" alt="Sebastian Drake"
-                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-color);">
-                    <div>
-                        <h4
-                            style="font-weight: 700; color: var(--text-main); font-family: var(--font-heading); font-size: 1.1rem;">
-                            Sebastian Drake</h4>
-                        <span style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">Motorsport
-                            Enthusiast</span>
-                    </div>
-                </div>
-            </div>
-        </div>
         </div>
     </section>
 
@@ -1154,7 +1152,8 @@
                 </div>
                 <div class="faq-answer">
                     <p>Consignors arrange dispatch, and AuctionNest's vetted logistics partners provide optional
-                        fully insured white-glove delivery. Estimated transit times and costs are displayed on every lot page.</p>
+                        fully insured white-glove delivery. Estimated transit times and costs are displayed on every lot
+                        page.</p>
                 </div>
             </div>
             <!-- Question 4 -->
@@ -1165,7 +1164,8 @@
                 </div>
                 <div class="faq-answer">
                     <p>Every transaction is protected by enterprise-grade TLS encryption and routed through
-                        PCI-DSS-compliant gateways, including Stripe and PayPal, ensuring your financial data remains secure at all times.</p>
+                        PCI-DSS-compliant gateways, including Stripe and PayPal, ensuring your financial data remains
+                        secure at all times.</p>
                 </div>
             </div>
         </div>
@@ -1217,7 +1217,8 @@
                         <span>AuctionNest</span>
                     </a>
                     <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
-                        The world's most distinguished auction house for rare and extraordinary collectibles. Trusted by collectors across 80+ countries since 2019.</p>
+                        The world's most distinguished auction house for rare and extraordinary collectibles. Trusted by
+                        collectors across 80+ countries since 2019.</p>
                     <div class="flex gap-4">
                         <a href="#"
                             style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.05); color: white; transition: var(--transition); border: 1px solid rgba(255,255,255,0.1);"><i
@@ -1248,7 +1249,8 @@
                                 style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">About
                                 Us</a></li>
                         <li style="margin-bottom: 0.8rem;"><a href="services.html"
-                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Services</a></li>
+                                style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Services</a>
+                        </li>
                         <li style="margin-bottom: 0.8rem;"><a href="contact.html"
                                 style="color: rgba(255,255,255,0.7); transition: var(--transition); font-size: 0.95rem;">Contact
                                 Us</a></li>
@@ -1302,7 +1304,8 @@
 
             <div
                 style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">&copy; 2026 AuctionNest. All rights reserved.
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">&copy; 2026 AuctionNest. All rights
+                    reserved.
                 </p>
                 <div class="flex gap-4">
                     <img src="assets/images/visa.svg" alt="Visa"
@@ -1371,4 +1374,3 @@
 </body>
 
 </html>
-

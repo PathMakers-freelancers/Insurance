@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AuctionNest — Administration Suite</title>
+    <title>AuctionNest  Administration Suite</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fraunces:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
@@ -464,38 +464,7 @@
             </a>
 
             <!-- Navigation Menu -->
-            <nav class="nav-menu">
-                <ul class="flex items-center gap-8">
-                    <li class="dropdown">
-                        <a href="index.html" class="nav-link dropdown-toggle">Showrooms <i
-                                class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="index.html">Showroom I</a></li>
-                            <li><a href="index2.html">Showroom II</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html" class="nav-link">Our Story</a></li>
-                    <li><a href="services.html" class="nav-link">Auction Galleries</a></li>
-                    <li><a href="contact.html" class="nav-link">Concierge</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active">Members Only <i
-                                class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="user-dashboard.html">Collector's Lounge</a></li>
-                            <li><a href="admin-dashboard.html">Administration Suite</a></li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <!-- Mobile Auth (Inside menu) -->
-                <div class="auth-buttons show-mobile flex flex-column gap-4"
-                    style="padding: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05);">
-                    <button class="btn btn-danger logout-btn"
-                        style="width: 100%; justify-content: center; display: flex; align-items: center; gap: 0.5rem;">
-                        <i class="fas fa-sign-out-alt"></i> Sign Out
-                    </button>
-                </div>
-            </nav>
+            <!-- Simplified Navbar -->
 
             <div class="flex items-center gap-8">
                 <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
@@ -506,12 +475,7 @@
                 </button>
 
                 <!-- Desktop Auth -->
-                <div class="auth-buttons flex hide-mobile" style="gap: 4rem;">
-                    <a href="login.html" class="btn btn-primary"
-                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Enter</a>
-                    <a href="signup.html" class="btn btn-outline"
-                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Register</a>
-                </div>
+                
 
                 <!-- Dashboard Sidebar Toggle (Mobile Only) -->
                 <button class="icon-btn show-mobile"
@@ -835,69 +799,7 @@
             </div>
 
             <!-- Footer Moved Inside Main Content -->
-            <footer class="footer" style="background: #0f172a; color: white; padding: 5rem 0 2rem; margin-top: auto;">
-                <div class="container">
-                    <div class="grid"
-                        style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 4rem;">
-                        <!-- Column 1: Brand -->
-                        <div class="footer-col">
-                            <a href="index.html" class="logo flex items-center gap-2"
-                                style="margin-bottom: 1.5rem; color: white;">
-                                <span class="logo-badge">AN</span><span style="font-size: 1.4rem; font-weight: 800;">AuctionNest</span>
-                            </a>
-                            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.7;">The world's most distinguished auction house for rare and extraordinary collectibles. Trusted by collectors across 80+ countries since 2019.</p>
-                        </div>
-
-                        <!-- Column 2: Quick Links -->
-                        <div class="footer-col">
-                            <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Navigation
-                            </h4>
-                            <ul style="list-style: none;">
-                                <li style="margin-bottom: 0.8rem;"><a href="index.html"
-                                        style="color: #94a3b8; transition: var(--transition);">Home</a></li>
-                                <li style="margin-bottom: 0.8rem;"><a href="admin-dashboard.html"
-                                        style="color: #94a3b8; transition: var(--transition);">Dashboard</a></li>
-                                <li style="margin-bottom: 0.8rem;"><a href="#"
-                                        style="color: #94a3b8; transition: var(--transition);">System Status</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Column 3: Tools -->
-                        <div class="footer-col">
-                            <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">Admin
-                                Resources
-                            </h4>
-                            <ul style="list-style: none;">
-                                <li style="margin-bottom: 0.8rem;"><a href="#"
-                                        style="color: #94a3b8; transition: var(--transition);">Transaction Ledger</a></li>
-                                <li style="margin-bottom: 0.8rem;"><a href="#"
-                                        style="color: #94a3b8; transition: var(--transition);">Member Administration</a></li>
-                                <li style="margin-bottom: 0.8rem;"><a href="#"
-                                        style="color: #94a3b8; transition: var(--transition);">Data Recovery</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Column 4: Support -->
-                        <div class="footer-col">
-                            <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">
-                                Support &amp; Documentation</h4>
-                            <ul style="list-style: none;">
-                                <li style="margin-bottom: 0.8rem;"><a href="#"
-                                        style="color: #94a3b8; transition: var(--transition);">Knowledge Base</a></li>
-                                <li style="margin-bottom: 0.8rem;"><a href="#"
-                                        style="color: #94a3b8; transition: var(--transition);">Support Request</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div
-                        style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                        <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 AuctionNest Administration Suite. Authorized
-                            Personnel
-                            Only.</p>
-                    </div>
-                </div>
-            </footer>
+            <!-- Footer Removed -->
         </main>
     </div>
 

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AuctionNest - Sign Up</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fraunces:wght@400;700;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fraunces:wght@400;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -15,182 +16,198 @@
     <style>
         .signup-reset-body {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
             min-height: 100vh;
             margin: 0;
             background: var(--bg-body);
-            overflow-x: hidden;
             position: relative;
+            padding: 2rem;
         }
 
-        .glass-signup-card {
-            background: rgba(10, 10, 10, 0.7);
-            backdrop-filter: blur(24px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.3);
-            border-radius: 24px;
+        .signup-wrapper {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            min-height: 750px;
+        }
+
+        .signup-left {
+            flex: 1.2;
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), url('assets/images/signup_bg.jpg') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5rem;
+            color: white;
+        }
+
+        .signup-form-side {
+            flex: 1;
+            padding: 5rem;
+            background: var(--bg-surface);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-left: 1px solid var(--border-glass);
+        }
+
+        .signup-form input {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-body);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-md);
+            color: var(--text-main);
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .signup-form input:focus {
+            border-color: var(--primary-main);
+            box-shadow: 0 0 0 4px rgba(175, 146, 77, 0.1);
+            outline: none;
+        }
+
+        .stat-badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 1024px) {
+            .signup-wrapper {
+                flex-direction: column;
+                max-width: 600px;
+                min-height: auto;
+            }
+
+            .signup-left {
+                padding: 3rem;
+                height: auto;
+            }
+
+            .signup-form-side {
+                padding: 3rem 2rem;
+            }
         }
     </style>
 
     <!-- Fixed Controls -->
-    
 
 
-    <div class="card glass-signup-card animate-entry signup-card premium-border glow-on-hover"
-        style="width: 95%; max-width: 1000px; padding: 0; text-align: center; position: relative; z-index: 10; display: flex; flex-direction: column; overflow: hidden; border: none; min-height: 600px; margin: 4rem auto;">
-        <style>
-            @media (min-width: 768px) {
-                .signup-card {
-                    flex-direction: row !important;
-                }
 
-                .signup-left {
-                    display: flex !important;
-                }
-            }
+    <div class="signup-wrapper animate-entry">
+        <!-- Left Side: Narrative -->
+        <div class="signup-left">
+            <h2 class="playfair" style="font-size: 3.5rem; margin-bottom: 2rem; line-height: 1.1;">Join the <span
+                    class="text-gold">Collecting Elite</span></h2>
+            <p
+                style="color: rgba(255,255,255,0.8); font-size: 1.25rem; line-height: 1.8; margin-bottom: 4rem; max-width: 500px; font-weight: 300;">
+                Experience the world's most exclusive saleroom. Access curated masterworks, verified provenance, and a
+                global network of connoisseurs.</p>
 
-            @media (max-width: 767px) {
-                .signup-left {
-                    display: flex !important;
-                    flex: none !important;
-                    height: 200px;
-                    min-height: 200px;
-                }
-
-                .signup-left > div:last-child {
-                    padding: 1.5rem !important;
-                }
-
-                .signup-left h2 {
-                    font-size: 1.5rem !important;
-                    margin-bottom: 0.5rem !important;
-                }
-
-                .signup-left p {
-                    font-size: 0.85rem !important;
-                    display: none;
-                }
-
-                .signup-left div[style*="margin-top: 3rem"] {
-                    display: none;
-                }
-            }
-
-            /* Added for reduced padding on small screens for the form side */
-            .signup-card .signup-form-side {
-                padding: clamp(1.5rem, 5vw, 4rem);
-                /* Default padding */
-            }
-
-            @media (max-width: 767px) {
-                .signup-card .signup-form-side {
-                    padding: clamp(1.5rem, 5vw, 2rem);
-                    /* Reduced padding on small screens */
-                }
-            }
-        </style>
-
-        <!-- Left Side: Image -->
-        <div class="signup-left"
-            style="flex: 1.2; position: relative; display: none; align-items: center; justify-content: center; background: url('assets/images/signup_bg.jpg') no-repeat center center; background-size: cover;">
-            <div
-                style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.3));">
-            </div>
-            <div style="position: relative; z-index: 1; padding: 3rem; text-align: left;">
-                <h2 class="playfair" style="font-size: 3rem; color: white; margin-bottom: 1.5rem;">Join the <span
-                        class="text-gold">Collecting Elite</span></h2>
-                <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; line-height: 1.6; max-width: 400px;">Gain access to curated auctions, certified valuations, and a worldwide network of distinguished collectors.</p>
-                <div style="margin-top: 3rem; display: flex; gap: 2rem;">
-                    <div>
-                        <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary-color);">65K+</div>
-                        <div class="signup-stat-label" style="font-size: 0.8rem; text-transform: uppercase;">Registered
-                            Collectors</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary-color);">$4.2B</div>
-                        <div class="signup-stat-label" style="font-size: 0.8rem; text-transform: uppercase;">Total
-                            Sales Volume</div>
-                    </div>
+            <div class="grid grid-cols-2 gap-6">
+                <div class="stat-badge">
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--primary-main); margin-bottom: 0.5rem;">
+                        65K+</div>
+                    <div
+                        style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.6);">
+                        Registered Members</div>
+                </div>
+                <div class="stat-badge">
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--primary-main); margin-bottom: 0.5rem;">
+                        $4.2B+</div>
+                    <div
+                        style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.6);">
+                        Trade Volume</div>
                 </div>
             </div>
         </div>
 
         <!-- Right Side: Form -->
-        <div class="signup-form-side"
-            style="flex: 1; padding: clamp(1.5rem, 5vw, 4rem); display: flex; flex-direction: column; justify-content: center;">
-            <a href="index.html" class="logo flex items-center justify-center gap-2"
-                style="margin-bottom: 2rem; align-self: center;">
-                <i class="fas fa-landmark fa-2x"></i>
-                <span style="font-size: 1.5rem; font-weight: 800; color: var(--text-main);">AuctionNest</span>
+        <div class="signup-form-side">
+            <a href="index.html" class="logo flex items-center justify-center gap-2" style="margin-bottom: 4rem;">
+                <span class="logo-badge">AN</span>
+                <span style="font-size: 1.8rem; font-weight: 800; color: var(--text-main);">AuctionNest</span>
             </a>
 
-            <h2 style="margin-bottom: 0.5rem; color: var(--text-main); text-align: center;">Create Your Account</h2>
-            <p style="color: var(--text-muted); margin-bottom: 2.5rem; text-align: center;">Register to bid, consign, and explore the world's finest auction platform.</p>
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Apply for Membership</h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem;">Begin your journey into the world of
+                    extraordinary collecting.</p>
+            </div>
 
-            <form onsubmit="handleSignup(event)" style="text-align: left;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem;">
-                    <div style="margin-bottom: 1.5rem;">
+            <form onsubmit="handleSignup(event)" class="signup-form">
+                <div class="grid grid-cols-2 gap-4" style="margin-bottom: 2rem;">
+                    <div>
                         <label
-                            style="color: #cbd5e1; margin-bottom: 0.5rem; display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">First
+                            style="display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem; color: var(--text-muted);">First
                             Name</label>
-                        <input type="text" required placeholder="Victoria"
-                            style="width: 100%; padding: 0.8rem; background: var(--bg-body); border: 1px solid var(--shadow-subtle); border-radius: 8px; color: var(--text-main); outline: none;">
+                        <input type="text" required placeholder="Victoria">
                     </div>
-                    <div style="margin-bottom: 1.5rem;">
+                    <div>
                         <label
-                            style="color: #cbd5e1; margin-bottom: 0.5rem; display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Last
+                            style="display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem; color: var(--text-muted);">Last
                             Name</label>
-                        <input type="text" required placeholder="Ashford"
-                            style="width: 100%; padding: 0.8rem; background: var(--bg-body); border: 1px solid var(--shadow-subtle); border-radius: 8px; color: var(--text-main); outline: none;">
-                    </div>
-                </div>
-
-                <div style="margin-bottom: 1.5rem;">
-                    <label
-                        style="margin-bottom: 0.5rem; display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Email
-                        Address</label>
-                    <div style="position: relative;">
-                        <i class="fas fa-envelope"
-                            style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
-                        <input type="email" required placeholder="name@example.com"
-                            style="width: 100%; padding: 0.8rem 1rem 0.8rem 2.8rem; background: var(--bg-body); border: 1px solid var(--shadow-subtle); border-radius: 8px; color: var(--text-main); outline: none;">
-                    </div>
-                </div>
-
-                <div style="margin-bottom: 1.5rem;">
-                    <label
-                        style="margin-bottom: 0.5rem; display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Password</label>
-                    <div style="position: relative;">
-                        <i class="fas fa-lock"
-                            style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
-                        <input type="password" required placeholder="••••••••"
-                            style="width: 100%; padding: 0.8rem 1rem 0.8rem 2.8rem; background: var(--bg-body); border: 1px solid var(--shadow-subtle); border-radius: 8px; color: var(--text-main); outline: none;">
+                        <input type="text" required placeholder="Ashford">
                     </div>
                 </div>
 
                 <div style="margin-bottom: 2rem;">
-                    <label class="flex items-center gap-2"
-                        style="color: var(--text-muted); font-size: 0.85rem; cursor: pointer;">
-                        <input type="checkbox" required style="accent-color: var(--primary-color);">
-                        I agree to the <a href="#" style="color: var(--primary-color);">Terms</a> & <a href="#"
-                            style="color: var(--primary-color);">Privacy</a>.
+                    <label
+                        style="display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem; color: var(--text-muted);">Email
+                        Address</label>
+                    <div style="position: relative;">
+                        <input type="email" required placeholder="name@domain.com" style="padding-left: 3rem;">
+                        <i class="fas fa-envelope"
+                            style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--primary-main);"></i>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 2.5rem;">
+                    <label
+                        style="display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem; color: var(--text-muted);">Secure
+                        Password</label>
+                    <div style="position: relative;">
+                        <input type="password" required placeholder="••••••••" style="padding-left: 3rem;">
+                        <i class="fas fa-lock"
+                            style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--primary-main);"></i>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 3rem;">
+                    <label class="flex items-center gap-3" style="cursor: pointer; user-select: none;">
+                        <input type="checkbox" required
+                            style="width: 18px; height: 18px; accent-color: var(--primary-main);">
+                        <span style="font-size: 0.95rem; color: var(--text-muted);">I accept the <a href="#"
+                                style="color: var(--primary-main); font-weight: 600; text-decoration: underline;">Membership
+                                Protocols</a></span>
                     </label>
                 </div>
 
                 <button type="submit" class="btn btn-primary"
-                    style="width: 100%; padding: 1rem; font-weight: 800; font-size: 1rem; margin-bottom: 1.5rem; justify-content: center; letter-spacing: 1px;">REQUEST
-                    ACCESS</button>
+                    style="width: 100%; padding: 1.2rem; font-size: 1.1rem; letter-spacing: 3px;">SUBMIT
+                    APPLICATION</button>
             </form>
 
-            <p style="margin-top: 1rem; color: var(--text-muted); text-align: center; font-size: 0.9rem;">
-                Already have an account? <a href="login.html"
-                    style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Sign in</a>
+            <p style="margin-top: 4rem; text-align: center; color: var(--text-muted); font-size: 1rem;">
+                Already have credentials? <a href="login.html"
+                    style="color: var(--primary-main); font-weight: 700; text-decoration: underline;">Identify
+                    Yourself</a>
             </p>
         </div>
     </div>
 
-    
+
 
     <script src="main.js"></script>
     <script src="rtltoggle.js"></script>
