@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BidMaster - User Dashboard</title>
+    <title>AuctionNest â€” Collector's Salon</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fraunces:wght@400;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -475,30 +475,30 @@
 
             <!-- Logo -->
             <a href="index.html" class="logo flex items-center gap-2">
-                <i class="fas fa-gavel fa-2x"></i>
-                <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
+                <i class="fas fa-landmark fa-2x"></i>
+                <span style="font-size: 1.5rem; font-weight: 800;">AuctionNest</span>
             </a>
 
             <!-- Navigation Menu -->
             <nav class="nav-menu">
                 <ul class="flex items-center gap-8">
                     <li class="dropdown">
-                        <a href="index.html" class="nav-link dropdown-toggle">Home <i
+                        <a href="index.html" class="nav-link dropdown-toggle">The House <i
                                 class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="index.html">Home 1</a></li>
-                            <li><a href="index2.html">Home 2</a></li>
+                            <li><a href="index.html">Flagship Gallery</a></li>
+                            <li><a href="index2.html">Heritage Gallery</a></li>
                         </ul>
                     </li>
-                    <li><a href="about.html" class="nav-link">About Us</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="about.html" class="nav-link">Our Story</a></li>
+                    <li><a href="services.html" class="nav-link">The Salerooms</a></li>
+                    <li><a href="contact.html" class="nav-link">Get in Touch</a></li>
                     <li class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active">Dashboard <i
+                        <a href="#" class="nav-link dropdown-toggle active">Member's Lounge <i
                                 class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="user-dashboard.html">User Dashboard</a></li>
-                            <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+                            <li><a href="user-dashboard.html">Collector's Dashboard</a></li>
+                            <li><a href="admin-dashboard.html">Curator's Portal</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -508,7 +508,7 @@
                     style="padding: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05);">
                     <button class="btn btn-danger logout-btn"
                         style="width: 100%; justify-content: center; display: flex; align-items: center; gap: 0.5rem;">
-                        <i class="fas fa-sign-out-alt"></i> Logout
+                        <i class="fas fa-sign-out-alt"></i> Sign Out
                     </button>
                 </div>
             </nav>
@@ -524,9 +524,9 @@
                 <!-- Desktop Auth -->
                 <div class="auth-buttons flex hide-mobile" style="gap: 4rem;">
                     <a href="login.html" class="btn btn-primary"
-                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Login</a>
+                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Enter</a>
                     <a href="signup.html" class="btn btn-outline"
-                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Sign Up</a>
+                        style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Register</a>
                 </div>
 
                 <!-- Dashboard Sidebar Toggle (Mobile Only) -->
@@ -557,53 +557,50 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div
-                style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 1.2rem; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: var(--radius-full); width: fit-content;">
+                style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 1.2rem; background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(37, 99, 235, 0.2); border-radius: var(--radius-full); width: fit-content;">
                 <i class="fas fa-user-circle" style="color: var(--primary-color) !important; font-size: 0.9rem;"></i>
                 <span
-                    style="color: var(--text-main); font-weight: 800; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">User</span>
+                    style="color: var(--text-main); font-weight: 800; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Patron</span>
             </div>
             <div class="hide-mobile" style="margin-bottom: 2rem;">
                 <h3
                     style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">
-                    Main Menu</h3>
+                    Navigate</h3>
             </div>
 
             <div class="sidebar-menu">
-                <a href="#overview" class="sidebar-link active"><i class="fas fa-layer-group"></i> Overview</a>
-                <a href="#bids" class="sidebar-link"><i class="fas fa-gavel"></i> My
-                    Bids <span
-                        style="margin-left: auto; background: var(--primary-color); color: white; padding: 0.1rem 0.6rem; border-radius: 20px; font-size: 0.7rem; font-weight: 700;">12</span></a>
-                <a href="#wins" class="sidebar-link"><i class="fas fa-trophy"></i>
-                    Winnings</a>
-                <a href="#watchlist" class="sidebar-link"><i class="fas fa-heart"></i> Watchlist</a>
-                <a href="#payments" class="sidebar-link"><i class="fas fa-wallet"></i> Payments</a>
-                <a href="#market-trends" class="sidebar-link"><i class="fas fa-chart-line"></i> Market Trends</a>
-                <a href="#bidding-insights" class="sidebar-link"><i class="fas fa-lightbulb"></i> Bidding Insights</a>
+                <a href="#overview" class="sidebar-link active"><i class="fas fa-layer-group"></i> At a Glance</a>
+                <a href="#bids" class="sidebar-link"><i class="fas fa-landmark"></i> Current Bids <span
+                        style="margin-left: auto; background: var(--primary-color); color: white; padding: 0.1rem 0.6rem; border-radius: 20px; font-size: 0.7rem; font-weight: 700;">9</span></a>
+                <a href="#wins" class="sidebar-link"><i class="fas fa-trophy"></i> Winning Gallery</a>
+                <a href="#watchlist" class="sidebar-link"><i class="fas fa-heart"></i> Wish List</a>
+                <a href="#payments" class="sidebar-link"><i class="fas fa-wallet"></i> Payment Vault</a>
+                <a href="#market-trends" class="sidebar-link"><i class="fas fa-chart-line"></i> Market Pulse</a>
+                <a href="#bidding-insights" class="sidebar-link"><i class="fas fa-lightbulb"></i> Bid Analytics</a>
 
                 <div style="margin: 1.5rem 0; height: 1px; background: rgba(0,0,0,0.05);"></div>
 
                 <h3
                     style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 0.5rem; padding-left: 1rem;">
-                    System</h3>
-                <a href="#settings" class="sidebar-link"><i class="fas fa-cog"></i> Settings</a>
-                <a href="#support" class="sidebar-link"><i class="fas fa-headset"></i> Support</a>
+                    Client Services</h3>
+                <a href="#settings" class="sidebar-link"><i class="fas fa-cog"></i> My Settings</a>
+                <a href="#support" class="sidebar-link"><i class="fas fa-headset"></i> Concierge Desk</a>
             </div>
 
             <div style="margin-top: auto; padding-top: 2rem;">
                 <div class="card"
                     style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border: none; margin-bottom: 1rem; border-radius: 1rem; padding: 1.5rem;">
                     <div class="flex justify-between items-center" style="margin-bottom: 0.5rem;">
-                        <p style="font-size: 0.8rem; opacity: 0.9;">Wallet Balance</p>
+                        <p style="font-size: 0.8rem; opacity: 0.9;">Bidding Credit</p>
                         <i class="fas fa-wallet" style="opacity: 0.5;"></i>
                     </div>
-                    <h3 style="font-size: 1.75rem; font-weight: 800;">$1,240.50</h3>
+                    <h3 style="font-size: 1.75rem; font-weight: 800;">$3,875.00</h3>
                     <button class="btn btn-sm"
-                        style="background: rgba(255,255,255,0.2); border: none; width: 100%; margin-top: 1rem; color: white;">Top
-                        Up</button>
+                        style="background: rgba(255,255,255,0.2); border: none; width: 100%; margin-top: 1rem; color: white;">Top Up</button>
                 </div>
                 <button class="logout-btn"
                     style="width: 100%; border-radius: 0.75rem; justify-content: flex-start; padding: 0.75rem 1rem;"><i
-                        class="fas fa-sign-out-alt"></i> Logout</button>
+                        class="fas fa-sign-out-alt"></i> Sign Out</button>
             </div>
         </aside>
 
@@ -614,11 +611,10 @@
             <div id="overview" class="tab-content active">
                 <header class="flex justify-between items-center flex-wrap gap-4" style="margin-bottom: 2.5rem;">
                     <div>
-                        <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">Dashboard</h1>
-                        <p style="color: var(--text-muted); font-size: 1.1rem;">Welcome back to your bidding command
-                            center.</p>
+                        <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">Welcome to Your Salon</h1>
+                        <p style="color: var(--text-muted); font-size: 1.1rem;">Good evening, distinguished patron. Your curated collection summary is ready.</p>
                     </div>
-                    <button class="btn btn-primary"><i class="fas fa-plus margin-right-2"></i> Browse Auctions</button>
+                    <button class="btn btn-primary"><i class="fas fa-plus margin-right-2"></i> Browse Open Lots</button>
                 </header>
 
                 <div class="grid"
@@ -626,26 +622,24 @@
                     <div class="card glass-card hover-float">
                         <div class="flex justify-between items-start">
                             <div>
-                                <span style="color: var(--text-muted); font-size: 0.95rem; font-weight: 500;">Active
-                                    Bids</span>
+                                <span style="color: var(--text-muted); font-size: 0.95rem; font-weight: 500;">Active Bids</span>
                                 <h3
                                     style="font-size: 2.5rem; color: var(--primary-color); margin-top: 0.5rem; font-weight: 800;">
-                                    12</h3>
+                                    9</h3>
                             </div>
                             <div
                                 style="width: 50px; height: 50px; background: rgba(99, 102, 241, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-gavel fa-lg"></i>
+                                <i class="fas fa-landmark fa-lg"></i>
                             </div>
                         </div>
                     </div>
                     <div class="card glass-card hover-float">
                         <div class="flex justify-between items-start">
                             <div>
-                                <span style="color: var(--text-muted); font-size: 0.95rem; font-weight: 500;">Auctions
-                                    Won</span>
+                                <span style="color: var(--text-muted); font-size: 0.95rem; font-weight: 500;">Lots Won</span>
                                 <h3
                                     style="font-size: 2.5rem; color: var(--stat-won); margin-top: 0.5rem; font-weight: 800;">
-                                    8</h3>
+                                    5</h3>
                             </div>
                             <div
                                 style="width: 50px; height: 50px; background: rgba(236, 72, 153, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
@@ -657,11 +651,10 @@
                     <div class="card glass-card hover-float">
                         <div class="flex justify-between items-start">
                             <div>
-                                <span style="color: var(--text-muted); font-size: 0.95rem; font-weight: 500;">Total
-                                    Invested</span>
+                                <span style="color: var(--text-muted); font-size: 0.95rem; font-weight: 500;">Total Invested</span>
                                 <h3
                                     style="font-size: 2.5rem; color: var(--stat-invested); margin-top: 0.5rem; font-weight: 800;">
-                                    $4.2k</h3>
+                                    $18.7k</h3>
                             </div>
                             <div
                                 style="width: 50px; height: 50px; background: rgba(139, 92, 246, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
@@ -675,13 +668,13 @@
                 <div class="grid"
                     style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 2rem; margin-bottom: 2rem;">
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Bidding Activity</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Weekly Bid Activity</h3>
                         <div class="chart-container">
                             <canvas id="bidActivityChart"></canvas>
                         </div>
                     </div>
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Asset Valuation</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Collection Value Trend</h3>
                         <div class="chart-container">
                             <canvas id="assetValuationChart"></canvas>
                         </div>
@@ -691,13 +684,13 @@
                 <div class="grid"
                     style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 2rem; margin-bottom: 2rem;">
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Bid Distribution by Category</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Bids by Category</h3>
                         <div class="chart-container">
                             <canvas id="bidDistributionChart"></canvas>
                         </div>
                     </div>
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Daily Activity</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Daily Platform Activity</h3>
                         <div class="chart-container">
                             <canvas id="dailyEngagementChart"></canvas>
                         </div>
@@ -707,13 +700,13 @@
                 <div class="grid"
                     style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 2rem; margin-bottom: 2rem;">
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Session Duration Trends</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Average Session Length</h3>
                         <div class="chart-container">
                             <canvas id="sessionMetricsChart"></canvas>
                         </div>
                     </div>
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Device Platform Usage</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Device Breakdown</h3>
                         <div class="chart-container">
                             <canvas id="platformUsageChart"></canvas>
                         </div>
@@ -723,19 +716,19 @@
 
             <!-- BIDS SECTION -->
             <div id="bids" class="tab-content">
-                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">My Activations</h1>
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Your Open Bids</h1>
 
                 <!-- NEW BIDS CHARTS -->
                 <div class="grid"
                     style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 2rem; margin-bottom: 2rem;">
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Active Bids Status</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Bid Status Overview</h3>
                         <div class="chart-container">
                             <canvas id="activeBidsStatusChart"></canvas>
                         </div>
                     </div>
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Bidding Frequency</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Weekly Bid History</h3>
                         <div class="chart-container">
                             <canvas id="bidHistoryChart"></canvas>
                         </div>
@@ -747,10 +740,10 @@
                             <tr>
                                 <th
                                     style="padding: 1.5rem; text-align: left; color: var(--text-muted); font-weight: 600;">
-                                    Item Details</th>
+                                    Lot</th>
                                 <th
                                     style="padding: 1.5rem; text-align: left; color: var(--text-muted); font-weight: 600;">
-                                    Time Left</th>
+                                    Closing In</th>
                                 <th
                                     style="padding: 1.5rem; text-align: left; color: var(--text-muted); font-weight: 600;">
                                     Your Bid</th>
@@ -769,15 +762,14 @@
                                             src="assets/images/classic_violin.png"
                                             style="width: 100%; height: 100%; object-fit: cover;"></div>
                                     <div>
-                                        <h4 style="font-weight: 700; margin-bottom: 0.25rem;">Vintage Violin 1742</h4>
-                                        <span style="font-size: 0.85rem; color: var(--text-muted);">Lot #8921</span>
+                                        <h4 style="font-weight: 700; margin-bottom: 0.25rem;">Breguet Tourbillon No. 1176, circa 1808</h4>
+                                        <span style="font-size: 0.85rem; color: var(--text-muted);">Lot #4407</span>
                                     </div>
                                 </td>
-                                <td style="padding: 1.5rem; color: #ef4444; font-weight: 600;">02h 15m</td>
-                                <td style="padding: 1.5rem; font-weight: 700;">$1,450</td>
+                                <td style="padding: 1.5rem; color: #ef4444; font-weight: 600;">01h 42m</td>
+                                <td style="padding: 1.5rem; font-weight: 700;">$67,500</td>
                                 <td style="padding: 1.5rem;"><span
-                                        style="background: #dcfce7; color: #166534; padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem; font-weight: 600;">Highest
-                                        Bidder</span></td>
+                                        style="background: #dcfce7; color: #166534; padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.85rem; font-weight: 600;">Highest Bidder</span></td>
                                 <td style="padding: 1.5rem; text-align: right;"><button
                                         class="btn btn-sm btn-outline">Increase Bid</button></td>
                             </tr>
@@ -791,17 +783,14 @@
                 <header class="flex justify-between items-center"
                     style="margin-bottom: 3rem; background: linear-gradient(to right, rgba(0,0,0,0.05), transparent); padding: 2rem; border-radius: 2rem; position: relative; overflow: hidden;">
                     <div style="z-index: 2;">
-                        <h1 class="playfair" style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">Your
-                            Exceptional Acquisitions</h1>
-                        <p style="color: var(--text-muted);">A curated collection of your successful bids and acquired
-                            treasures.</p>
+                        <h1 class="playfair" style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">Your Winning Collection</h1>
+                        <p style="color: var(--text-muted);">Every piece tells a story. Explore your prized auction victories below.</p>
                     </div>
                     <div class="flex items-center gap-6" style="z-index: 2;">
                         <div class="glass-panel" style="padding: 1rem 2rem; border-radius: 1rem;">
                             <span
-                                style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Total
-                                Acquisition Value</span>
-                            <h2 class="text-gold" style="font-size: 2rem; font-weight: 800;">$84,300</h2>
+                                style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Total Won Value</span>
+                            <h2 class="text-gold" style="font-size: 2rem; font-weight: 800;">$142,750</h2>
                         </div>
                     </div>
                     <!-- Decorative Icon/Image -->
@@ -819,7 +808,7 @@
                         </div>
                     </div>
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Monthly Spending</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Monthly Auction Spend</h3>
                         <div class="chart-container">
                             <canvas id="monthlySpendingChart"></canvas>
                         </div>
@@ -837,24 +826,24 @@
                                 SECURED</div>
                         </div>
                         <div style="padding: 1.5rem;">
-                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">18th Century Stradivarius Replica</h3>
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">A. Lange &amp; S&#246;hne Grand Complication, 1994</h3>
                             <div class="flex justify-between items-center" style="margin-bottom: 1rem;">
                                 <span style="color: var(--text-muted); font-size: 0.9rem;">Hammer Price:</span>
-                                <span class="text-gold" style="font-weight: 800; font-size: 1.25rem;">$12,500</span>
+                                <span class="text-gold" style="font-weight: 800; font-size: 1.25rem;">$38,200</span>
                             </div>
                             <div
                                 style="padding: 1rem; background: rgba(0,0,0,0.03); border-radius: 0.75rem; margin-bottom: 1.5rem;">
                                 <div class="flex items-center gap-2"
                                     style="font-size: 0.85rem; color: #10b981; margin-bottom: 0.5rem;">
-                                    <i class="fas fa-check-circle"></i> Payment Verified
+                                    <i class="fas fa-check-circle"></i> Payment Complete
                                 </div>
                                 <div class="flex items-center gap-2"
                                     style="font-size: 0.85rem; color: var(--primary-color);">
-                                    <i class="fas fa-truck"></i> In Transit (Est. Jan 20)
+                                    <i class="fas fa-truck"></i> Shipping &mdash; Arrives Mar 5
                                 </div>
                             </div>
                             <div class="flex gap-2">
-                                <button class="btn btn-sm btn-outline" style="flex: 1;">Order History</button>
+                                <button class="btn btn-sm btn-outline" style="flex: 1;">View Certificate</button>
                                 <button class="btn btn-sm btn-primary" style="flex: 1;">Track</button>
                             </div>
                         </div>
@@ -867,22 +856,22 @@
                                 style="width: 100%; height: 100%; object-fit: cover;">
                             <div
                                 style="position: absolute; top: 1rem; right: 1rem; background: #f59e0b; color: white; padding: 0.4rem 0.8rem; border-radius: 2rem; font-size: 0.75rem; font-weight: 700;">
-                                PAYMENT PENDING</div>
+                                AWAITING PAYMENT</div>
                         </div>
                         <div style="padding: 1.5rem;">
-                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">"Abstract Resonance" - Original</h3>
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">"Kashmir Sapphire Ring, 12.8 ct &mdash; Unheated"</h3>
                             <div class="flex justify-between items-center" style="margin-bottom: 1rem;">
                                 <span style="color: var(--text-muted); font-size: 0.9rem;">Hammer Price:</span>
-                                <span class="text-gold" style="font-weight: 800; font-size: 1.25rem;">$45,000</span>
+                                <span class="text-gold" style="font-weight: 800; font-size: 1.25rem;">$61,400</span>
                             </div>
                             <div
                                 style="padding: 1rem; background: rgba(0,0,0,0.03); border-radius: 0.75rem; margin-bottom: 1.5rem;">
                                 <div class="flex items-center gap-2"
                                     style="font-size: 0.85rem; color: #f59e0b; margin-bottom: 0.5rem;">
-                                    <i class="fas fa-clock"></i> 48 Hours to Complete
+                                    <i class="fas fa-clock"></i> Payment Due in 24 Hours
                                 </div>
                             </div>
-                            <button class="btn btn-sm btn-primary" style="width: 100%;">Complete Transaction</button>
+                            <button class="btn btn-sm btn-primary" style="width: 100%;">Complete Payment</button>
                         </div>
                     </div>
 
@@ -896,18 +885,18 @@
                                 DELIVERED</div>
                         </div>
                         <div style="padding: 1.5rem;">
-                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">"Ethereal Form" Bronze Sculpture</h3>
+                            <h3 style="font-weight: 700; margin-bottom: 0.5rem;">"1961 Ferrari 250 GT SWB &mdash; Matching Numbers"</h3>
                             <div class="flex justify-between items-center" style="margin-bottom: 1rem;">
                                 <span style="color: var(--text-muted); font-size: 0.9rem;">Hammer Price:</span>
-                                <span class="text-gold" style="font-weight: 800; font-size: 1.25rem;">$26,800</span>
+                                <span class="text-gold" style="font-weight: 800; font-size: 1.25rem;">$43,150</span>
                             </div>
                             <div
                                 style="padding: 1rem; background: rgba(0,0,0,0.03); border-radius: 0.75rem; margin-bottom: 1.5rem;">
                                 <div class="flex items-center gap-2" style="font-size: 0.85rem; color: #10b981;">
-                                    <i class="fas fa-box-open"></i> Collected on Dec 28
+                                    <i class="fas fa-box-open"></i> Delivered on Feb 14
                                 </div>
                             </div>
-                            <button class="btn btn-sm btn-outline" style="width: 100%;">Leave Feedback</button>
+                            <button class="btn btn-sm btn-outline" style="width: 100%;">Request Valuation</button>
                         </div>
                     </div>
                 </div>
@@ -915,7 +904,7 @@
                 <div class="glass-panel" style="margin-top: 3rem; padding: 0; overflow: hidden;">
                     <div
                         style="padding: 1.5rem; background: rgba(0,0,0,0.02); border-bottom: 1px solid rgba(0,0,0,0.05);">
-                        <h3 style="font-weight: 700;">Archive of Previous Wins</h3>
+                        <h3 style="font-weight: 700;">Past Winning Bids</h3>
                     </div>
                     <table style="width: 100%; border-collapse: collapse;">
                         <thead>
@@ -925,10 +914,10 @@
                                     Item</th>
                                 <th
                                     style="padding: 1.25rem; text-align: left; color: var(--text-muted); font-size: 0.85rem;">
-                                    Date</th>
+                                    Date Won</th>
                                 <th
                                     style="padding: 1.25rem; text-align: left; color: var(--text-muted); font-size: 0.85rem;">
-                                    Final Bid</th>
+                                    Hammer Price</th>
                                 <th
                                     style="padding: 1.25rem; text-align: right; color: var(--text-muted); font-size: 0.85rem;">
                                     Status</th>
@@ -936,9 +925,9 @@
                         </thead>
                         <tbody>
                             <tr style="border-bottom: 1px solid rgba(0,0,0,0.02);">
-                                <td style="padding: 1.25rem; font-weight: 600;">Luxury Timepiece #001</td>
-                                <td style="padding: 1.25rem; color: var(--text-muted);">Dec 12, 2025</td>
-                                <td style="padding: 1.25rem; font-weight: 700;">$7,300</td>
+                                <td style="padding: 1.25rem; font-weight: 600;">Cartier Art D&#233;co Diamond Brooch, 1925</td>
+                                <td style="padding: 1.25rem; color: var(--text-muted);">Jan 28, 2026</td>
+                                <td style="padding: 1.25rem; font-weight: 700;">$22,600</td>
                                 <td style="padding: 1.25rem; text-align: right;"><span
                                         style="color: #10b981; font-weight: 600;">Completed</span></td>
                             </tr>
@@ -949,18 +938,18 @@
 
             <!-- WATCHLIST SECTION -->
             <div id="watchlist" class="tab-content">
-                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Strategic Watchlist</h1>
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Your Watched Lots</h1>
                 <div class="grid"
                     style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr)); gap: 2rem;">
 
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 2rem;">Tracked Items Growth</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 2rem;">Watchlist Growth</h3>
                         <div class="chart-container">
                             <canvas id="watchlistGrowthChart"></canvas>
                         </div>
                     </div>
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 2rem;">Interest Density</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 2rem;">Interest by Activity</h3>
                         <div class="chart-container">
                             <canvas id="engagementChart"></canvas>
                         </div>
@@ -970,12 +959,12 @@
 
             <!-- PAYMENTS SECTION -->
             <div id="payments" class="tab-content">
-                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Financial Wallet</h1>
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Payments &amp; Billing</h1>
                 <div class="grid"
                     style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 2rem;">
 
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Preferred Funding</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Payment Methods</h3>
                         <div class="chart-container">
                             <canvas id="paymentMethodsChart"></canvas>
                         </div>
@@ -983,11 +972,10 @@
                     <div class="glass-panel flex flex-col justify-center">
                         <div class="card"
                             style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; padding: 2.5rem; border-radius: 1.5rem;">
-                            <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 0.5rem;">Available Credit</p>
-                            <h2 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1.5rem;">$24,500</h2>
+                            <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 0.5rem;">Your Spending Limit</p>
+                            <h2 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1.5rem;">$52,000</h2>
                             <button class="btn"
-                                style="background: white; color: var(--primary-color); width: 100%;">Increase
-                                Limit</button>
+                                style="background: white; color: var(--primary-color); width: 100%;">Request Increase</button>
                         </div>
                     </div>
                 </div>
@@ -995,26 +983,26 @@
 
             <!-- MARKET TRENDS SECTION -->
             <div id="market-trends" class="tab-content">
-                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Market Analytics</h1>
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Auction Market Trends</h1>
                 <div class="grid"
                     style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr)); gap: 2rem; margin-bottom: 2rem;">
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Price Index Evolution</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Price Index Over Time</h3>
                         <div class="chart-container">
                             <canvas id="marketTrendsChart"></canvas>
                         </div>
                     </div>
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Category Volume Density</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Lot Volume by Category</h3>
                         <div class="chart-container">
                             <canvas id="categoryVolumeChart"></canvas>
                         </div>
                     </div>
                 </div>
                 <div class="glass-panel">
-                    <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Global Luxury Demand Map</h3>
+                    <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Global Buyer Demand Map</h3>
                     <div class="map-container">
-                        <img src="assets/images/world-map.png" class="map-image" alt="World Map">
+                        <img src="assets/images/world-map.png" class="map-image" alt="Global Luxury Demand Map">
 
                         <!-- Interactive Points -->
                         <div class="map-point" style="top: 35%; left: 22%;" data-location="New York, USA"></div>
@@ -1032,25 +1020,25 @@
             <!-- BIDDING INSIGHTS SECTION -->
             <div id="bidding-insights" class="tab-content">
                 <header style="margin-bottom: 3rem;">
-                    <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">Intelligence Center</h1>
-                    <p style="color: var(--text-muted);">AI-driven analysis of your bidding patterns.</p>
+                    <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">Your Bidding Insights</h1>
+                    <p style="color: var(--text-muted);">Data-driven analysis of your bidding patterns, win rates, and spending habits.</p>
                 </header>
                 <div class="grid"
                     style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2rem; margin-bottom: 2rem;">
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Win / Loss Ratio</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Win Rate</h3>
                         <div class="chart-container">
                             <canvas id="winLossChart"></canvas>
                         </div>
                     </div>
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Aggression Profile</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Bidding Style Profile</h3>
                         <div class="chart-container">
                             <canvas id="aggressionRadarChart"></canvas>
                         </div>
                     </div>
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Category Spend</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Spending by Category</h3>
                         <div class="chart-container">
                             <canvas id="categorySpendChart"></canvas>
                         </div>
@@ -1059,7 +1047,7 @@
                 <div class="grid"
                     style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr)); gap: 2rem;">
                     <div class="glass-panel">
-                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Bid Timing Efficiency</h3>
+                        <h3 style="font-weight: 700; margin-bottom: 1.5rem;">Bid Timing Analysis</h3>
                         <div class="chart-container">
                             <canvas id="bidTimingChart"></canvas>
                         </div>
@@ -1075,14 +1063,14 @@
 
             <!-- SETTINGS SECTION -->
             <div id="settings" class="tab-content">
-                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Account Settings</h1>
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Profile Settings</h1>
                 <div class="glass-panel">
                     <form class="grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
                         <div class="form-group"><label>Full Name</label><input type="text" class="form-control"
-                                value="John Doe"></div>
-                        <div class="form-group"><label>Email</label><input type="email" class="form-control"
-                                value="john@example.com"></div>
-                        <button class="btn btn-primary" style="grid-column: span 2;">Update Profile</button>
+                                value="Victoria Lennox-Harrington"></div>
+                        <div class="form-group"><label>Email Address</label><input type="email" class="form-control"
+                                value="v.lennox@auctionnest.com"></div>
+                        <button class="btn btn-primary" style="grid-column: span 2;">Save Changes</button>
                     </form>
                 </div>
             </div>
@@ -1091,10 +1079,9 @@
             <div id="support" class="tab-content" style="text-align: center; padding: 5rem;">
                 <div class="glass-panel" style="max-width: 600px; margin: 0 auto;">
                     <i class="fas fa-headset fa-4x" style="color: var(--primary-color); margin-bottom: 2rem;"></i>
-                    <h2 class="playfair" style="font-size: 2rem; margin-bottom: 1rem;">Concierge Support</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Your dedicated advisor is available for
-                        private consultations.</p>
-                    <button class="btn btn-primary">Open Secure Channel</button>
+                    <h2 class="playfair" style="font-size: 2rem; margin-bottom: 1rem;">Personal Concierge</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Our dedicated team is available around the clock for personalized guidance and private auction advisory.</p>
+                    <button class="btn btn-primary">Contact Concierge</button>
                 </div>
             </div>
 
@@ -1107,14 +1094,10 @@
                         <div class="footer-col">
                             <a href="index.html" class="logo flex items-center gap-2"
                                 style="margin-bottom: 1.5rem; color: white;">
-                                <i class="fas fa-gavel fa-2x"></i>
-                                <span style="font-size: 1.5rem; font-weight: 800;">BidMaster</span>
+                                <i class="fas fa-landmark fa-2x"></i>
+                                <span style="font-size: 1.5rem; font-weight: 800;">AuctionNest</span>
                             </a>
-                            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.7;">The world's premier
-                                platform for
-                                extraordinary auctions. Verified sellers, rare treasures, and a global community of
-                                serious
-                                collectors.</p>
+                            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.7;">The world's most distinguished auction house for rare and extraordinary collectibles. Trusted by collectors across 80+ countries since 2019.</p>
                             <div class="flex gap-4" style="margin-top: 2rem;">
                                 <a href="#" style="color: #94a3b8; font-size: 1.2rem; transition: var(--transition);"><i
                                         class="fab fa-facebook-f"></i></a>
@@ -1149,13 +1132,13 @@
                             </h4>
                             <ul style="list-style: none;">
                                 <li style="margin-bottom: 0.8rem;"><a href="#"
-                                        style="color: #94a3b8; transition: var(--transition);">Electronics</a></li>
+                                        style="color: #94a3b8; transition: var(--transition);">Fine Horology</a></li>
                                 <li style="margin-bottom: 0.8rem;"><a href="#"
-                                        style="color: #94a3b8; transition: var(--transition);">Jewelry & Gems</a></li>
+                                        style="color: #94a3b8; transition: var(--transition);">Rare Jewels</a></li>
                                 <li style="margin-bottom: 0.8rem;"><a href="#"
-                                        style="color: #94a3b8; transition: var(--transition);">Art & Antiques</a></li>
+                                        style="color: #94a3b8; transition: var(--transition);">Curated Art</a></li>
                                 <li style="margin-bottom: 0.8rem;"><a href="#"
-                                        style="color: #94a3b8; transition: var(--transition);">Luxury Vehicles</a></li>
+                                        style="color: #94a3b8; transition: var(--transition);">Classic Motors</a></li>
                             </ul>
                         </div>
 
@@ -1178,7 +1161,7 @@
 
                     <div
                         style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                        <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 BidMaster. All rights reserved.</p>
+                        <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 AuctionNest. All rights reserved.</p>
                         <div class="flex gap-4">
                             <img src="assets/images/visa.svg" alt="Visa" style="height: 20px; opacity: 0.5;">
                             <img src="assets/images/mastercard.svg" alt="Mastercard"
@@ -1260,9 +1243,9 @@
                 data: {
                     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
                     datasets: [
-                        { label: 'Electronics', data: [100, 110, 105, 120, 115, 130], borderColor: '#3b82f6', tension: 0.3 },
-                        { label: 'Art', data: [120, 125, 130, 135, 140, 155], borderColor: '#8b5cf6', tension: 0.3 },
-                        { label: 'Collectibles', data: [90, 95, 110, 105, 125, 140], borderColor: '#ec4899', tension: 0.3 }
+                        { label: 'Fine Horology', data: [100, 110, 105, 120, 115, 130], borderColor: '#3b82f6', tension: 0.3 },
+                        { label: 'Curated Art', data: [120, 125, 130, 135, 140, 155], borderColor: '#8b5cf6', tension: 0.3 },
+                        { label: 'Rare Jewels', data: [90, 95, 110, 105, 125, 140], borderColor: '#ec4899', tension: 0.3 }
                     ]
                 },
                 options: chartOptions
@@ -1272,7 +1255,7 @@
             new Chart(document.getElementById('categoryVolumeChart'), {
                 type: 'radar',
                 data: {
-                    labels: ['Art', 'Electronics', 'Jewelry', 'Fashion', 'Collectibles', 'Vehicles'],
+                    labels: ['Curated Art', 'Fine Horology', 'Rare Jewels', 'Curated Art Prints', 'Heritage Collectibles', 'Classic Motors'],
                     datasets: [{ label: 'Volume', data: [65, 59, 90, 81, 56, 40], backgroundColor: 'rgba(59, 130, 246, 0.2)', borderColor: '#3b82f6' }]
                 },
                 options: { ...chartOptions, scales: {} }
@@ -1302,7 +1285,7 @@
             new Chart(document.getElementById('categorySpendChart'), {
                 type: 'doughnut',
                 data: {
-                    labels: ['Electronics', 'Art', 'Fashion', 'Other'],
+                    labels: ['Fine Horology', 'Curated Art', 'Rare Jewels', 'Other'],
                     datasets: [{ data: [45, 25, 20, 10], backgroundColor: ['#3b82f6', '#8b5cf6', '#ec4899', '#cbd5e1'], borderWidth: 0 }]
                 },
                 options: { ...chartOptions, cutout: '70%', scales: {} }
@@ -1361,7 +1344,7 @@
             new Chart(document.getElementById('bidDistributionChart'), {
                 type: 'pie',
                 data: {
-                    labels: ['Art', 'Electronics', 'Vehicles', 'Jewelry'],
+                    labels: ['Curated Art', 'Fine Horology', 'Classic Motors', 'Rare Jewels'],
                     datasets: [{
                         data: [35, 25, 20, 20],
                         backgroundColor: ['#3b82f6', '#10b981', '#f59e0b', '#ec4899'],
@@ -1421,7 +1404,7 @@
             new Chart(document.getElementById('winsByCategoryChart'), {
                 type: 'polarArea',
                 data: {
-                    labels: ['Art', 'Collectibles', 'Watches', 'Furniture'],
+                    labels: ['Curated Art', 'Heritage Collectibles', 'Fine Horology', 'Classic Motors'],
                     datasets: [{
                         data: [4, 6, 3, 2],
                         backgroundColor: [

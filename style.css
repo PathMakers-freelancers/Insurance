@@ -1,14 +1,14 @@
-:root {
+﻿:root {
     /* Premium Color Palette - Light Theme */
-    --primary-color: #D4AF37;
-    /* Metallic Gold */
-    --primary-hover: #B4941F;
-    --secondary-color: #1e1b4b;
-    /* Deep Indigo/Navy */
-    --accent-color: #7c3aed;
-    /* Royal Purple */
+    --primary-color: #2563eb;
+    /* Sapphire Blue */
+    --primary-hover: #1d4ed8;
+    --secondary-color: #0f172a;
+    /* Midnight */
+    --accent-color: #9ca3af;
+    /* Silver */
 
-    --gradient-gold: linear-gradient(135deg, #FDB931, #D4AF37, #FDB931);
+    --gradient-sapphire: linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8);
     --gradient-dark: linear-gradient(145deg, #0f172a, #1e293b);
 
     --bg-body: #f8fafc;
@@ -29,11 +29,11 @@
     --radius-xl: 2rem;
     --radius-full: 9999px;
 
-    --font-heading: 'Playfair Display', serif;
-    --font-main: 'Outfit', sans-serif;
+    --font-heading: 'Fraunces', serif;
+    --font-main: 'Space Grotesk', sans-serif;
 
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --premium-accent: rgba(212, 175, 55, 0.3);
+    --premium-accent: rgba(37, 99, 235, 0.3);
 
     /* Stat Colors */
     --stat-won: var(--secondary-color);
@@ -45,9 +45,9 @@
 
 [data-theme="dark"] {
     /* Premium Color Palette - Dark Theme */
-    --primary-color: #FDB931;
-    /* Lighter Gold for contrast */
-    --primary-hover: #D4AF37;
+    --primary-color: #3b82f6;
+    /* Brighter Sapphire for dark contrast */
+    --primary-hover: #2563eb;
 
     --bg-body: #020617;
     /* Slate 950 - Ultra Dark */
@@ -64,12 +64,12 @@
     --shadow-subtle: 0 0 0 1px rgba(255, 255, 255, 0.05);
 
     /* Stat Colors - Dark Theme */
-    --stat-won: #f472b6;
-    /* Pink-400 */
-    --stat-active: #f472b6;
-    /* Pink-400 */
-    --stat-invested: #a78bfa;
-    /* Violet-400 */
+    --stat-won: #60a5fa;
+    /* Blue-400 */
+    --stat-active: #60a5fa;
+    /* Blue-400 */
+    --stat-invested: #93c5fd;
+    /* Blue-300 */
 }
 
 
@@ -93,8 +93,8 @@ body {
 body {
     font-family: var(--font-main);
     background-color: var(--bg-body);
-    background-image: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(124, 58, 237, 0.02) 0%, transparent 40%);
+    background-image: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(156, 163, 175, 0.02) 0%, transparent 40%);
     color: var(--text-main);
     transition: background-color 0.4s ease, color 0.4s ease;
     line-height: 1.7;
@@ -109,8 +109,28 @@ h5,
 h6 {
     font-family: var(--font-heading);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* === H1 - Primary Headlines === */
+h1 {
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* === H2 - Section Headlines === */
+h2 {
+    font-weight: 700;
     letter-spacing: -0.02em;
+    line-height: 1.12;
+    text-rendering: optimizeLegibility;
 }
 
 /* RTL Support */
@@ -342,18 +362,18 @@ img {
 }
 
 .text-gold {
-    color: #d4af37 !important;
+    color: #2563eb !important;
 }
 
 .playfair {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Fraunces', serif;
 }
 
 .btn-primary {
-    background: var(--gradient-gold);
-    color: #0f172a;
-    /* Dark text on gold */
-    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+    background: var(--gradient-sapphire);
+    color: #ffffff;
+    /* White text on sapphire */
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
 }
 
 .btn-primary i {
@@ -362,24 +382,24 @@ img {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.6);
     filter: brightness(1.1);
 }
 
 .btn-premium {
-    background: var(--gradient-gold);
-    color: #0f172a !important;
-    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+    background: var(--gradient-sapphire);
+    color: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-premium i {
-    color: #0f172a !important;
+    color: #ffffff !important;
 }
 
 .btn-premium:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.6);
     filter: brightness(1.2);
 }
 
@@ -393,7 +413,7 @@ img {
 .btn-outline:hover {
     background: var(--primary-color);
     color: white !important;
-    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
 }
 
 
@@ -620,10 +640,39 @@ img {
     /* Responsive typography */
     font-weight: 800;
     margin-bottom: 1.5rem;
-    line-height: 1.1;
+    line-height: 1.05;
     color: white;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.4),
+        0 4px 12px rgba(0, 0, 0, 0.25),
+        0 12px 40px rgba(0, 0, 0, 0.15);
     text-align: center;
+    letter-spacing: -0.035em;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 0.6rem;
+}
+
+.hero h1::after {
+    content: '';
+    display: block;
+    width: 64px;
+    height: 3px;
+    margin: 1.2rem auto 0;
+    background: var(--gradient-sapphire);
+    border-radius: var(--radius-full);
+    opacity: 0.85;
+    animation: heroAccentReveal 1s 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes heroAccentReveal {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 64px;
+        opacity: 0.85;
+    }
 }
 
 .hero p {
@@ -644,7 +693,7 @@ img {
 
 #featured .curated-header span {
     display: inline-block;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(37, 99, 235, 0.05));
     color: var(--primary-color);
     padding: 0.4rem 1.2rem;
     border-radius: var(--radius-full);
@@ -652,13 +701,39 @@ img {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.85rem;
-    border: 1px solid rgba(212, 175, 55, 0.25);
+    border: 1px solid rgba(37, 99, 235, 0.25);
     margin-bottom: 1rem;
 }
 
 #featured .curated-header h2 {
     text-align: center;
     margin-bottom: 0.75rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.6rem;
+}
+
+#featured .curated-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 2px;
+    background: var(--gradient-sapphire);
+    border-radius: var(--radius-full);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#featured .curated-header h2:hover::after {
+    width: 80px;
+}
+
+#featured .curated-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #featured .curated-header p {
@@ -681,7 +756,7 @@ img {
 #featured .featured-card:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
-    border-color: rgba(212, 175, 55, 0.4);
+    border-color: rgba(37, 99, 235, 0.4);
 }
 
 #featured .featured-card img {
@@ -714,7 +789,7 @@ img {
     position: absolute;
     top: 1.25rem;
     left: 1.25rem;
-    background: rgba(212, 175, 55, 0.9);
+    background: rgba(37, 99, 235, 0.9);
     color: #0f172a;
     padding: 0.35rem 1rem;
     border-radius: var(--radius-full);
@@ -793,7 +868,7 @@ img {
     height: 48px;
     border-radius: 50%;
     background: var(--bg-surface);
-    border: 2px solid rgba(212, 175, 55, 0.3);
+    border: 2px solid rgba(37, 99, 235, 0.3);
     color: var(--primary-color);
     display: flex;
     align-items: center;
@@ -809,7 +884,7 @@ img {
     background: var(--primary-color);
     color: #0f172a;
     border-color: var(--primary-color);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
 }
 
 .testimonial-nav-btn:hover i {
@@ -852,7 +927,7 @@ img {
 .card:hover {
     transform: translateY(-5px) scale(1.005);
     box-shadow: var(--shadow-lg);
-    border-color: rgba(212, 175, 55, 0.3);
+    border-color: rgba(37, 99, 235, 0.3);
 }
 
 .glass-card {
@@ -873,7 +948,7 @@ img {
     background: linear-gradient(145deg, #0f172a, #1e293b);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border: 1px solid rgba(37, 99, 235, 0.3) !important;
 }
 
 [data-theme="light"] .bg-elite {
@@ -1034,9 +1109,43 @@ img {
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
     margin-bottom: 3rem;
     font-weight: 700;
+    position: relative;
+    padding-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 3px;
+    background: var(--gradient-sapphire);
+    border-radius: var(--radius-full);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-title:hover::after {
+    width: 80px;
+}
+
+/* Section title left-aligned variant (e.g., Live Auctions) */
+.section-title[style*="text-align: left"]::after,
+.section-title[style*="text-align:left"]::after {
+    left: 0;
+    transform: none;
+}
+
+[dir="rtl"] .section-title[style*="text-align: left"]::after,
+[dir="rtl"] .section-title[style*="text-align:left"]::after {
+    left: auto;
+    right: 0;
+    transform: none;
 }
 
 /* Unique Footer with Reveal Interaction */
@@ -1570,7 +1679,7 @@ img {
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 .stat-label {
@@ -2186,5 +2295,123 @@ body::before {
 
     #heritage .card > div:first-child > div:last-child p:first-child {
         font-size: 2.5rem !important;
+    }
+}
+
+/* =====================================================
+   H1 & H2 â€” Reconstructed Heading Design System
+   RTL/LTR aware, responsive, theme-compatible
+   ===================================================== */
+
+/* --- H1 Global Defaults --- */
+h1 {
+    background: linear-gradient(
+        135deg,
+        var(--text-main) 0%,
+        var(--text-main) 60%,
+        var(--primary-color) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Dark theme overrides for h1 gradient */
+[data-theme="dark"] h1 {
+    background: linear-gradient(
+        135deg,
+        #f8fafc 0%,
+        #f8fafc 55%,
+        #3b82f6 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Hero h1 exception â€” must stay white */
+.hero h1 {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: white;
+    background-clip: unset;
+}
+
+/* Admin/dashboard h1 where explicit color is needed */
+h1[style*="color: white"],
+h1[style*="color:#fff"],
+h1[style*="color: #fff"] {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+    background-clip: unset !important;
+}
+
+/* --- H2 Global Decorative Underline --- */
+h2:not(.section-title):not(.newsletter-section h2) {
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* --- RTL-aware heading alignment --- */
+[dir="rtl"] h1,
+[dir="rtl"] h2 {
+    text-align: right;
+}
+
+[dir="rtl"] .hero h1,
+[dir="rtl"] .hero h1::after {
+    text-align: center;
+}
+
+[dir="rtl"] .section-title {
+    text-align: center;
+}
+
+[dir="rtl"] .section-title::after {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+}
+
+[dir="rtl"] #featured .curated-header h2 {
+    text-align: center;
+}
+
+[dir="rtl"] #featured .curated-header h2::after {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+}
+
+/* --- Small-screen heading scaling --- */
+@media (max-width: 480px) {
+    h1 {
+        font-size: clamp(1.75rem, 7vw, 2.5rem) !important;
+        line-height: 1.1 !important;
+    }
+
+    h2 {
+        font-size: clamp(1.35rem, 5vw, 2rem) !important;
+        line-height: 1.15 !important;
+    }
+
+    .hero h1::after {
+        width: 40px !important;
+        margin-top: 0.75rem !important;
+    }
+
+    .section-title::after {
+        width: 36px !important;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+    h1 {
+        font-size: clamp(2rem, 6vw, 3rem);
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 4.5vw, 2.25rem);
     }
 }
