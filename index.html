@@ -23,40 +23,74 @@
 
 <body class="home-style-1">
 
+    <!-- Floating Background Shapes -->
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
     <!-- Header -->
-    <header class="header glass-panel">
-        <div class="container flex justify-between items-center py-4">
-            <a href="index.html" class="logo">
-                <span class="logo-badge">AN</span>
-                <span
-                    style="font-size: 1.8rem; font-weight: 800; letter-spacing: -1px; color: var(--text-main);">AuctionNest</span>
+    <header class="header">
+        <div class="container flex justify-between items-center">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo flex items-center gap-2">
+                <span class="logo-badge">AN</span><span style="font-size: 1.4rem; font-weight: 800;">AuctionNest</span>
             </a>
 
-            <nav class="nav-menu hide-mobile">
-                <ul class="flex gap-8 items-center">
-                    <li><a href="index.html" class="nav-link active">Gallery</a></li>
-                    <li><a href="auctions.html" class="nav-link">Live Events</a></li>
-                    <li><a href="private-sales.html" class="nav-link">Private Sales</a></li>
-                    <li><a href="valuation.html" class="nav-link">Valuations</a></li>
+            <!-- Navigation Menu -->
+            <nav class="nav-menu">
+                <ul class="flex items-center gap-8">
                     <li class="dropdown">
-                        <a href="#" class="nav-link flex items-center gap-1">Collectibles <i
-                                class="fas fa-chevron-down text-xs"></i></a>
-                        <div class="dropdown-menu glass-card">
-                            <a href="#" class="dropdown-item">Fine Horology</a>
-                            <a href="#" class="dropdown-item">Rare Gems</a>
-                            <a href="#" class="dropdown-item">Estate Jewels</a>
-                            <a href="#" class="dropdown-item">Masterworks</a>
-                        </div>
+                        <a href="index.html" class="nav-link dropdown-toggle active">Home <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Home 1</a></li>
+                            <li><a href="index2.html">Home 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Dashboards <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="user-dashboard.html">User Dashboard</a></li>
+                            <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+                        </ul>
                     </li>
                 </ul>
+
+                <!-- Mobile Auth (Inside menu) -->
+                <div class="auth-buttons show-mobile flex flex-column gap-4"
+                    style="padding: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05);">
+                    <a href="login.html" class="btn btn-login-text" style="width: 100%;">Log In</a>
+                    <a href="signup.html" class="btn btn-primary" style="width: 100%;">Get Started</a>
+                </div>
             </nav>
 
-            <div class="auth-buttons flex items-center gap-4">
-                <a href="login.html" class="btn btn-outline"
-                    style="border-radius: var(--radius-full); padding: 0.75rem 2rem;">Sign In</a>
-                <a href="signup.html" class="btn btn-primary"
-                    style="border-radius: var(--radius-full); padding: 0.75rem 2rem;">Join Elite</a>
-                <button class="theme-toggle" id="theme-btn"><i class="fas fa-moon"></i></button>
+            <div class="flex items-center gap-8">
+                <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="rtl-toggle" class="icon-btn" title="Switch Language Direction">
+                    <i class="fas fa-globe"></i>
+                </button>
+
+                <!-- Desktop Auth -->
+                <div class="auth-buttons flex hide-mobile" style="gap: 4rem;">
+                    <a href="login.html" class="btn btn-login-text">Log In</a>
+                    <a href="signup.html" class="btn btn-primary"
+                        style="padding: 0.6rem 1.6rem; font-size: 0.85rem;">Get Started</a>
+                </div>
+
+                <!-- Hamburger -->
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
         </div>
     </header>
@@ -1060,58 +1094,68 @@
         </div>
     </section>
 
-    <!-- Elite Membership Section -->
-    <section id="elite-section" class="container animate-entry delay-300">
-        <div class="glass-card premium-section bg-elite"
-            style="padding: 5rem 2rem; text-align: center; border-radius: var(--radius-lg); position: relative;">
-            <div class="elite-circle-container"
-                style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
-                <div class="elite-badge" style="margin-bottom: 2rem;">
-                    <i class="fas fa-crown fa-3x text-gold"
-                        style="filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));"></i>
-                </div>
+    <!-- Elite Membership -->
+    <section class="elite-membership"
+        style="background: var(--secondary-dark); position: relative; overflow: hidden; margin-top: 6rem; padding: 10rem 0;">
+        <div class="container grid grid-cols-2 gap-20 items-center" style="position: relative; z-index: 2;">
+            <div class="animate-entry">
                 <span class="text-gold"
-                    style="font-weight: 700; letter-spacing: 4px; text-transform: uppercase; display: block; margin-bottom: 1.5rem; font-size: 0.9rem;">Sovereign
-                    Society</span>
-                <h2 class="section-title text-gold"
-                    style="margin-bottom: 2rem; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.2;">Elevate to
-                    the Sovereign Society</h2>
-                <p style="color: rgba(255, 255, 255, 0.8); margin: 0 auto 3rem; font-size: 1.2rem; line-height: 1.8;">
-                    Join the private enclave reserved for the world's most passionate connoisseurs. Unlock early access
-                    to marquee lots, a personal auction strategist, and complimentary premiums on select acquisitions.
-                </p>
-                <div class="flex gap-6 justify-center" style="flex-wrap: wrap;">
-                    <a href="signup.html" class="btn btn-premium"
-                        style="font-size: 1.2rem; padding: 1.2rem 3.5rem; border-radius: var(--radius-full);">
-                        Request Membership <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
-                    </a>
-                    <a href="about.html" class="btn btn-outline"
-                        style="font-size: 1.2rem; padding: 1.2rem 3.5rem; border-radius: var(--radius-full);">
-                        Discover Benefits
-                    </a>
-                </div>
+                    style="font-weight: 700; letter-spacing: 3px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 1.5rem; display: block;">Membership
+                    Elite</span>
+                <h2 style="font-size: 3.5rem; color: white; margin-bottom: 2rem; font-weight: 800; line-height: 1.2;">
+                    Acquire with <span class="text-gold">Sovereign</span> Privilege</h2>
+                <p style="color: rgba(255,255,255,0.6); font-size: 1.1rem; margin-bottom: 3rem; line-height: 1.8;">Join
+                    the world's most discerning collectors. Our elite membership provides the tools and access required
+                    for world-class acquisition.</p>
+                <ul
+                    style="color: rgba(255,255,255,0.7); font-size: 1.1rem; margin-bottom: 4rem; list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1.5rem; display: flex; align-items: center;"><i
+                            class="fas fa-check-circle text-gold" style="margin-right: 1rem; font-size: 1.2rem;"></i>
+                        Priority Access to Masterpiece Collections</li>
+                    <li style="margin-bottom: 1.5rem; display: flex; align-items: center;"><i
+                            class="fas fa-check-circle text-gold" style="margin-right: 1rem; font-size: 1.2rem;"></i>
+                        Bespoke Acquisition Concierge</li>
+                    <li style="margin-bottom: 1.5rem; display: flex; align-items: center;"><i
+                            class="fas fa-check-circle text-gold" style="margin-right: 1rem; font-size: 1.2rem;"></i>
+                        Private Viewing in Global Salerooms</li>
+                </ul>
+                <a href="signup.html" class="btn btn-primary"
+                    style="padding: 1.5rem 4rem; border-radius: var(--radius-full); font-size: 1.1rem;">Apply for
+                    Membership</a>
             </div>
 
-            <!-- Decorative Premium Elements -->
-            <div
-                style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(212, 175, 55, 0.15), transparent 70%); filter: blur(60px); pointer-events: none;">
+            <div class="relative animate-entry delay-200">
+                <div class="glass-card"
+                    style="padding: 4rem; border: 1px solid rgba(212, 175, 55, 0.2); background: rgba(255,255,255,0.03); backdrop-filter: blur(20px);">
+                    <i class="fas fa-quote-left text-gold"
+                        style="font-size: 3rem; opacity: 0.3; margin-bottom: 2rem; display: block;"></i>
+                    <div
+                        style="font-family: var(--font-heading); color: white; font-size: 1.8rem; line-height: 1.6; margin-bottom: 3rem; font-weight: 300; font-style: italic;">
+                        "The service is unparalleled. AuctionNest has transformed how I acquire rare assets with
+                        complete discretion."</div>
+                    <div class="flex items-center gap-5">
+                        <div
+                            style="width: 60px; height: 60px; background: var(--gradient-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--secondary-dark); font-weight: 800; font-size: 1.2rem;">
+                            JS</div>
+                        <div>
+                            <div style="color: white; font-weight: 700; font-size: 1.1rem;">Julian Sterling</div>
+                            <div
+                                style="color: var(--text-gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
+                                Private Collector • London</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div
-                style="position: absolute; bottom: -100px; left: -100px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(99, 102, 241, 0.1), transparent 70%); filter: blur(60px); pointer-events: none;">
-            </div>
+        </div>
 
-            <!-- Floating Particles Effect (Visual Only) -->
-            <div class="elite-particles hide-mobile"
-                style="position: absolute; inset: 0; pointer-events: none; opacity: 0.4;">
-                <div
-                    style="position: absolute; top: 20%; left: 10%; width: 4px; height: 4px; background: var(--primary-color); border-radius: 50%; box-shadow: 0 0 10px var(--primary-color);">
-                </div>
-                <div
-                    style="position: absolute; top: 60%; right: 15%; width: 6px; height: 6px; background: var(--primary-color); border-radius: 50%; box-shadow: 0 0 15px var(--primary-color);">
-                </div>
-                <div
-                    style="position: absolute; bottom: 30%; left: 20%; width: 3px; height: 3px; background: var(--primary-color); border-radius: 50%; box-shadow: 0 0 8px var(--primary-color);">
-                </div>
+        <!-- Background Decorations -->
+        <div
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none;">
+            <div
+                style="position: absolute; top: -20%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(212, 175, 55, 0.08), transparent 70%); filter: blur(100px);">
+            </div>
+            <div
+                style="position: absolute; bottom: -20%; left: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(37, 99, 235, 0.05), transparent 70%); filter: blur(80px);">
             </div>
         </div>
     </section>
@@ -1199,8 +1243,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer"
-        style="background: var(--secondary-color); color: white; padding: 6rem 0 3rem; margin-top: 6rem; position: relative;">
+    <footer class="footer" style="color: white; padding: 6rem 0 3rem; margin-top: 6rem; position: relative;">
         <!-- Top Border with Gold Accent -->
         <div
             style="position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(to right, transparent, var(--primary-color), transparent); opacity: 0.5;">
